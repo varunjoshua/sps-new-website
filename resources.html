@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical Resources — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Resources page-specific styles ──────────────────────── */
+
+    /* Author Feature */
+    .author-feature {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+    .author-photo {
+      position: relative;
+      background: var(--dark);
+      min-height: 360px;
+    }
+    .author-photo img {
+      width: 100%; height: 100%;
+      object-fit: cover; object-position: top center;
+      opacity: .85;
+    }
+    .author-photo-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, transparent 60%, rgba(255,255,255,.05) 100%);
+    }
+    .author-info {
+      padding: 48px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .author-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--red-bg); color: var(--red);
+      font-size: 10px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; padding: 6px 14px;
+      border-radius: 20px; margin-bottom: 20px; width: fit-content;
+    }
+    .author-name {
+      font-size: 32px; font-weight: 900; color: var(--dark);
+      line-height: 1.1; margin-bottom: 6px; letter-spacing: -.5px;
+    }
+    .author-title {
+      font-size: 14px; color: var(--red); font-weight: 600;
+      margin-bottom: 20px;
+    }
+    .author-bio {
+      font-size: 15px; color: var(--grey); line-height: 1.75;
+      margin-bottom: 28px; max-width: 520px;
+    }
+    .author-credentials {
+      display: flex; gap: 24px; flex-wrap: wrap;
+    }
+    .credential-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: var(--light); border-radius: var(--radius);
+      padding: 8px 14px;
+    }
+    .credential-badge i { font-size: 14px; color: var(--red); }
+    .credential-badge span { font-size: 12px; font-weight: 600; color: var(--dark); }
+
+    /* Filter Bar */
+    .resource-filter-bar {
+      background: #fff; border-bottom: 1px solid var(--border);
+      padding: 0; position: sticky; top: 72px; z-index: 50;
+    }
+    .resource-filter-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 0;
+    }
+    .resource-tabs {
+      display: flex; gap: 0;
+    }
+    .resource-tab {
+      padding: 18px 22px; font-size: 13px; font-weight: 600;
+      color: var(--grey); cursor: pointer; border-bottom: 3px solid transparent;
+      transition: all .2s; white-space: nowrap; background: none; border-top: none;
+      border-left: none; border-right: none; font-family: 'Inter', sans-serif;
+    }
+    .resource-tab:hover { color: var(--red); }
+    .resource-tab.active { color: var(--red); border-bottom-color: var(--red); }
+    .resource-count {
+      display: inline-flex; align-items: center; justify-content: center;
+      background: var(--light); color: var(--grey);
+      font-size: 10px; font-weight: 700;
+      width: 18px; height: 18px; border-radius: 9px;
+      margin-left: 6px;
+    }
+    .resource-tab.active .resource-count { background: var(--red); color: #fff; }
+
+    /* Article Grid */
+    .articles-section { padding: 72px 0; background: var(--light); }
+    .articles-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    .article-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); overflow: hidden;
+      transition: all .25s ease; display: flex; flex-direction: column;
+    }
+    .article-card:hover {
+      box-shadow: var(--shadow-md); transform: translateY(-3px); border-color: var(--red);
+    }
+    .article-thumb {
+      height: 180px; overflow: hidden; position: relative;
+    }
+    .article-thumb img {
+      width: 100%; height: 100%; object-fit: cover;
+      transition: transform .4s ease;
+    }
+    .article-card:hover .article-thumb img { transform: scale(1.04); }
+    .article-category-pill {
+      position: absolute; top: 14px; left: 14px;
+      background: var(--red); color: #fff;
+      font-size: 9px; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; padding: 4px 10px; border-radius: 3px;
+    }
+    .article-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
+    .article-meta {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 11.5px; color: var(--light-grey);
+      margin-bottom: 12px;
+    }
+    .article-meta i { font-size: 10px; color: var(--red); }
+    .article-title {
+      font-size: 15.5px; font-weight: 700; color: var(--dark);
+      line-height: 1.4; margin-bottom: 10px;
+      transition: color .2s;
+    }
+    .article-card:hover .article-title { color: var(--red); }
+    .article-excerpt {
+      font-size: 13px; color: var(--grey); line-height: 1.65;
+      margin-bottom: 18px; flex: 1;
+    }
+    .article-footer {
+      display: flex; align-items: center; justify-content: space-between;
+      padding-top: 16px; border-top: 1px solid var(--border);
+    }
+    .article-read-link {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 12.5px; font-weight: 600; color: var(--red);
+      transition: gap .2s;
+    }
+    .article-card:hover .article-read-link { gap: 10px; }
+    .article-read-time {
+      font-size: 11.5px; color: var(--light-grey);
+      display: flex; align-items: center; gap: 5px;
+    }
+
+    /* Featured / Large Article Card */
+    .article-card.featured {
+      grid-column: span 2;
+      display: grid; grid-template-columns: 1fr 1fr;
+    }
+    .article-card.featured .article-thumb {
+      height: 100%; min-height: 260px;
+    }
+    .article-card.featured .article-body {
+      padding: 36px 32px;
+    }
+    .article-card.featured .article-title {
+      font-size: 19px; margin-bottom: 14px;
+    }
+
+    /* Topic Tags */
+    .topic-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 16px; }
+    .topic-tag {
+      font-size: 10px; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; padding: 3px 9px; border-radius: 3px;
+      background: var(--light); color: var(--grey); border: 1px solid var(--border);
+    }
+
+    /* Newsletter Section */
+    .newsletter-section {
+      background: var(--dark); padding: 80px 0;
+    }
+    .newsletter-inner {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .newsletter-left h2 {
+      font-size: clamp(26px, 3vw, 36px); font-weight: 800; color: #fff;
+      line-height: 1.2; margin-bottom: 16px; letter-spacing: -.5px;
+    }
+    .newsletter-left h2 span { color: var(--red); }
+    .newsletter-left p { font-size: 15px; color: rgba(255,255,255,.5); line-height: 1.75; margin-bottom: 28px; }
+    .newsletter-topics { display: flex; gap: 10px; flex-wrap: wrap; }
+    .newsletter-topic-pill {
+      display: flex; align-items: center; gap: 6px;
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 20px; padding: 5px 12px;
+      font-size: 12px; color: rgba(255,255,255,.5);
+    }
+    .newsletter-topic-pill i { font-size: 10px; color: var(--red); }
+    .newsletter-right {}
+    .newsletter-form-large {
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius-lg); padding: 36px;
+    }
+    .newsletter-form-large h4 { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 6px; }
+    .newsletter-form-large p { font-size: 13px; color: rgba(255,255,255,.4); margin-bottom: 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 11px; font-weight: 600; color: rgba(255,255,255,.4); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+    .form-control {
+      width: 100%; background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: var(--radius); padding: 11px 14px;
+      font-size: 13.5px; color: #fff; font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color .2s;
+    }
+    .form-control:focus { border-color: var(--red); }
+    .form-control::placeholder { color: rgba(255,255,255,.25); }
+    .subscribe-privacy { font-size: 11px; color: rgba(255,255,255,.3); margin-top: 10px; text-align: center; }
+
+    /* Resource stats */
+    .resource-stats {
+      background: var(--red); padding: 48px 0;
+    }
+    .stats-row {
+      display: flex; justify-content: space-between; align-items: center;
+    }
+    .stat-item { text-align: center; }
+    .stat-value { font-size: 40px; font-weight: 900; color: #fff; line-height: 1; letter-spacing: -1px; }
+    .stat-label { font-size: 13px; color: rgba(255,255,255,.7); margin-top: 6px; font-weight: 500; }
+    .stat-divider { width: 1px; height: 60px; background: rgba(255,255,255,.2); }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .articles-grid { grid-template-columns: repeat(2, 1fr); }
+      .article-card.featured { grid-column: span 2; }
+      .newsletter-inner { gap: 36px; }
+    }
+    @media (max-width: 768px) {
+      /* Stats bar: 2×2 wrap */
+      .resource-stats { padding: 32px 0; }
+      .stats-row { flex-wrap: wrap; gap: 24px; justify-content: center; }
+      .stat-divider { display: none; }
+      .stat-item { flex: 0 0 calc(50% - 12px); }
+      .stat-value { font-size: 30px; }
+
+      /* Filter tabs: horizontal scroll */
+      .resource-filter-bar { position: static; }
+      .resource-filter-inner { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+      .resource-tabs { flex-wrap: nowrap; padding: 0 4px; }
+      .resource-tab { flex-shrink: 0; padding: 14px 14px; font-size: 12px; }
+
+      /* Author feature: single column */
+      .author-feature { grid-template-columns: 1fr; }
+      .author-photo { min-height: 260px; }
+      .author-info { padding: 28px 24px; }
+      .author-credentials { flex-wrap: wrap; gap: 10px; }
+
+      /* Articles: single column */
+      .articles-grid { grid-template-columns: 1fr; gap: 18px; }
+      .article-card.featured { grid-column: 1; grid-template-columns: 1fr; }
+      .article-card.featured .article-thumb { height: 200px; min-height: unset; }
+
+      /* Newsletter: single column */
+      .newsletter-inner { grid-template-columns: 1fr; gap: 32px; }
+      .newsletter-section { padding: 48px 0; }
+      .newsletter-form-large { padding: 24px; }
+    }
+    @media (max-width: 480px) {
+      .stat-item { flex: 0 0 100%; }
+      .author-name { font-size: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="preview-banner" class="preview-notice">
+    ⚠ Design Preview — Not the live website
+  </div>
+
+  <!-- Nav & Utility injected by components.js -->
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=80&fit=crop')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Resources</span>
+      </div>
+      <h1>Technical <span>Knowledge</span><br>Centre</h1>
+      <p>In-depth technical articles on high-temperature coatings, forging lubrication, scale control, and heat treatment — authored by our IIT-trained metallurgists.</p>
+      <div class="page-hero-ctas">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-flask"></i> Request a Sample</a>
+        <a href="#articles" class="btn btn-outline-white btn-lg"><i class="fas fa-book-open"></i> Browse Articles</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats Bar ────────────────────────────────────────── -->
+  <div class="resource-stats">
+    <div class="container">
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-value">10+</div>
+          <div class="stat-label">Technical Articles</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">40</div>
+          <div class="stat-label">Years of R&amp;D</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">5</div>
+          <div class="stat-label">Industry Sectors Covered</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">IIT</div>
+          <div class="stat-label">Metallurgy Background</div>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <div class="stat-value">Free</div>
+          <div class="stat-label">Always Open Access</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Author Feature ───────────────────────────────────── -->
+  <section style="padding:80px 0; background:#fff;">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Our Author</span>
+        <h2 class="section-title">The Mind Behind the Research</h2>
+        <p class="section-sub">Decades of practical metallurgical experience distilled into accessible technical knowledge.</p>
+      </div>
+      <div class="author-feature">
+        <div class="author-photo">
+          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=640&q=80&fit=crop&crop=faces" alt="S.P. Shenoy">
+          <div class="author-photo-overlay"></div>
+        </div>
+        <div class="author-info">
+          <span class="author-tag"><i class="fas fa-award"></i> Chief Technical Author</span>
+          <div class="author-name">S.P. Shenoy</div>
+          <div class="author-title">Founder &amp; Chief Metallurgist — IIT Bombay, M.Tech</div>
+          <p class="author-bio">
+            With over four decades in applied metallurgy and surface engineering, S.P. Shenoy founded Steel Plant Specialities in 1985 to bridge the gap between academic research and industrial practice. A graduate of IIT Bombay with an M.Tech in Metallurgical Engineering, he has personally developed the ESPON range of coatings and lubricants — solutions trusted by leading steel plants, forging shops, and aerospace component manufacturers worldwide.
+          </p>
+          <div class="author-credentials">
+            <div class="credential-badge">
+              <i class="fas fa-university"></i>
+              <span>IIT Bombay</span>
+            </div>
+            <div class="credential-badge">
+              <i class="fas fa-graduation-cap"></i>
+              <span>M.Tech Metallurgy</span>
+            </div>
+            <div class="credential-badge">
+              <i class="fas fa-calendar-alt"></i>
+              <span>40+ Years Experience</span>
+            </div>
+            <div class="credential-badge">
+              <i class="fas fa-flask"></i>
+              <span>ESPON Range Creator</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <!-- ── Filter Bar ────────────────────────────────────────── -->
+  <div id="articles" class="resource-filter-bar">
+    <div class="container">
+      <div class="resource-filter-inner">
+        <div class="resource-tabs">
+          <button class="resource-tab active" data-filter="all">
+            All Articles <span class="resource-count">10</span>
+          </button>
+          <button class="resource-tab" data-filter="forging">
+            Hot Forging <span class="resource-count">4</span>
+          </button>
+          <button class="resource-tab" data-filter="rolling">
+            Hot Rolling <span class="resource-count">2</span>
+          </button>
+          <button class="resource-tab" data-filter="heat-treatment">
+            Heat Treatment <span class="resource-count">2</span>
+          </button>
+          <button class="resource-tab" data-filter="coatings">
+            Coatings &amp; Lubricants <span class="resource-count">5</span>
+          </button>
+          <button class="resource-tab" data-filter="superalloys">
+            Titanium &amp; Alloys <span class="resource-count">2</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Articles Grid ─────────────────────────────────────── -->
+  <section class="articles-section">
+    <div class="container">
+      <div class="articles-grid" id="articles-grid">
+
+        <!-- Featured Article -->
+        <div class="article-card featured" data-category="forging coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=800&q=80&fit=crop" alt="Scale Formation">
+            <span class="article-category-pill">Hot Forging</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2024</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Scale Control</span>
+              <span class="topic-tag">Protective Coatings</span>
+              <span class="topic-tag">ESPON Range</span>
+            </div>
+            <h3 class="article-title">Understanding Scale Formation in Steel During Hot Forging and the Role of Protective Coatings</h3>
+            <p class="article-excerpt">Scale formation during hot forging is one of the most significant sources of material loss and surface defects in industrial production. This article explores the oxidation mechanisms at high temperatures and explains how anti-scale coatings from the ESPON range prevent scale buildup, reduce material loss by up to 0.3%, and improve surface finish on finished forgings.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 12 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 2 -->
+        <div class="article-card" data-category="forging coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=600&q=80&fit=crop" alt="Die Lubricants">
+            <span class="article-category-pill">Forging</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2024</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Die Lubricants</span>
+              <span class="topic-tag">Tool Life</span>
+            </div>
+            <h3 class="article-title">Forging Die Lubricants: Selecting the Right Formulation for Closed-Die Applications</h3>
+            <p class="article-excerpt">The choice of die lubricant directly influences die life, dimensional accuracy, and material flow. This guide covers graphite vs. graphite-free formulations and their optimal application windows.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 9 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 3 -->
+        <div class="article-card" data-category="heat-treatment coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80&fit=crop" alt="Anti-Scale Paste">
+            <span class="article-category-pill">Heat Treatment</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Decarburization</span>
+              <span class="topic-tag">Surface Protection</span>
+            </div>
+            <h3 class="article-title">Preventing Decarburization in Spring Steel and Tool Steel During Annealing</h3>
+            <p class="article-excerpt">Carbon loss from the surface layer during heat treatment compromises hardness and fatigue resistance. Learn how decarb-control coatings provide a protective barrier in atmosphere furnaces.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 4 -->
+        <div class="article-card" data-category="superalloys coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?w=600&q=80&fit=crop" alt="Titanium Alloys">
+            <span class="article-category-pill">Titanium &amp; Alloys</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Titanium</span>
+              <span class="topic-tag">Anti-Nitriding</span>
+              <span class="topic-tag">Aerospace</span>
+            </div>
+            <h3 class="article-title">Anti-Nitriding Coatings for Titanium Alloy Forging: Protecting Alpha-Case Formation</h3>
+            <p class="article-excerpt">Titanium's affinity for oxygen and nitrogen at elevated temperatures creates a hard, brittle alpha-case layer. This article explains why standard coatings fall short and how specialised anti-nitriding pastes solve the problem.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 11 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 5 -->
+        <div class="article-card" data-category="rolling coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?w=600&q=80&fit=crop" alt="Rolling Mill">
+            <span class="article-category-pill">Hot Rolling</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2023</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Refractory</span>
+              <span class="topic-tag">Mill Rolls</span>
+            </div>
+            <h3 class="article-title">Refractory Coatings for Walking Beam Furnaces: Thermal Efficiency and Workpiece Protection</h3>
+            <p class="article-excerpt">Walking beam furnaces are central to billet and slab reheating before rolling. Refractory coatings on furnace components and hearth areas extend furnace lining life significantly while reducing heat loss.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 7 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 6 -->
+        <div class="article-card" data-category="forging coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&q=80&fit=crop" alt="Coating Application">
+            <span class="article-category-pill">Coatings</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2022</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Application Methods</span>
+              <span class="topic-tag">Process Optimisation</span>
+            </div>
+            <h3 class="article-title">Coating Application Methods for Forging Billets: Spray, Dip, and Brush Compared</h3>
+            <p class="article-excerpt">Application method profoundly affects coating uniformity, coverage thickness, and ultimately performance. A systematic comparison of spray, dip, and brush methods with recommendations for billet geometry and production volume.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 10 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 7 -->
+        <div class="article-card" data-category="heat-treatment coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1516937941344-00b4e0337589?w=600&q=80&fit=crop" alt="Heat Treatment Furnace">
+            <span class="article-category-pill">Heat Treatment</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2022</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Nitriding</span>
+              <span class="topic-tag">Selective Masking</span>
+            </div>
+            <h3 class="article-title">Selective Anti-Nitriding: Masking Strategies for Partial Nitriding of Complex Parts</h3>
+            <p class="article-excerpt">Many engineering components require nitriding in only specific areas. This technical paper covers masking approaches, paste formulations, and application protocols for achieving sharp transitions between nitrided and unnitrided zones.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 9 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 8 -->
+        <div class="article-card" data-category="forging coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1589939705384-5185137a7f0f?w=600&q=80&fit=crop" alt="Billet Heating">
+            <span class="article-category-pill">Hot Forging</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2022</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Scale Loss</span>
+              <span class="topic-tag">Material Yield</span>
+            </div>
+            <h3 class="article-title">Reducing Oxidation Loss in Steel Billets During Induction and Furnace Heating</h3>
+            <p class="article-excerpt">Even modest scale reduction translates to significant annual savings in high-volume forging. This article quantifies the material loss from oxidation across different steel grades and heating methods, and demonstrates ROI for anti-scale coatings.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 9 -->
+        <div class="article-card" data-category="rolling coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=80&fit=crop" alt="Rolling Process">
+            <span class="article-category-pill">Hot Rolling</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2021</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Roll Cooling</span>
+              <span class="topic-tag">EP Grease</span>
+            </div>
+            <h3 class="article-title">Extreme Pressure Greases in Hot Rolling: Lubrication Science Under Severe Loads</h3>
+            <p class="article-excerpt">Rolling mill components — chock bearings, gear couplings, and roll necks — face extreme pressure at elevated temperature. This article explains EP additive chemistry and selection criteria for hot rolling environments.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 8 min read</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Article 10 -->
+        <div class="article-card" data-category="superalloys coatings">
+          <div class="article-thumb">
+            <img src="https://images.unsplash.com/photo-1614728894747-a83421e2b9c9?w=600&q=80&fit=crop" alt="Aerospace Components">
+            <span class="article-category-pill">Super-Alloys</span>
+          </div>
+          <div class="article-body">
+            <div class="article-meta">
+              <span><i class="fas fa-user"></i> S.P. Shenoy</span>
+              <span><i class="fas fa-calendar"></i> 2021</span>
+            </div>
+            <div class="topic-tags">
+              <span class="topic-tag">Nickel Alloys</span>
+              <span class="topic-tag">Aerospace</span>
+              <span class="topic-tag">High-Temp</span>
+            </div>
+            <h3 class="article-title">Protective Coatings for Nickel-Based Superalloy Forging: Challenges at 1200°C and Above</h3>
+            <p class="article-excerpt">Nickel superalloys used in turbine blades and aerospace fasteners present unique coating challenges. This paper reviews oxidation behavior, coating adhesion requirements, and recommended ESPON formulations for alloy classes like IN718 and Waspaloy.</p>
+            <div class="article-footer">
+              <a href="resources.html" class="article-read-link">Read Article <i class="fas fa-arrow-right"></i></a>
+              <span class="article-read-time"><i class="fas fa-clock"></i> 13 min read</span>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /articles-grid -->
+    </div>
+  </section>
+
+  <!-- ── Newsletter Section ────────────────────────────────── -->
+  <div class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-inner">
+        <div class="newsletter-left">
+          <span class="section-label" style="color:rgba(255,255,255,.4)">Stay Informed</span>
+          <h2>Get New Articles<br>Delivered to Your <span>Inbox</span></h2>
+          <p>Join engineers and plant managers from 15+ countries who receive our technical updates. No marketing, no fluff — just applied metallurgy.</p>
+          <div class="newsletter-topics">
+            <span class="newsletter-topic-pill"><i class="fas fa-fire"></i> Hot Forging</span>
+            <span class="newsletter-topic-pill"><i class="fas fa-cogs"></i> Hot Rolling</span>
+            <span class="newsletter-topic-pill"><i class="fas fa-thermometer-half"></i> Heat Treatment</span>
+            <span class="newsletter-topic-pill"><i class="fas fa-rocket"></i> Aerospace Alloys</span>
+            <span class="newsletter-topic-pill"><i class="fas fa-flask"></i> New Products</span>
+          </div>
+        </div>
+        <div class="newsletter-right">
+          <div class="newsletter-form-large">
+            <h4>Subscribe for free</h4>
+            <p>New articles published monthly. Unsubscribe anytime.</p>
+            <div class="form-group">
+              <label>Your Name</label>
+              <input type="text" class="form-control" placeholder="Rajesh Kumar">
+            </div>
+            <div class="form-group">
+              <label>Work Email</label>
+              <input type="email" class="form-control" placeholder="rajesh@company.com">
+            </div>
+            <div class="form-group">
+              <label>Industry</label>
+              <select class="form-control">
+                <option>Hot Forging</option>
+                <option>Hot Rolling</option>
+                <option>Heat Treatment</option>
+                <option>Die Casting</option>
+                <option>Aerospace / Titanium</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:4px">
+              <i class="fas fa-paper-plane"></i> Subscribe Now
+            </button>
+            <p class="subscribe-privacy">No spam. We respect your privacy.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Have a Technical Challenge?</h2>
+          <p>Our metallurgists are happy to recommend the right product for your specific process. Contact us with your application details.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-flask"></i> Request a Sample</a>
+          <a href="products.html" class="btn btn-outline-white btn-lg"><i class="fas fa-layer-group"></i> View All Products</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'resources';</script>
+  <script src="assets/js/components.js"></script>
+  <script>
+    // Resource filter tabs
+    const tabs = document.querySelectorAll('.resource-tab');
+    const cards = document.querySelectorAll('.article-card');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => t.classList.remove('active'));
+        tab.classList.add('active');
+
+        const filter = tab.dataset.filter;
+        cards.forEach(card => {
+          const cats = card.dataset.category || '';
+          if (filter === 'all' || cats.includes(filter)) {
+            card.style.display = '';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+
+        // Re-handle featured card layout when filtering
+        const featuredCard = document.querySelector('.article-card.featured');
+        if (featuredCard && featuredCard.style.display !== 'none') {
+          featuredCard.style.gridColumn = 'span 2';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

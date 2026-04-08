@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Contact page-specific styles ─────────────────────── */
+
+    /* Main contact layout */
+    .contact-section { padding: 80px 0; background: var(--light); }
+    .contact-layout {
+      display: grid; grid-template-columns: 1fr 420px;
+      gap: 48px; align-items: start;
+    }
+
+    /* Form card */
+    .contact-form-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 48px;
+    }
+    .contact-form-card h2 {
+      font-size: 24px; font-weight: 800; color: var(--dark);
+      margin-bottom: 6px; letter-spacing: -.3px;
+    }
+    .contact-form-card > p {
+      font-size: 14px; color: var(--grey); margin-bottom: 32px; line-height: 1.65;
+    }
+
+    /* Form styles */
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .field { margin-bottom: 20px; }
+    .field label {
+      display: block; font-size: 11px; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: var(--mid); margin-bottom: 7px;
+    }
+    .field label .required { color: var(--red); margin-left: 2px; }
+    .field input, .field select, .field textarea {
+      width: 100%; background: var(--light); border: 1.5px solid var(--border);
+      border-radius: var(--radius); padding: 12px 14px;
+      font-size: 14px; color: var(--dark); font-family: 'Inter', sans-serif;
+      outline: none; transition: border-color .2s, background .2s;
+    }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      border-color: var(--red); background: #fff;
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--light-grey); }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .field select { cursor: pointer; }
+    .form-checkbox {
+      display: flex; align-items: flex-start; gap: 10px; margin-top: 4px;
+    }
+    .form-checkbox input[type="checkbox"] { margin-top: 2px; flex-shrink: 0; accent-color: var(--red); }
+    .form-checkbox label { font-size: 12.5px; color: var(--grey); line-height: 1.6; cursor: pointer; text-transform: none; letter-spacing: 0; font-weight: 400; }
+    .form-checkbox label a { color: var(--red); }
+    .form-submit-row { display: flex; align-items: center; gap: 16px; margin-top: 28px; }
+    .form-note { font-size: 11.5px; color: var(--light-grey); }
+    .form-note i { color: var(--red); margin-right: 4px; }
+
+    /* Radio tabs for enquiry type */
+    .enquiry-type-row {
+      display: flex; gap: 12px; margin-bottom: 28px;
+    }
+    .enquiry-type-btn {
+      flex: 1; padding: 12px; border: 2px solid var(--border);
+      border-radius: var(--radius); text-align: center; cursor: pointer;
+      transition: all .2s; background: #fff;
+    }
+    .enquiry-type-btn input { display: none; }
+    .enquiry-type-btn i { font-size: 18px; color: var(--light-grey); display: block; margin-bottom: 6px; transition: color .2s; }
+    .enquiry-type-btn span { font-size: 12px; font-weight: 600; color: var(--grey); display: block; transition: color .2s; }
+    .enquiry-type-btn.selected,
+    .enquiry-type-btn:hover { border-color: var(--red); background: var(--red-bg); }
+    .enquiry-type-btn.selected i,
+    .enquiry-type-btn:hover i { color: var(--red); }
+    .enquiry-type-btn.selected span,
+    .enquiry-type-btn:hover span { color: var(--red); }
+
+    /* Sidebar */
+    .contact-sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    /* Info card */
+    .contact-info-card {
+      background: #fff; border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 32px;
+    }
+    .contact-info-card h3 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 20px; }
+    .contact-info-item {
+      display: flex; gap: 14px; align-items: flex-start; margin-bottom: 20px;
+    }
+    .contact-info-item:last-child { margin-bottom: 0; }
+    .contact-info-icon {
+      width: 36px; height: 36px; background: var(--red-bg); border-radius: var(--radius);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+    }
+    .contact-info-icon i { font-size: 14px; color: var(--red); }
+    .contact-info-text {}
+    .contact-info-text strong { font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--light-grey); display: block; margin-bottom: 4px; }
+    .contact-info-text a, .contact-info-text span { font-size: 13.5px; color: var(--dark); display: block; line-height: 1.5; }
+    .contact-info-text a { transition: color .2s; }
+    .contact-info-text a:hover { color: var(--red); }
+
+    /* Hours */
+    .hours-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0; border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .hours-row:last-child { border-bottom: none; }
+    .hours-row .day { color: var(--mid); font-weight: 500; }
+    .hours-row .time { color: var(--dark); font-weight: 600; }
+    .hours-row .closed { color: var(--light-grey); }
+
+    /* WhatsApp card */
+    .whatsapp-card {
+      background: #25d366; border-radius: var(--radius-lg);
+      padding: 24px 28px; display: flex; align-items: center; gap: 16px;
+      cursor: pointer; transition: background .2s;
+    }
+    .whatsapp-card:hover { background: #1db954; }
+    .whatsapp-icon { font-size: 32px; color: #fff; flex-shrink: 0; }
+    .whatsapp-text {}
+    .whatsapp-text strong { display: block; font-size: 14px; font-weight: 700; color: #fff; }
+    .whatsapp-text span { font-size: 12px; color: rgba(255,255,255,.8); }
+
+    /* Sample Request Card */
+    .sample-card {
+      background: var(--red); border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    .sample-card h3 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .sample-card p { font-size: 13px; color: rgba(255,255,255,.75); line-height: 1.65; margin-bottom: 20px; }
+    .sample-card .btn-outline-white { display: flex; justify-content: center; }
+
+    /* Distributor Card */
+    .distributor-card {
+      background: var(--dark); border-radius: var(--radius-lg);
+      padding: 28px;
+    }
+    .distributor-card h3 { font-size: 16px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+    .distributor-card p { font-size: 13px; color: rgba(255,255,255,.5); line-height: 1.65; margin-bottom: 20px; }
+
+    /* Map Section */
+    .map-section { background: #fff; }
+    .map-container {
+      height: 420px; background: var(--light); position: relative;
+      overflow: hidden;
+    }
+    .map-placeholder {
+      position: absolute; inset: 0; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; gap: 12px;
+    }
+    .map-placeholder i { font-size: 48px; color: var(--light-grey); }
+    .map-placeholder p { font-size: 14px; color: var(--light-grey); }
+    .map-address-pin {
+      position: absolute; bottom: 32px; left: 32px;
+      background: #fff; border-radius: var(--radius-lg);
+      padding: 20px 24px; box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--red);
+      display: flex; align-items: center; gap: 16px;
+    }
+    .map-address-pin i { font-size: 20px; color: var(--red); flex-shrink: 0; }
+    .map-address-pin div {}
+    .map-address-pin strong { display: block; font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 2px; }
+    .map-address-pin span { font-size: 12.5px; color: var(--grey); }
+
+    /* Map dots bg */
+    .map-dots {
+      position: absolute; inset: 0;
+      background-image: radial-gradient(circle, #ddd 1px, transparent 1px);
+      background-size: 24px 24px; opacity: .5;
+    }
+
+    /* Success state */
+    .form-success {
+      display: none; text-align: center; padding: 48px 32px;
+    }
+    .form-success i { font-size: 56px; color: #22c55e; display: block; margin-bottom: 16px; }
+    .form-success h3 { font-size: 22px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+    .form-success p { font-size: 14px; color: var(--grey); }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 1024px) {
+      .contact-layout { grid-template-columns: 1fr; }
+      .contact-sidebar { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+      .whatsapp-card { grid-column: 1 / -1; }
+      .contact-info-card:first-of-type { grid-column: 1 / -1; }
+    }
+    @media (max-width: 768px) {
+      .contact-section { padding: 48px 0; }
+      .contact-form-card { padding: 28px 20px; }
+
+      /* Enquiry type: 2×2 grid */
+      .enquiry-type-row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+
+      /* Form rows: single column */
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+
+      /* Sidebar: single column */
+      .contact-sidebar { grid-template-columns: 1fr; }
+      .whatsapp-card { grid-column: 1; }
+      .contact-info-card:first-of-type { grid-column: 1; }
+
+      /* Map */
+      .map-container { height: 280px; }
+      .map-address-pin { left: 16px; right: 16px; bottom: 16px; }
+    }
+    @media (max-width: 480px) {
+      .enquiry-type-row { grid-template-columns: 1fr 1fr; }
+      .form-submit-row { flex-direction: column; align-items: stretch; }
+      .form-submit-row .btn { width: 100%; justify-content: center; }
+      .hours-row { font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div id="preview-banner" class="preview-notice">
+    ⚠ Design Preview — Not the live website
+  </div>
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1600&q=80&fit=crop')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Contact</span>
+      </div>
+      <h1>Let's Solve Your<br><span>Process Challenge</span></h1>
+      <p>Tell us your application. Our metallurgists will recommend the right product, arrange a sample, or help you set up a trial — usually within 24 hours.</p>
+      <div class="page-hero-ctas">
+        <a href="#enquiry-form" class="btn btn-primary btn-lg"><i class="fas fa-paper-plane"></i> Send an Enquiry</a>
+        <a href="tel:+919820493373" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> Call Now</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Main Contact Section ──────────────────────────────── -->
+  <section class="contact-section" id="enquiry-form">
+    <div class="container">
+      <div class="contact-layout">
+
+        <!-- Left: Form -->
+        <div class="contact-form-card">
+          <h2>Send Us an Enquiry</h2>
+          <p>Fill in the form and a member of our technical team will get back to you within one business day.</p>
+
+          <!-- Enquiry type -->
+          <div class="enquiry-type-row">
+            <label class="enquiry-type-btn selected">
+              <input type="radio" name="enquiry_type" value="product" checked>
+              <i class="fas fa-flask"></i>
+              <span>Product Enquiry</span>
+            </label>
+            <label class="enquiry-type-btn">
+              <input type="radio" name="enquiry_type" value="sample">
+              <i class="fas fa-box-open"></i>
+              <span>Request Sample</span>
+            </label>
+            <label class="enquiry-type-btn">
+              <input type="radio" name="enquiry_type" value="technical">
+              <i class="fas fa-microscope"></i>
+              <span>Technical Help</span>
+            </label>
+            <label class="enquiry-type-btn">
+              <input type="radio" name="enquiry_type" value="distributor">
+              <i class="fas fa-handshake"></i>
+              <span>Distributorship</span>
+            </label>
+          </div>
+
+          <form id="contact-form" novalidate>
+            <div class="form-row">
+              <div class="field">
+                <label>First Name <span class="required">*</span></label>
+                <input type="text" placeholder="Rajesh" required>
+              </div>
+              <div class="field">
+                <label>Last Name <span class="required">*</span></label>
+                <input type="text" placeholder="Kumar" required>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Work Email <span class="required">*</span></label>
+                <input type="email" placeholder="rajesh@company.com" required>
+              </div>
+              <div class="field">
+                <label>Phone Number</label>
+                <input type="tel" placeholder="+91 98765 43210">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="field">
+                <label>Company / Plant Name <span class="required">*</span></label>
+                <input type="text" placeholder="ABC Forgings Pvt Ltd" required>
+              </div>
+              <div class="field">
+                <label>Country</label>
+                <select>
+                  <option>India</option>
+                  <option>United Arab Emirates</option>
+                  <option>Saudi Arabia</option>
+                  <option>Thailand</option>
+                  <option>Indonesia</option>
+                  <option>Malaysia</option>
+                  <option>Vietnam</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label>Product of Interest</label>
+              <select>
+                <option value="">— Select a product (optional) —</option>
+                <option>Anti-Scale Coatings (ESPON range)</option>
+                <option>Refractory Coatings</option>
+                <option>Forging Die Lubricants</option>
+                <option>Anti-Nitriding Paste</option>
+                <option>EP Grease</option>
+                <option>Oil Cleaning Liquids</option>
+                <option>Die Spray Systems</option>
+                <option>Decarb Control Coatings</option>
+                <option>Not sure — need a recommendation</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Your Application / Process</label>
+              <select>
+                <option value="">— Select your process —</option>
+                <option>Hot Forging (open die)</option>
+                <option>Hot Forging (closed die)</option>
+                <option>Hot Rolling</option>
+                <option>Heat Treatment — Nitriding</option>
+                <option>Heat Treatment — Annealing / Hardening</option>
+                <option>Die Casting</option>
+                <option>Titanium / Super-Alloy Forging</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Message <span class="required">*</span></label>
+              <textarea placeholder="Describe your challenge, steel grade, operating temperature, current product being used, or anything else that would help us understand your requirement..." required></textarea>
+            </div>
+
+            <div class="form-checkbox">
+              <input type="checkbox" id="consent">
+              <label for="consent">I agree to Steel Plant Specialities storing my contact information for the purpose of responding to this enquiry. See our <a href="#">Privacy Policy</a>.</label>
+            </div>
+
+            <div class="form-submit-row">
+              <button type="submit" class="btn btn-primary btn-lg">
+                <i class="fas fa-paper-plane"></i> Send Enquiry
+              </button>
+              <span class="form-note"><i class="fas fa-lock"></i> Your information is kept private</span>
+            </div>
+          </form>
+
+          <div class="form-success" id="form-success">
+            <i class="fas fa-check-circle"></i>
+            <h3>Enquiry Received!</h3>
+            <p>Thank you. A member of our technical team will contact you within one business day.<br>
+            In the meantime, feel free to browse our <a href="products.html" style="color:var(--red)">product range</a> or <a href="resources.html" style="color:var(--red)">technical articles</a>.</p>
+          </div>
+        </div>
+
+        <!-- Right: Sidebar -->
+        <div class="contact-sidebar">
+
+          <!-- WhatsApp -->
+          <a href="https://wa.me/919820493373" class="whatsapp-card">
+            <i class="fab fa-whatsapp whatsapp-icon"></i>
+            <div class="whatsapp-text">
+              <strong>Chat on WhatsApp</strong>
+              <span>+91 98204 93373 — Quick responses during business hours</span>
+            </div>
+            <i class="fas fa-arrow-right" style="color:rgba(255,255,255,.6);margin-left:auto;flex-shrink:0"></i>
+          </a>
+
+          <!-- Contact Info -->
+          <div class="contact-info-card">
+            <h3>Direct Contact</h3>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div class="contact-info-text">
+                <strong>Address</strong>
+                <span>211 Raikar Chambers,<br>Govandi East,<br>Mumbai — 400088, India</span>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-phone"></i></div>
+              <div class="contact-info-text">
+                <strong>Mobile</strong>
+                <a href="tel:+919820493373">+91 98204 93373</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-phone-office"></i></div>
+              <div class="contact-info-text">
+                <strong>Landline</strong>
+                <a href="tel:+912267978060">+91-22-6797 8060</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-info-icon"><i class="fas fa-envelope"></i></div>
+              <div class="contact-info-text">
+                <strong>Email</strong>
+                <a href="mailto:info@steelplantspecialities.com">info@steelplantspecialities.com</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Office Hours -->
+          <div class="contact-info-card">
+            <h3>Office Hours</h3>
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">7:00am – 6:00pm IST</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00am – 1:00pm IST</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div>
+          </div>
+
+          <!-- Sample CTA -->
+          <div class="sample-card">
+            <h3>Request a Free Sample</h3>
+            <p>We offer product samples for qualified enquiries. Try before you commit to a full order.</p>
+            <a href="#enquiry-form" class="btn btn-outline-white btn-sm" onclick="document.querySelector('[value=sample]').closest('.enquiry-type-btn').click()">
+              <i class="fas fa-box-open"></i> Request a Sample
+            </a>
+          </div>
+
+          <!-- Distributor CTA -->
+          <div class="distributor-card">
+            <h3>Become a Distributor</h3>
+            <p>We are actively expanding our distributor network across South-East Asia, the Middle East, and Africa. If you serve the forging or rolling sector in your region, we'd love to hear from you.</p>
+            <a href="#enquiry-form" class="btn btn-outline-white btn-sm" onclick="document.querySelector('[value=distributor]').closest('.enquiry-type-btn').click()">
+              <i class="fas fa-handshake"></i> Enquire About Distribution
+            </a>
+          </div>
+
+        </div><!-- /sidebar -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Map Section ───────────────────────────────────────── -->
+  <div class="map-section">
+    <div class="map-container">
+      <div class="map-dots"></div>
+      <div class="map-placeholder">
+        <i class="fas fa-map-marked-alt"></i>
+        <p>Google Maps will be embedded here<br><span style="font-size:12px">211 Raikar Chambers, Govandi East, Mumbai 400088</span></p>
+      </div>
+      <div class="map-address-pin">
+        <i class="fas fa-building"></i>
+        <div>
+          <strong>Steel Plant Specialities LLP</strong>
+          <span>211 Raikar Chambers, Govandi East, Mumbai — 400088</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Not Sure Which Product You Need?</h2>
+          <p>Browse our product range filtered by process, or read our technical articles to understand which solution fits your application.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="products.html" class="btn btn-primary btn-lg"><i class="fas fa-layer-group"></i> Browse Products</a>
+          <a href="resources.html" class="btn btn-outline-white btn-lg"><i class="fas fa-book-open"></i> Read Articles</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'contact';</script>
+  <script src="assets/js/components.js"></script>
+  <script>
+    // Enquiry type toggle
+    document.querySelectorAll('.enquiry-type-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.enquiry-type-btn').forEach(b => b.classList.remove('selected'));
+        btn.classList.add('selected');
+      });
+    });
+
+    // Form submit demo
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('form-success').style.display = 'block';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industries — Steel Plant Specialities LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+
+/* Industry nav tabs */
+.industry-tabs {
+  background: var(--light); border-bottom: 1px solid var(--border);
+  position: sticky; top: 72px; z-index: 50;
+}
+.industry-tabs .container { display: flex; }
+.industry-tab {
+  padding: 18px 24px; font-size: 13.5px; font-weight: 600; color: var(--grey);
+  border-bottom: 3px solid transparent; cursor: pointer; transition: all .2s;
+  white-space: nowrap;
+}
+.industry-tab:hover { color: var(--red); }
+.industry-tab.active { color: var(--red); border-bottom-color: var(--red); }
+
+/* Industry section */
+.industry-section {
+  padding: 80px 0; border-bottom: 1px solid var(--border);
+}
+.industry-section:nth-child(even) { background: var(--light); }
+.industry-inner {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
+}
+.industry-inner.reverse { direction: rtl; }
+.industry-inner.reverse > * { direction: ltr; }
+.industry-image-wrap { border-radius: 10px; overflow: hidden; position: relative; }
+.industry-image-wrap img { height: 420px; }
+.industry-image-badge {
+  position: absolute; bottom: 24px; right: 24px;
+  background: var(--red); color: #fff; padding: 12px 20px;
+  border-radius: var(--radius); font-size: 13px; font-weight: 700;
+  box-shadow: 0 8px 24px rgba(235,61,0,.4);
+}
+.industry-content {}
+.industry-num {
+  font-size: 48px; font-weight: 900; color: rgba(235,61,0,.12);
+  font-family: 'IBM Plex Mono', monospace; line-height: 1; margin-bottom: -8px;
+}
+.industry-content h2 { font-size: 32px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
+.industry-tagline { font-size: 15px; color: var(--red); font-weight: 600; margin-bottom: 20px; }
+.industry-desc { font-size: 15px; color: var(--grey); line-height: 1.8; margin-bottom: 28px; }
+
+.challenges-heading { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+.challenge-list { margin-bottom: 28px; }
+.challenge-item {
+  display: flex; align-items: flex-start; gap: 12px;
+  padding: 12px 0; border-bottom: 1px solid var(--border);
+}
+.challenge-item:last-child { border-bottom: none; }
+.challenge-icon {
+  width: 34px; height: 34px; background: var(--red-bg); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.challenge-icon i { font-size: 13px; color: var(--red); }
+.challenge-text strong { display: block; font-size: 13.5px; color: var(--dark); margin-bottom: 2px; }
+.challenge-text span { font-size: 12.5px; color: var(--grey); }
+
+.products-heading { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
+.product-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+.product-chip {
+  display: flex; align-items: center; gap: 8px;
+  background: #fff; border: 1px solid var(--border); padding: 8px 14px;
+  border-radius: 20px; font-size: 12.5px; font-weight: 600; color: var(--mid);
+  transition: all .2s; cursor: pointer;
+}
+.product-chip:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
+.product-chip-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
+
+.industry-actions { display: flex; gap: 12px; }
+
+/* Global reach strip */
+.global-strip { background: var(--dark); padding: 56px 0; }
+.global-strip-inner { display: flex; align-items: center; justify-content: space-between; gap: 48px; }
+.global-strip h2 { font-size: 28px; font-weight: 800; color: #fff; margin-bottom: 8px; }
+.global-strip p { font-size: 15px; color: rgba(255,255,255,.55); max-width: 460px; }
+.global-regions { display: flex; flex-direction: column; gap: 10px; }
+.global-region {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 13.5px; color: rgba(255,255,255,.7); font-weight: 500;
+}
+.global-region i { color: var(--red); width: 16px; }
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .industry-inner { gap: 40px; }
+}
+@media (max-width: 768px) {
+  /* Tab bar: horizontally scrollable */
+  .industry-tab-bar { position: static; }
+  .industry-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 2px; }
+  .industry-tab { flex-shrink: 0; padding: 14px 16px; font-size: 12.5px; }
+  .industry-tab i { display: none; }
+
+  /* Industry sections: single column */
+  .industry-section { padding: 48px 0; }
+  .industry-inner { grid-template-columns: 1fr !important; direction: ltr !important; gap: 28px; }
+  .industry-image-wrap { height: 260px; }
+  .industry-num { font-size: 60px; }
+  .industry-content { padding: 0; }
+  .challenge-item { gap: 12px; }
+
+  /* Product chips: wrap */
+  .product-chips { flex-wrap: wrap; }
+
+  /* Global strip */
+  .global-strip .container { flex-direction: column; gap: 28px; }
+}
+@media (max-width: 480px) {
+  .industry-image-wrap { height: 200px; }
+  .product-chip { font-size: 11px; padding: 5px 10px; }
+}
+</style>
+</head>
+<body>
+
+<div id="preview-banner" class="preview-notice">
+  <strong>🎨 Design Preview</strong> — Industries Page &nbsp;·&nbsp; Steel Plant Specialities LLP
+</div>
+<script>window.ACTIVE_NAV = 'industries';</script>
+
+<!-- ── PAGE HERO ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Industries</span>
+    </div>
+    <h1>Built for the Most <span>Demanding</span> Metal Forming Processes</h1>
+    <p>SPS products are engineered for and proven across five high-temperature metal forming industries — with installations in India, Asia, Middle East, USA and Europe.</p>
+    <div class="page-hero-ctas">
+      <a href="products.html" class="btn btn-primary btn-lg"><i class="fas fa-th-large"></i> Explore Products</a>
+      <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fas fa-comments"></i> Talk to an Expert</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDUSTRY TABS ──────────────────────────────────────── -->
+<div class="industry-tabs">
+  <div class="container">
+    <div class="industry-tab active" onclick="scrollTo('hot-forging')"><i class="fas fa-hammer" style="margin-right:6px;color:var(--red)"></i>Hot Forging</div>
+    <div class="industry-tab" onclick="scrollTo('hot-rolling')"><i class="fas fa-industry" style="margin-right:6px;color:var(--red)"></i>Hot Rolling</div>
+    <div class="industry-tab" onclick="scrollTo('heat-treatment')"><i class="fas fa-thermometer-three-quarters" style="margin-right:6px;color:var(--red)"></i>Heat Treatment</div>
+    <div class="industry-tab" onclick="scrollTo('die-casting')"><i class="fas fa-cubes" style="margin-right:6px;color:var(--red)"></i>Die Casting</div>
+    <div class="industry-tab" onclick="scrollTo('superalloys')"><i class="fas fa-rocket" style="margin-right:6px;color:var(--red)"></i>Titanium &amp; Super-Alloys</div>
+  </div>
+</div>
+
+<!-- ── HOT FORGING ────────────────────────────────────────── -->
+<section class="industry-section" id="hot-forging">
+  <div class="container">
+    <div class="industry-inner">
+      <div class="industry-image-wrap">
+        <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=700&q=80&fit=crop" alt="Hot Forging">
+        <div class="industry-image-badge"><i class="fas fa-hammer"></i> &nbsp;Hot Forging</div>
+      </div>
+      <div class="industry-content">
+        <div class="industry-num">01</div>
+        <h2>Hot Forging</h2>
+        <div class="section-label">Presses &amp; Hammers · Closed Die · Open Die</div>
+        <p class="industry-desc">Hot forging involves controlled plastic deformation of heated metals into precision shapes under extreme pressure. Die cost represents 10–15% of total forging cost, making die life and lubrication critical to profitability. Clean, efficient forge shops also demand eco-friendly lubricants that eliminate graphite pollution.</p>
+
+        <div class="challenges-heading">Key Challenges</div>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-fire-alt"></i></div>
+            <div class="challenge-text">
+              <strong>Scale loss during billet heating</strong>
+              <span>Up to 8% metal lost as scale, damaging die surfaces and reducing yield.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-tint"></i></div>
+            <div class="challenge-text">
+              <strong>Die lubrication &amp; temperature control</strong>
+              <span>Incorrect spray leads to over-heating, over-cooling, sticking, and short die life.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-smog"></i></div>
+            <div class="challenge-text">
+              <strong>Graphite pollution in forge shops</strong>
+              <span>Black graphite deposits on floors, machinery, and in the air create hygiene and fire hazards.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-heading">Relevant SPS Products</div>
+        <div class="product-chips">
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-GLF3 Die Lubricants</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>DSP2 Die Spray Systems</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-AN Anti-Nitriding Paste</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON EP00 Grease</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>O-CLEAN3 Cleaning Liquid</div>
+        </div>
+        <div class="industry-actions">
+          <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
+          <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOT ROLLING ────────────────────────────────────────── -->
+<section class="industry-section" id="hot-rolling">
+  <div class="container">
+    <div class="industry-inner reverse">
+      <div class="industry-image-wrap">
+        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Hot Rolling">
+        <div class="industry-image-badge"><i class="fas fa-industry"></i> &nbsp;Hot Rolling</div>
+      </div>
+      <div class="industry-content">
+        <div class="industry-num">02</div>
+        <h2>Hot Rolling</h2>
+        <div class="section-label">Billets · Bars · Rails · Structural</div>
+        <p class="industry-desc">In hot rolling, billets and ingots are heated to high temperatures before passing through rolling mills to achieve the desired shape. Scale formation, decarburisation, and billet sticking in furnaces are persistent problems that reduce yield, cause rejections, and damage expensive mill equipment.</p>
+
+        <div class="challenges-heading">Key Challenges</div>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-layer-group"></i></div>
+            <div class="challenge-text">
+              <strong>Scale formation &amp; material loss</strong>
+              <span>Scale fallen in furnaces damages hearths and induction heater coils. Removal is labour-intensive.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-exclamation-triangle"></i></div>
+            <div class="challenge-text">
+              <strong>Decarburisation in critical products</strong>
+              <span>Leaf springs, rails, and automotive parts require tight decarb control that is compromised at high temperatures.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-fire"></i></div>
+            <div class="challenge-text">
+              <strong>Excess fuel consumption</strong>
+              <span>Worn refractory lining increases heat-up time and fuel use. Rolling mill furnaces lose efficiency within months.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-heading">Relevant SPS Products</div>
+        <div class="product-chips">
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-DC Decarb Control</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-RF Refractory Coatings</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON EP00 Grease</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>O-CLEAN3 Cleaning Liquid</div>
+        </div>
+        <div class="industry-actions">
+          <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
+          <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HEAT TREATMENT ─────────────────────────────────────── -->
+<section class="industry-section" id="heat-treatment">
+  <div class="container">
+    <div class="industry-inner">
+      <div class="industry-image-wrap">
+        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80&fit=crop" alt="Heat Treatment">
+        <div class="industry-image-badge"><i class="fas fa-thermometer-three-quarters"></i> &nbsp;Heat Treatment</div>
+      </div>
+      <div class="industry-content">
+        <div class="industry-num">03</div>
+        <h2>Heat Treatment</h2>
+        <div class="section-label">Sealed Quench · Open Air · Induction</div>
+        <p class="industry-desc">Heat treatment is critical to the mechanical properties of engineering components. Oxidation and decarburisation during open-air heat treatment lead to rejections, expensive post-processing, and wasted capital investment. SPS coatings allow scale-free heat treatment in open-air furnaces — eliminating the need for protective atmosphere equipment.</p>
+
+        <div class="challenges-heading">Key Challenges</div>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-ban"></i></div>
+            <div class="challenge-text">
+              <strong>Oxidation &amp; scale in open-air furnaces</strong>
+              <span>Causes pit marks, dimensional loss, and rejected finish-machined components during re-heat treatment.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-tachometer-alt"></i></div>
+            <div class="challenge-text">
+              <strong>Furnace inefficiency over time</strong>
+              <span>Refractory lining wear increases heat-up time by up to 1 hour or more within 8–10 months of relining.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-wrench"></i></div>
+            <div class="challenge-text">
+              <strong>Costly gas atmosphere equipment</strong>
+              <span>Protective atmosphere furnaces require large capital investment. ESPON coatings eliminate this requirement.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-heading">Relevant SPS Products</div>
+        <div class="product-chips">
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-RF Refractory Coatings</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-AN Anti-Nitriding Paste</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-DC Decarb Control</div>
+        </div>
+        <div class="industry-actions">
+          <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
+          <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── DIE CASTING ────────────────────────────────────────── -->
+<section class="industry-section" id="die-casting">
+  <div class="container">
+    <div class="industry-inner reverse">
+      <div class="industry-image-wrap">
+        <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=700&q=80&fit=crop" alt="Die Casting">
+        <div class="industry-image-badge"><i class="fas fa-cubes"></i> &nbsp;Die Casting</div>
+      </div>
+      <div class="industry-content">
+        <div class="industry-num">04</div>
+        <h2>Die Casting</h2>
+        <div class="section-label">Aluminium · Zinc · Magnesium · Copper Alloys</div>
+        <p class="industry-desc">Die casting operations demand clean, well-maintained shop environments and reliable lubrication. Oil spills from centralised lubrication systems, dirty machinery, and poorly cleaned dies all contribute to quality issues and production downtime. SPS cleaning and lubrication products help die casting facilities maintain clean, efficient, and safe operations.</p>
+
+        <div class="challenges-heading">Key Challenges</div>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-oil-can"></i></div>
+            <div class="challenge-text">
+              <strong>Oil spills &amp; floor contamination</strong>
+              <span>Accumulated oil on floors, machinery, and plastic trays creates safety, hygiene, and fire hazard risks.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-cogs"></i></div>
+            <div class="challenge-text">
+              <strong>Equipment cleaning downtime</strong>
+              <span>Conventional cleaning of oil-contaminated trays and bins requires high-pressure machines prone to filter choking.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-heading">Relevant SPS Products</div>
+        <div class="product-chips">
+          <div class="product-chip"><span class="product-chip-dot"></span>O-CLEAN3 Cleaning Liquid</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON EP00 Grease</div>
+        </div>
+        <div class="industry-actions">
+          <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
+          <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TITANIUM / SUPER-ALLOYS ────────────────────────────── -->
+<section class="industry-section" id="superalloys">
+  <div class="container">
+    <div class="industry-inner">
+      <div class="industry-image-wrap">
+        <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?w=700&q=80&fit=crop" alt="Titanium Super-Alloys">
+        <div class="industry-image-badge"><i class="fas fa-rocket"></i> &nbsp;Super-Alloys</div>
+      </div>
+      <div class="industry-content">
+        <div class="industry-num">05</div>
+        <h2>Titanium &amp; Super-Alloys</h2>
+        <div class="section-label">Titanium · Inconel · Critical Aerospace Alloys</div>
+        <p class="industry-desc">High-performance alloys such as Titanium and Inconel are used in aerospace, defence, and critical engineering applications. These materials are expensive and highly sensitive to oxidation at forging and heat treatment temperatures. Alpha-case formation and oxidation losses make protective coatings essential — not optional.</p>
+
+        <div class="challenges-heading">Key Challenges</div>
+        <div class="challenge-list">
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-atom"></i></div>
+            <div class="challenge-text">
+              <strong>Alpha-case formation in Titanium</strong>
+              <span>Oxygen contamination at forging temperatures forms a brittle alpha-case layer that must be removed — a costly and lossy operation.</span>
+            </div>
+          </div>
+          <div class="challenge-item">
+            <div class="challenge-icon"><i class="fas fa-temperature-high"></i></div>
+            <div class="challenge-text">
+              <strong>Heat retention during hot working</strong>
+              <span>Super-alloys lose temperature quickly. Protective coatings retain heat and extend the forging window.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="products-heading">Relevant SPS Products</div>
+        <div class="product-chips">
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
+          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-DC Decarb Control</div>
+        </div>
+        <div class="industry-actions">
+          <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
+          <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── GLOBAL REACH ───────────────────────────────────────── -->
+<div class="global-strip">
+  <div class="container">
+    <div class="global-strip-inner">
+      <div>
+        <div class="section-label" style="color:var(--red)">Global Presence</div>
+        <h2>Trusted by Market Leaders Across 5 Global Regions</h2>
+        <p>SPS is the preferred — and in many cases sole — supplier of its innovative products to market leaders in heat treatment, hot forging, hot rolling, die casting and metal working.</p>
+      </div>
+      <div class="global-regions">
+        <div class="global-region"><i class="fas fa-map-marker-alt"></i> India — Primary market, 40+ years</div>
+        <div class="global-region"><i class="fas fa-map-marker-alt"></i> Asia — South &amp; South-East Asia</div>
+        <div class="global-region"><i class="fas fa-map-marker-alt"></i> Middle East — UAE, Saudi Arabia &amp; region</div>
+        <div class="global-region"><i class="fas fa-map-marker-alt"></i> USA — North America</div>
+        <div class="global-region"><i class="fas fa-map-marker-alt"></i> Europe — Select markets</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── CTA STRIP ─────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Working in One of These Industries?</h2>
+        <p>Get expert advice from a metallurgical engineer who understands your process challenges — not a sales representative.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-comments"></i> Talk to an Expert</a>
+        <a href="products.html" class="btn btn-outline-white btn-lg"><i class="fas fa-flask"></i> Request a Sample</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="assets/js/components.js"></script>
+<script>
+  // Tab scroll highlight
+  const tabs = document.querySelectorAll('.industry-tab');
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+    });
+  });
+  function scrollTo(id) {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+</script>
+</body>
+</html>

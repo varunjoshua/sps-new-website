@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anti-Scale Protective Coatings — Steel Plant Specialities LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+.products-section { padding: 72px 0; background: #fff; }
+.products-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px;
+}
+.product-card {
+  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  overflow: hidden; transition: all .25s ease; position: relative;
+}
+.product-card:hover { box-shadow: 0 8px 32px rgba(235,61,0,.12); transform: translateY(-3px); border-color: var(--red); }
+.product-card::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+  background: var(--red); transition: width .25s ease;
+}
+.product-card:hover::before { width: 3px; }
+.product-img { height: 160px; overflow: hidden; }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+.product-card:hover .product-img img { transform: scale(1.05); }
+.product-body { padding: 22px 20px 20px; }
+.product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+.product-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.35; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--red); font-weight: 600; margin-bottom: 10px; }
+.product-desc { font-size: 13px; color: var(--grey); line-height: 1.65; margin-bottom: 14px; }
+.product-footer {
+  border-top: 1px solid var(--border); padding-top: 16px;
+  display: flex; align-items: center; justify-content: flex-end;
+}
+.product-link {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 13px; font-weight: 600; color: var(--red); transition: gap .2s;
+}
+.product-card:hover .product-link { gap: 10px; }
+
+.category-intro {
+  background: var(--light); border-left: 4px solid var(--red);
+  padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 0;
+  max-width: 760px;
+}
+.category-intro p { font-size: 15px; color: var(--mid); line-height: 1.75; margin: 0; }
+
+@media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+
+<div id="preview-banner" class="preview-notice">
+  <strong>🎨 Design Preview</strong> — Anti-Scale Protective Coatings &nbsp;·&nbsp; Steel Plant Specialities LLP
+</div>
+<script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── PAGE HERO ──────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Anti-Scale Protective Coatings</span>
+    </div>
+    <h1>Anti-Scale <span>Protective Coatings</span></h1>
+    <p>Water-based coatings that prevent oxidation and decarburisation of steel billets, ingots, and bars during furnace heating — recovering 1–8% metal loss back to near-zero.</p>
+  </div>
+</section>
+
+<!-- ── PRODUCTS IN THIS CATEGORY ──────────────────────────── -->
+<section class="products-section">
+  <div class="container">
+    <div class="category-intro">
+      <p>All ESPON anti-scale coatings are applied to billet or ingot surfaces before furnace entry. They form a protective barrier that prevents atmospheric oxygen and nitrogen from reacting with the steel surface during high-temperature soaking — significantly reducing scale formation, metal loss, and decarburisation.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <!-- ESPON-HR -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75&fit=crop" alt="ESPON-HR">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Hot Rolling</span><span class="tag tag-light">Coating</span></div>
+          <div class="product-code">ESPON-HR</div>
+          <div class="product-name">ESPON-HR</div>
+          <div class="product-desc">Anti-scale coating for billets and slabs in hot rolling mill furnaces. Prevents oxidation during high-temperature soaking and minimises scale loss on rolling lines.</div>
+          <div class="product-footer">
+            <a href="product-espon-hr.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPON-AS -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&fit=crop" alt="ESPON-AS">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Hot Forging</span><span class="tag tag-light">Coating</span></div>
+          <div class="product-code">ESPON-AS</div>
+          <div class="product-name">ESPON-AS</div>
+          <div class="product-desc">General-purpose anti-scale coating for forging billets. Suitable for open-die and closed-die forging operations where scale loss and surface oxidation are primary concerns.</div>
+          <div class="product-footer">
+            <a href="product-espon-as.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPON-SR -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=75&fit=crop" alt="ESPON-SR">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Scale Reduction</span><span class="tag tag-light">Coating</span></div>
+          <div class="product-code">ESPON-SR</div>
+          <div class="product-name">ESPON-SR</div>
+          <div class="product-desc">Scale reduction coating for bars, rods, and shaped profiles. Designed for operations with short heating cycles where maximum scale reduction efficiency is needed.</div>
+          <div class="product-footer">
+            <a href="product-espon-sr.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPON-ACR3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1569025591790-e2e90c3a6591?w=600&q=75&fit=crop" alt="ESPON-ACR3">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Anti-Scale</span><span class="tag tag-light">High Performance</span></div>
+          <div class="product-code">ESPON-ACR3</div>
+          <div class="product-name">ESPON-ACR3</div>
+          <div class="product-desc">Advanced anti-scale and anti-corrosion coating for superalloys, titanium, and high-alloy steels. Provides enhanced protection at extreme temperatures with superior adhesion.</div>
+          <div class="product-footer">
+            <a href="product-espon-acr3.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Decarburisation Control Coating -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1574624498700-e35a8aba6e45?w=600&q=75&fit=crop" alt="Decarburisation Control Coating">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Decarb Control</span><span class="tag tag-light">Coating</span></div>
+          <div class="product-code">ESPON-DC</div>
+          <div class="product-name">Decarburisation Control Coating</div>
+          <div class="product-desc">Maintains decarburisation within specification for high-carbon steel components — leaf springs, rails, automotive parts, and pressure vessels processed through heat treatment furnaces.</div>
+          <div class="product-footer">
+            <a href="product-decarb-coating.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA STRIP ─────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Not Sure Which Coating is Right for You?</h2>
+        <p>Our metallurgical engineers can recommend the correct ESPON coating for your specific steel grade, furnace type, and heating cycle.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-flask"></i> Request a Sample</a>
+        <a href="contact.html" class="btn btn-outline-white btn-lg"><i class="fas fa-phone"></i> Call Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="assets/js/components.js"></script>
+</body>
+</html>

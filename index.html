@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Steel Plant Specialities LLP — Homepage Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<style>
+  /* ── Reset & Base ──────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --red:       #eb3d00;
+    --red-dark:  #c43200;
+    --red-light: #ff5520;
+    --black:     #111111;
+    --dark:      #1a1a1a;
+    --mid:       #333333;
+    --grey:      #666666;
+    --light:     #f4f4f4;
+    --border:    #e0e0e0;
+    --white:     #ffffff;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); font-size: 16px; line-height: 1.65; }
+  img { display: block; width: 100%; object-fit: cover; }
+  a { text-decoration: none; color: inherit; }
+
+  /* ── Utility ───────────────────────────────────────────────── */
+  .container { max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+  .tag {
+    display: inline-block; background: var(--red); color: #fff;
+    font-size: 10px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: 3px 10px; border-radius: 2px;
+  }
+  .tag.outline {
+    background: transparent; color: var(--red); border: 1px solid var(--red);
+  }
+  .btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 600;
+    padding: 13px 28px; border-radius: 4px; cursor: pointer; border: none;
+    transition: all .2s ease; letter-spacing: .3px;
+  }
+  .btn-primary { background: var(--red); color: #fff; }
+  .btn-primary:hover { background: var(--red-dark); transform: translateY(-1px); }
+  .btn-outline { background: transparent; color: #fff; border: 2px solid rgba(255,255,255,.7); }
+  .btn-outline:hover { background: rgba(255,255,255,.1); border-color: #fff; }
+  .btn-dark { background: var(--dark); color: #fff; }
+  .btn-dark:hover { background: var(--black); }
+  .section-label {
+    display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--red); margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 36px; font-weight: 800; color: var(--dark); line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-sub { font-size: 17px; color: var(--grey); max-width: 580px; line-height: 1.7; }
+
+  /* ── Top Utility Bar ───────────────────────────────────────── */
+  .utility-bar {
+    background: var(--dark); color: #ccc;
+    font-size: 12.5px; padding: 9px 0;
+  }
+  .utility-bar .container {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .utility-bar a { color: #ccc; transition: color .2s; }
+  .utility-bar a:hover { color: var(--red); }
+  .utility-left { display: flex; gap: 24px; align-items: center; }
+  .utility-left span { display: flex; align-items: center; gap: 6px; }
+  .utility-left i { color: var(--red); font-size: 11px; }
+  .utility-right { display: flex; gap: 16px; align-items: center; }
+  .utility-right a {
+    width: 28px; height: 28px; border-radius: 50%;
+    background: rgba(255,255,255,.08); display: flex; align-items: center; justify-content: center;
+    transition: background .2s;
+  }
+  .utility-right a:hover { background: var(--red); color: #fff; }
+  .utility-right i { font-size: 12px; }
+
+  /* ── Nav ──────────────────────────────────────────────────── */
+  .navbar {
+    background: #fff; position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 12px rgba(0,0,0,.06);
+  }
+  .navbar .container {
+    display: flex; align-items: center; justify-content: space-between;
+    height: 72px;
+  }
+  .nav-logo { display: flex; align-items: center; gap: 12px; }
+  .nav-logo-icon {
+    width: 42px; height: 42px; background: var(--red); border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo-icon svg { width: 26px; height: 26px; fill: #fff; }
+  .nav-logo-img { height: 42px; width: auto; display: block; flex-shrink: 0; }
+  .nav-logo-text { line-height: 1.2; }
+  .nav-logo-text strong { display: block; font-size: 15px; font-weight: 800; color: var(--dark); }
+  .nav-logo-text span { font-size: 10.5px; color: var(--grey); font-weight: 500; letter-spacing: .5px; }
+  .nav-links { display: flex; gap: 4px; align-items: center; }
+  .nav-links a {
+    font-size: 13.5px; font-weight: 600; color: var(--mid); padding: 8px 14px;
+    border-radius: 4px; transition: all .2s; position: relative;
+  }
+  .nav-links a:hover, .nav-links a.active { color: var(--red); background: rgba(235,61,0,.06); }
+  .nav-links a.active::after {
+    content: ''; position: absolute; bottom: 4px; left: 14px; right: 14px;
+    height: 2px; background: var(--red); border-radius: 1px;
+  }
+  .nav-cta { display: flex; align-items: center; gap: 12px; }
+  .nav-phone { font-size: 13px; font-weight: 600; color: var(--grey); display: flex; align-items: center; gap: 6px; }
+  .nav-phone i { color: var(--red); }
+
+  /* ── Hero ─────────────────────────────────────────────────── */
+  .hero {
+    position: relative; height: 88vh; min-height: 560px; overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop');
+    background-size: cover; background-position: center;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(105deg, rgba(10,10,10,.85) 0%, rgba(10,10,10,.65) 50%, rgba(10,10,10,.4) 100%);
+  }
+  .hero .container { width: 100%; }
+  .hero-content { position: relative; z-index: 1; max-width: 680px; }
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(235,61,0,.2); border: 1px solid rgba(235,61,0,.5);
+    color: #ff6b3d; font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; padding: 6px 14px; border-radius: 20px; margin-bottom: 24px;
+  }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
+  .hero h1 {
+    font-size: clamp(36px, 5vw, 58px); font-weight: 900; color: #fff;
+    line-height: 1.1; margin-bottom: 20px; letter-spacing: -1px;
+  }
+  .hero h1 span { color: var(--red); }
+  .hero-sub {
+    font-size: 18px; color: rgba(255,255,255,.8); line-height: 1.7;
+    margin-bottom: 36px; max-width: 540px;
+  }
+  .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; }
+  .hero-scroll {
+    position: absolute; bottom: 36px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,.4); font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .hero-scroll i { animation: bounce 1.8s ease-in-out infinite; }
+  @keyframes bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(6px); } }
+
+  /* ── Trust Bar ─────────────────────────────────────────────── */
+  .trust-bar { background: var(--red); padding: 0; }
+  .trust-bar .container {
+    display: flex; align-items: stretch;
+  }
+  .trust-item {
+    flex: 1; display: flex; align-items: center; justify-content: center; flex-direction: column;
+    padding: 28px 20px; text-align: center; position: relative;
+  }
+  .trust-item + .trust-item::before {
+    content: ''; position: absolute; left: 0; top: 20%; bottom: 20%;
+    width: 1px; background: rgba(255,255,255,.25);
+  }
+  .trust-num {
+    font-size: 34px; font-weight: 900; color: #fff; line-height: 1;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+  .trust-label {
+    font-size: 11px; font-weight: 600; color: rgba(255,255,255,.75);
+    letter-spacing: 1.2px; text-transform: uppercase; margin-top: 5px;
+  }
+
+  /* ── Products Grid ─────────────────────────────────────────── */
+  .products-section { padding: 96px 0 80px; background: #fff; }
+  .section-header { margin-bottom: 56px; }
+  .section-header.center { text-align: center; }
+  .section-header.center .section-sub { margin: 0 auto; }
+  .products-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  }
+  .product-card {
+    border: 1px solid var(--border); border-radius: 8px; padding: 28px 24px;
+    background: #fff; transition: all .25s ease; position: relative; overflow: hidden;
+  }
+  .product-card::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
+    background: var(--red); transition: width .25s ease;
+  }
+  .product-card:hover { border-color: var(--red); box-shadow: 0 8px 32px rgba(235,61,0,.12); transform: translateY(-3px); }
+  .product-card:hover::before { width: 3px; }
+  .product-icon {
+    width: 52px; height: 52px; background: rgba(235,61,0,.08); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+  }
+  .product-icon i { font-size: 22px; color: var(--red); }
+  .product-card h3 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.3; }
+  .product-card p { font-size: 13px; color: var(--grey); line-height: 1.6; margin-bottom: 18px; }
+  .product-link {
+    font-size: 13px; font-weight: 600; color: var(--red); display: flex; align-items: center; gap: 6px;
+    transition: gap .2s;
+  }
+  .product-card:hover .product-link { gap: 10px; }
+
+  .products-footer { text-align: center; margin-top: 48px; }
+
+  /* ── Industries ────────────────────────────────────────────── */
+  .industries-section {
+    background: var(--dark); padding: 96px 0;
+  }
+  .industries-section .section-label { color: var(--red); }
+  .industries-section .section-title { color: #fff; }
+  .industries-section .section-sub { color: rgba(255,255,255,.6); }
+  .industries-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; margin-top: 56px;
+  }
+  .industry-card {
+    position: relative; border-radius: 8px; overflow: hidden;
+    aspect-ratio: 3/4; cursor: pointer; group: true;
+  }
+  .industry-img {
+    position: absolute; inset: 0; transition: transform .4s ease;
+  }
+  .industry-card:hover .industry-img { transform: scale(1.08); }
+  .industry-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,.85) 0%, rgba(0,0,0,.3) 60%, rgba(0,0,0,.1) 100%);
+    transition: background .3s;
+  }
+  .industry-card:hover .industry-overlay {
+    background: linear-gradient(0deg, rgba(235,61,0,.85) 0%, rgba(0,0,0,.5) 60%, rgba(0,0,0,.2) 100%);
+  }
+  .industry-content {
+    position: absolute; bottom: 0; left: 0; right: 0; padding: 24px 20px;
+  }
+  .industry-icon { font-size: 28px; color: rgba(255,255,255,.7); margin-bottom: 10px; }
+  .industry-card:hover .industry-icon { color: #fff; }
+  .industry-name { font-size: 15px; font-weight: 700; color: #fff; margin-bottom: 4px; }
+  .industry-desc { font-size: 12px; color: rgba(255,255,255,.6); line-height: 1.5; }
+
+  /* ── Featured Article ─────────────────────────────────────── */
+  .article-section { padding: 96px 0; background: var(--light); }
+  .article-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: "img heading" "img body";
+    gap: 0; border-radius: 12px;
+    overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,.1);
+  }
+  .article-img { grid-area: img; height: 100%; min-height: 460px; }
+  .article-heading {
+    grid-area: heading;
+    background: #fff; padding: 48px 52px 24px;
+  }
+  .article-heading h3 {
+    font-size: 22px; font-weight: 800; color: var(--dark); line-height: 1.35; margin-bottom: 14px;
+  }
+  .article-body {
+    grid-area: body;
+    background: #fff; padding: 0 52px 48px; display: flex; flex-direction: column; justify-content: flex-start;
+  }
+  .article-meta {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 20px;
+  }
+  .article-author-chip {
+    display: flex; align-items: center; gap: 8px;
+    font-size: 12px; color: var(--grey);
+  }
+  .author-avatar {
+    width: 32px; height: 32px; background: var(--dark); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 12px; font-weight: 700; color: #fff;
+  }
+  .article-heading h3 {
+    font-size: 26px; font-weight: 800; color: var(--dark); line-height: 1.25;
+    margin-bottom: 16px;
+  }
+  .article-body p { font-size: 15px; color: var(--grey); line-height: 1.8; margin-bottom: 28px; }
+  .article-highlights { margin-bottom: 32px; }
+  .highlight-item {
+    display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;
+  }
+  .highlight-item i { color: var(--red); margin-top: 3px; font-size: 12px; }
+  .highlight-item span { font-size: 13.5px; color: var(--mid); }
+
+  /* ── About Strip ───────────────────────────────────────────── */
+  .about-section { padding: 96px 0; background: #fff; }
+  .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
+  .about-image-wrap { position: relative; border-radius: 10px; overflow: hidden; }
+  .about-image-wrap img { height: 480px; }
+  .about-badge {
+    position: absolute; bottom: 32px; left: -20px;
+    background: var(--red); color: #fff; padding: 20px 24px; border-radius: 8px;
+    box-shadow: 0 12px 40px rgba(235,61,0,.35);
+  }
+  .about-badge-num { font-size: 40px; font-weight: 900; line-height: 1; font-family: 'IBM Plex Mono', monospace; }
+  .about-badge-label { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; opacity: .85; }
+  .about-text .section-sub { margin-bottom: 28px; }
+  .about-creds {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 36px;
+  }
+  .cred-item {
+    padding: 16px; border: 1px solid var(--border); border-radius: 6px;
+    border-left: 3px solid var(--red);
+  }
+  .cred-item strong { display: block; font-size: 13px; font-weight: 700; color: var(--dark); }
+  .cred-item span { font-size: 12px; color: var(--grey); }
+
+  /* ── Espon Brand Strip ─────────────────────────────────────── */
+  .espon-strip {
+    background: var(--light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+    padding: 28px 0;
+  }
+  .espon-strip .container {
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .espon-label { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--grey); }
+  .espon-products { display: flex; gap: 28px; align-items: center; }
+  .espon-chip {
+    font-size: 12px; font-weight: 600; color: var(--mid); background: #fff;
+    border: 1px solid var(--border); padding: 6px 14px; border-radius: 20px;
+    font-family: 'IBM Plex Mono', monospace;
+  }
+
+  /* ── Contact CTA ─────────────────────────────────────────────*/
+  .contact-cta { background: var(--dark); padding: 80px 0; }
+  .contact-cta .container {
+    display: flex; align-items: center; justify-content: space-between; gap: 48px;
+  }
+  .cta-text h2 { font-size: 34px; font-weight: 800; color: #fff; margin-bottom: 10px; }
+  .cta-text p { font-size: 16px; color: rgba(255,255,255,.55); max-width: 480px; }
+  .cta-actions { display: flex; gap: 14px; flex-shrink: 0; }
+
+  /* ── Footer ───────────────────────────────────────────────── */
+  footer {
+    background: var(--black); color: rgba(255,255,255,.55);
+    padding: 64px 0 32px;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.6fr 1fr 1fr 1.2fr; gap: 48px;
+    margin-bottom: 56px;
+  }
+  .footer-brand p { font-size: 13px; line-height: 1.75; margin: 16px 0 24px; color: rgba(255,255,255,.45); }
+  .footer-social { display: flex; gap: 10px; }
+  .footer-social a {
+    width: 34px; height: 34px; border-radius: 50%; border: 1px solid rgba(255,255,255,.15);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; transition: all .2s;
+  }
+  .footer-social a:hover { background: var(--red); border-color: var(--red); color: #fff; }
+  .footer-col h4 {
+    font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    color: rgba(255,255,255,.35); margin-bottom: 20px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13.5px; color: rgba(255,255,255,.55); transition: color .2s; }
+  .footer-col ul li a:hover { color: var(--red); }
+  .footer-contact p { font-size: 13px; margin-bottom: 10px; display: flex; gap: 10px; align-items: flex-start; }
+  .footer-contact i { color: var(--red); margin-top: 3px; flex-shrink: 0; }
+  .footer-newsletter { margin-top: 24px; }
+  .footer-newsletter h5 { font-size: 12px; font-weight: 600; color: rgba(255,255,255,.5); margin-bottom: 10px; letter-spacing: .5px; }
+  .newsletter-input {
+    display: flex; border: 1px solid rgba(255,255,255,.12); border-radius: 4px; overflow: hidden;
+  }
+  .newsletter-input input {
+    flex: 1; background: rgba(255,255,255,.06); border: none; padding: 10px 14px;
+    font-size: 13px; color: #fff; font-family: 'Inter', sans-serif; outline: none;
+  }
+  .newsletter-input input::placeholder { color: rgba(255,255,255,.3); }
+  .newsletter-input button {
+    background: var(--red); border: none; padding: 10px 16px; color: #fff;
+    font-size: 13px; cursor: pointer; font-weight: 600; transition: background .2s;
+  }
+  .newsletter-input button:hover { background: var(--red-dark); }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px;
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 12px; color: rgba(255,255,255,.3);
+  }
+  .footer-bottom a { color: rgba(255,255,255,.4); transition: color .2s; }
+  .footer-bottom a:hover { color: var(--red); }
+
+  /* ── Preview Banner ───────────────────────────────────────── */
+  .preview-notice {
+    background: #fff3cd; color: #7d4e00; text-align: center;
+    padding: 10px; font-size: 13px; font-weight: 500; border-bottom: 1px solid #f0c040;
+  }
+  .preview-notice strong { font-weight: 700; }
+
+  /* ============================================================
+     HOMEPAGE RESPONSIVE
+     ============================================================ */
+
+  /* Hamburger (homepage has its own inline nav) */
+  .nav-hamburger {
+    display: none; flex-direction: column; justify-content: center;
+    gap: 5px; width: 40px; height: 40px; cursor: pointer;
+    background: none; border: none; padding: 8px;
+  }
+  .nav-hamburger span { display: block; height: 2px; background: var(--dark); border-radius: 2px; transition: all .25s; }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  @media (max-width: 768px) {
+    .utility-bar { display: none; }
+    .navbar .container { height: 64px; }
+    .nav-logo-text { display: none; }
+    .nav-hamburger { display: flex; }
+    .nav-cta .btn { display: none; }
+    .nav-phone { display: none !important; }
+
+    /* Overlay */
+    .nav-overlay {
+      display: none; position: fixed; inset: 0; top: 64px;
+      background: rgba(0,0,0,.45); z-index: 98;
+    }
+    .nav-overlay.open { display: block; }
+
+    /* Slide-in panel */
+    .nav-links {
+      display: none;
+      position: fixed; top: 64px; right: 0; bottom: 0;
+      width: 75%;
+      background: var(--red); flex-direction: column;
+      padding: 0; gap: 0; z-index: 99;
+      box-shadow: -4px 0 32px rgba(0,0,0,.25);
+      overflow-y: auto;
+    }
+    .nav-links.open { display: flex; }
+
+    /* Close button — absolute top-right of panel */
+    .nav-panel-header {
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(255,255,255,.2);
+    }
+    .nav-panel-header span {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,.7);
+    }
+    .nav-close-btn {
+      position: absolute; top: 14px; right: 14px;
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(255,255,255,.2); border: none; cursor: pointer;
+      color: #fff; font-size: 16px; display: flex;
+      align-items: center; justify-content: center;
+    }
+
+    .nav-links a {
+      padding: 16px 20px; font-size: 15px; border-radius: 0;
+      border-bottom: 1px solid rgba(255,255,255,.15);
+      color: #fff; font-weight: 600;
+    }
+    .nav-links a:hover { background: rgba(255,255,255,.12); color: #fff; }
+    .nav-links a.active { background: rgba(255,255,255,.18); color: #fff; }
+
+    /* Hero */
+    .hero { height: 80vh; min-height: 480px; }
+    .hero-content h1 { font-size: 30px; }
+    .hero-content p { font-size: 15px; }
+    .hero-ctas { flex-direction: column; }
+    .hero-ctas .btn { width: 100%; justify-content: center; }
+    .hero-stats { display: none; }
+
+    /* Trust bar — hidden on mobile */
+    .trust-bar { display: none; }
+
+    /* ESPON brand strip */
+    .espon-strip .container { flex-direction: column; gap: 16px; text-align: center; }
+    .espon-products { flex-wrap: wrap; justify-content: center; gap: 12px; }
+
+    /* Products grid */
+    .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+
+    /* Industries grid */
+    .industries-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+
+    /* Featured article */
+    .article-card-home { grid-template-columns: 1fr; }
+    .article-image { height: 220px; }
+
+    /* About strip */
+    .about-inner { grid-template-columns: 1fr; gap: 36px; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+    .about-image { height: 280px; border-radius: 12px; }
+
+    /* Technical Resources article — heading → image → body */
+    .article-inner {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+      grid-template-areas: "heading" "img" "body";
+      border-radius: 8px;
+    }
+    .article-img { min-height: unset; height: 220px; }
+    .article-heading { padding: 24px 20px 16px; }
+    .article-heading h3 { font-size: 18px; }
+    .article-body { padding: 0 20px 28px; }
+
+    /* CTA strip */
+    .cta-strip-home .container,
+    .contact-cta .container { flex-direction: column; text-align: center; gap: 24px; }
+    .cta-actions { justify-content: center; flex-direction: column; width: 100%; }
+    .cta-actions .btn { width: 100%; justify-content: center; }
+
+    /* Footer */
+    .footer-grid { grid-template-columns: 1fr; gap: 28px; }
+    .footer-bottom { flex-direction: column; gap: 10px; text-align: center; }
+  }
+
+  @media (max-width: 480px) {
+    .products-grid { grid-template-columns: 1fr; }
+    .industries-grid { grid-template-columns: 1fr; }
+    .about-stats { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 769px) {
+    .nav-hamburger { display: none; }
+    .nav-panel-header { display: none; }
+    .nav-overlay { display: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- Preview Notice -->
+<div class="preview-notice">
+  <strong>🎨 Design Preview — Steel Plant Specialities LLP Homepage Revamp</strong>
+  &nbsp;·&nbsp; Placeholder images used for layout reference &nbsp;·&nbsp; Colours: #eb3d00 primary, #1a1a1a dark, #ffffff white
+</div>
+
+<!-- ── UTILITY BAR ─────────────────────────────────────────── -->
+<div class="utility-bar">
+  <div class="container">
+    <div class="utility-left">
+      <span><i class="fas fa-phone"></i><a href="tel:+919820493373">+91 98204 93373</a></span>
+      <span><i class="fas fa-envelope"></i><a href="mailto:info@steelplantspecialities.com">info@steelplantspecialities.com</a></span>
+      <span><i class="fab fa-whatsapp"></i><a href="#">WhatsApp</a></span>
+    </div>
+    <div class="utility-right">
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- ── NAVBAR ──────────────────────────────────────────────── -->
+<nav class="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <img src="spslogo.webp" class="nav-logo-img" alt="Steel Plant Specialities">
+      <div class="nav-logo-text">
+        <strong>Steel Plant Specialities</strong>
+        <span>LLP &nbsp;·&nbsp; Est. 1985 &nbsp;·&nbsp; Mumbai</span>
+      </div>
+    </a>
+
+    <div class="nav-links" id="hp-nav-links">
+      <div class="nav-panel-header">
+        <span>Menu</span>
+        <button class="nav-close-btn" id="hp-close-btn" aria-label="Close menu">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <a href="index.html" class="active">Home</a>
+      <a href="products.html">Products</a>
+      <a href="industries.html">Industries</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="nav-overlay" id="hp-overlay"></div>
+
+    <div class="nav-cta">
+      <div class="nav-phone"><i class="fas fa-flask"></i></div>
+      <a href="contact.html" class="btn btn-primary">Request a Sample <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      <button class="nav-hamburger" id="hp-hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- ── HERO ───────────────────────────────────────────────── -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="container">
+    <div class="hero-content">
+      <div class="hero-tag">Est. 1985 &nbsp;·&nbsp; IIT-Founded &nbsp;·&nbsp; Global Supply</div>
+      <h1>40 Years of Reducing Costs in <span>Hot Forging,</span> Hot Rolling &amp; Heat Treatment.</h1>
+      <p class="hero-sub">
+        Innovative ESPON protective coatings and lubricants — engineered by metallurgists, trusted by market leaders across India, Asia, Middle East, USA and Europe.
+      </p>
+      <div class="hero-ctas">
+        <a href="#" class="btn btn-primary" style="font-size:15px; padding:15px 32px;">
+          Explore Products <i class="fas fa-arrow-right" style="font-size:12px"></i>
+        </a>
+        <a href="#" class="btn btn-outline" style="font-size:15px; padding:15px 32px;">
+          <i class="fas fa-file-alt" style="font-size:13px"></i> Technical Articles
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll">
+    <span>Scroll</span>
+    <i class="fas fa-chevron-down"></i>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ──────────────────────────────────────────── -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-item">
+      <div class="trust-num">40+</div>
+      <div class="trust-label">Years of Innovation</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">100+</div>
+      <div class="trust-label">Industrial Clients</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">8</div>
+      <div class="trust-label">Product Lines</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">5</div>
+      <div class="trust-label">Global Markets</div>
+    </div>
+    <div class="trust-item">
+      <div class="trust-num">IIT</div>
+      <div class="trust-label">Founded by Engineers</div>
+    </div>
+  </div>
+</div>
+
+<!-- ── ESPON BRAND STRIP ──────────────────────────────────── -->
+<div class="espon-strip">
+  <div class="container">
+    <div class="espon-label">Our ESPON Product Range</div>
+    <div class="espon-products">
+      <span class="espon-chip">ESPON-HR</span>
+      <span class="espon-chip">ESPON-GLF3</span>
+      <span class="espon-chip">ESPON-RF</span>
+      <span class="espon-chip">ESPON-AN</span>
+      <span class="espon-chip">ESPON EP00</span>
+      <span class="espon-chip">O-CLEAN3</span>
+    </div>
+    <a href="#" style="font-size:13px; font-weight:600; color:var(--red); white-space:nowrap;">View Full Range →</a>
+  </div>
+</div>
+
+<!-- ── PRODUCTS GRID ──────────────────────────────────────── -->
+<section class="products-section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Products</div>
+      <h2 class="section-title">Solutions for Every Stage of Metal Forming</h2>
+      <p class="section-sub">Eight specialised product lines — each engineered to reduce losses, increase yield, and improve quality in your specific process.</p>
+    </div>
+
+    <div class="products-grid">
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-layer-group"></i></div>
+        <h3>Anti-Scale Protective Coatings</h3>
+        <p>Prevent billet oxidation and decarburisation during heating. Reduce scale losses of 1–8% back to near zero.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-fire-alt"></i></div>
+        <h3>Refractory Coatings</h3>
+        <p>Extend furnace lining life, reduce fuel consumption, and cut heat-up time by up to 1.5 hours per cycle.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-tint"></i></div>
+        <h3>Hot Forging Die Lubricants</h3>
+        <p>Graphite-free, eco-friendly water-soluble lubricants. Clean forge floors, optimum die life, zero pollution.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-shield-alt"></i></div>
+        <h3>Anti-Nitriding Stop-off Paste</h3>
+        <p>Selective gas and plasma-ion nitriding protection. Mask threaded areas, enable easy die machining post-nitriding.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-cog"></i></div>
+        <h3>EP Grease</h3>
+        <p>High-viscosity EP00 lithium grease engineered for centralised lubrication near high-temperature forge presses.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-soap"></i></div>
+        <h3>Oil Cleaning Liquids</h3>
+        <p>Water-based, environment-friendly degreasers. Clean shop floors, machinery, and components with water alone.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-spray-can"></i></div>
+        <h3>Die Lubricant Spray Systems</h3>
+        <p>Precision DSP2 spray guns and SPS systems for correct die lubrication, temperature control, and lubricant efficiency.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+      <div class="product-card">
+        <div class="product-icon"><i class="fas fa-atom"></i></div>
+        <h3>Decarburisation Control Coatings</h3>
+        <p>Maintain decarburisation within spec for critical components — leaf springs, rails, aerospace super-alloys.</p>
+        <a href="#" class="product-link">Learn More <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+    </div>
+
+    <div class="products-footer">
+      <a href="#" class="btn btn-dark" style="font-size:14px">
+        <i class="fas fa-th-large" style="font-size:12px"></i> Explore All Products &amp; Find the Right Solution
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── INDUSTRIES ─────────────────────────────────────────── -->
+<section class="industries-section">
+  <div class="container">
+    <div class="section-header center">
+      <div class="section-label">Industries Served</div>
+      <h2 class="section-title">Built for the Most Demanding Metal Forming Processes</h2>
+      <p class="section-sub">SPS products are proven across five high-temperature metal forming industries, with global installations from India to Europe.</p>
+    </div>
+
+    <div class="industries-grid">
+
+      <div class="industry-card">
+        <div class="industry-img">
+          <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=400&q=75&fit=crop" alt="Hot Forging" style="height:100%; object-fit:cover;">
+        </div>
+        <div class="industry-overlay"></div>
+        <div class="industry-content">
+          <div class="industry-icon"><i class="fas fa-hammer"></i></div>
+          <div class="industry-name">Hot Forging</div>
+          <div class="industry-desc">Die lubricants, anti-scale, spray systems</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-img">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=400&q=75&fit=crop" alt="Hot Rolling" style="height:100%; object-fit:cover;">
+        </div>
+        <div class="industry-overlay"></div>
+        <div class="industry-content">
+          <div class="industry-icon"><i class="fas fa-industry"></i></div>
+          <div class="industry-name">Hot Rolling</div>
+          <div class="industry-desc">Scale prevention, decarb control, yield improvement</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-img">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=400&q=75&fit=crop" alt="Heat Treatment" style="height:100%; object-fit:cover;">
+        </div>
+        <div class="industry-overlay"></div>
+        <div class="industry-content">
+          <div class="industry-icon"><i class="fas fa-thermometer-three-quarters"></i></div>
+          <div class="industry-name">Heat Treatment</div>
+          <div class="industry-desc">Scale-free HT, refractory coatings, cost reduction</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-img">
+          <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=400&q=75&fit=crop" alt="Die Casting" style="height:100%; object-fit:cover;">
+        </div>
+        <div class="industry-overlay"></div>
+        <div class="industry-content">
+          <div class="industry-icon"><i class="fas fa-cubes"></i></div>
+          <div class="industry-name">Die Casting</div>
+          <div class="industry-desc">Release agents, die protection, cleaning solutions</div>
+        </div>
+      </div>
+
+      <div class="industry-card">
+        <div class="industry-img">
+          <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?w=400&q=75&fit=crop" alt="Titanium & Super-Alloys" style="height:100%; object-fit:cover;">
+        </div>
+        <div class="industry-overlay"></div>
+        <div class="industry-content">
+          <div class="industry-icon"><i class="fas fa-rocket"></i></div>
+          <div class="industry-name">Titanium &amp; Super-Alloys</div>
+          <div class="industry-desc">Alpha-case reduction, heat retention</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURED ARTICLE ───────────────────────────────────── -->
+<section class="article-section">
+  <div class="container">
+    <div class="section-header center" style="margin-bottom:40px">
+      <div class="section-label">Technical Resources</div>
+      <h2 class="section-title">Expert Knowledge from 40 Years in Metallurgy</h2>
+    </div>
+    <div class="article-inner">
+      <div class="article-img">
+        <img src="https://images.unsplash.com/photo-1565043666747-69f6646db940?w=700&q=80&fit=crop" alt="Hot forging process" style="height:100%; object-fit:cover;">
+      </div>
+      <div class="article-heading">
+        <h3>Cost Reduction in Hot Forging by the Use of Graphite-Free Water-Soluble Die Lubricants</h3>
+        <div class="article-meta">
+          <span class="tag">Hot Forging</span>
+          <span class="tag outline">Die Lubricants</span>
+        </div>
+      </div>
+      <div class="article-body">
+        <p>Modern forging organisations are switching to clean, eco-friendly lubricants. This article examines the engineering case for graphite-free water-soluble die lubricants and the measurable impact on die life, forge shop hygiene, and total cost of production.</p>
+        <div class="article-highlights">
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Die cost is 10–15% of total forging cost — lubricant choice is critical</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Zero graphite deposits on forge shop floors and machinery</span>
+          </div>
+          <div class="highlight-item">
+            <i class="fas fa-check-circle"></i>
+            <span>Suitable for presses and hammers; works with DSP2 spray systems</span>
+          </div>
+        </div>
+        <div class="article-author-chip" style="margin-bottom:24px">
+          <div class="author-avatar">SP</div>
+          <div>
+            <strong style="font-size:13px; color:#1a1a1a; display:block">S. P. Shenoy</strong>
+            <span style="font-size:11px; color:#888">M.Tech (Met. Engg.), IIT Mumbai &nbsp;·&nbsp; CEO, SPS &nbsp;·&nbsp; 40 Years Experience</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">Read Article <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+        &nbsp;&nbsp;
+        <a href="#" style="font-size:14px; font-weight:600; color:var(--grey);">View All 10 Articles →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── ABOUT STRIP ─────────────────────────────────────────── -->
+<section class="about-section">
+  <div class="container">
+    <div class="section-header center">
+      <span class="section-label">About SPS</span>
+      <h2 class="section-title">Forging Partnerships with Innovation and Efficiency</h2>
+    </div>
+    <div class="about-inner">
+
+      <div class="about-image-wrap">
+        <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=700&q=80&fit=crop" alt="Steel Plant Specialities — metallurgical expertise" style="height:480px;">
+        <div class="about-badge">
+          <div class="about-badge-num">1985</div>
+          <div class="about-badge-label">Year Founded</div>
+        </div>
+      </div>
+
+      <div class="about-text">
+        <p class="section-sub">
+          Steel Plant Specialities was founded by Mr. S.P. Shenoy and a team of Metallurgical Engineers from IIT Mumbai. For nearly four decades, SPS has been a trusted partner to leading manufacturers in the steel, forging, and heat treatment industries worldwide.
+        </p>
+        <div class="about-creds">
+          <div class="cred-item">
+            <strong>IIT-Founded</strong>
+            <span>Metallurgical engineers from India's premier technical institutes</span>
+          </div>
+          <div class="cred-item">
+            <strong>Global Reach</strong>
+            <span>India, Asia, Middle East, USA and Europe</span>
+          </div>
+          <div class="cred-item">
+            <strong>Sole Supplier</strong>
+            <span>Preferred or sole supplier to major industry leaders</span>
+          </div>
+          <div class="cred-item">
+            <strong>Eco-Friendly</strong>
+            <span>Water-based, graphite-free, environmentally responsible products</span>
+          </div>
+        </div>
+        <a href="#" class="btn btn-primary">About Steel Plant Specialities <i class="fas fa-arrow-right" style="font-size:11px"></i></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT CTA ─────────────────────────────────────────── -->
+<section class="contact-cta">
+  <div class="container">
+    <div class="cta-text">
+      <h2>Ready to Reduce Costs in Your Process?</h2>
+      <p>Speak to a metallurgical engineer. Get expert advice on the right product for your specific application — no obligation.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="#" class="btn btn-primary" style="font-size:15px; padding:15px 32px; white-space:nowrap;">
+        <i class="fas fa-flask"></i> Request a Sample
+      </a>
+      <a href="#" class="btn btn-outline" style="font-size:15px; padding:15px 32px; white-space:nowrap;">
+        <i class="fas fa-phone"></i> Call Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ──────────────────────────────────────────────── -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-brand">
+        <a href="index.html" class="nav-logo" style="margin-bottom:0">
+          <img src="spslogo.webp" class="nav-logo-img" alt="Steel Plant Specialities">
+          <div class="nav-logo-text">
+            <strong style="color:#fff">Steel Plant Specialities</strong>
+            <span style="color:rgba(255,255,255,.35)">LLP · Est. 1985 · Mumbai</span>
+          </div>
+        </a>
+        <p>Innovative protective coatings and lubricants for the hot forging, hot rolling, and heat treatment industries. Engineered by IIT metallurgists. Trusted by market leaders worldwide.</p>
+        <div class="footer-social">
+          <a href="#" style="color:rgba(255,255,255,.5)"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" style="color:rgba(255,255,255,.5)"><i class="fab fa-youtube"></i></a>
+          <a href="#" style="color:rgba(255,255,255,.5)"><i class="fab fa-twitter"></i></a>
+        </div>
+        <div class="footer-newsletter" style="margin-top:24px">
+          <h5>Product updates & technical articles</h5>
+          <div class="newsletter-input">
+            <input type="email" placeholder="your@email.com">
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Anti-Scale Coatings</a></li>
+          <li><a href="#">Refractory Coatings</a></li>
+          <li><a href="#">Forging Die Lubricants</a></li>
+          <li><a href="#">Anti-Nitriding Paste</a></li>
+          <li><a href="#">EP Grease</a></li>
+          <li><a href="#">Oil Cleaning Liquids</a></li>
+          <li><a href="#">Die Spray Systems</a></li>
+          <li><a href="#">Decarb Control Coatings</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Industries</h4>
+        <ul>
+          <li><a href="#">Hot Forging</a></li>
+          <li><a href="#">Hot Rolling</a></li>
+          <li><a href="#">Heat Treatment</a></li>
+          <li><a href="#">Die Casting</a></li>
+          <li><a href="#">Titanium &amp; Super-Alloys</a></li>
+        </ul>
+        <h4 style="margin-top:24px">Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Technical Articles</a></li>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Become a Distributor</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p><i class="fas fa-map-marker-alt"></i> 211 Raikar Chambers, Govandi East, Mumbai — 400088, India</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+919820493373" style="color:rgba(255,255,255,.55)">+91 98204 93373</a></p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+912267978060" style="color:rgba(255,255,255,.55)">+91-22-6797 8060</a></p>
+        <p><i class="fas fa-envelope"></i> <a href="mailto:info@steelplantspecialities.com" style="color:rgba(255,255,255,.55)">info@steelplantspecialities.com</a></p>
+        <p><i class="fas fa-clock"></i> Mon–Fri: 7:00am – 6:00pm IST</p>
+        <div style="margin-top:20px">
+          <a href="#" class="btn btn-primary" style="font-size:12px; padding:10px 20px; width:100%; justify-content:center">
+            <i class="fas fa-flask" style="font-size:11px"></i> Request a Sample
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 Steel Plant Specialities LLP. All rights reserved.</span>
+      <div style="display:flex; gap:20px">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const hpBurger   = document.getElementById('hp-hamburger');
+  const hpLinks    = document.getElementById('hp-nav-links');
+  const hpCloseBtn = document.getElementById('hp-close-btn');
+  const hpOverlay  = document.getElementById('hp-overlay');
+
+  function hpOpen() {
+    hpBurger.classList.add('open');
+    hpLinks.classList.add('open');
+    if (hpOverlay) hpOverlay.classList.add('open');
+  }
+  function hpClose() {
+    hpBurger.classList.remove('open');
+    hpLinks.classList.remove('open');
+    if (hpOverlay) hpOverlay.classList.remove('open');
+  }
+
+  if (hpBurger && hpLinks) {
+    hpBurger.addEventListener('click', () =>
+      hpLinks.classList.contains('open') ? hpClose() : hpOpen()
+    );
+    if (hpCloseBtn) hpCloseBtn.addEventListener('click', hpClose);
+    if (hpOverlay)  hpOverlay.addEventListener('click', hpClose);
+    hpLinks.querySelectorAll('a').forEach(link =>
+      link.addEventListener('click', hpClose)
+    );
+  }
+</script>
+
+</body>
+</html>

@@ -56,9 +56,6 @@ function renderNav(activeKey) {
       </div>
       <div class="nav-overlay" id="nav-overlay"></div>
       <div class="nav-cta">
-        <a href="contact.html" class="btn btn-primary btn-sm">
-          <i class="fas fa-flask"></i> Request a Sample
-        </a>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
@@ -131,11 +128,6 @@ function renderFooter() {
           <div class="footer-contact-item"><i class="fas fa-phone"></i><a href="tel:+912267978060" style="color:rgba(255,255,255,.55)">+91-22-6797 8060</a></div>
           <div class="footer-contact-item"><i class="fas fa-envelope"></i><a href="mailto:info@steelplantspecialities.com" style="color:rgba(255,255,255,.55)">info@steelplantspecialities.com</a></div>
           <div class="footer-contact-item"><i class="fas fa-clock"></i><span>Mon–Fri: 7:00am – 6:00pm IST</span></div>
-          <div style="margin-top:20px">
-            <a href="contact.html" class="btn btn-primary btn-sm" style="width:100%;justify-content:center">
-              <i class="fas fa-flask"></i> Request a Sample
-            </a>
-          </div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -153,10 +145,7 @@ function renderFooter() {
 // Inject on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
   const active = window.ACTIVE_NAV || 'home';
-  const previewBanner = document.getElementById('preview-banner');
-  if (previewBanner) {
-    previewBanner.insertAdjacentHTML('afterend', renderUtilityBar() + renderNav(active));
-  }
+  document.body.insertAdjacentHTML('afterbegin', renderUtilityBar() + renderNav(active));
   const footerMount = document.getElementById('footer-mount');
   if (footerMount) footerMount.outerHTML = renderFooter();
 

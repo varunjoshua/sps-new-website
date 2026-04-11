@@ -220,9 +220,7 @@
 </head>
 <body>
 
-  <div id="preview-banner" class="preview-notice">
-    ⚠ Design Preview — Not the live website
-  </div>
+  
 
   <!-- ── Page Hero ───────────────────────────────────────── -->
   <section class="page-hero">
@@ -254,6 +252,9 @@
           <p>Fill in the form and a member of our technical team will get back to you within one business day.</p>
 
           <!-- Enquiry type -->
+          <div class="field" style="margin-bottom:12px">
+            <label style="font-size:11px;font-weight:700;color:var(--grey);letter-spacing:1.2px;text-transform:uppercase;">How can we help?</label>
+          </div>
           <div class="enquiry-type-row">
             <label class="enquiry-type-btn selected">
               <input type="radio" name="enquiry_type" value="product" checked>
@@ -350,8 +351,8 @@
             </div>
 
             <div class="field">
-              <label>Message <span class="required">*</span></label>
-              <textarea placeholder="Describe your challenge, steel grade, operating temperature, current product being used, or anything else that would help us understand your requirement..." required></textarea>
+              <label id="msg-label">Message <span class="required">*</span></label>
+              <textarea id="msg-textarea" placeholder="Describe your challenge, steel grade, operating temperature, current product being used, or anything else that would help us understand your requirement..." required></textarea>
             </div>
 
             <div class="form-checkbox">
@@ -429,24 +430,6 @@
             <div class="hours-row"><span class="day">Sunday</span><span class="closed">Closed</span></div>
           </div>
 
-          <!-- Sample CTA -->
-          <div class="sample-card">
-            <h3>Request a Free Sample</h3>
-            <p>We offer product samples for qualified enquiries. Try before you commit to a full order.</p>
-            <a href="#enquiry-form" class="btn btn-outline-white btn-sm" onclick="document.querySelector('[value=sample]').closest('.enquiry-type-btn').click()">
-              <i class="fas fa-box-open"></i> Request a Sample
-            </a>
-          </div>
-
-          <!-- Distributor CTA -->
-          <div class="distributor-card">
-            <h3>Become a Distributor</h3>
-            <p>We are actively expanding our distributor network across South-East Asia, the Middle East, and Africa. If you serve the forging or rolling sector in your region, we'd love to hear from you.</p>
-            <a href="#enquiry-form" class="btn btn-outline-white btn-sm" onclick="document.querySelector('[value=distributor]').closest('.enquiry-type-btn').click()">
-              <i class="fas fa-handshake"></i> Enquire About Distribution
-            </a>
-          </div>
-
         </div><!-- /sidebar -->
       </div>
     </div>
@@ -491,11 +474,36 @@
   <script>window.ACTIVE_NAV = 'contact';</script>
   <script src="assets/js/components.js"></script>
   <script>
-    // Enquiry type toggle
+    // Enquiry type toggle + dynamic message field
+    const msgConfig = {
+      product: {
+        label: 'Your message <span class="required">*</span>',
+        placeholder: 'Tell us about the product you\'re looking for — include your process, steel grade, operating temperature, and current product if applicable...'
+      },
+      sample: {
+        label: 'What would you like to sample? <span class="required">*</span>',
+        placeholder: 'Please send a sample of... We process [material] at [temperature] and are currently using [current product]...'
+      },
+      technical: {
+        label: 'Describe your technical challenge <span class="required">*</span>',
+        placeholder: 'We\'re experiencing a problem with... Our process involves [temperature / material / equipment]. We have tried [previous solutions]...'
+      },
+      distributor: {
+        label: 'Tell us about your business <span class="required">*</span>',
+        placeholder: 'We operate in [region] and serve [industry]. We\'re interested in representing ESPON products because...'
+      }
+    };
+
     document.querySelectorAll('.enquiry-type-btn').forEach(btn => {
       btn.addEventListener('click', () => {
         document.querySelectorAll('.enquiry-type-btn').forEach(b => b.classList.remove('selected'));
         btn.classList.add('selected');
+        const val = btn.querySelector('input').value;
+        const cfg = msgConfig[val];
+        if (cfg) {
+          document.getElementById('msg-label').innerHTML = cfg.label;
+          document.getElementById('msg-textarea').placeholder = cfg.placeholder;
+        }
       });
     });
 

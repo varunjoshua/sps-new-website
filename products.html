@@ -14,36 +14,59 @@
 /* Products grid */
 .products-section { padding: 72px 0; background: #fff; }
 .products-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
 }
 .product-card {
-  background: #fff; border: 1px solid var(--border); border-radius: 10px;
+  background: #fff; border: 1px solid var(--border); border-radius: 12px;
   overflow: hidden; transition: all .25s ease; position: relative;
+  display: flex; flex-direction: column;
 }
-.product-card:hover { box-shadow: 0 8px 32px rgba(235,61,0,.12); transform: translateY(-3px); border-color: var(--red); }
-.product-card::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
-  background: var(--red); transition: width .25s ease;
+.product-card:hover { box-shadow: 0 12px 40px rgba(235,61,0,.13); transform: translateY(-4px); border-color: var(--red); }
+
+/* Image header */
+.product-img-header {
+  position: relative; height: 220px; overflow: hidden;
 }
-.product-card:hover::before { width: 3px; }
-.product-img { height: 180px; overflow: hidden; }
-.product-img img { height: 100%; transition: transform .4s ease; }
-.product-card:hover .product-img img { transform: scale(1.05); }
-.product-body { padding: 22px 20px 20px; }
-.product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-.product-name { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 8px; line-height: 1.35; }
-.product-desc { font-size: 13px; color: var(--grey); line-height: 1.65; margin-bottom: 14px; }
-.product-benefits { margin-bottom: 18px; }
+.product-img-header img {
+  width: 100%; height: 100%; object-fit: cover;
+  transition: transform .5s ease;
+}
+.product-card:hover .product-img-header img { transform: scale(1.06); }
+.product-img-overlay {
+  position: absolute; inset: 0;
+  background: rgba(0,0,0,.15);
+}
+.product-img-text {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: var(--red);
+  padding: 14px 20px;
+  display: flex; align-items: center; gap: 14px;
+}
+.product-img-icon {
+  width: 38px; height: 38px; border-radius: 8px;
+  background: rgba(255,255,255,.18);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.product-img-icon i { font-size: 17px; color: #fff; }
+.product-count-badge {
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500;
+  color: rgba(255,255,255,.65); letter-spacing: .8px; text-transform: uppercase;
+  margin-bottom: 3px;
+}
+.product-name { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.25; }
+
+/* Card body */
+.product-body { padding: 24px 28px 22px; flex: 1; display: flex; flex-direction: column; }
+.product-benefits { margin-bottom: 0; flex: 1; }
 .product-benefit {
-  display: flex; align-items: flex-start; gap: 8px; margin-bottom: 6px;
-  font-size: 12.5px; color: var(--mid);
+  display: flex; align-items: flex-start; gap: 10px; margin-bottom: 10px;
+  font-size: 13.5px; color: var(--mid); line-height: 1.5;
 }
-.product-benefit i { color: var(--red); margin-top: 3px; font-size: 10px; flex-shrink: 0; }
+.product-benefit i { color: var(--red); margin-top: 3px; font-size: 11px; flex-shrink: 0; }
 .product-footer {
-  border-top: 1px solid var(--border); padding-top: 16px;
-  display: flex; align-items: center; justify-content: space-between;
+  border-top: 1px solid var(--border); padding-top: 18px; margin-top: 20px;
+  display: flex; align-items: center; justify-content: flex-end;
 }
-.product-espon { font-family: 'IBM Plex Mono', monospace; font-size: 11px; color: var(--light-grey); font-weight: 500; }
 .product-link {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 13px; font-weight: 600; color: var(--red); transition: gap .2s;
@@ -68,17 +91,14 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .products-grid { grid-template-columns: repeat(3, 1fr); }
+  .products-grid { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 768px) {
-  /* Product grid */
-  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
-  .product-card-body { padding: 18px; }
-
-  /* Selector table: scroll horizontally */
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .product-img-header { height: 190px; }
+  .product-body { padding: 20px; }
   .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .selector-table { min-width: 640px; }
-
 }
 @media (max-width: 480px) {
   .products-grid { grid-template-columns: 1fr; }
@@ -125,23 +145,24 @@
 
       <!-- 1. Anti-Scale Protective Coatings -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75&fit=crop" alt="Anti-Scale Coating">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80&fit=crop" alt="Anti-Scale Coating">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">5 Products</div>
+              <div class="product-name">Anti-Scale Protective Coatings</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">Anti-Scale</span>
-            <span class="tag tag-light">Coating</span>
-          </div>
-          <div class="product-name">Anti-Scale Protective Coatings</div>
-          <div class="product-desc">Prevent billet oxidation and decarburisation during high-temperature heating. Recover 1–8% metal loss back to near-zero.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Reduces scale loss on billets &amp; ingots</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Controls decarburisation in steel</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Prevents billet sticking in induction heating</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">5 Products</span>
             <a href="products-anti-scale.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -149,23 +170,24 @@
 
       <!-- 2. Anti-Nitriding Stop-Off Paste -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1574624498700-e35a8aba6e45?w=600&q=75&fit=crop" alt="Anti-Nitriding Paste">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1574624498700-e35a8aba6e45?w=700&q=80&fit=crop" alt="Anti-Nitriding Paste">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-ban"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">2 Products</div>
+              <div class="product-name">Anti-Nitriding Stop-Off Paste</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">Anti-Nitriding</span>
-            <span class="tag tag-light">Paste</span>
-          </div>
-          <div class="product-name">Anti-Nitriding Stop-Off Paste</div>
-          <div class="product-desc">Selective masking paste for gas nitriding and plasma-ion nitriding. Protect threaded areas, enable easy machining of nitrided dies.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Prevents nitriding on coated areas</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Extends forging die service life</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Reduces machining time on hardened dies</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">2 Products</span>
             <a href="products-anti-nitriding.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -173,23 +195,24 @@
 
       <!-- 3. Oil Cleaning Liquid -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75&fit=crop" alt="Oil Cleaning Liquid">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=700&q=80&fit=crop" alt="Oil Cleaning Liquid">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-tint"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">1 Product</div>
+              <div class="product-name">Oil Cleaning Liquid</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">Cleaning</span>
-            <span class="tag tag-light">Water-Based</span>
-          </div>
-          <div class="product-name">Oil Cleaning Liquid</div>
-          <div class="product-desc">Environment-friendly water-based degreaser. Cleans shop floors, machinery, plastic trays, and workers' hands — no solvents required.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Cleans floors, machinery &amp; hands</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>No solvents — water-based &amp; eco-safe</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Removes solid oil-mud cake formation</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">1 Product</span>
             <a href="products-oil-cleaning.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -197,23 +220,24 @@
 
       <!-- 4. ESPON EP Grease -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=600&q=75&fit=crop" alt="EP Grease">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=700&q=80&fit=crop" alt="EP Grease">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-oil-can"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">2 Products</div>
+              <div class="product-name">ESPON EP Grease</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">EP Grease</span>
-            <span class="tag tag-light">Lubrication</span>
-          </div>
-          <div class="product-name">ESPON EP Grease</div>
-          <div class="product-desc">High-viscosity extreme pressure lithium grease for centralised lubrication systems of hot forging presses and rolling mills.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Stable viscosity above 100–150°C</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Eliminates overflow &amp; fire hazard risk</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Prevents centralised system choking</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">2 Products</span>
             <a href="products-ep-grease.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -221,23 +245,24 @@
 
       <!-- 5. Hot Forging Die Lubricants -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=600&q=75&fit=crop" alt="Die Lubricants">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=700&q=80&fit=crop" alt="Die Lubricants">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-spray-can"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">5 Products</div>
+              <div class="product-name">Hot Forging Die Lubricants</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">Die Lubricant</span>
-            <span class="tag tag-light">Eco-Friendly</span>
-          </div>
-          <div class="product-name">Hot Forging Die Lubricants</div>
-          <div class="product-desc">Graphite-free, water-soluble die lubricants for hot forging presses and hammers. Clean forge floors, optimum die life.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Zero graphite — clean shop floors</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>1:10 to 1:25 water dilution ratio</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>For small to heavy forgings &amp; extrusions</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">5 Products</span>
             <a href="products-die-lubricants.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -245,23 +270,24 @@
 
       <!-- 6. Refractory Coatings -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=75&fit=crop" alt="Refractory Coating">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80&fit=crop" alt="Refractory Coating">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-fire-alt"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">1 Product</div>
+              <div class="product-name">Refractory Coatings</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">Refractory</span>
-            <span class="tag tag-light">Coating</span>
-          </div>
-          <div class="product-name">Refractory Coatings</div>
-          <div class="product-desc">Protect furnace lining from thermal shock cracking, extend refractory life, reduce fuel consumption and heat-up time.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Withstands up to 1900°C</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Up to 1.5 hr reduction in furnace heat-up</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Resists corrosive combustion gases</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">1 Product</span>
             <a href="products-refractory.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
@@ -269,23 +295,24 @@
 
       <!-- 7. Spray Systems -->
       <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&fit=crop" alt="Spray Systems">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Spray Systems">
+          <div class="product-img-overlay"></div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-wind"></i></div>
+            <div class="product-img-label">
+              <div class="product-count-badge">4 Products</div>
+              <div class="product-name">Spray Systems</div>
+            </div>
+          </div>
         </div>
         <div class="product-body">
-          <div class="product-tags">
-            <span class="tag tag-red">Spray System</span>
-            <span class="tag tag-light">Equipment</span>
-          </div>
-          <div class="product-name">Spray Systems</div>
-          <div class="product-desc">Precision spray systems and guns for correct lubricant application, die temperature control, and minimum lubricant wastage.</div>
           <div class="product-benefits">
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Correct spray pressure &amp; coverage</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Prevents die over-heating &amp; over-cooling</div>
             <div class="product-benefit"><i class="fas fa-check-circle"></i>Reduces die lubricant consumption</div>
           </div>
           <div class="product-footer">
-            <span class="product-espon">4 Products</span>
             <a href="products-spray-systems.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>

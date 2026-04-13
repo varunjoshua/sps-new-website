@@ -15,7 +15,12 @@
   background: var(--light); border-bottom: 1px solid var(--border);
   position: sticky; top: 72px; z-index: 50;
 }
-.industry-tabs .container { display: flex; }
+.industry-tabs .container { display: flex; align-items: center; }
+.industry-tab-label {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
+  color: var(--grey); white-space: nowrap; padding: 0 20px 0 4px;
+  border-right: 1px solid var(--border); margin-right: 4px; flex-shrink: 0;
+}
 .industry-tab {
   padding: 18px 24px; font-size: 13.5px; font-weight: 600; color: var(--grey);
   border-bottom: 3px solid transparent; cursor: pointer; transition: all .2s;
@@ -74,8 +79,8 @@
   display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
 }
 .solution-icon i { font-size: 13px; color: var(--red); }
-.solution-text strong { display: block; font-size: 13.5px; color: var(--dark); margin-bottom: 3px; }
-.solution-text span { font-size: 12.5px; color: var(--grey); line-height: 1.6; }
+.solution-text strong { display: block; font-size: 15px; color: var(--dark); margin-bottom: 3px; }
+.solution-text span { font-size: 14px; color: var(--grey); line-height: 1.6; }
 
 /* ── Industry products panel ──────────────────────────────── */
 .ig-products {
@@ -85,22 +90,24 @@
   font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
   text-transform: uppercase; color: var(--grey); margin-bottom: 18px;
 }
+.ig-products, .ig-solutions { font-size: 15px; }
 .products-band-row {
-  display: flex; align-items: center; gap: 0; margin-bottom: 10px;
+  display: flex; align-items: center; gap: 10px; margin-bottom: 8px;
 }
 .products-band-row:last-child { margin-bottom: 0; }
 .products-band-cat {
-  font-size: 12.5px; font-weight: 700; color: var(--dark);
-  min-width: 200px; flex-shrink: 0;
+  font-size: 14px; font-weight: 700; color: var(--dark);
+  flex-shrink: 0; white-space: nowrap;
 }
 .products-band-cat::after { content: ':'; }
-.products-band-chips { display: flex; flex-wrap: wrap; gap: 8px; }
+.products-band-chips { display: flex; flex-wrap: wrap; gap: 6px; }
 .product-chip {
-  display: inline-flex; align-items: center;
-  background: #fff; border: 1px solid var(--border); padding: 6px 14px;
-  border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--mid);
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid var(--border); padding: 5px 0;
+  border-radius: 20px; font-size: 11.5px; font-weight: 600; color: var(--mid);
   font-family: 'IBM Plex Mono', monospace;
   transition: all .2s; text-decoration: none;
+  width: 16ch; text-align: center; color: var(--red);
 }
 .product-chip:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
 
@@ -142,10 +149,8 @@
 
   .industry-image-wrap img { min-height: 240px; }
   .industry-num { font-size: 40px; }
-  .products-band-row { flex-direction: column; align-items: flex-start; gap: 8px; }
-  .products-band-cat { min-width: unset; }
+  .products-band-row { flex-direction: column; align-items: flex-start; gap: 6px; }
   .products-band-chips { flex-wrap: wrap; }
-  .global-strip .container { flex-direction: column; gap: 28px; }
 }
 @media (max-width: 480px) {
   .product-chip { font-size: 11px; padding: 5px 10px; }
@@ -178,11 +183,12 @@
 <!-- ── INDUSTRY TABS ──────────────────────────────────────── -->
 <div class="industry-tabs">
   <div class="container">
-    <div class="industry-tab active" onclick="scrollTo('hot-forging')"><i class="fas fa-hammer" style="margin-right:6px;color:var(--red)"></i>Hot Forging</div>
-    <div class="industry-tab" onclick="scrollTo('hot-rolling')"><i class="fas fa-industry" style="margin-right:6px;color:var(--red)"></i>Hot Rolling</div>
-    <div class="industry-tab" onclick="scrollTo('heat-treatment')"><i class="fas fa-thermometer-three-quarters" style="margin-right:6px;color:var(--red)"></i>Heat Treatment</div>
-    <div class="industry-tab" onclick="scrollTo('die-casting')"><i class="fas fa-cubes" style="margin-right:6px;color:var(--red)"></i>Die Casting</div>
-    <div class="industry-tab" onclick="scrollTo('superalloys')"><i class="fas fa-rocket" style="margin-right:6px;color:var(--red)"></i>Titanium &amp; Super-Alloys</div>
+    <div class="industry-tab-label">Select Industry</div>
+    <div class="industry-tab active" onclick="scrollToSection('hot-forging')"><i class="fas fa-hammer" style="margin-right:6px;color:var(--red)"></i>Hot Forging</div>
+    <div class="industry-tab" onclick="scrollToSection('hot-rolling')"><i class="fas fa-industry" style="margin-right:6px;color:var(--red)"></i>Hot Rolling</div>
+    <div class="industry-tab" onclick="scrollToSection('heat-treatment')"><i class="fas fa-thermometer-three-quarters" style="margin-right:6px;color:var(--red)"></i>Heat Treatment</div>
+    <div class="industry-tab" onclick="scrollToSection('die-casting')"><i class="fas fa-cubes" style="margin-right:6px;color:var(--red)"></i>Die Casting</div>
+    <div class="industry-tab" onclick="scrollToSection('superalloys')"><i class="fas fa-rocket" style="margin-right:6px;color:var(--red)"></i>Titanium &amp; Super-Alloys</div>
   </div>
 </div>
 
@@ -193,7 +199,7 @@
 
       <div class="ig-image">
         <div class="industry-image-wrap">
-          <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=700&q=80&fit=crop" alt="Hot Forging">
+          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/hotforging.jpg" alt="Hot Forging">
           <div class="industry-image-badge"><i class="fas fa-hammer"></i> &nbsp;Hot Forging</div>
         </div>
       </div>
@@ -292,7 +298,7 @@
 
       <div class="ig-image">
         <div class="industry-image-wrap">
-          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Hot Rolling">
+          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/hotrolling.jpg" alt="Hot Rolling">
           <div class="industry-image-badge"><i class="fas fa-industry"></i> &nbsp;Hot Rolling</div>
         </div>
       </div>
@@ -376,7 +382,7 @@
 
       <div class="ig-image">
         <div class="industry-image-wrap">
-          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80&fit=crop" alt="Heat Treatment">
+          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/heat-treatment.jpg" alt="Heat Treatment">
           <div class="industry-image-badge"><i class="fas fa-thermometer-three-quarters"></i> &nbsp;Heat Treatment</div>
         </div>
       </div>
@@ -455,7 +461,7 @@
 
       <div class="ig-image">
         <div class="industry-image-wrap">
-          <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=700&q=80&fit=crop" alt="Die Casting">
+          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/die-casting.jpg" alt="Die Casting">
           <div class="industry-image-badge"><i class="fas fa-cubes"></i> &nbsp;Die Casting</div>
         </div>
       </div>
@@ -515,74 +521,60 @@
 <!-- ── TITANIUM / SUPER-ALLOYS ────────────────────────────── -->
 <section class="industry-section" id="superalloys">
   <div class="container">
-    <div class="industry-inner">
-      <div class="industry-image-wrap">
-        <img src="https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?w=700&q=80&fit=crop" alt="Titanium Super-Alloys">
-        <div class="industry-image-badge"><i class="fas fa-rocket"></i> &nbsp;Super-Alloys</div>
+    <div class="industry-grid">
+
+      <div class="ig-image">
+        <div class="industry-image-wrap">
+          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/titanium.jpg" alt="Titanium Super-Alloys">
+          <div class="industry-image-badge"><i class="fas fa-rocket"></i> &nbsp;Super-Alloys</div>
+        </div>
       </div>
-      <div class="industry-content">
+
+      <div class="ig-title">
         <div class="industry-num">05</div>
         <h2>Titanium &amp; Super-Alloys</h2>
         <div class="section-label">Titanium · Inconel · Critical Aerospace Alloys</div>
         <p class="industry-desc">High-performance alloys such as Titanium and Inconel are used in aerospace, defence, and critical engineering applications. These materials are expensive and highly sensitive to oxidation at forging and heat treatment temperatures. Alpha-case formation and oxidation losses make protective coatings essential — not optional.</p>
-
-        <div class="challenges-heading">Key Challenges</div>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-atom"></i></div>
-            <div class="challenge-text">
-              <strong>Alpha-case formation in Titanium</strong>
-              <span>Oxygen contamination at forging temperatures forms a brittle alpha-case layer that must be removed — a costly and lossy operation.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-temperature-high"></i></div>
-            <div class="challenge-text">
-              <strong>Heat retention during hot working</strong>
-              <span>Super-alloys lose temperature quickly. Protective coatings retain heat and extend the forging window.</span>
-            </div>
-          </div>
-        </div>
-
         <div class="industry-actions">
           <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
           <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
         </div>
       </div>
-    </div>
-    <!-- Products band — Titanium & Super-Alloys -->
-    <div class="industry-products-band">
-      <div class="products-band-heading">Relevant SPS Products</div>
-      <div class="products-band-row">
-        <div class="products-band-cat">Anti-Scale Coatings</div>
-        <div class="products-band-chips">
-          <a href="product-espon-hr.html" class="product-chip">ESPON-HR</a>
-          <a href="product-decarb-coating.html" class="product-chip">ESPON-DC</a>
+
+      <div class="ig-products">
+        <div class="products-band-heading">Relevant SPS Products</div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Anti-Scale Coatings</div>
+          <div class="products-band-chips">
+            <a href="product-espon-hr.html" class="product-chip">ESPON-HR</a>
+            <a href="product-decarb-coating.html" class="product-chip">ESPON-DC</a>
+          </div>
         </div>
       </div>
+
+      <div class="ig-solutions">
+        <div class="solutions-heading">How SPS Helps</div>
+        <div class="solution-list">
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="solution-text">
+              <strong>Prevent alpha-case formation in Titanium</strong>
+              <span>ESPON coatings block oxygen contamination at forging temperatures — eliminating the brittle alpha-case layer and the costly material removal step.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-thermometer-full"></i></div>
+            <div class="solution-text">
+              <strong>Extend the forging window for super-alloys</strong>
+              <span>Protective coatings retain heat longer during hot working, giving operators more time within the optimal forging temperature range and reducing reheat cycles.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
-
-<!-- ── GLOBAL REACH ───────────────────────────────────────── -->
-<div class="global-strip">
-  <div class="container">
-    <div class="global-strip-inner">
-      <div>
-        <div class="section-label" style="color:var(--red)">Global Presence</div>
-        <h2>Trusted by Market Leaders Across 5 Global Regions</h2>
-        <p>SPS is the preferred — and in many cases sole — supplier of its innovative products to market leaders in heat treatment, hot forging, hot rolling, die casting and metal working.</p>
-      </div>
-      <div class="global-regions">
-        <div class="global-region"><i class="fas fa-map-marker-alt"></i> India — Primary market, 40+ years</div>
-        <div class="global-region"><i class="fas fa-map-marker-alt"></i> Asia — South &amp; South-East Asia</div>
-        <div class="global-region"><i class="fas fa-map-marker-alt"></i> Middle East — UAE, Saudi Arabia &amp; region</div>
-        <div class="global-region"><i class="fas fa-map-marker-alt"></i> USA — North America</div>
-        <div class="global-region"><i class="fas fa-map-marker-alt"></i> Europe — Select markets</div>
-      </div>
-    </div>
-  </div>
-</div>
 
 <!-- ── CTA STRIP ─────────────────────────────────────────── -->
 <section class="cta-strip">
@@ -593,8 +585,7 @@
         <p>Get expert advice from a metallurgical engineer who understands your process challenges — not a sales representative.</p>
       </div>
       <div class="cta-strip-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-comments"></i> Talk to an Expert</a>
-        <a href="products.html" class="btn btn-outline-white btn-lg"><i class="fas fa-flask"></i> Request a Sample</a>
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
       </div>
     </div>
   </div>
@@ -611,8 +602,9 @@
       tab.classList.add('active');
     });
   });
-  function scrollTo(id) {
-    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 </script>
 </body>

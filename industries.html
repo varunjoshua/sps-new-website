@@ -29,53 +29,80 @@
   padding: 80px 0; border-bottom: 1px solid var(--border);
 }
 .industry-section:nth-child(even) { background: var(--light); }
-.industry-inner {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start;
+
+/* 2×2 grid */
+.industry-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 64px; row-gap: 36px;
 }
-.industry-inner.reverse { direction: rtl; }
-.industry-inner.reverse > * { direction: ltr; }
-.industry-image-wrap { border-radius: 10px; overflow: hidden; position: relative; }
-.industry-image-wrap img { height: 420px; }
+.ig-image  { grid-column: 1; grid-row: 1; }
+.ig-title  { grid-column: 2; grid-row: 1; }
+.ig-products { grid-column: 1; grid-row: 2; }
+.ig-solutions { grid-column: 2; grid-row: 2; }
+.industry-grid.reverse .ig-image    { grid-column: 2; }
+.industry-grid.reverse .ig-title    { grid-column: 1; }
+.industry-grid.reverse .ig-products { grid-column: 2; }
+.industry-grid.reverse .ig-solutions{ grid-column: 1; }
+
+.industry-image-wrap { border-radius: 10px; overflow: hidden; position: relative; height: 100%; }
+.industry-image-wrap img { height: 100%; min-height: 340px; object-fit: cover; }
 .industry-image-badge {
   position: absolute; bottom: 24px; right: 24px;
   background: var(--red); color: #fff; padding: 12px 20px;
   border-radius: var(--radius); font-size: 13px; font-weight: 700;
   box-shadow: 0 8px 24px rgba(235,61,0,.4);
 }
-.industry-content {}
 .industry-num {
   font-size: 48px; font-weight: 900; color: rgba(235,61,0,.12);
   font-family: 'IBM Plex Mono', monospace; line-height: 1; margin-bottom: -8px;
 }
-.industry-content h2 { font-size: 32px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
-.industry-tagline { font-size: 15px; color: var(--red); font-weight: 600; margin-bottom: 20px; }
+.ig-title h2 { font-size: 32px; font-weight: 800; color: var(--dark); margin-bottom: 8px; }
 .industry-desc { font-size: 15px; color: var(--grey); line-height: 1.8; margin-bottom: 28px; }
+.industry-actions { display: flex; gap: 12px; }
 
-.challenges-heading { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-.challenge-list { margin-bottom: 28px; }
-.challenge-item {
+/* Solutions panel */
+.solutions-heading { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 16px; }
+.solution-list {}
+.solution-item {
   display: flex; align-items: flex-start; gap: 12px;
   padding: 12px 0; border-bottom: 1px solid var(--border);
 }
-.challenge-item:last-child { border-bottom: none; }
-.challenge-icon {
+.solution-item:last-child { border-bottom: none; }
+.solution-icon {
   width: 34px; height: 34px; background: var(--red-bg); border-radius: 50%;
-  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 1px;
 }
-.challenge-icon i { font-size: 13px; color: var(--red); }
-.challenge-text strong { display: block; font-size: 13.5px; color: var(--dark); margin-bottom: 2px; }
-.challenge-text span { font-size: 12.5px; color: var(--grey); }
+.solution-icon i { font-size: 13px; color: var(--red); }
+.solution-text strong { display: block; font-size: 13.5px; color: var(--dark); margin-bottom: 3px; }
+.solution-text span { font-size: 12.5px; color: var(--grey); line-height: 1.6; }
 
-.products-heading { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--mid); margin-bottom: 14px; }
-.product-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+/* ── Industry products panel ──────────────────────────────── */
+.ig-products {
+  padding-top: 4px;
+}
+.products-band-heading {
+  font-size: 11px; font-weight: 700; letter-spacing: 1.5px;
+  text-transform: uppercase; color: var(--grey); margin-bottom: 18px;
+}
+.products-band-row {
+  display: flex; align-items: center; gap: 0; margin-bottom: 10px;
+}
+.products-band-row:last-child { margin-bottom: 0; }
+.products-band-cat {
+  font-size: 12.5px; font-weight: 700; color: var(--dark);
+  min-width: 200px; flex-shrink: 0;
+}
+.products-band-cat::after { content: ':'; }
+.products-band-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .product-chip {
-  display: flex; align-items: center; gap: 8px;
-  background: #fff; border: 1px solid var(--border); padding: 8px 14px;
-  border-radius: 20px; font-size: 12.5px; font-weight: 600; color: var(--mid);
-  transition: all .2s; cursor: pointer;
+  display: inline-flex; align-items: center;
+  background: #fff; border: 1px solid var(--border); padding: 6px 14px;
+  border-radius: 20px; font-size: 12px; font-weight: 600; color: var(--mid);
+  font-family: 'IBM Plex Mono', monospace;
+  transition: all .2s; text-decoration: none;
 }
 .product-chip:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
-.product-chip-dot { width: 6px; height: 6px; background: var(--red); border-radius: 50%; }
 
 .industry-actions { display: flex; gap: 12px; }
 
@@ -93,31 +120,34 @@
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .industry-inner { gap: 40px; }
+  .industry-grid { column-gap: 40px; }
 }
 @media (max-width: 768px) {
-  /* Tab bar: horizontally scrollable */
   .industry-tab-bar { position: static; }
   .industry-tabs { overflow-x: auto; -webkit-overflow-scrolling: touch; flex-wrap: nowrap; padding-bottom: 2px; }
   .industry-tab { flex-shrink: 0; padding: 14px 16px; font-size: 12.5px; }
   .industry-tab i { display: none; }
 
-  /* Industry sections: single column */
   .industry-section { padding: 48px 0; }
-  .industry-inner { grid-template-columns: 1fr !important; direction: ltr !important; gap: 28px; }
-  .industry-image-wrap { height: 260px; }
-  .industry-num { font-size: 60px; }
-  .industry-content { padding: 0; }
-  .challenge-item { gap: 12px; }
+  .industry-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: auto !important;
+    row-gap: 28px;
+  }
+  /* Force natural reading order on mobile */
+  .ig-image, .industry-grid.reverse .ig-image     { grid-column: 1 !important; grid-row: 1 !important; }
+  .ig-title, .industry-grid.reverse .ig-title     { grid-column: 1 !important; grid-row: 2 !important; }
+  .ig-solutions, .industry-grid.reverse .ig-solutions { grid-column: 1 !important; grid-row: 3 !important; }
+  .ig-products, .industry-grid.reverse .ig-products   { grid-column: 1 !important; grid-row: 4 !important; }
 
-  /* Product chips: wrap */
-  .product-chips { flex-wrap: wrap; }
-
-  /* Global strip */
+  .industry-image-wrap img { min-height: 240px; }
+  .industry-num { font-size: 40px; }
+  .products-band-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .products-band-cat { min-width: unset; }
+  .products-band-chips { flex-wrap: wrap; }
   .global-strip .container { flex-direction: column; gap: 28px; }
 }
 @media (max-width: 480px) {
-  .industry-image-wrap { height: 200px; }
   .product-chip { font-size: 11px; padding: 5px 10px; }
 }
 </style>
@@ -159,56 +189,98 @@
 <!-- ── HOT FORGING ────────────────────────────────────────── -->
 <section class="industry-section" id="hot-forging">
   <div class="container">
-    <div class="industry-inner">
-      <div class="industry-image-wrap">
-        <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=700&q=80&fit=crop" alt="Hot Forging">
-        <div class="industry-image-badge"><i class="fas fa-hammer"></i> &nbsp;Hot Forging</div>
+    <div class="industry-grid">
+
+      <div class="ig-image">
+        <div class="industry-image-wrap">
+          <img src="https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=700&q=80&fit=crop" alt="Hot Forging">
+          <div class="industry-image-badge"><i class="fas fa-hammer"></i> &nbsp;Hot Forging</div>
+        </div>
       </div>
-      <div class="industry-content">
+
+      <div class="ig-title">
         <div class="industry-num">01</div>
         <h2>Hot Forging</h2>
         <div class="section-label">Presses &amp; Hammers · Closed Die · Open Die</div>
         <p class="industry-desc">Hot forging involves controlled plastic deformation of heated metals into precision shapes under extreme pressure. Die cost represents 10–15% of total forging cost, making die life and lubrication critical to profitability. Clean, efficient forge shops also demand eco-friendly lubricants that eliminate graphite pollution.</p>
-
-        <div class="challenges-heading">Key Challenges</div>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-fire-alt"></i></div>
-            <div class="challenge-text">
-              <strong>Scale loss during billet heating</strong>
-              <span>Up to 8% metal lost as scale, damaging die surfaces and reducing yield.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-tint"></i></div>
-            <div class="challenge-text">
-              <strong>Die lubrication &amp; temperature control</strong>
-              <span>Incorrect spray leads to over-heating, over-cooling, sticking, and short die life.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-smog"></i></div>
-            <div class="challenge-text">
-              <strong>Graphite pollution in forge shops</strong>
-              <span>Black graphite deposits on floors, machinery, and in the air create hygiene and fire hazards.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-heading">Relevant SPS Products</div>
-        <div class="product-chips">
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-GLF3 Die Lubricants</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>DSP2 Die Spray Systems</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-AN Anti-Nitriding Paste</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON EP00 Grease</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>O-CLEAN3 Cleaning Liquid</div>
-        </div>
         <div class="industry-actions">
           <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
           <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
         </div>
       </div>
+
+      <div class="ig-products">
+        <div class="products-band-heading">Relevant SPS Products</div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Anti-Scale Coatings</div>
+          <div class="products-band-chips">
+            <a href="product-espon-hr.html" class="product-chip">ESPON-HR</a>
+            <a href="product-espon-as.html" class="product-chip">ESPON-AS</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Die Lubricants</div>
+          <div class="products-band-chips">
+            <a href="product-espon-glf3.html" class="product-chip">ESPON-GLF3</a>
+            <a href="product-espon-em3.html" class="product-chip">ESPON-EM3</a>
+            <a href="product-espon-dfk3.html" class="product-chip">ESPON-DFk3</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Spray Systems</div>
+          <div class="products-band-chips">
+            <a href="product-die-spray-system.html" class="product-chip">DSP2 System</a>
+            <a href="product-spray-gun-1.html" class="product-chip">Spray Gun 1</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Anti-Nitriding Paste</div>
+          <div class="products-band-chips">
+            <a href="product-espon-anp.html" class="product-chip">ESPON-ANP</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">EP Grease</div>
+          <div class="products-band-chips">
+            <a href="product-ep00-grease.html" class="product-chip">ESPON EP00</a>
+            <a href="product-ep0-grease.html" class="product-chip">ESPON EP0</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Oil Cleaning</div>
+          <div class="products-band-chips">
+            <a href="product-o-clean3.html" class="product-chip">O-CLEAN3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-solutions">
+        <div class="solutions-heading">How SPS Helps</div>
+        <div class="solution-list">
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="solution-text">
+              <strong>Recover metal lost to scale</strong>
+              <span>ESPON anti-scale coatings reduce billet oxidation losses from up to 8% to near zero, protecting die surfaces and improving yield.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-tint"></i></div>
+            <div class="solution-text">
+              <strong>Optimise die life and spray coverage</strong>
+              <span>Precision ESPON spray systems deliver the right lubricant at the right pressure — preventing sticking, over-heating, and premature die failure.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-leaf"></i></div>
+            <div class="solution-text">
+              <strong>Eliminate graphite from your forge shop</strong>
+              <span>Graphite-free ESPON die lubricants remove black deposits from floors, machinery, and air — cleaner, safer, and environmentally compliant.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -216,55 +288,83 @@
 <!-- ── HOT ROLLING ────────────────────────────────────────── -->
 <section class="industry-section" id="hot-rolling">
   <div class="container">
-    <div class="industry-inner reverse">
-      <div class="industry-image-wrap">
-        <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Hot Rolling">
-        <div class="industry-image-badge"><i class="fas fa-industry"></i> &nbsp;Hot Rolling</div>
+    <div class="industry-grid reverse">
+
+      <div class="ig-image">
+        <div class="industry-image-wrap">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&q=80&fit=crop" alt="Hot Rolling">
+          <div class="industry-image-badge"><i class="fas fa-industry"></i> &nbsp;Hot Rolling</div>
+        </div>
       </div>
-      <div class="industry-content">
+
+      <div class="ig-title">
         <div class="industry-num">02</div>
         <h2>Hot Rolling</h2>
         <div class="section-label">Billets · Bars · Rails · Structural</div>
-        <p class="industry-desc">In hot rolling, billets and ingots are heated to high temperatures before passing through rolling mills to achieve the desired shape. Scale formation, decarburisation, and billet sticking in furnaces are persistent problems that reduce yield, cause rejections, and damage expensive mill equipment.</p>
-
-        <div class="challenges-heading">Key Challenges</div>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-layer-group"></i></div>
-            <div class="challenge-text">
-              <strong>Scale formation &amp; material loss</strong>
-              <span>Scale fallen in furnaces damages hearths and induction heater coils. Removal is labour-intensive.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-exclamation-triangle"></i></div>
-            <div class="challenge-text">
-              <strong>Decarburisation in critical products</strong>
-              <span>Leaf springs, rails, and automotive parts require tight decarb control that is compromised at high temperatures.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-fire"></i></div>
-            <div class="challenge-text">
-              <strong>Excess fuel consumption</strong>
-              <span>Worn refractory lining increases heat-up time and fuel use. Rolling mill furnaces lose efficiency within months.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-heading">Relevant SPS Products</div>
-        <div class="product-chips">
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-DC Decarb Control</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-RF Refractory Coatings</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON EP00 Grease</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>O-CLEAN3 Cleaning Liquid</div>
-        </div>
+        <p class="industry-desc">In hot rolling, billets and ingots are heated to high temperatures before passing through rolling mills. Scale formation, decarburisation, and billet sticking in furnaces reduce yield, cause rejections, and damage expensive mill equipment.</p>
         <div class="industry-actions">
           <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
           <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
         </div>
       </div>
+
+      <div class="ig-products">
+        <div class="products-band-heading">Relevant SPS Products</div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Anti-Scale Coatings</div>
+          <div class="products-band-chips">
+            <a href="product-espon-hr.html" class="product-chip">ESPON-HR</a>
+            <a href="product-espon-sr.html" class="product-chip">ESPON-SR</a>
+            <a href="product-decarb-coating.html" class="product-chip">ESPON-DC</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Refractory Coatings</div>
+          <div class="products-band-chips">
+            <a href="product-espon-rcp.html" class="product-chip">ESPON-RCP</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">EP Grease</div>
+          <div class="products-band-chips">
+            <a href="product-ep00-grease.html" class="product-chip">ESPON EP00</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Oil Cleaning</div>
+          <div class="products-band-chips">
+            <a href="product-o-clean3.html" class="product-chip">O-CLEAN3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-solutions">
+        <div class="solutions-heading">How SPS Helps</div>
+        <div class="solution-list">
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="solution-text">
+              <strong>Prevent scale buildup and hearth damage</strong>
+              <span>ESPON coatings keep billets scale-free in the furnace, protecting hearths and induction coils and reducing cleanup downtime.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-check-circle"></i></div>
+            <div class="solution-text">
+              <strong>Control decarburisation in critical products</strong>
+              <span>Meet tight decarb specifications for leaf springs, rails, and automotive parts — even in high-temperature open-air furnaces.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-fire"></i></div>
+            <div class="solution-text">
+              <strong>Extend refractory life and cut fuel costs</strong>
+              <span>ESPON-RCP refractory coating restores furnace efficiency, reducing heat-up time and fuel consumption for months after application.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -272,54 +372,78 @@
 <!-- ── HEAT TREATMENT ─────────────────────────────────────── -->
 <section class="industry-section" id="heat-treatment">
   <div class="container">
-    <div class="industry-inner">
-      <div class="industry-image-wrap">
-        <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80&fit=crop" alt="Heat Treatment">
-        <div class="industry-image-badge"><i class="fas fa-thermometer-three-quarters"></i> &nbsp;Heat Treatment</div>
+    <div class="industry-grid">
+
+      <div class="ig-image">
+        <div class="industry-image-wrap">
+          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=700&q=80&fit=crop" alt="Heat Treatment">
+          <div class="industry-image-badge"><i class="fas fa-thermometer-three-quarters"></i> &nbsp;Heat Treatment</div>
+        </div>
       </div>
-      <div class="industry-content">
+
+      <div class="ig-title">
         <div class="industry-num">03</div>
         <h2>Heat Treatment</h2>
         <div class="section-label">Sealed Quench · Open Air · Induction</div>
-        <p class="industry-desc">Heat treatment is critical to the mechanical properties of engineering components. Oxidation and decarburisation during open-air heat treatment lead to rejections, expensive post-processing, and wasted capital investment. SPS coatings allow scale-free heat treatment in open-air furnaces — eliminating the need for protective atmosphere equipment.</p>
-
-        <div class="challenges-heading">Key Challenges</div>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-ban"></i></div>
-            <div class="challenge-text">
-              <strong>Oxidation &amp; scale in open-air furnaces</strong>
-              <span>Causes pit marks, dimensional loss, and rejected finish-machined components during re-heat treatment.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-tachometer-alt"></i></div>
-            <div class="challenge-text">
-              <strong>Furnace inefficiency over time</strong>
-              <span>Refractory lining wear increases heat-up time by up to 1 hour or more within 8–10 months of relining.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-wrench"></i></div>
-            <div class="challenge-text">
-              <strong>Costly gas atmosphere equipment</strong>
-              <span>Protective atmosphere furnaces require large capital investment. ESPON coatings eliminate this requirement.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-heading">Relevant SPS Products</div>
-        <div class="product-chips">
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-RF Refractory Coatings</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-AN Anti-Nitriding Paste</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-DC Decarb Control</div>
-        </div>
+        <p class="industry-desc">Heat treatment determines the mechanical properties of engineering components. Oxidation and decarburisation in open-air furnaces cause rejections, expensive post-processing, and wasted investment. ESPON coatings enable scale-free heat treatment without protective atmosphere equipment.</p>
         <div class="industry-actions">
           <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
           <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
         </div>
       </div>
+
+      <div class="ig-products">
+        <div class="products-band-heading">Relevant SPS Products</div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Anti-Scale Coatings</div>
+          <div class="products-band-chips">
+            <a href="product-espon-hr.html" class="product-chip">ESPON-HR</a>
+            <a href="product-espon-acr3.html" class="product-chip">ESPON-ACR3</a>
+            <a href="product-decarb-coating.html" class="product-chip">ESPON-DC</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Refractory Coatings</div>
+          <div class="products-band-chips">
+            <a href="product-espon-rcp.html" class="product-chip">ESPON-RCP</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Anti-Nitriding Paste</div>
+          <div class="products-band-chips">
+            <a href="product-espon-anp.html" class="product-chip">ESPON-ANP</a>
+            <a href="product-espon-int3.html" class="product-chip">ESPON-INT3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-solutions">
+        <div class="solutions-heading">How SPS Helps</div>
+        <div class="solution-list">
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-shield-alt"></i></div>
+            <div class="solution-text">
+              <strong>Scale-free heat treatment in open air</strong>
+              <span>Eliminate pit marks, dimensional loss, and rejections — ESPON coatings protect components without protective atmosphere equipment.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-clock"></i></div>
+            <div class="solution-text">
+              <strong>Recover lost furnace heat-up time</strong>
+              <span>ESPON-RCP refractory coating restores up to 1 hour of heat-up time lost within 8–10 months of relining, reducing fuel costs and cycle time.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-rupee-sign"></i></div>
+            <div class="solution-text">
+              <strong>Avoid costly protective atmosphere investment</strong>
+              <span>ESPON coatings deliver equivalent oxidation protection in standard open-air furnaces, eliminating capital expenditure on gas atmosphere equipment.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -327,45 +451,63 @@
 <!-- ── DIE CASTING ────────────────────────────────────────── -->
 <section class="industry-section" id="die-casting">
   <div class="container">
-    <div class="industry-inner reverse">
-      <div class="industry-image-wrap">
-        <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=700&q=80&fit=crop" alt="Die Casting">
-        <div class="industry-image-badge"><i class="fas fa-cubes"></i> &nbsp;Die Casting</div>
+    <div class="industry-grid reverse">
+
+      <div class="ig-image">
+        <div class="industry-image-wrap">
+          <img src="https://images.unsplash.com/photo-1581093458791-9d42e3c7e117?w=700&q=80&fit=crop" alt="Die Casting">
+          <div class="industry-image-badge"><i class="fas fa-cubes"></i> &nbsp;Die Casting</div>
+        </div>
       </div>
-      <div class="industry-content">
+
+      <div class="ig-title">
         <div class="industry-num">04</div>
         <h2>Die Casting</h2>
         <div class="section-label">Aluminium · Zinc · Magnesium · Copper Alloys</div>
-        <p class="industry-desc">Die casting operations demand clean, well-maintained shop environments and reliable lubrication. Oil spills from centralised lubrication systems, dirty machinery, and poorly cleaned dies all contribute to quality issues and production downtime. SPS cleaning and lubrication products help die casting facilities maintain clean, efficient, and safe operations.</p>
-
-        <div class="challenges-heading">Key Challenges</div>
-        <div class="challenge-list">
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-oil-can"></i></div>
-            <div class="challenge-text">
-              <strong>Oil spills &amp; floor contamination</strong>
-              <span>Accumulated oil on floors, machinery, and plastic trays creates safety, hygiene, and fire hazard risks.</span>
-            </div>
-          </div>
-          <div class="challenge-item">
-            <div class="challenge-icon"><i class="fas fa-cogs"></i></div>
-            <div class="challenge-text">
-              <strong>Equipment cleaning downtime</strong>
-              <span>Conventional cleaning of oil-contaminated trays and bins requires high-pressure machines prone to filter choking.</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="products-heading">Relevant SPS Products</div>
-        <div class="product-chips">
-          <div class="product-chip"><span class="product-chip-dot"></span>O-CLEAN3 Cleaning Liquid</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON EP00 Grease</div>
-        </div>
+        <p class="industry-desc">Die casting operations demand clean, well-maintained environments and reliable lubrication. Oil spills, dirty machinery, and contaminated trays contribute to quality issues and production downtime. SPS cleaning and lubrication products keep die casting facilities clean, efficient, and safe.</p>
         <div class="industry-actions">
           <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
           <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
         </div>
       </div>
+
+      <div class="ig-products">
+        <div class="products-band-heading">Relevant SPS Products</div>
+        <div class="products-band-row">
+          <div class="products-band-cat">EP Grease</div>
+          <div class="products-band-chips">
+            <a href="product-ep00-grease.html" class="product-chip">ESPON EP00</a>
+            <a href="product-ep0-grease.html" class="product-chip">ESPON EP0</a>
+          </div>
+        </div>
+        <div class="products-band-row">
+          <div class="products-band-cat">Oil Cleaning</div>
+          <div class="products-band-chips">
+            <a href="product-o-clean3.html" class="product-chip">O-CLEAN3</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="ig-solutions">
+        <div class="solutions-heading">How SPS Helps</div>
+        <div class="solution-list">
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-broom"></i></div>
+            <div class="solution-text">
+              <strong>Clean floors, trays, and machinery — no high-pressure equipment</strong>
+              <span>O-CLEAN3 dissolves oil contamination on contact — no pressure washing, no filter choking, no hazardous solvents required.</span>
+            </div>
+          </div>
+          <div class="solution-item">
+            <div class="solution-icon"><i class="fas fa-oil-can"></i></div>
+            <div class="solution-text">
+              <strong>Reliable lubrication at extreme temperatures</strong>
+              <span>ESPON EP grease maintains stable viscosity at 100–150°C, preventing overflow, fire risk, and centralised system choking.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -402,14 +544,20 @@
           </div>
         </div>
 
-        <div class="products-heading">Relevant SPS Products</div>
-        <div class="product-chips">
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-HR Anti-Scale Coatings</div>
-          <div class="product-chip"><span class="product-chip-dot"></span>ESPON-DC Decarb Control</div>
-        </div>
         <div class="industry-actions">
           <a href="products.html" class="btn btn-primary"><i class="fas fa-th-large"></i> View Products</a>
           <a href="contact.html" class="btn btn-outline-red">Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+    <!-- Products band — Titanium & Super-Alloys -->
+    <div class="industry-products-band">
+      <div class="products-band-heading">Relevant SPS Products</div>
+      <div class="products-band-row">
+        <div class="products-band-cat">Anti-Scale Coatings</div>
+        <div class="products-band-chips">
+          <a href="product-espon-hr.html" class="product-chip">ESPON-HR</a>
+          <a href="product-decarb-coating.html" class="product-chip">ESPON-DC</a>
         </div>
       </div>
     </div>

@@ -11,62 +11,37 @@
   <style>
     /* ── Resources page-specific styles ──────────────────────── */
 
-    /* Author Feature */
-    .author-feature {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-lg);
-      overflow: hidden;
-      display: grid;
-      grid-template-columns: 320px 1fr;
+    /* Author — 2-column section */
+    .author-minimal {
+      padding: 56px 0; background: var(--light);
+      border-top: 1px solid var(--border);
     }
-    .author-photo {
-      position: relative;
-      background: var(--dark);
-      min-height: 360px;
+    .author-minimal .section-label { display: block; margin-bottom: 28px; }
+    .author-inner {
+      display: grid; grid-template-columns: 30% 70%; gap: 48px;
+      align-items: center;
     }
-    .author-photo img {
-      width: 100%; height: 100%;
+    .author-left { text-align: center; }
+    .author-avatar {
+      width: 100px; height: 100px; border-radius: 50%;
       object-fit: cover; object-position: top center;
-      opacity: .85;
+      margin: 0 auto 14px;
+      border: 3px solid var(--border);
     }
-    .author-photo-overlay {
-      position: absolute; inset: 0;
-      background: linear-gradient(to right, transparent 60%, rgba(255,255,255,.05) 100%);
+    .author-minimal-name {
+      font-size: 16px; font-weight: 700; color: var(--dark);
+      margin-bottom: 4px;
     }
-    .author-info {
-      padding: 48px;
-      display: flex; flex-direction: column; justify-content: center;
+    .author-minimal-title {
+      font-size: 12px; color: var(--red); font-weight: 600;
+      line-height: 1.5;
     }
-    .author-tag {
-      display: inline-flex; align-items: center; gap: 8px;
-      background: var(--red-bg); color: var(--red);
-      font-size: 10px; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; padding: 6px 14px;
-      border-radius: 20px; margin-bottom: 20px; width: fit-content;
+    .author-minimal-bio {
+      font-size: 14.5px; color: var(--grey); line-height: 1.8;
     }
-    .author-name {
-      font-size: 32px; font-weight: 900; color: var(--dark);
-      line-height: 1.1; margin-bottom: 6px; letter-spacing: -.5px;
+    @media (max-width: 768px) {
+      .author-inner { grid-template-columns: 1fr; gap: 24px; text-align: center; }
     }
-    .author-title {
-      font-size: 14px; color: var(--red); font-weight: 600;
-      margin-bottom: 20px;
-    }
-    .author-bio {
-      font-size: 15px; color: var(--grey); line-height: 1.75;
-      margin-bottom: 28px; max-width: 520px;
-    }
-    .author-credentials {
-      display: flex; gap: 24px; flex-wrap: wrap;
-    }
-    .credential-badge {
-      display: flex; align-items: center; gap: 8px;
-      background: var(--light); border-radius: var(--radius);
-      padding: 8px 14px;
-    }
-    .credential-badge i { font-size: 14px; color: var(--red); }
-    .credential-badge span { font-size: 12px; font-weight: 600; color: var(--dark); }
 
     /* Filter Bar */
     .resource-filter-bar {
@@ -300,83 +275,6 @@
       </div>
     </div>
   </section>
-
-  <!-- ── Stats Bar ────────────────────────────────────────── -->
-  <div class="resource-stats">
-    <div class="container">
-      <div class="stats-row">
-        <div class="stat-item">
-          <div class="stat-value">10+</div>
-          <div class="stat-label">Technical Articles</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-value">40</div>
-          <div class="stat-label">Years of R&amp;D</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-value">5</div>
-          <div class="stat-label">Industry Sectors Covered</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-value">IIT</div>
-          <div class="stat-label">Metallurgy Background</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-value">Free</div>
-          <div class="stat-label">Always Open Access</div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ── Author Feature ───────────────────────────────────── -->
-  <section style="padding:80px 0; background:#fff;">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-label">Our Author</span>
-        <h2 class="section-title">The Mind Behind the Research</h2>
-        <p class="section-sub">Decades of practical metallurgical experience distilled into accessible technical knowledge.</p>
-      </div>
-      <div class="author-feature">
-        <div class="author-photo">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=640&q=80&fit=crop&crop=faces" alt="S.P. Shenoy">
-          <div class="author-photo-overlay"></div>
-        </div>
-        <div class="author-info">
-          <span class="author-tag"><i class="fas fa-award"></i> Chief Technical Author</span>
-          <div class="author-name">S.P. Shenoy</div>
-          <div class="author-title">Founder &amp; Chief Metallurgist — IIT Bombay, M.Tech</div>
-          <p class="author-bio">
-            With over four decades in applied metallurgy and surface engineering, S.P. Shenoy founded Steel Plant Specialities in 1985 to bridge the gap between academic research and industrial practice. A graduate of IIT Bombay with an M.Tech in Metallurgical Engineering, he has personally developed the ESPON range of coatings and lubricants — solutions trusted by leading steel plants, forging shops, and aerospace component manufacturers worldwide.
-          </p>
-          <div class="author-credentials">
-            <div class="credential-badge">
-              <i class="fas fa-university"></i>
-              <span>IIT Bombay</span>
-            </div>
-            <div class="credential-badge">
-              <i class="fas fa-graduation-cap"></i>
-              <span>M.Tech Metallurgy</span>
-            </div>
-            <div class="credential-badge">
-              <i class="fas fa-calendar-alt"></i>
-              <span>40+ Years Experience</span>
-            </div>
-            <div class="credential-badge">
-              <i class="fas fa-flask"></i>
-              <span>ESPON Range Creator</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <hr class="divider">
 
   <!-- ── Filter Bar ────────────────────────────────────────── -->
   <div id="articles" class="resource-filter-bar">
@@ -655,6 +553,23 @@
         </div>
 
       </div><!-- /articles-grid -->
+    </div>
+  </section>
+
+  <!-- ── Author ───────────────────────────────────────────── -->
+  <section class="author-minimal">
+    <div class="container">
+      <span class="section-label">About the Author</span>
+      <div class="author-inner">
+        <div class="author-left">
+          <img class="author-avatar" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=640&q=80&fit=crop&crop=faces" alt="S.P. Shenoy">
+          <div class="author-minimal-name">S.P. Shenoy</div>
+          <div class="author-minimal-title">Founder &amp; Chief Metallurgist<br>IIT Bombay, M.Tech</div>
+        </div>
+        <div class="author-right">
+          <p class="author-minimal-bio">With over four decades in applied metallurgy and surface engineering, S.P. Shenoy founded Steel Plant Specialities in 1985 to bridge the gap between academic research and industrial practice. A graduate of IIT Bombay with an M.Tech in Metallurgical Engineering, he has personally developed the ESPON range of coatings and lubricants — solutions trusted by leading steel plants and forging shops, worldwide.</p>
+        </div>
+      </div>
     </div>
   </section>
 

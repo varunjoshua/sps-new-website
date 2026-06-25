@@ -2,7 +2,7 @@
    Each page sets window.ACTIVE_NAV before loading this script.
    ─────────────────────────────────────────────────────────── */
 
-const LOGO_IMG = `<img src="spslogo.webp" class="nav-logo-img" alt="Steel Plant Specialities">`;
+const LOGO_IMG = `<img src="sps_logo.png" class="nav-logo-img" alt="Steel Plant Specialities">`;
 
 const NAV_ITEMS = [
   { label: 'Home',       href: 'index.html',      key: 'home' },
@@ -40,10 +40,7 @@ function renderNav(activeKey) {
     <div class="container">
       <a href="index.html" class="nav-logo">
         ${LOGO_IMG}
-        <div class="nav-logo-text">
-          <strong>Steel Plant Specialities</strong>
-          <span>LLP &nbsp;·&nbsp; Est. 1985 &nbsp;·&nbsp; Mumbai</span>
-        </div>
+        <img src="sps_title_grey.png" class="nav-title-img" alt="Steel Plant Specialities LLP">
       </a>
       <div class="nav-links" id="nav-links">
         <div class="nav-panel-header">

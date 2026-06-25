@@ -127,6 +127,7 @@ ul { list-style: none; }
 .nav-logo-text { line-height: 1.2; }
 .nav-logo-text strong { display: block; font-size: 19px; font-weight: 800; color: var(--dark); }
 .nav-logo-text span { font-size: 13px; color: var(--grey); font-weight: 500; letter-spacing: .4px; }
+.nav-title-img { height: 53px; width: auto; display: block; flex-shrink: 0; }
 .nav-links { display: flex; gap: 2px; align-items: center; }
 .nav-links a {
   font-size: 17px; font-weight: 600; color: var(--mid);
@@ -292,6 +293,7 @@ footer { background: var(--black); color: rgba(255,255,255,.55); padding: 64px 0
   /* ── Navbar ─────────────────────────── */
   .navbar .container { height: 64px; position: relative; }
   .nav-logo-text { display: none; }
+  .nav-title-img { display: none; }
 
   /* Overlay behind the panel */
   .nav-overlay {

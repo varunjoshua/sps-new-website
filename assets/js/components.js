@@ -69,10 +69,7 @@ function renderFooter() {
         <div class="footer-brand">
           <a href="index.html" class="nav-logo">
             ${LOGO_IMG}
-            <div class="nav-logo-text">
-              <strong style="color:#fff">Steel Plant Specialities</strong>
-              <span style="color:rgba(255,255,255,.35)">LLP · Est. 1985 · Mumbai</span>
-            </div>
+            <img src="sps_title_grey.png" class="nav-title-img" alt="Steel Plant Specialities LLP">
           </a>
           <p>Innovative protective coatings and lubricants for hot forging, hot rolling, and heat treatment industries. Engineered by IIT metallurgists. Trusted by market leaders worldwide.</p>
           <div class="footer-social">

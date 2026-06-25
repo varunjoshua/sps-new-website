@@ -117,7 +117,7 @@ ul { list-style: none; }
   box-shadow: 0 2px 12px rgba(0,0,0,.06);
 }
 .navbar .container { display: flex; align-items: center; justify-content: space-between; height: 90px; }
-.nav-logo { display: flex; align-items: center; gap: 0; }
+.nav-logo { display: flex; align-items: center; gap: 5px; }
 .nav-logo-icon {
   width: 53px; height: 53px; background: var(--red); border-radius: var(--radius);
   display: flex; align-items: center; justify-content: center; flex-shrink: 0;

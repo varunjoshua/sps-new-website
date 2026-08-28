@@ -9,33 +9,18 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="assets/css/main.css">
   <style>
-    /* ── About page-specific styles ───────────────────────── */
-
-    /* Founding Story */
+    /* ── About: Story + Leadership ───────────────────────────── */
     .story-section { padding: 96px 0; background: #fff; }
+    .story-header { text-align: center; margin-bottom: 56px; }
+    .story-header h2 {
+      font-size: clamp(28px, 3vw, 38px); font-weight: 900; color: var(--dark);
+      line-height: 1.15; letter-spacing: -.5px;
+    }
+    .story-header h2 span { color: var(--red); }
     .story-grid {
       display: grid; grid-template-columns: 1fr 1fr;
-      gap: 80px; align-items: center;
+      gap: 72px; align-items: start;
     }
-    .story-image-wrap { position: relative; }
-    .story-image-wrap img {
-      border-radius: var(--radius-lg);
-      height: 480px; object-fit: cover;
-    }
-    .story-badge {
-      position: absolute; bottom: -24px; right: -24px;
-      background: var(--red); color: #fff;
-      border-radius: var(--radius-lg); padding: 24px 28px;
-      text-align: center; box-shadow: var(--shadow-lg);
-    }
-    .story-badge .badge-year { font-size: 40px; font-weight: 900; line-height: 1; letter-spacing: -2px; }
-    .story-badge .badge-label { font-size: 11px; font-weight: 600; opacity: .8; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 4px; }
-    .story-text {}
-    .story-text h2 {
-      font-size: clamp(28px, 3vw, 38px); font-weight: 900; color: var(--dark);
-      line-height: 1.15; margin-bottom: 20px; letter-spacing: -.5px;
-    }
-    .story-text h2 span { color: var(--red); }
     .story-text p { font-size: 15.5px; color: var(--grey); line-height: 1.8; margin-bottom: 16px; }
     .story-highlights { display: flex; gap: 32px; margin-top: 32px; }
     .story-highlight { text-align: center; }
@@ -43,7 +28,29 @@
     .story-highlight .value span { color: var(--red); }
     .story-highlight .label { font-size: 12px; color: var(--grey); font-weight: 500; margin-top: 6px; }
 
-    /* Timeline */
+    /* Leadership cards (right column of story) */
+    .leader-cards { display: flex; flex-direction: column; gap: 20px; }
+    .leader-card {
+      display: flex; gap: 20px; align-items: flex-start;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 20px;
+      transition: border-color .25s;
+    }
+    .leader-card:hover { border-color: var(--red); }
+    .leader-photo {
+      width: 100px; height: 120px; border-radius: var(--radius);
+      object-fit: cover; object-position: top center;
+      flex-shrink: 0;
+    }
+    .leader-info { flex: 1; min-width: 0; }
+    .leader-info h3 { font-size: 16px; font-weight: 800; color: var(--dark); margin-bottom: 2px; }
+    .leader-info .leader-role {
+      font-size: 12px; font-weight: 600; color: var(--red);
+      margin-bottom: 10px; display: block;
+    }
+    .leader-info p { font-size: 13px; color: var(--grey); line-height: 1.65; }
+
+    /* ── Timeline ─────────────────────────────────────────────── */
     .timeline-section { padding: 96px 0; background: var(--light); }
     .timeline { position: relative; max-width: 800px; margin: 0 auto; }
     .timeline::before {
@@ -72,37 +79,7 @@
     .timeline-item:nth-child(even) .timeline-dot { grid-column: 2; }
     .timeline-item:nth-child(even) .timeline-right { grid-column: 1; grid-row: 1; text-align: right; padding-right: 36px; padding-left: 0; }
 
-    /* Leadership */
-    .leadership-section { padding: 96px 0; background: #fff; }
-    .leadership-card {
-      display: grid; grid-template-columns: 280px 1fr;
-      background: var(--light); border-radius: var(--radius-lg);
-      overflow: hidden; max-width: 900px; margin: 0 auto;
-      border: 1px solid var(--border);
-    }
-    .leadership-photo {
-      position: relative; background: var(--dark); min-height: 380px;
-    }
-    .leadership-photo img {
-      width: 100%; height: 100%; object-fit: cover; object-position: top center;
-    }
-    .leadership-photo-tag {
-      position: absolute; bottom: 16px; left: 16px; right: 16px;
-      background: rgba(235,61,0,.9); color: #fff;
-      border-radius: 6px; padding: 10px 14px; text-align: center;
-    }
-    .leadership-photo-tag .name { font-size: 14px; font-weight: 700; }
-    .leadership-photo-tag .role { font-size: 11px; opacity: .8; margin-top: 2px; }
-    .leadership-details { padding: 48px; }
-    .leadership-details h3 { font-size: 26px; font-weight: 900; color: var(--dark); margin-bottom: 4px; letter-spacing: -.5px; }
-    .leadership-details .designation { font-size: 14px; color: var(--red); font-weight: 600; margin-bottom: 20px; }
-    .leadership-details p { font-size: 14.5px; color: var(--grey); line-height: 1.8; margin-bottom: 16px; }
-    .qualification-list { display: flex; flex-direction: column; gap: 10px; margin-top: 24px; }
-    .qualification-item { display: flex; align-items: center; gap: 12px; }
-    .qualification-item i { color: var(--red); font-size: 14px; width: 20px; flex-shrink: 0; }
-    .qualification-item span { font-size: 13.5px; color: var(--dark); font-weight: 500; }
-
-    /* Values */
+    /* ── Values ────────────────────────────────────────────────── */
     .values-section { padding: 96px 0; background: var(--dark); }
     .values-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
     .value-card {
@@ -120,70 +97,39 @@
     .value-card h3 { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 10px; }
     .value-card p { font-size: 13.5px; color: rgba(255,255,255,.5); line-height: 1.7; }
 
-    /* Global Presence */
-    .global-section { padding: 96px 0; background: var(--light); }
-    .global-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
-    .global-map {
-      background: #fff; border: 1px solid var(--border);
-      border-radius: var(--radius-lg); padding: 48px;
-      display: flex; align-items: center; justify-content: center; min-height: 320px;
-      position: relative; overflow: hidden;
+    /* ── ISO Strip ─────────────────────────────────────────────── */
+    .iso-strip {
+      padding: 36px 0; background: var(--light);
+      border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
     }
-    .global-map-placeholder {
-      text-align: center;
+    .iso-inner {
+      display: flex; align-items: center; justify-content: center; gap: 16px;
     }
-    .global-map-placeholder i { font-size: 64px; color: var(--red); opacity: .25; display: block; margin-bottom: 16px; }
-    .global-map-placeholder p { font-size: 13px; color: var(--light-grey); }
-    .global-dots {
-      position: absolute; inset: 0;
-      background-image: radial-gradient(circle, var(--border) 1px, transparent 1px);
-      background-size: 20px 20px;
+    .iso-badge {
+      display: flex; align-items: center; justify-content: center;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: var(--white); border: 2px solid var(--border);
+      flex-shrink: 0;
     }
-    .global-text {}
-    .global-text h2 { font-size: clamp(26px, 3vw, 34px); font-weight: 900; color: var(--dark); margin-bottom: 16px; letter-spacing: -.5px; }
-    .global-text h2 span { color: var(--red); }
-    .global-text p { font-size: 15px; color: var(--grey); line-height: 1.8; margin-bottom: 28px; }
-    .region-list { display: flex; flex-direction: column; gap: 12px; }
-    .region-item {
-      display: flex; align-items: center; gap: 12px;
-      background: #fff; border: 1px solid var(--border);
-      border-radius: var(--radius); padding: 12px 16px;
+    .iso-badge i { font-size: 22px; color: var(--red); }
+    .iso-text { text-align: left; }
+    .iso-text strong {
+      display: block; font-size: 16px; font-weight: 800; color: var(--dark);
+      letter-spacing: .3px;
     }
-    .region-flag { font-size: 20px; }
-    .region-info {}
-    .region-info strong { font-size: 13px; font-weight: 700; color: var(--dark); display: block; }
-    .region-info span { font-size: 12px; color: var(--grey); }
+    .iso-text span {
+      font-size: 13px; color: var(--grey); font-weight: 500;
+    }
 
-    /* Certifications */
-    .cert-section { padding: 72px 0; background: #fff; }
-    .cert-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
-    .cert-card {
-      border: 2px dashed var(--border); border-radius: var(--radius-lg);
-      padding: 32px 24px; text-align: center; transition: all .25s;
-    }
-    .cert-card:hover { border-color: var(--red); border-style: solid; }
-    .cert-card i { font-size: 32px; color: var(--light-grey); margin-bottom: 14px; display: block; transition: color .2s; }
-    .cert-card:hover i { color: var(--red); }
-    .cert-card h4 { font-size: 13px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
-    .cert-card p { font-size: 12px; color: var(--light-grey); }
-    .cert-placeholder { font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--light-grey); margin-top: 8px; }
-
-    /* ── Responsive ─────────────────────────────────────────── */
+    /* ── Responsive ────────────────────────────────────────────── */
     @media (max-width: 1024px) {
       .values-grid { grid-template-columns: repeat(2, 1fr); }
-      .cert-grid { grid-template-columns: repeat(2, 1fr); }
-      .global-inner { gap: 40px; }
     }
     @media (max-width: 768px) {
-      /* Story section */
       .story-section { padding: 56px 0; }
       .story-grid { grid-template-columns: 1fr; gap: 48px; }
-      .story-image-wrap img { height: 280px; }
-      .story-badge { bottom: -16px; right: 16px; padding: 16px 20px; }
-      .story-badge .badge-year { font-size: 28px; }
       .story-highlights { gap: 20px; }
 
-      /* Timeline: collapse to left-aligned single column */
       .timeline-section { padding: 56px 0; }
       .timeline::before { left: 12px; transform: none; }
       .timeline-item {
@@ -193,39 +139,23 @@
       .timeline-left { grid-column: 2; grid-row: 1; text-align: left; padding: 0; }
       .timeline-dot { grid-column: 1; grid-row: 1; margin: 4px 0 0; }
       .timeline-right { grid-column: 2; grid-row: 2; text-align: left; padding: 8px 0 0; }
-      /* Even items: same layout */
       .timeline-item:nth-child(even) .timeline-left { grid-column: 2; grid-row: 1; text-align: left; padding: 0; }
       .timeline-item:nth-child(even) .timeline-dot { grid-column: 1; grid-row: 1; }
       .timeline-item:nth-child(even) .timeline-right { grid-column: 2; grid-row: 2; text-align: left; padding: 8px 0 0; }
       .timeline-year { font-size: 18px; }
 
-      /* Leadership */
-      .leadership-section { padding: 56px 0; }
-      .leadership-card { grid-template-columns: 1fr; }
-      .leadership-photo { min-height: 260px; }
-      .leadership-details { padding: 28px 24px; }
-
-      /* Values */
       .values-section { padding: 56px 0; }
 
-      /* Global */
-      .global-section { padding: 56px 0; }
-      .global-inner { grid-template-columns: 1fr; }
-      .global-map { min-height: 220px; }
-
-      /* Certs */
-      .cert-section { padding: 48px 0; }
+      .leader-card { gap: 16px; padding: 16px; }
+      .leader-photo { width: 80px; height: 100px; }
     }
     @media (max-width: 480px) {
       .values-grid { grid-template-columns: 1fr; }
-      .cert-grid { grid-template-columns: 1fr; }
       .story-highlights { flex-direction: column; align-items: flex-start; gap: 16px; }
     }
   </style>
 </head>
 <body>
-
-  
 
   <!-- ── Page Hero ───────────────────────────────────────── -->
   <section class="page-hero">
@@ -238,7 +168,7 @@
         <span>About</span>
       </div>
       <h1>Four Decades of<br><span>Metallurgical</span> Excellence</h1>
-      <p>Founded in 1985, Steel Plant Specialities LLP has been developing high-performance anti-scale coatings and hot forging lubricants for the world's most demanding industrial processes.</p>
+      <p>Founded in 1985, Steel Plant Specialities LLP has been developing high-performance metallurgical formulations, systems and sustainable technologies for the steel industry.</p>
       <div class="page-hero-ctas">
         <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-handshake"></i> Get in Touch</a>
         <a href="resources.html" class="btn btn-outline-white btn-lg"><i class="fas fa-book-open"></i> Our Research</a>
@@ -246,38 +176,51 @@
     </div>
   </section>
 
-  <!-- ── Founding Story ────────────────────────────────────── -->
+  <!-- ── Our Story + Leadership ───────────────────────────── -->
   <section class="story-section">
     <div class="container">
+      <div class="story-header">
+        <span class="section-label">Our Story</span>
+        <h2>Born from a Problem <span>No One Was Solving</span></h2>
+      </div>
       <div class="story-grid">
-        <div class="story-image-wrap">
-          <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=900&q=80&fit=crop" alt="Forge Shop">
-          <div class="story-badge">
-            <div class="badge-year">1985</div>
-            <div class="badge-label">Est. Mumbai</div>
-          </div>
-        </div>
         <div class="story-text">
-          <span class="section-label">Our Story</span>
-          <h2>Born from a Problem<br><span>No One Was Solving</span></h2>
-          <p>In 1985, S.P. Shenoy — a metallurgical engineer from IIT Bombay — observed a consistent gap in the Indian industrial market: forge shops and steel plants were struggling with scale loss, die wear, and decarburization, but available products were either imported, expensive, or simply not engineered for local conditions.</p>
-          <p>He founded Steel Plant Specialities in Mumbai to enable the metal-forming industries to achieve substantial savings. With an initial focus on anti-scale coatings for hot rolling, hot forging, heat treatment, investment casting and processing titanium and superalloys.</p>
-          <p>Today, the ESPON range of products is trusted by market leaders across India, South-East Asia, and the Middle East — a testament to four decades of applied research, field testing, and continuous improvement.</p>
+          <p>Steel Plant Specialities (SPS) is a trusted partner to leading organisations in the hot rolling and hot forging industry for more than four decades. The company was built on the conviction that process-losses conventionally accepted in hot-forming processes can be prevented or substantially reduced.</p>
+          <p>SPS designs and manufactures metallurgical protective coatings, lubricants and application systems for hot rolling, hot forging and heat treatment. These products are customised based on customer's grades of steel, furnace conditions and production process, with a single purpose — to increase yield, improve quality and lower the cost of every tonne produced.</p>
+          <p>Today Steel Plant Specialities is the preferred supplier to leading steel plants and forge shops worldwide.</p>
           <div class="story-highlights">
             <div class="story-highlight">
               <div class="value">40<span>+</span></div>
               <div class="label">Years in Operation</div>
             </div>
             <div class="story-highlight">
-              <div class="value">8<span>+</span></div>
+              <div class="value">7<span>+</span></div>
               <div class="label">Product Lines</div>
             </div>
             <div class="story-highlight">
               <div class="value">15<span>+</span></div>
-              <div class="label">Countries Served</div>
+              <div class="label">Global Markets Served</div>
             </div>
           </div>
         </div>
+        <div class="leader-cards">
+            <div class="leader-card">
+              <img class="leader-photo" src="Images/About/sp-shenoy.webp" alt="S.P. Shenoy — Founder">
+              <div class="leader-info">
+                <h3>S.P. Shenoy</h3>
+                <span class="leader-role">Founder &amp; Chief Metallurgist</span>
+                <p>A graduate of IIT Bombay with an M.Tech in Metallurgical Engineering and over four decades in applied metallurgy and surface engineering. He personally oversees product development, quality, and authors technical articles published on this site.</p>
+              </div>
+            </div>
+            <div class="leader-card">
+              <img class="leader-photo" src="Images/About/srikar-shenoy.webp" alt="Srikar Shenoy — Director">
+              <div class="leader-info">
+                <h3>Srikar Shenoy</h3>
+                <span class="leader-role">Director</span>
+                <p>A management graduate with over two decades of techno-commercial experience in the steel industry. He works alongside seasoned metallurgical engineers to solve customer challenges and drives business growth at Steel Plant Specialities.</p>
+              </div>
+            </div>
+          </div>
       </div>
     </div>
   </section>
@@ -289,8 +232,8 @@
     <div class="container">
       <div class="section-header center">
         <span class="section-label">Company History</span>
-        <h2 class="section-title">Four Decades of Milestones</h2>
-        <p class="section-sub">From a single product for hot forging to a comprehensive range serving five industrial sectors.</p>
+        <h2 class="section-title">Four Decades of Innovation</h2>
+        <p class="section-sub">Our journey from a single product to a comprehensive range serving five industrial sectors.</p>
       </div>
       <div class="timeline">
 
@@ -344,7 +287,7 @@
           </div>
           <div class="timeline-dot"></div>
           <div class="timeline-right timeline-content">
-            <h4>Aerospace & Superalloy Range</h4>
+            <h4>Aerospace &amp; Superalloy Range</h4>
             <p>Specialised coatings and anti-nitriding pastes for titanium, Inconel, and nickel superalloy forging developed for the growing aerospace supply chain.</p>
           </div>
         </div>
@@ -371,51 +314,6 @@
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Leadership ────────────────────────────────────────── -->
-  <section class="leadership-section">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-label">Leadership</span>
-        <h2 class="section-title">The Person Behind the Products</h2>
-        <p class="section-sub">Every ESPON formulation carries the personal expertise of our founder — an engineer who has spent a lifetime solving real industrial problems.</p>
-      </div>
-      <div class="leadership-card">
-        <div class="leadership-photo">
-          <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=560&q=80&fit=crop&crop=faces" alt="S.P. Shenoy">
-          <div class="leadership-photo-tag">
-            <div class="name">S.P. Shenoy</div>
-            <div class="role">Founder &amp; Chief Metallurgist</div>
-          </div>
-        </div>
-        <div class="leadership-details">
-          <h3>S.P. Shenoy</h3>
-          <div class="designation">Founder &amp; Chief Metallurgist — Steel Plant Specialities LLP</div>
-          <p>
-            S.P. Shenoy's approach has always been empirical: understand the failure mode before proposing a solution. This philosophy, developed through years of fieldwork in forging shops and rolling mills across India, is why ESPON products perform where others fall short.
-          </p>
-          <p>
-            An alumnus of IIT Bombay (M.Tech, Metallurgical Engineering), he combines deep academic grounding in oxidation kinetics, tribology, and surface engineering with an engineer's instinct for practical, cost-effective solutions. He personally oversees product development, quality, and the technical articles published on this site.
-          </p>
-          <div class="qualification-list">
-            <div class="qualification-item">
-              <i class="fas fa-university"></i>
-              <span>B.Tech (Met. Engg.), IIT-BHU.
-                <br> M.Tech (Met. Engg.), IIT-Bombay.</span>
-            </div>
-            <div class="qualification-item">
-              <i class="fas fa-flask"></i>
-              <span>Inventor of the ESPON range of industrial coatings and lubricants</span>
-            </div>
-            <div class="qualification-item">
-              <i class="fas fa-pen-nib"></i>
-              <span>Author of 10+ peer-reviewed technical articles on high-temperature coatings</span>
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   </section>
@@ -463,88 +361,16 @@
     </div>
   </section>
 
-  <!-- ── Global Presence ───────────────────────────────────── -->
-  <section class="global-section">
+  <!-- ── ISO Certification Strip ───────────────────────────── -->
+  <section class="iso-strip">
     <div class="container">
-      <div class="global-inner">
-        <div class="global-map">
-          <div class="global-dots"></div>
-          <div class="global-map-placeholder">
-            <i class="fas fa-globe-asia"></i>
-            <p>Interactive map placeholder<br><span style="font-size:11px">Will be replaced with a live world map showing export countries</span></p>
-          </div>
+      <div class="iso-inner">
+        <div class="iso-badge">
+          <i class="fas fa-shield-alt"></i>
         </div>
-        <div class="global-text">
-          <span class="section-label">Global Reach</span>
-          <h2>Trusted Across<br><span>15+ Countries</span></h2>
-          <p>From Mumbai's industrial belt to forging shops in South-East Asia and the Middle East, ESPON products protect billions of rupees of steel and alloy investment each year.</p>
-          <div class="region-list">
-            <div class="region-item">
-              <span class="region-flag">🇮🇳</span>
-              <div class="region-info">
-                <strong>India — Primary Market</strong>
-                <span>Maharashtra, Gujarat, Tamil Nadu, Rajasthan, Punjab</span>
-              </div>
-            </div>
-            <div class="region-item">
-              <span class="region-flag">🇦🇪</span>
-              <div class="region-info">
-                <strong>Middle East</strong>
-                <span>UAE, Saudi Arabia, Qatar</span>
-              </div>
-            </div>
-            <div class="region-item">
-              <span class="region-flag">🌏</span>
-              <div class="region-info">
-                <strong>South-East Asia</strong>
-                <span>Thailand, Indonesia, Malaysia, Vietnam</span>
-              </div>
-            </div>
-            <div class="region-item">
-              <span class="region-flag">🌍</span>
-              <div class="region-info">
-                <strong>Distributor Network</strong>
-                <span>Authorised distributors in 8 countries — <a href="contact.html" style="color:var(--red);font-weight:600">Become a distributor</a></span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Certifications ────────────────────────────────────── -->
-  <section class="cert-section">
-    <div class="container">
-      <div class="section-header center">
-        <span class="section-label">Quality &amp; Compliance</span>
-        <h2 class="section-title">Certifications &amp; Standards</h2>
-        <p class="section-sub">Our quality systems and certifications ensure consistent product performance and customer confidence.</p>
-      </div>
-      <div class="cert-grid">
-        <div class="cert-card">
-          <i class="fas fa-certificate"></i>
-          <h4>ISO 9001:2015</h4>
-          <p>Quality Management System</p>
-          <div class="cert-placeholder">Certification Pending</div>
-        </div>
-        <div class="cert-card">
-          <i class="fas fa-leaf"></i>
-          <h4>RoHS Compliant</h4>
-          <p>Restriction of Hazardous Substances</p>
-          <div class="cert-placeholder">Applicable Products</div>
-        </div>
-        <div class="cert-card">
-          <i class="fas fa-file-alt"></i>
-          <h4>Technical Data Sheets</h4>
-          <p>Full TDS available for all products</p>
-          <div class="cert-placeholder">On Request</div>
-        </div>
-        <div class="cert-card">
-          <i class="fas fa-vials"></i>
-          <h4>Custom Testing</h4>
-          <p>Lab testing for customer-specific alloys and conditions</p>
-          <div class="cert-placeholder">Available</div>
+        <div class="iso-text">
+          <strong>ISO 9001:2015</strong>
+          <span>Certified Quality Management System</span>
         </div>
       </div>
     </div>

@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cost Reduction in Hot Forging by Graphite-Free Die Lubricants — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Article layout ─────────────────────────────────────── */
+    .article-wrap { padding: 64px 0 96px; background: #fff; }
+    .article-container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+    /* Meta bar */
+    .article-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      padding-bottom: 28px; margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--grey);
+    }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; }
+    .article-meta-item i { color: var(--red); font-size: 12px; }
+    .article-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 3px;
+      background: var(--red); color: #fff;
+    }
+
+    /* Table of contents */
+    .article-toc {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .article-toc h2 {
+      font-size: 14px; font-weight: 800; color: var(--dark);
+      margin-bottom: 16px; letter-spacing: .3px; text-transform: uppercase;
+    }
+    .toc-list { counter-reset: toc; list-style: none; padding-left: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list li a {
+      font-size: 14px; color: var(--grey); font-weight: 500;
+      transition: color .2s; display: flex; gap: 8px;
+    }
+    .toc-list li a::before {
+      counter-increment: toc;
+      content: counter(toc) ".";
+      color: var(--red); font-weight: 700; min-width: 20px;
+    }
+    .toc-list li a:hover { color: var(--red); }
+    .toc-sub { padding-left: 28px; margin-top: 6px; list-style: none; }
+    .toc-sub li a { font-size: 13px; }
+    .toc-sub li a::before { content: "▪"; color: var(--grey); font-size: 10px; counter-increment: none; }
+
+    /* Article body typography */
+    .article-body h2 {
+      font-size: clamp(22px, 2.5vw, 28px); font-weight: 900;
+      color: var(--dark); margin: 56px 0 20px; line-height: 1.2;
+      letter-spacing: -.3px; padding-top: 20px;
+      border-top: 2px solid var(--border);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .article-body h3 {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article-body h4 {
+      font-size: 15px; font-weight: 700; color: var(--dark);
+      margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 16px; color: var(--mid); line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .article-body strong { color: var(--dark); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px; font-size: 16px; color: var(--mid); line-height: 1.85;
+    }
+    .article-body li { margin-bottom: 8px; }
+
+    /* Article images */
+    .article-img {
+      margin: 32px 0; border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      padding: 10px 16px; background: var(--light);
+      font-size: 12.5px; color: var(--grey); line-height: 1.55;
+      border-top: 1px solid var(--border);
+    }
+    .article-img-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(0, 1fr) auto;
+      column-gap: 20px; margin: 32px 0;
+    }
+    .article-img-row .article-img {
+      margin: 0; display: grid; grid-row: span 2;
+      grid-template-rows: subgrid;
+    }
+    .article-img-row .article-img .img-cell {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .article-img-row .article-img .img-cell img {
+      max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+    }
+
+    /* Data callout */
+    .article-callout {
+      background: rgba(235,61,0,.05);
+      border: 1px solid rgba(235,61,0,.15);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin: 28px 0; font-size: 15px; color: var(--dark); line-height: 1.75;
+    }
+    .article-callout strong { color: var(--red); }
+
+    /* Result block */
+    .result-block {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px; margin: 28px 0;
+    }
+    .result-block h4 { margin-top: 0; margin-bottom: 12px; }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 6px 0; font-size: 14px; color: var(--mid);
+      border-bottom: 1px dashed var(--border);
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .result-label { font-weight: 500; }
+    .result-row .result-value { font-weight: 700; color: var(--dark); font-family: 'IBM Plex Mono', monospace; }
+    .result-highlight {
+      margin-top: 16px; padding: 12px 16px;
+      background: rgba(235,61,0,.07); border-radius: var(--radius);
+      font-size: 14px; font-weight: 700; color: var(--red); text-align: center;
+    }
+
+    /* Tables */
+    .article-table-wrap {
+      margin: 28px 0; overflow-x: auto;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+    }
+    .article-table {
+      width: 100%; border-collapse: collapse; font-size: 14px;
+    }
+    .article-table thead { background: var(--dark); color: #fff; }
+    .article-table th {
+      padding: 12px 16px; text-align: left;
+      font-weight: 700; font-size: 13px; letter-spacing: .3px;
+    }
+    .article-table td {
+      padding: 10px 16px; border-bottom: 1px solid var(--border);
+      color: var(--mid); vertical-align: top;
+    }
+    .article-table tbody tr:last-child td { border-bottom: none; }
+    .article-table tbody tr:nth-child(even) { background: var(--light); }
+    .article-table .highlight-row { background: rgba(235,61,0,.05) !important; }
+    .article-table .highlight-row td { color: var(--dark); font-weight: 600; }
+
+    /* Benefits diagram */
+    .benefits-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px;
+      margin: 32px 0;
+    }
+    .benefit-item {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 20px 16px;
+      text-align: center; font-size: 14px; font-weight: 700;
+      color: var(--dark); line-height: 1.4;
+    }
+    .benefit-item i {
+      display: block; font-size: 24px; color: var(--red); margin-bottom: 10px;
+    }
+    .benefit-center {
+      grid-column: 2; grid-row: 2;
+      background: var(--red); color: #fff;
+      border: none; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+    }
+    .benefit-center i { color: #fff; }
+
+    /* Video links */
+    .video-link-table { margin: 28px 0; }
+    .video-pair { margin-bottom: 24px; }
+    .video-pair-title {
+      font-size: 14px; font-weight: 700; color: var(--dark);
+      margin-bottom: 8px; padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .video-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 8px 0; font-size: 14px;
+    }
+    .video-row .video-desc { color: var(--mid); flex: 1; }
+    .video-row a {
+      font-family: 'IBM Plex Mono', monospace; font-size: 13px;
+      color: var(--red); font-weight: 600;
+    }
+
+    /* Author card (bottom) */
+    .author-card {
+      display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+      align-items: start;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      margin: 56px 0 0;
+    }
+    .author-card-photo {
+      width: 100px; height: 120px; border-radius: var(--radius);
+      object-fit: cover; object-position: top center;
+    }
+    .author-card h3 { font-size: 18px; font-weight: 800; color: var(--dark); margin: 0 0 2px; }
+    .author-card .author-card-role {
+      font-size: 12px; font-weight: 600; color: var(--red); margin-bottom: 12px; display: block;
+    }
+    .author-card p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .article-wrap { padding: 40px 0 64px; }
+      .article-container { padding: 0 16px; }
+      .article-toc { padding: 20px; }
+      .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+      .article-body p { font-size: 15px; }
+      .article-img-row { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .article-img-row .article-img { grid-row: auto; }
+      .author-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 20px; }
+      .author-card-photo { width: 80px; height: 96px; }
+      .result-row { flex-direction: column; gap: 2px; }
+      .article-table { font-size: 13px; }
+      .article-table th, .article-table td { padding: 8px 10px; }
+      .benefits-grid { grid-template-columns: 1fr 1fr; }
+      .benefit-center { grid-column: 1 / -1; grid-row: auto; }
+    }
+    @media (max-width: 480px) {
+      .article-meta { gap: 12px; }
+      .benefits-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('Images/Articles/article-forging-lube-003.jpg')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="resources.html">Resources</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Technical Article</span>
+      </div>
+      <h1>Cost Reduction in Hot Forging by<br><span>Graphite-Free</span><br>Water-Soluble Die Lubricants</h1>
+      <p>How environment-friendly, graphite-free die lubricants improve die life, reduce costs, and eliminate shop-floor pollution — with five industrial case studies.</p>
+    </div>
+  </section>
+
+  <!-- ── Article Body ──────────────────────────────────────── -->
+  <section class="article-wrap">
+    <div class="article-container">
+
+      <!-- Meta bar -->
+      <div class="article-meta">
+        <span class="article-tag">Technical Paper</span>
+        <div class="article-meta-item"><i class="fas fa-user"></i> S.P. Shenoy</div>
+        <div class="article-meta-item"><i class="fas fa-calendar"></i> 2024</div>
+        <div class="article-meta-item"><i class="fas fa-clock"></i> 20 min read</div>
+        <div class="article-meta-item"><i class="fas fa-industry"></i> Hot Forging &amp; Die Lubrication</div>
+      </div>
+
+      <div class="article-body">
+
+        <!-- Abstract -->
+        <h2 id="abstract">Abstract</h2>
+        <p>Hot forging involves controlled plastic deformation of heated metals and alloys into desired useful shapes. It is a noble metal craft. Modern civilization cannot survive without hot forging. At the same time, without suitable forging die lubricant, economical and effective closed-die forging operation is not possible. This paper examines the requirements of a good die lubricant, compares seven types of lubricants used in the industry, and presents five industrial case studies demonstrating the cost, productivity, and environmental benefits of switching from conventional oil-based or graphite-based lubricants to graphite-free, water-soluble die lubricants.</p>
+
+        <!-- TOC -->
+        <nav class="article-toc">
+          <h2>Contents</h2>
+          <ol class="toc-list">
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#requirements">Requirements of a Good Hot Forging Die Lubricant</a>
+              <ul class="toc-sub">
+                <li><a href="#requirements">Friction, forging load, metal flow</a></li>
+                <li><a href="#requirements">Parting, heat barrier, residue</a></li>
+                <li><a href="#requirements">Safety, eco-friendliness, economy</a></li>
+              </ul>
+            </li>
+            <li><a href="#application">Method of Application</a></li>
+            <li><a href="#types">Types of Hot Forging Die Lubricants</a></li>
+            <li>
+              <a href="#graphite-free">Why Graphite-Free?</a>
+              <ul class="toc-sub">
+                <li><a href="#graphite-free">Problems with graphite lubricants</a></li>
+                <li><a href="#graphite-free">Advantages of water-soluble lubricants</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#case-studies">Industrial Case Studies</a>
+              <ul class="toc-sub">
+                <li><a href="#case-1">Forging sleeve: 22% productivity gain</a></li>
+                <li><a href="#case-2">Companion flange: 33% die life increase</a></li>
+                <li><a href="#case-3">Input shaft: 40% die life increase</a></li>
+                <li><a href="#case-4">Crank shaft: Rs 25,200 saving per 100 tons</a></li>
+              </ul>
+            </li>
+            <li><a href="#environment">How Environment Friendly Are Graphite-Free Lubricants?</a></li>
+            <li><a href="#seeing">Seeing is Believing</a></li>
+            <li><a href="#selection">How to Select the Right Die Lubricant</a></li>
+            <li><a href="#summary">Summary</a></li>
+          </ol>
+        </nav>
+
+        <!-- Introduction -->
+        <h2 id="introduction">Introduction</h2>
+        <p>Hot forging involves controlled plastic deformation of heated metals and alloys into desired useful shapes. It is a noble metal craft. Modern civilization cannot survive without hot forging. At the same time, without suitable forging die lubricant, economical and effective closed-die forging operation is not possible.</p>
+
+        <p>In the case of closed die forging, <strong>cost of die amounts to 10% to 15% of the total forging cost</strong>. Any improvement in the forging die life would automatically result in improved productivity and profitability of the forge shop.</p>
+
+        <p>The following factors contribute to ensuring maximum life of a forging die:</p>
+
+        <ol>
+          <li>Correct die material.</li>
+          <li>Correct die design, especially proper draft, corner radius and fillet.</li>
+          <li>Appropriate heat treatment of forging die. Use of protective anti-scale coating to prevent scaling on critical surface areas of die. Nitriding of forging die.</li>
+          <li>Reduction of friction during hot forging by the use of polished dies and suitable die lubricant.</li>
+          <li>Correct method of application of die lubricant at appropriate intervals.</li>
+        </ol>
+
+        <!-- Requirements -->
+        <h2 id="requirements">Requirements of a Good Hot Forging Die Lubricant</h2>
+
+        <p>Basic function of any lubricant is to reduce friction between two surfaces and reduce wear. In the case of forging, a good hot forging die lubricant must have the properties listed below:</p>
+
+        <h4>1. Minimize friction between the workpiece and the forging die</h4>
+        <p>Table 1 provides a comparison of coefficient of friction for various types of lubricants used in hot forging.</p>
+
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Lubricant</th>
+                <th>μ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td>DRY (No Lubricant)</td>
+                <td>0.33, 0.35, 0.35</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Furnace Oil</td>
+                <td>0.10, 0.18, 0.12</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Graphite in machine oil</td>
+                <td>0.065, 0.09, 0.09</td>
+              </tr>
+              <tr>
+                <td>4.</td>
+                <td>Graphite in water</td>
+                <td>0.11, 0.10, 0.13</td>
+              </tr>
+              <tr>
+                <td>5.</td>
+                <td>Saw Dust</td>
+                <td>0.13, 0.16, 0.17</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12.5px; color:var(--grey); margin-top:-16px;">Table I: Coefficient of friction for various die lubricants. Ref.: Dr. A. S. Deshpande, IIT, Mumbai, India.</p>
+
+        <h4>2. Reduce forging load</h4>
+        <p>Fig 1 shows reduced forging load by use of graphite-in-oil-based die lubricant.</p>
+
+        <!-- Fig 1: Forging load chart -->
+        <figure class="article-img" style="max-width:520px; margin: 32px auto;">
+          <img src="Images/Articles/reduced-forging-load.png" alt="Fig 1: Load (Tonnes) vs Reduction in Height % at 1050°C — Dry vs Graphite in machine oil" style="background:#fff;">
+          <figcaption>Fig 1: Reduced forging load by using oil lubricant.<br>Ref.: Dr. A. S. Deshpande, IIT, Mumbai, India.</figcaption>
+        </figure>
+
+        <h4>3. Enable uniform metal flow to fill the die cavity</h4>
+        <p>Especially in the case of critical forgings with low degrees of draft radius, die lubricants play an important role in enabling uniform metal flow such that it correctly fills the die cavity.</p>
+
+        <h4>4. Function as a parting compound</h4>
+
+        <figure class="article-img" style="float:right; width:280px; margin:0 0 20px 24px;">
+          <img src="Images/Articles/article-forging-lube-001.jpg" alt="Hot billet being forged in a die cavity">
+          <figcaption>Hot forging in progress — die lubricant aids ejection</figcaption>
+        </figure>
+
+        <p>Forging dies with low degree of draft radius usually face problems of job-sticking in the die. Special additives in the forging lubricant must ensure a mild gas generation to aid the ejection of the forging from the die after the part has been forged. However, the lubricant must neither cause an explosive effect nor generate smoke.</p>
+
+        <div style="clear:both"></div>
+
+        <h4>5. Serve as a barrier to heat transfer</h4>
+        <p>Thereby maintaining the correct die temperature. The die should not gain excess heat due to continuous contact with hot billets as this will lead to faster die wear and cracking. At the same time, the die should not be subjected to rapid cooling due to excess lubrication as this will lead to die chilling effect. Forging lubricant must help in maintaining the correct die temperature by acting as a barrier to heat transfer from hot billet to forging die.</p>
+
+        <h4>6. Prevent build up in the die cavity</h4>
+        <p>Prevent build up in the die cavity due to deposit of lubricant residue in the die and cause problems such as forging underfill.</p>
+
+        <h4>7. Lubricant must be readily removable from the workpiece</h4>
+
+        <figure class="article-img" style="float:right; width:280px; margin:0 0 20px 24px;">
+          <img src="Images/Articles/article-forging-lube-002.jpg" alt="Workers operating a forging hammer">
+          <figcaption>Forging operation at a hammer forge</figcaption>
+        </figure>
+
+        <h4>8. Avoid 'explosion' during forging</h4>
+        <p>Avoid 'explosion' during forging due to rapid phase change. Sawdust, when used as a lubricant in hot forging, is known to cause a loud explosion with sparks and thus release the forging from the die. Modern lubricants can achieve the same effect without the explosion and hazard.</p>
+
+        <div style="clear:both"></div>
+
+        <h4>9. The forging die lubricant must be eco-friendly</h4>
+        <p>Preferably, bio-degradable lubricants must be used. Use of polluting oils and additions like graphite in lubricants cause much damage to the environment due to smoke and dirtying the forge shop floor and surroundings.</p>
+
+        <h4>10. The hot forging lubricant must be economical and justify its use</h4>
+
+        <!-- Method of Application -->
+        <h2 id="application">Method of Application of Hot Forging Die Lubricant</h2>
+
+        <figure class="article-img" style="float:right; width:340px; margin:0 0 20px 24px;">
+          <img src="Images/Articles/article-forging-lube-003.jpg" alt="Lubricant being sprayed manually on a forging die">
+          <figcaption>Lubricant being sprayed manually with a double-action spraygun on the forging die</figcaption>
+        </figure>
+
+        <p>Lubricant is either sprayed automatically, manually or swabbed onto the hot dies.</p>
+
+        <p>Many installations use automatic sprays that are timed with the stroke of the forging press. Deeper cavity dies may require the use of a supplemental spray to ensure coverage throughout the die surface and cavity.</p>
+
+        <p>The correct amount of lubricant provides an optimum film in the die cavity to aid metal flow and to curtail heat transfer from the workpiece to the die. Excess lubricant is wasteful, dirties the area and the workpiece and pollutes the atmosphere. Excess forging lubricant may also leave residue into the dies to cause problems like forging 'underfill' and 'lap'.</p>
+
+        <p>Lubricant cost is less than 2% of the forging cost. Yet, use of improper lubricant can upset the forging production by way of low die life, rejections, rework, reduced productivity and customer dissatisfaction due to delayed deliveries.</p>
+
+        <div style="clear:both"></div>
+
+        <!-- Types of Die Lubricants -->
+        <h2 id="types">Types of Hot Forging Die Lubricants</h2>
+
+        <p>Table-II gives various types of lubricants used in hot forging.</p>
+
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Lubricant</th>
+                <th>Advantages</th>
+                <th>Disadvantages</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1.</td>
+                <td>Furnace Oil</td>
+                <td>The cheapest. (Costliest??) No purchase hassles.</td>
+                <td>Carcinogenic. Low die life. Dirties the die and surrounding. Highly polluting.</td>
+              </tr>
+              <tr>
+                <td>2.</td>
+                <td>Special oil + graphite</td>
+                <td>Improves die life.</td>
+                <td>Some amount of gentle smoke is emitted.</td>
+              </tr>
+              <tr>
+                <td>3.</td>
+                <td>Only oil, without graphite.</td>
+                <td>Suitable for brass.</td>
+                <td>Not suitable for steel.</td>
+              </tr>
+              <tr>
+                <td>4.</td>
+                <td>Water + Common Salt</td>
+                <td>Apparently economical.</td>
+                <td>Corrosive</td>
+              </tr>
+              <tr>
+                <td>5.</td>
+                <td>Water + Saw Dust.</td>
+                <td>Economical.</td>
+                <td>Explosion due to rapid phase change. Unsafe.</td>
+              </tr>
+              <tr>
+                <td>6.</td>
+                <td>Water + Graphite</td>
+                <td>Improves die life. No smoke. Eco-friendly.</td>
+                <td>Graphite particles fly off and damage the electrical systems. Graphite particles accumulate on shop floor. Risk of slipping.</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>7.</td>
+                <td>Water + Soluble Lubricant</td>
+                <td>Easy to use. No particulate settling. Improved die life. Improved productivity. Non-polluting. Most eco-friendly.</td>
+                <td>Not adequate for very large forgings.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12.5px; color:var(--grey); margin-top:-16px;">Table II: Types of Forging Die Lubricants</p>
+
+        <!-- Why Graphite-Free -->
+        <h2 id="graphite-free">Why Graphite-Free?</h2>
+
+        <p>Owing to development of a range of water based lubricants, polluting oils and sawdust have been largely replaced by graphite lubricants.</p>
+
+        <p>In the case of graphite containing lubricants, purity, particle size and special additives in the lubricant are important factors. Graphite based lubricant is popular throughout the world due to low cost. Although smoke pollution is absent during its use, certain problems are being faced by modern forging press operators. First, the graphite particles fly off and damage the electrical system. Secondly, graphite particles accumulate on shop floor and pose the risk of slipping to the people moving around. Hygiene factors such as release of particulate matter in air, release of carbon monoxide and sulfur in air are hazards that prevail during use of graphite based die lubricants.</p>
+
+        <p>Owing to these factors, environment friendly graphite-free, water soluble lubricants are gaining due importance compared to graphite based lubricants. Due to complete solubility in water, problem of settling of graphite is absent in the case of graphite-free die lubricants. Mild to nil agitation during use is adequate. Continuous stirring may not be necessary. Thickness of film formation on forging die is controlled by varying the dilution ratio of forging lubricant with water.</p>
+
+        <figure class="article-img" style="max-width:400px; margin: 32px auto;">
+          <img src="Images/Articles/article-forging-lube-004.jpg" alt="ESPON graphiteless water-soluble die lubricant">
+          <figcaption>ESPON graphite-free, water-soluble hot forging die lubricant</figcaption>
+        </figure>
+
+        <p>In the case of graphite-free forging lubricants, hazards like suspended particulate matter in air, release of carbon monoxide and sulfur are substantially reduced. Bio-degradable phosphate esters, soaps and organic substances contribute towards the development of eco-friendly lubricants. These special additives also possess superior lubrication characteristics compared to graphite.</p>
+
+        <p>Hence, in the case of small to medium sized forgings weighing up to 12 kgs., graphite-free, water soluble die lubricants have proven to perform either at par or better than graphite based die lubricants. Cost of die lubrication is proven to considerably reduce by switching over to graphiteless, water soluble die lubricants in such forgings. This is due to benefits like increased die life, reduced need for constant die grinding due to reduced die wear by the use of graphiteless die lubricants. It may be added that maintenance downtime of die lubrication systems by clogging of spray nozzles, deposition of graphite inside tanks, inside spray pumps and inside automated lubricant delivery pipes is eliminated by the use of graphite-free die lubricants.</p>
+
+        <!-- Industrial Case Studies -->
+        <h2 id="case-studies">Industrial Case Studies</h2>
+
+        <p>Graphiteless, water soluble forging die lubricants have played a crucial role in increasing die life and increasing productivity, especially in the case of small to medium sized forgings. Productivity improvement, die life improvement and cost benefits analysis of graphiteless, water soluble die lubricant as compared to graphite based and other popular lubricants are given in following Comparison Case Studies.</p>
+
+        <!-- Case Study I -->
+        <h3 id="case-1">Comparison Case Study I: Productivity Improvement — Forging Sleeve</h3>
+        <p>Productivity Improvement due to reduced die grinding time by switching over to graphiteless, water soluble lubricant.</p>
+
+        <figure class="article-img" style="max-width:300px; margin: 24px auto;">
+          <div class="img-cell" style="display:flex; align-items:center; justify-content:center; background:var(--light); padding:16px;">
+            <img src="Images/Articles/article-forging-lube-005.jpg" alt="Forging sleeve — finished forged component" style="max-width:100%; max-height:200px; object-fit:contain;">
+          </div>
+          <figcaption>Forging Sleeve — Case Study I product</figcaption>
+        </figure>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Forging Equipment</span>
+            <span class="result-value">1000 Ton Press</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Product</span>
+            <span class="result-value">Forging Sleeve</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Dilution Ratio (both)</span>
+            <span class="result-value">1 : 10</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Die Grinding Time (Graphite)</span>
+            <span class="result-value">1.5 hours/shift</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Die Grinding Time (Graphiteless)</span>
+            <span class="result-value">NIL</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Production in 3 Shifts (Graphite)</span>
+            <span class="result-value">7,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Production in 3 Shifts (Graphiteless)</span>
+            <span class="result-value">9,000</span>
+          </div>
+          <div class="result-highlight">22% Productivity Improvement</div>
+        </div>
+
+        <!-- Case Study II -->
+        <h3 id="case-2">Comparison Case Study II: Die Life Increase — Companion Flange</h3>
+        <p>Die life increase by switching over to graphiteless, water soluble die lubricant from conventional oil.</p>
+
+        <figure class="article-img" style="max-width:300px; margin: 24px auto;">
+          <div class="img-cell" style="display:flex; align-items:center; justify-content:center; background:var(--light); padding:16px;">
+            <img src="Images/Articles/article-forging-lube-006.jpg" alt="Companion flange — finished forged component" style="max-width:100%; max-height:200px; object-fit:contain;">
+          </div>
+          <figcaption>Companion Flange — Case Study II product</figcaption>
+        </figure>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Forging Equipment</span>
+            <span class="result-value">1000 Ton Press</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Product</span>
+            <span class="result-value">Companion Flange</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Die Life (Conventional Oil)</span>
+            <span class="result-value">4,500</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Die Life (Graphiteless Lubricant)</span>
+            <span class="result-value">6,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Method: Oil</span>
+            <span class="result-value">Manual swabbing</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Method: Graphiteless</span>
+            <span class="result-value">Manual spraying</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Pollution: Oil</span>
+            <span class="result-value">Obnoxious, carcinogenic smoke</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Pollution: Graphiteless</span>
+            <span class="result-value">Zero pollution. Clean environment.</span>
+          </div>
+          <div class="result-highlight">33% Die Life Improvement</div>
+        </div>
+
+        <!-- Case Study III -->
+        <h3 id="case-3">Comparison Case Study III: Die Life &amp; Cost Benefit — Input Shaft</h3>
+        <p>Die Life and Cost benefit analysis of graphiteless water soluble die lubricant compared to conventional oil.</p>
+
+        <figure class="article-img" style="max-width:500px; margin: 24px auto;">
+          <img src="Images/Articles/article-forging-lube-007.jpg" alt="Input shaft forgings — Indica motor car">
+          <figcaption>Input Shaft (Indica motor car) — Case Study III product</figcaption>
+        </figure>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Forging Equipment</span>
+            <span class="result-value">1600 Ton Press</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Product</span>
+            <span class="result-value">Input Shaft (Indica motor car)</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Die Life (Conventional Oil)</span>
+            <span class="result-value">5,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Die Life (Graphiteless ESPON)</span>
+            <span class="result-value">7,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Price: Conventional Oil</span>
+            <span class="result-value">Rs 24/- per litre</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Price: ESPON Solution (1:10)</span>
+            <span class="result-value">Rs 12/- per litre</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Method: Oil</span>
+            <span class="result-value">Manual swabbing</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Method: Graphiteless</span>
+            <span class="result-value">Manual spraying</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Pollution: Oil</span>
+            <span class="result-value">Obnoxious, carcinogenic smoke</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Pollution: Graphiteless</span>
+            <span class="result-value">Zero pollution. Clean environment.</span>
+          </div>
+          <div class="result-highlight">40% Die Life Improvement + 50% Cost Reduction</div>
+        </div>
+
+        <!-- Case Study IV -->
+        <h3 id="case-4">Comparison Case Study IV: Cost Saving — Two Wheeler Crank Shaft</h3>
+        <p>Cost Saving due to graphiteless, water soluble forging lubricant.</p>
+
+        <figure class="article-img" style="max-width:400px; margin: 24px auto;">
+          <img src="Images/Articles/article-forging-lube-008.jpg" alt="Two-wheeler crank shaft — forged component">
+          <figcaption>Two Wheeler Crank Shaft — Case Study IV product</figcaption>
+        </figure>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Forging Equipment</span>
+            <span class="result-value">1000 T Press</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Product</span>
+            <span class="result-value">Two Wheeler Crank Shaft</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Total Production</span>
+            <span class="result-value">100 Tons</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Consumption of lubricant per 100 tons</span>
+            <span class="result-value">400 kgs.</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Lubricant cost per kg (Graphite, imported)</span>
+            <span class="result-value">180/-</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Lubricant cost per kg (ESPON, Indian)</span>
+            <span class="result-value">117/-</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Total cost: Graphite (imported)</span>
+            <span class="result-value">Rs. 72,000/-</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Total cost: ESPON (Indian)</span>
+            <span class="result-value">Rs. 46,800/-</span>
+          </div>
+          <div class="result-highlight">Saving per 100 tons: Rs. 25,200/-</div>
+        </div>
+
+        <p style="font-size:13px; color:var(--grey)"><em>Note: Consumption per ton of graphite-free die lubricant has remained same as that of graphite based lubricant. Cost reduction is achieved due to lower cost per unit of graphiteless die lubricant.</em></p>
+
+        <!-- Benefits Diagram (Figure 2) -->
+        <h3>Benefits of Using Graphiteless, Water Soluble Hot Forging Die Lubricant</h3>
+        <p>Figure-2 explains how solving a problem (pollution control) simultaneously gives other benefits like cost reduction and improved customer satisfaction.</p>
+
+        <div class="benefits-grid">
+          <div class="benefit-item"><i class="fas fa-gavel"></i>Better Statutory Compliance</div>
+          <div class="benefit-item"><i class="fas fa-leaf"></i>Zero Pollution</div>
+          <div class="benefit-item"><i class="fas fa-users"></i>Happy &amp; Motivated Workmen</div>
+          <div class="benefit-item"><i class="fas fa-cogs"></i>Improved Die Life</div>
+          <div class="benefit-item benefit-center"><i class="fas fa-industry" style="font-size:32px;margin-bottom:8px"></i><span style="font-size:13px;opacity:.9">ESPON-GLF</span>Graphiteless Lubricant</div>
+          <div class="benefit-item"><i class="fas fa-chart-line"></i>Improved Profitability</div>
+          <div class="benefit-item"><i class="fas fa-gem"></i>Improved Quality</div>
+          <div class="benefit-item"><i class="fas fa-rupee-sign"></i>Reduced Forging Cost</div>
+          <div class="benefit-item"><i class="fas fa-handshake"></i>Improved Customer Satisfaction</div>
+        </div>
+        <p style="font-size:12.5px; color:var(--grey); text-align:center;">Figure 2: Benefits of a water soluble, graphiteless hot forging lubricant</p>
+
+        <!-- How Environment Friendly -->
+        <h2 id="environment">Exactly How Environment Friendly Are Graphite-Free Die Lubricants?</h2>
+
+        <p>An independent government approved laboratory has conducted tests to monitor 'Work-Zone Air Quality' in a forge shop using graphite based lubricant on one press and graphite-free die lubricant on a similar press located away from the first press. Air sample in the work-zone of each press was monitored over period of time. The analysis of average of air quality readings when using graphite based lubricant compared to that of graphiteless, water soluble lubricant is given in the following Comparison Case Study V.</p>
+
+        <h3 id="case-5">Comparison Case Study V: Forge Shop (Work Zone) Air Quality Monitoring</h3>
+        <p>Graphite based lubricant compared to graphiteless, water soluble forging die lubricant.</p>
+
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Parameter</th>
+                <th>Factories Act 1948 Standards</th>
+                <th>Units</th>
+                <th>With Graphite</th>
+                <th>Without Graphite</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Suspended Particulate Matter</td>
+                <td>N/S</td>
+                <td>μ g/m³</td>
+                <td>509</td>
+                <td><strong>362 (29% Less)</strong></td>
+              </tr>
+              <tr>
+                <td>Sulfur Dioxide</td>
+                <td>≤ 5000</td>
+                <td>μ g/m³</td>
+                <td>33.60</td>
+                <td>32</td>
+              </tr>
+              <tr>
+                <td>Oxides of Nitrogen</td>
+                <td>≤ 6000</td>
+                <td>μ g/m³</td>
+                <td>42.50</td>
+                <td>41.00</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>Carbon Monoxide</td>
+                <td>≤ 50</td>
+                <td>ppm</td>
+                <td>8</td>
+                <td><strong>3 (63% Less)</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:12.5px; color:var(--grey); margin-top:-16px;">Tested by: MITCON Consultancy Services Ltd., Pune, Maharashtra, India.</p>
+
+        <div class="article-callout">
+          <p style="margin:0"><em>It is evident that benefits like reduced 'Suspended Particulate Matter' and substantially reduced 'Carbon Monoxide Emission' are enabled by the use of graphiteless, water soluble die lubricant.</em> These factors lead to hygienic working condition in forge shops as opposed to highly polluted surroundings and slippery black forge shop floor. Utilization of carbon would be eliminated in the case of graphite-free, water soluble hot forging die lubricants. This fact may be harnessed to possibly claim carbon credits by Organizations that are switching over from oil based or graphite based lubricants to graphiteless forging die lubricants. However, this is yet to be explored by the forging industry at large.</p>
+        </div>
+
+        <!-- Seeing is Believing -->
+        <h2 id="seeing">Seeing is Believing</h2>
+
+        <p>Comparison Video Links: Polluting oils against graphiteless, water soluble, environment friendly die lubricants.</p>
+
+        <div class="video-link-table">
+          <div class="video-pair">
+            <div class="video-pair-title">1. Press Forging Operation</div>
+            <div class="video-row">
+              <span class="video-desc">A. Use of polluting oils as die lubricant:</span>
+              <a href="http://bit.ly/oildielube" target="_blank" rel="noopener">bit.ly/oildielube <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+            </div>
+            <div class="video-row">
+              <span class="video-desc">B. Use of environment friendly, water based die lubricant:</span>
+              <a href="http://bit.ly/ESPON-DEL3" target="_blank" rel="noopener">bit.ly/ESPON-DEL3 <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+            </div>
+          </div>
+          <div class="video-pair">
+            <div class="video-pair-title">2. Hammer Forging Operation</div>
+            <div class="video-row">
+              <span class="video-desc">A. Heavy pollution (smoke and flames) due to oil lubricant:</span>
+              <a href="http://bit.ly/hammeroil" target="_blank" rel="noopener">bit.ly/hammeroil <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+            </div>
+            <div class="video-row">
+              <span class="video-desc">B. Zero pollution by switching over to environment friendly die lubricant:</span>
+              <a href="http://bit.ly/hammerdielube" target="_blank" rel="noopener">bit.ly/hammerdielube <i class="fas fa-external-link-alt" style="font-size:10px"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Selection -->
+        <h2 id="selection">How to Select the Right Type of Hot Forging Die Lubricant?</h2>
+
+        <p>Selection of right type of hot forging die lubricant is carried out based on parameters like depth of die cavity, size and complexity of the forging, method of dispensing the lubricant onto the die, time required to complete one forging part, commitment to cost reduction and pollution control.</p>
+
+        <p>Though the best method of determining an appropriate lubricant and the dilution ratio of die lubricant to water is by field trials, general guidelines for selecting die lubricants for a range of forgings are provided in the 'Table of Guidelines for Selecting Correct Hot Forging Die Lubricant'.</p>
+
+        <!-- Summary -->
+        <h2 id="summary">Summary</h2>
+
+        <div class="article-callout">
+          <p style="margin:0 0 12px"><strong>1.</strong> Use of right type of die lubricant and correct method of dispensing the lubricant is a decisive factor in the success of closed-die forging.</p>
+          <p style="margin:0 0 12px"><strong>2.</strong> Specially developed graphiteless, water soluble hot forging die lubricants hold promises of significant contribution towards hot forging cost reduction and progress towards environment friendly forging operation. Such lubricants are proven to be effective in forgings weighing up to 12 kgs. For heavy and complex forgings, graphite-free, water soluble lubricants may be used by calibrating the dilution ratio of die lubricant to water and lubricant application technique to suit the forging process.</p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="author-card">
+          <span class="section-label" style="grid-column:1/-1;margin-bottom:4px">About the Author</span>
+          <img class="author-card-photo" src="Images/About/sp-shenoy.webp" alt="S.P. Shenoy">
+          <div>
+            <h3>S.P. Shenoy</h3>
+            <span class="author-card-role">M.Tech. (Met. Engg.), Founder &amp; CEO — Steel Plant Specialities LLP</span>
+            <p>A metallurgist from the Indian Institute of Technology, Mumbai and CEO of M/s. Steel Plant Specialities (SPS), Mumbai, India, established in 1985, engaged in the manufacture of environment friendly hot forging die lubricants and a range of protective coatings that enable cost reduction in hot forging, heat treatment and hot rolling operations.</p>
+          </div>
+        </div>
+
+      </div><!-- .article-body -->
+    </div><!-- .article-container -->
+  </section>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Need a Product Trial?</h2>
+          <p>Contact our team to discuss how ESPON graphite-free die lubricants can reduce costs and improve die life at your forge shop.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'resources';</script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

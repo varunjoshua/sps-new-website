@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reducing Fuel Consumption in Furnace Operations — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Article layout ─────────────────────────────────────── */
+    .article-wrap { padding: 64px 0 96px; background: #fff; }
+    .article-container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+    /* Meta bar */
+    .article-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      padding-bottom: 28px; margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--grey);
+    }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; }
+    .article-meta-item i { color: var(--red); font-size: 12px; }
+    .article-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 3px;
+      background: var(--red); color: #fff;
+    }
+
+    /* Table of contents */
+    .article-toc {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .article-toc h2 {
+      font-size: 14px; font-weight: 800; color: var(--dark);
+      margin-bottom: 16px; letter-spacing: .3px; text-transform: uppercase;
+    }
+    .toc-list { counter-reset: toc; list-style: none; padding-left: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list li a {
+      font-size: 14px; color: var(--grey); font-weight: 500;
+      transition: color .2s; display: flex; gap: 8px;
+    }
+    .toc-list li a::before {
+      counter-increment: toc;
+      content: counter(toc) ".";
+      color: var(--red); font-weight: 700; min-width: 20px;
+    }
+    .toc-list li a:hover { color: var(--red); }
+    .toc-sub { padding-left: 28px; margin-top: 6px; list-style: none; }
+    .toc-sub li a { font-size: 13px; }
+    .toc-sub li a::before { content: "▪"; color: var(--grey); font-size: 10px; counter-increment: none; }
+
+    /* Article body typography */
+    .article-body h2 {
+      font-size: clamp(22px, 2.5vw, 28px); font-weight: 900;
+      color: var(--dark); margin: 56px 0 20px; line-height: 1.2;
+      letter-spacing: -.3px; padding-top: 20px;
+      border-top: 2px solid var(--border);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .article-body h3 {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article-body h4 {
+      font-size: 15px; font-weight: 700; color: var(--dark);
+      margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 16px; color: var(--mid); line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .article-body strong { color: var(--dark); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px; font-size: 16px; color: var(--mid); line-height: 1.85;
+    }
+    .article-body li { margin-bottom: 8px; }
+
+    /* Article images */
+    .article-img {
+      margin: 32px 0; border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      padding: 10px 16px; background: var(--light);
+      font-size: 12.5px; color: var(--grey); line-height: 1.55;
+      border-top: 1px solid var(--border);
+    }
+    .article-img-row {
+      display: grid; grid-template-columns: 1fr 1fr;
+      grid-template-rows: minmax(0, 1fr) auto;
+      column-gap: 20px; margin: 32px 0;
+    }
+    .article-img-row .article-img {
+      margin: 0; display: grid; grid-row: span 2;
+      grid-template-rows: subgrid;
+    }
+    .article-img-row .article-img .img-cell {
+      display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .article-img-row .article-img .img-cell img {
+      max-width: 100%; max-height: 100%; object-fit: contain; display: block;
+    }
+
+    /* Comparison section */
+    .comparison-pair { margin-bottom: 24px; }
+    .comparison-pair .article-img-row { margin: 0; }
+    .comparison-pair .img-cell { position: relative; }
+    .img-label {
+      position: absolute; bottom: 0; right: 0;
+      background: rgba(0,0,0,.65); color: #fff;
+      font-size: 11px; font-weight: 600; letter-spacing: .3px;
+      padding: 4px 10px; border-radius: var(--radius) 0 0 0;
+    }
+    .comparison-header {
+      display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px;
+      margin-bottom: 8px;
+    }
+    .comparison-header div {
+      font-size: 13px; font-weight: 800; text-transform: uppercase;
+      letter-spacing: 1px; color: var(--dark);
+      padding: 8px 0; border-bottom: 2px solid var(--red);
+    }
+    .comparison-desc {
+      display: grid; grid-template-columns: 1fr 1fr; column-gap: 20px;
+      margin-bottom: 16px;
+    }
+    .comparison-desc div {
+      font-size: 14px; color: var(--grey); line-height: 1.6; padding: 8px 0;
+    }
+
+    /* Data callout */
+    .article-callout {
+      background: rgba(235,61,0,.05);
+      border: 1px solid rgba(235,61,0,.15);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin: 28px 0; font-size: 15px; color: var(--dark); line-height: 1.75;
+    }
+    .article-callout strong { color: var(--red); }
+
+    /* Result block */
+    .result-block {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px; margin: 28px 0;
+    }
+    .result-block h4 { margin-top: 0; margin-bottom: 12px; }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 6px 0; font-size: 14px; color: var(--mid);
+      border-bottom: 1px dashed var(--border);
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .result-label { font-weight: 500; }
+    .result-row .result-value { font-weight: 700; color: var(--dark); font-family: 'IBM Plex Mono', monospace; }
+    .result-highlight {
+      margin-top: 16px; padding: 12px 16px;
+      background: rgba(235,61,0,.07); border-radius: var(--radius);
+      font-size: 14px; font-weight: 700; color: var(--red); text-align: center;
+    }
+
+    /* Author card (bottom) */
+    .author-card {
+      display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+      align-items: start;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      margin: 56px 0 0;
+    }
+    .author-card-photo {
+      width: 100px; height: 120px; border-radius: var(--radius);
+      object-fit: cover; object-position: top center;
+    }
+    .author-card h3 { font-size: 18px; font-weight: 800; color: var(--dark); margin: 0 0 2px; }
+    .author-card .author-card-role {
+      font-size: 12px; font-weight: 600; color: var(--red); margin-bottom: 12px; display: block;
+    }
+    .author-card p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .article-wrap { padding: 40px 0 64px; }
+      .article-container { padding: 0 16px; }
+      .article-toc { padding: 20px; }
+      .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+      .article-body p { font-size: 15px; }
+      .article-img-row { grid-template-columns: 1fr; grid-template-rows: auto; }
+      .article-img-row .article-img { grid-row: auto; }
+      .comparison-pair { margin-bottom: 36px; }
+      .comparison-pair .article-img-row {
+        grid-template-columns: 1fr 1fr; column-gap: 12px;
+        grid-template-rows: minmax(0, 1fr);
+      }
+      .comparison-pair .article-img-row .article-img { grid-row: span 1; }
+      .comparison-header { grid-template-columns: 1fr 1fr; column-gap: 12px; }
+      .comparison-desc { grid-template-columns: 1fr 1fr; column-gap: 12px; }
+      .comparison-desc div { font-size: 12px; }
+      .author-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 20px; }
+      .author-card-photo { width: 80px; height: 96px; }
+      .result-row { flex-direction: column; gap: 2px; }
+    }
+    @media (max-width: 480px) {
+      .article-meta { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('Images/Articles/article-furnace-001.jpg')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="resources.html">Resources</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Technical Article</span>
+      </div>
+      <h1>Reducing Fuel Consumption &amp;<br><span>Maintenance Costs</span><br>in Furnace Operations</h1>
+      <p>How ESPON refractory coatings save fuel, extend lining life, and reduce furnace downtime — with industrial case studies.</p>
+    </div>
+  </section>
+
+  <!-- ── Article Body ──────────────────────────────────────── -->
+  <section class="article-wrap">
+    <div class="article-container">
+
+      <!-- Meta bar -->
+      <div class="article-meta">
+        <span class="article-tag">Technical Paper</span>
+        <div class="article-meta-item"><i class="fas fa-user"></i> S.P. Shenoy</div>
+        <div class="article-meta-item"><i class="fas fa-clock"></i> 12 min read</div>
+        <div class="article-meta-item"><i class="fas fa-industry"></i> Furnace Operations &amp; Heat Treatment</div>
+      </div>
+
+      <div class="article-body">
+
+        <!-- Abstract -->
+        <h2 id="abstract">Abstract</h2>
+        <p>This paper shows how significant savings in fuel consumption and reduced maintenance downtime can be achieved in furnace operations by adapting a technique developed by an Indian company. The technique is now popularly implemented in furnaces like BRFs (billet re-heating furnaces) and heat-treatment furnaces. The process involves improving thermal shock cracking resistance of refractory lining, emissivity enhancement, improved corrosion resistance and preventing carbon deposits on burner blocks.</p>
+
+        <!-- TOC -->
+        <nav class="article-toc">
+          <h2>Contents</h2>
+          <ol class="toc-list">
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#problems">Problems of Refractories</a>
+              <ul class="toc-sub">
+                <li><a href="#problems">Thermal shock cracking</a></li>
+                <li><a href="#problems">High thermal conductivity</a></li>
+                <li><a href="#problems">Low emissivity</a></li>
+                <li><a href="#problems">Corrosive action</a></li>
+                <li><a href="#problems">Sand blasting effect</a></li>
+                <li><a href="#problems">Carbon deposit on burner blocks</a></li>
+              </ul>
+            </li>
+            <li><a href="#effects">Effects Observed in Furnaces</a></li>
+            <li><a href="#solution">The ESPON Refractory Coating Solution</a></li>
+            <li>
+              <a href="#case-studies">Industrial Case Studies</a>
+              <ul class="toc-sub">
+                <li><a href="#case-1">Billet re-heating furnace: Fuel &amp; startup time savings</a></li>
+                <li><a href="#case-2">Ingot soaking pit: Reduced shell temperature</a></li>
+                <li><a href="#case-3">Billet re-heating furnace: Extended lining life</a></li>
+                <li><a href="#case-4">Annealing muffle furnace: ROI in 1 month</a></li>
+                <li><a href="#case-5">Sealed quench furnaces: Improved heat uniformity</a></li>
+                <li><a href="#case-6">Continuous carburizing furnace: 7% fuel saving</a></li>
+              </ul>
+            </li>
+            <li><a href="#visual-comparison">Visual Comparison: Before &amp; After Coating</a></li>
+            <li><a href="#summary">Summary</a></li>
+          </ol>
+        </nav>
+
+        <!-- Introduction -->
+        <h2 id="introduction">Introduction</h2>
+        <p>Hot rolling involves plastic deformation of heated metals and alloys into flat products (plates) or long products (wire rods, angles, channels, I sections, TMT bars, etc.). Some of the hot rolled products are heat treated. Hot forging is a similar process of heating ingots or billets and forming them into automotive or engineering parts. Most of the forged parts are heat treated.</p>
+
+        <div class="article-img-row">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-furnace-000.jpg" alt="Hot rolling mill with heated billet exiting reheating furnace"></div>
+            <figcaption>Heated billet exiting a reheating furnace for hot rolling</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-furnace-001.jpg" alt="Ingots glowing inside a reheating furnace"></div>
+            <figcaption>Ingots being heated inside a soaking pit furnace</figcaption>
+          </figure>
+        </div>
+
+        <p>In these important metal forming operations, refractory and fuel for the reheating furnaces and heat treatment furnaces are the major costs. Refractory lining consists of alumina bricks. Popular fuels are furnace oil, pulverized coal or gas. Electricity is used as fuel in the automotive parts heat treatment industry.</p>
+
+        <p>Any process or technique to reduce costs of fuel and refractory brick lining will automatically improve the profitability of the hot forming organisation. This article introduces a practical method of achieving these results. The technique is popularly used in hot rolling, hot forging and heat treatment industries. It can be implemented in all types of organisations, big and small.</p>
+
+        <!-- Problems of Refractories -->
+        <h2 id="problems">Problems of Refractories</h2>
+
+        <p>Refractory plays a major role in the fuel consumption and also in the maintenance of the furnace. Hence, it is important to know the problems of refractories. The following problems are encountered:</p>
+
+        <h4>a) Thermal shock cracking</h4>
+        <p>Thermal shock is caused by the exposure of refractory lining to rapid heating and cooling conditions which cause temperature gradients within the refractory bricks. Such gradients, in the case of uneven cooling or heating, may cause cracking. Thermal shock is unavoidable in furnace operation, however much care may be taken. Thermal shock cracks cause energy leaks through them. This loss may be as high as <strong>33% of the total energy consumption</strong>. Thermal shock cracks lead to 'spalling' and reduced refractory lining life.</p>
+
+        <h4>b) High thermal conductivity</h4>
+        <p>Conductivity of alumina bricks increases as refractory lining wears out over time. This leads to increased furnace outer shell temperature over a period of time. Reduction in thermal conductivity will lead to retention of heat within the furnace.</p>
+
+        <h4>c) Low emissivity</h4>
+        <p>Refractory lining has a low emissivity of <strong>0.2</strong> and hence hampers furnace efficiency. Improving the emissivity value to <strong>0.5 or more</strong> will prevent heat absorption by the refractory lining, leading to fuel saving. However, it is difficult to measure emissivity. Measuring thermal conductivity is easier.</p>
+
+        <h4>d) Corrosive action</h4>
+        <p>Furnace oil contains sulphur dioxide and vanadium pentoxide. These compounds corrode the refractory lining. This is one of the reasons why burner blocks wear out much faster.</p>
+
+        <h4>e) Vicious sand blasting effect</h4>
+        <p>The flame impinging on the refractory lining has a vicious effect of sand blasting. Combined with the corrosive effect, the flame damages the refractory lining and reduces its life span.</p>
+
+        <h4>f) Carbon deposit on burner blocks</h4>
+
+        <figure class="article-img" style="float:right; width:340px; margin:0 0 20px 24px;">
+          <img src="Images/Articles/article-furnace-003.jpg" alt="Severely damaged burner block with carbon deposits and deteriorated refractory lining">
+          <figcaption>Severely damaged burner block. Refractory lining around burner may need replacement.</figcaption>
+        </figure>
+
+        <p>Unburnt carbon deposits on the burner blocks, and over a period of time, sufficient carbon build up takes place. Due to this build up, the flame geometry is impaired and heating efficiency is lowered. This problem is more pronounced when the fuel used is furnace oil. The operators try to remove these deposits by inserting metal rods from outside the furnace, near the burner, thereby damaging the burner block.</p>
+
+        <div style="clear:both"></div>
+
+        <!-- Effects Observed in Furnaces -->
+        <h2 id="effects">Effects Observed in Furnaces Due to Refractory Problems</h2>
+
+        <p>Owing to the problems mentioned above, a number of adverse effects are observed in the furnace:</p>
+
+        <ol>
+          <li><strong>Increased fuel consumption:</strong> Fuel consumption increases for achieving the same temperature and heating efficiency, after a time gap of say six months from the date of relining the furnace refractory. This is due to energy leaks from cracks due to thermal shocks and wearing out of the refractory lining.</li>
+          <li><strong>Increased furnace outer shell temperature:</strong> Conductivity of refractory lining and thermal shock cracking together contribute to increased temperature of the furnace outer shell, over a period of time.</li>
+          <li><strong>Formation of 'hot spots' on furnace outer shell:</strong> In some cases, only selective areas of the refractory get highly damaged from inside the furnace. As a result, the outer shell becomes very hot and at times, red hot. These are called hot spots.</li>
+          <li><strong>Rejections due to chipping of refractory lining and roof damage:</strong> Due to thermal shocks, the refractory lining begins to chip off or spall and fall off. This falling of refractory pieces may cause rejections of materials being heated or heat treated in furnace. Examples: Ceramic tiles and ceramic items being heated in furnaces get immediately rejected even if small refractory pieces fall on them. Refractory pieces may cause rejection of automotive parts being heat treated in a highly controlled environment.</li>
+          <li><strong>Non-uniformity of temperature leading to uneven heat treatment:</strong> In highly controlled heat treatment operations (like those in sealed quench furnaces), non-uniformity of heat by a few degrees leads to uneven heat treatment and the desired characteristics of parts are not achieved. This may lead to rejections.</li>
+          <li><strong>Furnace downtime for refractory repair or re-lining:</strong> For repair of refractory or for its relining due to damage, unplanned furnace shut down has to be implemented. This results in loss of production time and loss of energy in cooling and re-heating the furnace.</li>
+        </ol>
+
+        <!-- The ESPON Solution -->
+        <h2 id="solution">The ESPON Refractory Coating Solution</h2>
+
+        <p>Steel Plant Specialties LLP, a Mumbai based firm, has developed a unique solution to overcome all the above problems. The entire refractory lining of the reheating furnace is coated with a special ESPON coating. This coating contains zircon, proprietary additives and binders, developed over many years of research. The coating was tested in reputed laboratories and then implemented on industry scale in the year 2005. Since then it has undergone a number of upgrades to make it the best version available today.</p>
+
+        <div class="article-callout">
+          <p style="margin:0"><strong>ESPON refractory coating</strong> is in paste form. It can withstand heat up to <strong>1900°C</strong>. After attaining temperature of 200°C, the coating is slightly plastic in nature, thereby preventing cracks due to thermal shocks.</p>
+        </div>
+
+        <p>ESPON coating has very low thermal conductivity. It reflects the heat back into the furnace. A single coating of ESPON on refractory has proven to <strong>reduce thermal conductivity by approximately 11%</strong>. If two sides of refractory bricks are coated with ESPON, the thermal conductivity is further reduced substantially by <strong>up to 18%</strong>.</p>
+
+        <p>The two sides of refractory bricks to be coated are the hot face (side facing the heat inside the furnace) and the opposite side. However, it may not be practical to coat two sides of refractory bricks. Hence, the furnace shell is coated from inside, before laying the refractory lining. After laying the refractory lining, the hot face of bricks is coated with ESPON.</p>
+
+        <p>The coating procedure includes surface preparation, primer coating and final coating with ESPON, complete drying of coating and slow furnace firing. Step-by-step training is provided to the re-lining team by experienced technicians of SPS. Videos for each of these steps are also provided.</p>
+
+        <!-- Case Studies -->
+        <h2 id="case-studies">Industrial Case Studies</h2>
+
+        <p>Some successful case studies of ESPON refractory coating in billet re-heating furnaces and heat treatment furnaces are presented below:</p>
+
+        <!-- Case Study 1 -->
+        <h3 id="case-1">1. Billet Re-Heating Furnace: Reduced Fuel Consumption, Reduced Startup Time</h3>
+
+        <p>A hot rolling mill producing 200 tons per day of structural steel has achieved significant savings in oil consumption. The reheating furnace is put off at 06.00 p.m. daily.</p>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Before coating — furnace fired at</span>
+            <span class="result-value">02:00 a.m.</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Furnace temperature at 02:00 a.m.</span>
+            <span class="result-value">300–400°C</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Billet heating temp. (1150°C) achieved at</span>
+            <span class="result-value">05:00 a.m.</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">After ESPON coating — furnace fired at</span>
+            <span class="result-value">03:00 a.m.</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Furnace temperature at 03:00 a.m.</span>
+            <span class="result-value">~700°C</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Billet heating temp. (1150°C) achieved at</span>
+            <span class="result-value">05:00 a.m.</span>
+          </div>
+          <div class="result-highlight">Saving: 1 hour of fuel consumption and startup time daily</div>
+        </div>
+
+        <p><strong>Explanation:</strong> When the refractory lining is coated with ESPON, emissivity of refractory lining is increased and thermal conductivity is reduced. As a result, heat is retained within the furnace for a longer period of time, even after switching off the furnace.</p>
+
+        <div class="result-block">
+          <h4>Monetary Savings</h4>
+          <div class="result-row">
+            <span class="result-label">Oil saved daily</span>
+            <span class="result-value">600 litres</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Oil saving in six months</span>
+            <span class="result-value">90,000 litres</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Value of fuel saving (6 months)</span>
+            <span class="result-value">Rs. 27,90,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Cost of coating material</span>
+            <span class="result-value">Rs. 3,60,000</span>
+          </div>
+          <div class="result-highlight">Net saving in six months: Rs. 24,30,000/-</div>
+        </div>
+
+        <!-- Case Study 2 -->
+        <h3 id="case-2">2. Ingot Soaking Pit: Reduced Outer Shell Temperature, Fuel Savings</h3>
+
+        <p>Temperature inside the ingot soaking pit reaches up to 1300°C. In this case, the outer shell temperature of the ingot soaking pit was as high as 130°C. Workmen found it difficult to operate nearby the furnace due to high temperature.</p>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Outer shell temperature reduction</span>
+            <span class="result-value">20°C</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Fuel saving</span>
+            <span class="result-value">&gt; 5%</span>
+          </div>
+          <div class="result-highlight">Reduced outer shell temperature confirms reduced conductivity and increased heat retention</div>
+        </div>
+
+        <!-- Case Study 3 -->
+        <h3 id="case-3">3. Billet Re-Heating Furnace: Extended Refractory Lining Life</h3>
+
+        <p>In a billet re-heating furnace of a TMT bars rolling mill, ESPON refractory coating was used with the aim of reducing furnace maintenance downtime.</p>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Before coating — re-lining interval</span>
+            <span class="result-value">12 months</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">After ESPON coating — re-lining interval</span>
+            <span class="result-value">21 months</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Fuel saving recorded</span>
+            <span class="result-value">5%</span>
+          </div>
+          <div class="result-highlight">Refractory lining life increased by 75%. Unplanned furnace shutdown was prevented.</div>
+        </div>
+
+        <!-- Case Study 4 -->
+        <h3 id="case-4">4. Annealing Muffle Furnace: Substantial Fuel Savings, ROI = 1 Month</h3>
+
+        <p>In this organisation, annealing furnaces designed and supplied by Andritz, Germany, are used. Temperature is 1250°C. The fuel efficiency and refractory lining life are excellent. Furnace outer shell temperature is steadily maintained at 45°C. There are no problems faced in this furnace.</p>
+
+        <p>The only aim of using ESPON refractory coating in this furnace was to further reduce fuel consumption. Thermographic analysis was carried out before and after use of ESPON coating. Fuel consumption is recorded accurately as the furnaces have inbuilt software to monitor fuel efficiency.</p>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Fuel consumption reduction</span>
+            <span class="result-value">1%</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Return on Investment (ROI)</span>
+            <span class="result-value">1 month</span>
+          </div>
+          <div class="result-highlight">Even in this already highly fuel-efficient furnace, ESPON delivered measurable savings with ROI in 1 month. Organisation gave 'blanket approval' for all furnaces.</div>
+        </div>
+
+        <!-- Case Study 5 -->
+        <h3 id="case-5">5. Sealed Quench Furnaces: Improved Heat Uniformity</h3>
+
+        <p>In the heat treatment of automotive parts, uniformity of heat throughout the furnace is very important to achieve desired metallurgical characteristics in the parts being heat treated. Maximum temperature in sealed quench furnaces is 900°C.</p>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-furnace-004.jpg" alt="Sealed quench furnace used in automotive heat treatment">
+          <figcaption>Sealed quench furnace used for heat treatment of automotive parts. Temperature uniformity is critical for consistent metallurgical results.</figcaption>
+        </figure>
+
+        <p>In two esteemed Indian organisations manufacturing bearings and gears, very similar problems were faced: Temperature variation of more than 9°C in various zones of their sealed quench furnaces. Skin temperature of furnaces was much higher. Both sealed quench furnaces were coated with ESPON refractory coating.</p>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Heat uniformity improvement</span>
+            <span class="result-value">±12°C → ±8°C</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Furnace skin temperature reduction</span>
+            <span class="result-value">up to 15°C</span>
+          </div>
+        </div>
+
+        <!-- Case Study 6 -->
+        <h3 id="case-6">6. Continuous Gas Carburizing Furnace: 7% Fuel Saving, ROI = 1 Month</h3>
+
+        <p>In this organization — one of the top 3 Indian tractor and passenger car manufacturers — the continuous carburizing heat treatment furnace relining was due. They were referred by their associates to try out ESPON refractory coating. Maximum temperature in continuous carburizing furnaces is 925°C.</p>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-furnace-005.jpg" alt="Interior of a continuous carburizing furnace">
+          <figcaption>Interior of a continuous gas carburizing furnace. After ESPON refractory coating, furnace skin temperature reduced by up to 15°C.</figcaption>
+        </figure>
+
+        <div class="result-block">
+          <h4>Results</h4>
+          <div class="result-row">
+            <span class="result-label">Furnace skin temperature reduction</span>
+            <span class="result-value">up to 15°C avg.</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Fuel consumption saving</span>
+            <span class="result-value">7%</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Return on Investment (ROI)</span>
+            <span class="result-value">1 month</span>
+          </div>
+        </div>
+
+        <!-- Visual Comparison -->
+        <h2 id="visual-comparison">Visual Comparison: Before &amp; After ESPON Coating</h2>
+
+        <div class="comparison-header">
+          <div>Before coating</div>
+          <div>After ESPON coating</div>
+        </div>
+        <div class="comparison-desc">
+          <div>Cracked, spalled and worn refractory lining and burner blocks, leading to energy loss, increased shell temperature and unplanned downtime.</div>
+          <div>Smooth, sealed refractory surface. Cracks filled, thermal conductivity reduced, emissivity improved. Heat retained in furnace.</div>
+        </div>
+
+        <div class="comparison-pair">
+          <div class="article-img-row">
+            <figure class="article-img">
+              <div class="img-cell"><img src="Images/Articles/article-furnace-006.jpg" alt="Refractory lining before coating — cracked and spalled"><span class="img-label">Before coating</span></div>
+              <figcaption>Refractory lining — cracked, spalled, worn</figcaption>
+            </figure>
+            <figure class="article-img">
+              <div class="img-cell"><img src="Images/Articles/article-furnace-008.jpg" alt="Refractory lining after ESPON coating — smooth and sealed"><span class="img-label">After ESPON</span></div>
+              <figcaption>Refractory lining — sealed and protected with ESPON</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="comparison-pair">
+          <div class="article-img-row">
+            <figure class="article-img">
+              <div class="img-cell"><img src="Images/Articles/article-furnace-007.jpg" alt="Burner blocks before coating — uncoated, worn brickwork"><span class="img-label">Before coating</span></div>
+              <figcaption>Burner blocks — uncoated, showing wear and carbon deposits</figcaption>
+            </figure>
+            <figure class="article-img">
+              <div class="img-cell"><img src="Images/Articles/article-furnace-009.jpg" alt="Burner blocks after ESPON coating — clean, white, sealed"><span class="img-label">After ESPON</span></div>
+              <figcaption>Burner blocks — coated with ESPON, clean and sealed</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- Summary -->
+        <h2 id="summary">Summary</h2>
+
+        <div class="article-callout">
+          <p style="margin:0 0 12px"><strong>1.</strong> Use of a special ESPON refractory coating holds high promises to any rolling mill, forge shop or heat treatment unit that is interested in reducing fuel consumption and increasing refractory lining life.</p>
+          <p style="margin:0"><strong>2.</strong> This technique is a proven method of achieving savings by reducing fuel consumption and reducing furnace maintenance issues.</p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="author-card">
+          <span class="section-label" style="grid-column:1/-1;margin-bottom:4px">About the Author</span>
+          <img class="author-card-photo" src="Images/About/sp-shenoy.webp" alt="S.P. Shenoy">
+          <div>
+            <h3>S.P. Shenoy</h3>
+            <span class="author-card-role">M.Tech. (Met. Engg.), Founder &amp; CEO — Steel Plant Specialities LLP</span>
+            <p>A graduate of IIT Bombay with an M.Tech in Metallurgical Engineering and over four decades in applied metallurgy and surface engineering. He personally oversees product development, quality, and authors technical articles published on this site.</p>
+          </div>
+        </div>
+
+      </div><!-- .article-body -->
+    </div><!-- .article-container -->
+  </section>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Need a Product Trial?</h2>
+          <p>Contact our team to discuss how ESPON refractory coatings can reduce fuel costs and extend furnace lining life at your facility.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'resources';</script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

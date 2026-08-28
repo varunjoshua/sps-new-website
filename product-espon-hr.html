@@ -3,42 +3,93 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-HR — Anti-Scale Coating — Steel Plant Specialities LLP</title>
+<title>ESPON-HR — Anti-Scale Protective Coating — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
-.product-detail { padding: 72px 0; background: #fff; }
-.product-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; }
-.product-code-label { font-family: 'IBM Plex Mono', monospace; font-size: 13px; color: var(--red); font-weight: 600; margin-bottom: 12px; letter-spacing: 0.5px; }
-.product-title { font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 16px; }
-.product-tagline { font-size: 16px; color: var(--grey); line-height: 1.7; margin-bottom: 32px; }
-.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 28px 0; }
-.benefit-item { display: flex; align-items: flex-start; gap: 10px; }
-.benefit-item i { color: var(--red); margin-top: 3px; flex-shrink: 0; }
-.benefit-item span { font-size: 14px; color: var(--mid); line-height: 1.5; }
-.applications { margin-top: 32px; }
-.applications h3 { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 14px; }
-.app-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+/* ── Product Page Layout ─────────────────────────────────── */
 
-/* Spec card */
-.spec-card { background: var(--light); border-radius: 12px; padding: 28px; border: 1px solid var(--border); position: sticky; top: 88px; }
-.spec-card-title { font-size: 13px; font-weight: 700; color: var(--grey); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 20px; }
-.spec-row { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--border); font-size: 13px; }
-.spec-row:last-child { border-bottom: none; padding-bottom: 0; }
-.spec-label { color: var(--grey); font-weight: 500; flex-shrink: 0; }
-.spec-value { color: var(--dark); font-weight: 600; text-align: right; }
-.spec-code { font-family: 'IBM Plex Mono', monospace; }
-.request-btn { display: block; width: 100%; margin-top: 24px; padding: 13px; background: var(--red); color: #fff; text-align: center; border-radius: 8px; font-weight: 700; font-size: 14px; text-decoration: none; transition: opacity .2s; }
-.request-btn:hover { opacity: .88; color: #fff; }
-.back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--mid); margin-top: 40px; }
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+/* How it works */
+.product-how { padding: 72px 0; background: var(--light); }
+.how-content { max-width: 720px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.comparison-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: #fff; }
+.comparison-label { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; }
+.comparison-label.uncoated { background: var(--dark); color: #fff; }
+.comparison-label.coated { background: var(--red); color: #fff; }
+.comparison-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.comparison-caption { padding: 12px 16px; font-size: 13px; color: var(--grey); line-height: 1.55; text-align: center; border-top: 1px solid var(--border); }
+
+/* Application section */
+.product-application { padding: 72px 0; background: #fff; }
+.steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
+.application-images { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.application-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.application-img-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.application-img-card figcaption { padding: 10px 16px; font-size: 13px; color: var(--grey); text-align: center; border-top: 1px solid var(--border); line-height: 1.5; }
+.step-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: #fff; transition: border-color .2s; }
+.step-item:hover { border-color: var(--red); }
+.step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-text { font-size: 14px; color: var(--mid); line-height: 1.6; padding-top: 6px; }
+
+/* Benefits section */
+.product-benefits { padding: 72px 0; background: var(--light); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Specifications section */
+.product-specs { padding: 72px 0; background: #fff; }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+.spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
 .back-link:hover { color: var(--red); }
 
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+  .specs-layout { gap: 36px; }
+}
 @media (max-width: 900px) {
-  .product-layout { grid-template-columns: 1fr; }
-  .spec-card { position: static; }
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .comparison-grid { grid-template-columns: 1fr 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .application-images { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-how, .product-application,
+  .product-benefits, .product-specs { padding: 48px 0; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .product-title { font-size: 24px; }
 }
 </style>
 </head>
@@ -46,8 +97,9 @@
 
 <script>window.ACTIVE_NAV = 'products';</script>
 
+<!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-bg" style="background-image:url('https://steelplantspecialities.com/wp-content/uploads/2023/11/NOT-3.webp')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
@@ -55,76 +107,235 @@
       <i class="fas fa-chevron-right"></i>
       <a href="products.html">Products</a>
       <i class="fas fa-chevron-right"></i>
-      <a href="products-anti-scale.html">Anti-Scale Protective Coatings</a>
+      <a href="products-anti-scale.html">Anti-Scale &amp; Decarburization Control Coatings</a>
       <i class="fas fa-chevron-right"></i>
       <span>ESPON-HR</span>
     </div>
-    <h1>ESPON-HR <span>Anti-Scale Coating</span></h1>
-    <p>Water-based anti-scale coating for billets and slabs in hot rolling mill furnaces. Prevents oxidation during high-temperature soaking and minimises metal loss on rolling lines.</p>
+    <h1>ESPON-HR <span>Anti-Scale Protective Coating</span></h1>
+    <p>Substantially reduces scaling on billets and ingots during heating for hot rolling and hot forging. Protects at temperatures up to 1280&deg;C.</p>
   </div>
 </section>
 
-<section class="product-detail">
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro">
   <div class="container">
-    <div class="product-layout">
-
-      <!-- Left: Details -->
+    <div class="product-intro-grid">
       <div>
-        <div class="product-code-label">ESPON-HR</div>
-        <div class="product-title">Anti-Scale Protective Coating for Hot Rolling</div>
-        <div class="product-tagline">Applied to steel billets and slabs before furnace entry, ESPON-HR forms a protective barrier that prevents atmospheric oxygen from reacting with the steel surface during soaking. The result is a dramatic reduction in scale formation, metal loss, and surface defects on the rolled product.</div>
-
-        <h3 style="font-size:15px; font-weight:700; color:var(--dark); margin-bottom:14px;">Key Benefits</h3>
-        <div class="benefits-grid">
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reduces scale loss on billets and ingots by up to 80%</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Prevents billet sticking on furnace hearth</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Improves surface finish of rolled product</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reduces descaling effort and water pressure requirements</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Compatible with induction and gas-fired furnaces</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>No toxic fumes — safe for enclosed furnace environments</span></div>
-        </div>
-
-        <div class="applications">
-          <h3>Applications</h3>
-          <div class="app-tags">
-            <span class="tag tag-light">Hot Rolling Mills</span>
-            <span class="tag tag-light">Billet Heating Furnaces</span>
-            <span class="tag tag-light">Slab Reheat Furnaces</span>
-            <span class="tag tag-light">Induction Heating Lines</span>
-            <span class="tag tag-light">Structural Steel Production</span>
-            <span class="tag tag-light">Wire Rod Mills</span>
-          </div>
-        </div>
-
-        <a href="products-anti-scale.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Anti-Scale Protective Coatings</a>
-      </div>
-
-      <!-- Right: Spec Card -->
-      <div>
-        <div class="spec-card">
-          <div class="spec-card-title">Product Data</div>
-          <div class="spec-row"><span class="spec-label">Product Code</span><span class="spec-value spec-code">ESPON-HR</span></div>
-          <div class="spec-row"><span class="spec-label">Form</span><span class="spec-value">Water-based liquid</span></div>
-          <div class="spec-row"><span class="spec-label">Application Method</span><span class="spec-value">Spray or brush</span></div>
-          <div class="spec-row"><span class="spec-label">Max Temp.</span><span class="spec-value">1300°C</span></div>
-          <div class="spec-row"><span class="spec-label">Dilution</span><span class="spec-value">As supplied / dilutable</span></div>
-          <div class="spec-row"><span class="spec-label">Colour (wet)</span><span class="spec-value">Off-white</span></div>
-          <div class="spec-row"><span class="spec-label">Shelf Life</span><span class="spec-value">12 months</span></div>
-          <div class="spec-row"><span class="spec-label">Packaging</span><span class="spec-value">25 L drum, 200 L barrel</span></div>
-          <a href="contact.html" class="request-btn"><i class="fas fa-flask"></i> &nbsp;Request a Sample</a>
+        <div class="product-code">ESPON-HR &mdash; Anti-Scale Protective Coating</div>
+        <h2 class="product-title">Protect Billets &amp; Ingots from Oxidation During High-Temperature Heating</h2>
+        <div class="product-desc">
+          <p>ESPON-HR is a protective coating that substantially reduces scaling on billets and ingots during heating prior to hot rolling and hot forging. Applied before furnace entry, it forms a barrier that prevents atmospheric oxygen from reacting with the steel surface at high temperatures.</p>
         </div>
       </div>
-
+      <div>
+        <div class="product-img-card">
+          <img src="Images/Products/ESPON-HF-Packaging.png" alt="ESPON-HR Anti-Scale Compound — 50 kg HDPE container" style="object-fit:contain; background:#f0e4e0;">
+          <div class="product-img-caption">ESPON-HR Anti-Scale Compound &mdash; 50 kg special HDPE container</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- ── How It Works ────────────────────────────────────────── -->
+<section class="product-how">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Preventing Scale Formation at the Source</h2>
+    <div class="how-content">
+      <p>Between 1% and 8% of metal is typically lost to scaling during high-temperature heating. Apart from material loss, scaling causes pit marks, reduced die life in closed-die forging, and damage to furnace hearths from fallen scale.</p>
+      <p>ESPON-HR is applied to the billet or ingot surface before furnace entry, creating a protective barrier between the steel and atmospheric oxygen. This achieves a 50% to 72% reduction in scaling with no impact on heating time or temperature. The coating is consumed during rolling or forging, leaving no residue on the finished product.</p>
+    </div>
+
+    <div class="comparison-grid">
+      <div class="comparison-card">
+        <div class="comparison-label uncoated">Not Coated</div>
+        <img src="https://steelplantspecialities.com/wp-content/uploads/2023/11/NOT-1.webp" alt="Uncoated Ni steel billet showing heavy scale after induction heating to 1230°C">
+        <div class="comparison-caption">Ni steel billet induction heated to 1230&deg;C &mdash; heavy scale generated on billet surface</div>
+      </div>
+      <div class="comparison-card">
+        <div class="comparison-label coated">ESPON-HR Coated</div>
+        <img src="https://steelplantspecialities.com/wp-content/uploads/2023/11/NOT-2.webp" alt="ESPON-HR coated Ni steel billet showing minimal scale after induction heating to 1230°C">
+        <div class="comparison-caption">ESPON coated Ni steel billet, induction heated to 1230&deg;C &mdash; very minimal scale generated</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Application ─────────────────────────────────────────── -->
+<section class="product-application">
+  <div class="container">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Method of Application</h2>
+    <p class="section-sub">ESPON-HR is ready to use. It can be applied by airless spraying, brushing, or dipping.</p>
+
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <div class="step-text">Stir the contents thoroughly with a clean stirrer so that the bottom sludge is completely mixed with the liquid.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <div class="step-text">Ensure the surface to be coated is dry and free from grease, oil, rust, and dust.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <div class="step-text">Coat the blooms or billets with ESPON-HR using airless spraying equipment, brushing, or dipping.</div>
+      </div>
+      <div class="step-item">
+        <div class="step-num">4</div>
+        <div class="step-text">Allow the coating to dry at 70&ndash;120&deg;C. If required, apply a second coat by spraying.</div>
+      </div>
+    </div>
+
+    <div class="application-images">
+      <figure class="application-img-card">
+        <img src="Images/Articles/article-hotrolling-p5-3.jpg" alt="Billets coated with anti-scale protective coatings before heating" loading="lazy">
+        <figcaption>Billets coated with anti-scale protective coatings before heating</figcaption>
+      </figure>
+      <figure class="application-img-card">
+        <img src="https://steelplantspecialities.com/wp-content/uploads/2023/11/NOT-6-1-600x300-1.webp" alt="ESPON-HR coated blocks ready for heating" loading="lazy">
+        <figcaption>ESPON-HR coated blocks ready for heating</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section class="product-benefits">
+  <div class="container">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why Use ESPON-HR</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
+        <div class="benefit-text">50% to 72% reduction in scaling during billet heating, leading to increased yield and substantial material savings</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-temperature-high"></i></div>
+        <div class="benefit-text">Protects billets and ingots at temperatures up to 1280&deg;C in furnaces and induction heaters</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-link-slash"></i></div>
+        <div class="benefit-text">Prevents billet sticking and welding during heating in pusher-type furnaces and induction heaters</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-ban"></i></div>
+        <div class="benefit-text">Prevents forging rejections due to pit marks caused by scale on the billet surface</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="benefit-text">Reduces damage to furnace hearth and induction heater refractory by substantially reducing scale deposits</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-gem"></i></div>
+        <div class="benefit-text">Enables better surface finish on hot rolled and hot forged products</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-recycle"></i></div>
+        <div class="benefit-text">Enables salvaging of rejected forgings and components where re-heating is required</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+        <div class="benefit-text">Non-hazardous, non-flammable, and non-toxic during storage and use</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Properties & Specifications ─────────────────────────── -->
+<section class="product-specs">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Properties &amp; Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Code</td>
+              <td class="mono">ESPON-HR</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Yellow paste, free from visible extraneous matter</td>
+            </tr>
+            <tr>
+              <td>Weight per Litre</td>
+              <td>1.4 kgs &plusmn; 0.1 kg</td>
+            </tr>
+            <tr>
+              <td>Max Operating Temp.</td>
+              <td>1280&deg;C</td>
+            </tr>
+            <tr>
+              <td>Application Method</td>
+              <td>Airless spraying, brushing, or dipping</td>
+            </tr>
+            <tr>
+              <td>Drying Temperature</td>
+              <td>70&ndash;120&deg;C</td>
+            </tr>
+            <tr>
+              <td>Flash Point</td>
+              <td>Does not flash. Does not catch fire.</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>Non-hazardous. Non-flammable. Non-toxic.</td>
+            </tr>
+            <tr>
+              <td>Shelf Life</td>
+              <td>6 months in factory sealed condition</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="spec-card-standalone">
+          <div class="spec-card-title">Packaging</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pack Size</th>
+                <th>Container Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>50 kg</td>
+                <td>Special HDPE container</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products-anti-scale.html" class="back-link"><i class="fas fa-arrow-left"></i> All Anti-Scale &amp; Decarburization Control Coatings</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
 <section class="cta-strip">
   <div class="container">
     <div class="cta-strip-inner">
       <div>
         <h2>Ready to Reduce Scale Loss?</h2>
-        <p>Request a sample of ESPON-HR or speak with a metallurgical engineer about your rolling mill setup.</p>
+        <p>Speak with our metallurgical engineers about ESPON-HR for your rolling mill or forging setup.</p>
       </div>
       <div class="cta-strip-actions">
         <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>

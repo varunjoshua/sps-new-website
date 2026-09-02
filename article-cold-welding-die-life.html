@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Increasing Die and Tool Life Using Japanese Cold-Welding Technique — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Article layout ─────────────────────────────────────── */
+    .article-wrap { padding: 64px 0 96px; background: #fff; }
+    .article-container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+    /* Meta bar */
+    .article-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      padding-bottom: 28px; margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--grey);
+    }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; }
+    .article-meta-item i { color: var(--red); font-size: 12px; }
+    .article-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 3px;
+      background: var(--red); color: #fff;
+    }
+
+    /* Table of contents */
+    .article-toc {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .article-toc h2 {
+      font-size: 14px; font-weight: 800; color: var(--dark);
+      margin-bottom: 16px; letter-spacing: .3px; text-transform: uppercase;
+    }
+    .toc-list { counter-reset: toc; list-style: none; padding-left: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list li a {
+      font-size: 14px; color: var(--grey); font-weight: 500;
+      transition: color .2s; display: flex; gap: 8px;
+    }
+    .toc-list li a::before {
+      counter-increment: toc;
+      content: counter(toc) ".";
+      color: var(--red); font-weight: 700; min-width: 20px;
+    }
+    .toc-list li a:hover { color: var(--red); }
+    .toc-sub { padding-left: 28px; margin-top: 6px; list-style: none; }
+    .toc-sub li a { font-size: 13px; }
+    .toc-sub li a::before { content: "▪"; color: var(--grey); font-size: 10px; counter-increment: none; }
+
+    /* Article body typography */
+    .article-body h2 {
+      font-size: clamp(22px, 2.5vw, 28px); font-weight: 900;
+      color: var(--dark); margin: 56px 0 20px; line-height: 1.2;
+      letter-spacing: -.3px; padding-top: 20px;
+      border-top: 2px solid var(--border);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .article-body h3 {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article-body h4 {
+      font-size: 15px; font-weight: 700; color: var(--dark);
+      margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 16px; color: var(--mid); line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .article-body strong { color: var(--dark); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px; font-size: 16px; color: var(--mid); line-height: 1.85;
+    }
+    .article-body li { margin-bottom: 8px; }
+
+    /* Article images */
+    .article-img {
+      margin: 32px 0; border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      padding: 10px 16px; background: var(--light);
+      font-size: 12.5px; color: var(--grey); line-height: 1.55;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Caption-above-image variant */
+    .article-img.cap-top { display: flex; flex-direction: column; }
+    .article-img.cap-top figcaption {
+      order: -1; border-top: none; border-bottom: 1px solid var(--border);
+    }
+    .article-img.cap-top .img-cell {
+      height: 260px; display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .article-img.cap-top .img-cell img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+    }
+
+    /* Two-up side-by-side pair (stacks on mobile) */
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+    .img-pair .article-img { margin: 0; }
+    @media (max-width: 768px) {
+      .img-pair { grid-template-columns: 1fr; }
+    }
+
+    /* Flexible image grids (3-up / 2-up) */
+    .img-grid { display: grid; gap: 16px; margin: 32px 0; }
+    .img-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .img-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .img-grid .article-img { margin: 0; display: flex; flex-direction: column; }
+    .img-grid .article-img .img-cell {
+      height: 190px; display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .img-grid .article-img .img-cell img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    .img-grid .article-img .img-cell.cover img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .img-grid .article-img figcaption { flex: 1; }
+
+    /* Data callout */
+    .article-callout {
+      background: rgba(235,61,0,.05);
+      border: 1px solid rgba(235,61,0,.15);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin: 28px 0; font-size: 15px; color: var(--dark); line-height: 1.75;
+    }
+    .article-callout strong { color: var(--red); }
+
+    /* Result block */
+    .result-block {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px; margin: 28px 0;
+    }
+    .result-block h4 { margin-top: 0; margin-bottom: 12px; }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 6px 0; font-size: 14px; color: var(--mid);
+      border-bottom: 1px dashed var(--border);
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .result-label { font-weight: 500; }
+    .result-row .result-value { font-weight: 700; color: var(--dark); font-family: 'IBM Plex Mono', monospace; }
+    .result-highlight {
+      margin-top: 16px; padding: 12px 16px;
+      background: rgba(235,61,0,.07); border-radius: var(--radius);
+      font-size: 14px; font-weight: 700; color: var(--red); text-align: center;
+    }
+
+    /* Tables */
+    .article-table-wrap {
+      margin: 28px 0; overflow-x: auto;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+    }
+    .article-table {
+      width: 100%; border-collapse: collapse; font-size: 14px;
+    }
+    .article-table thead { background: var(--dark); color: #fff; }
+    .article-table th {
+      padding: 12px 16px; text-align: left;
+      font-weight: 700; font-size: 13px; letter-spacing: .3px;
+    }
+    .article-table td {
+      padding: 10px 16px; border-bottom: 1px solid var(--border);
+      color: var(--mid); vertical-align: top;
+    }
+    .article-table tbody tr:last-child td { border-bottom: none; }
+    .article-table tbody tr:nth-child(even) { background: var(--light); }
+    .article-table .highlight-row { background: rgba(235,61,0,.05) !important; }
+    .article-table .highlight-row td { color: var(--dark); font-weight: 600; }
+
+    /* Three-box info panel (Applicable Substrates / Examples / Safety) */
+    .info-panel {
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+      padding: 20px 24px; margin: 20px 0;
+    }
+    .info-panel h4 { color: var(--red); margin: 0 0 12px; }
+    .info-panel ul, .info-panel p { margin-bottom: 0; }
+    .info-panel ul { margin-top: 0; }
+    .info-panel li:last-child { margin-bottom: 0; }
+
+    /* Author card */
+    .author-card {
+      display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+      align-items: start;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      margin: 56px 0 0;
+    }
+    .author-card-photo {
+      width: 100px; height: 120px; border-radius: var(--radius);
+      object-fit: cover; object-position: top center;
+    }
+    .author-card h3 { font-size: 18px; font-weight: 800; color: var(--dark); margin: 0 0 2px; }
+    .author-card .author-card-role {
+      font-size: 12px; font-weight: 600; color: var(--red); margin-bottom: 12px; display: block;
+    }
+    .author-card p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .article-wrap { padding: 40px 0 64px; }
+      .article-container { padding: 0 16px; }
+      .article-toc { padding: 20px; }
+      .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+      .article-body p { font-size: 15px; }
+      .img-grid-3, .img-grid-2 { grid-template-columns: 1fr; }
+      .author-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 20px; }
+      .author-card-photo { width: 80px; height: 96px; }
+      .result-row { flex-direction: column; gap: 2px; }
+      .article-table { font-size: 13px; }
+      .article-table th, .article-table td { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .article-meta { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('Images/Articles/japanese-cold-welding.webp')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="resources.html">Resources</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Technical Article</span>
+      </div>
+      <h1>Increasing Die and Tool Life Using<br><span>Japanese Cold-Welding Technique</span></h1>
+      <p>A practical, on-site tungsten carbide coating technique that increases die and tool life without skilled welders, open space, or pre/post weld heat treatment.</p>
+    </div>
+  </section>
+
+  <!-- ── Article Body ──────────────────────────────────────── -->
+  <section class="article-wrap">
+    <div class="article-container">
+
+      <!-- Meta bar -->
+      <div class="article-meta">
+        <span class="article-tag">Technical Article</span>
+        <div class="article-meta-item"><i class="fas fa-user"></i> Srikar Shenoy</div>
+        <div class="article-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+        <div class="article-meta-item"><i class="fas fa-clock"></i> 12 min read</div>
+        <div class="article-meta-item"><i class="fas fa-industry"></i> Die &amp; Tool Life</div>
+      </div>
+
+      <div class="article-body">
+
+        <!-- TOC -->
+        <nav class="article-toc">
+          <h2>Contents</h2>
+          <ol class="toc-list">
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#popular-treatments">Popular Treatments to Increase Die Life</a>
+              <ul class="toc-sub">
+                <li><a href="#nitriding">Nitriding</a></li>
+                <li><a href="#pvd-cvd">PVD, CVD</a></li>
+                <li><a href="#welding">Welding to repair / reclaim worn out dies</a></li>
+              </ul>
+            </li>
+            <li><a href="#cold-welding">New Protective Treatment: Japanese Cold Welding</a></li>
+            <li><a href="#equipment">Compact Cold Welding Equipment and Applicators</a></li>
+            <li><a href="#anyone">Can Be Used By Anyone, Anywhere</a></li>
+            <li><a href="#principle">Principle of Operation</a></li>
+            <li><a href="#procedure">High Quality and Performance Procedure</a></li>
+            <li><a href="#heat-resistance">Proven Excellent Heat Resistance</a></li>
+            <li><a href="#comparison">Comparison With Other Techniques</a></li>
+            <li><a href="#applicability">Applicable Substrates, Examples &amp; Safety</a></li>
+            <li><a href="#case-studies">Successful Cold-Welding Case Studies in the Indian Metal Forming Industry</a></li>
+            <li><a href="#die-life-data">Substantial Increase in Die Life After Cold-Welding</a></li>
+            <li><a href="#summary">Summary</a></li>
+          </ol>
+        </nav>
+
+        <!-- 1. Introduction -->
+        <h2 id="introduction">Introduction</h2>
+
+        <p>Die, mould and tool wear are major reasons for production downtime and increased costs in most industries. Apart from using strong base metals for making dies, a few effective treatments can be administered to dies to increase their service life. Even if possible, such treatments are not feasible for all metal-forming units. This article introduces a practical and economical technique to increase die, mould and tool life. The technique can be easily adopted by all metal-forming units, big and small.</p>
+
+        <!-- 2. Popular treatments -->
+        <h2 id="popular-treatments">Popular Treatments to Increase Die Life or Repair / Reclaim Forging Dies</h2>
+
+        <h3 id="nitriding">1. Nitriding</h3>
+
+        <p>Gas Nitriding / Plasma Ion Nitriding are popular surface hardening treatments carried out on dies. With an initial die hardness of 42 HRC, the nitriding process can further harden the surface of die up to 64 HRC. Many large forge shops in India carry out nitriding of 100% of their forging dies. However, very few forging companies have an in-house nitriding facility. Nitriding is found effective in many cases. The skill of the nitrider, flawless nitriding facility and process play a vital role in the success of this technique. Nitriding is also a capital-intensive technique and not many companies can afford the finance, space and skilled workforce to set up an in-house nitriding facility. Getting the dies nitrided from commercial heat treat shops is not always feasible. Finally, additional efforts are required to carry out selective nitriding and mask areas of components where nitriding is to be avoided.</p>
+
+        <h3 id="pvd-cvd">2. PVD, CVD</h3>
+
+        <p>Treatments like PVD (Physical Vapour Deposition) and CVD (Chemical Vapour Deposition) are popular in the machine-tool industries in America and European countries. These techniques are yet to evolve completely in the Indian forging industry. PVD is slowly gaining share in the Indian machine-tool treatment market. It ensures surface hardness of up to 90 HRC. However, the result of PVD treatment on forging dies is not documented. Cost of PVD is approximately Rs. 800/- per kg. of metal that is treated (as on date of this article). CVD technology is not yet introduced in India.</p>
+
+        <h3 id="welding">3. Welding to Repair / Reclaim Worn Out Dies</h3>
+
+        <p>Apart from the mentioned treatments, the only option available is to repair and reclaim the dies through welding. Conventionally, welding of the worn out areas of dies or welding of cracks in dies is carried out. Flood welding of the dies is also carried out to completely reclaim the dies. However, this technique also poses its own limitations:</p>
+
+        <p><strong>Limitations of Conventional Welding:</strong></p>
+        <ol>
+          <li>Requirement of skilled welders</li>
+          <li>Requires open space or effective ducting for carrying out welding operation</li>
+          <li>Time consuming process as forging dies must be taken to welding area</li>
+          <li>Pre and post welding heat treatment / stress relieving is necessary</li>
+        </ol>
+
+        <p>Usually, conventional welding is a &lsquo;Repair-Oriented&rsquo; technique. It is carried out after the dies are damaged or worn out.</p>
+
+        <!-- 3. Cold Welding -->
+        <h2 id="cold-welding">New Protective Treatment to Increase Die Life: Japanese Cold Welding</h2>
+
+        <p>A new Japanese cold-welding technique enables appropriate surface hardening of dies, moulds and tools to increase their service life. The technique involves electronic coating of tungsten carbide on selective wear-prone areas of dies / moulds / tools through Japanese Cold Welding Technique.</p>
+
+        <p>Cold welding is carried out as a &lsquo;Preventive Maintenance&rsquo; technique on new dies. It is a surface hardening technique, similar to nitriding and PVD, but is administered using a completely different methodology. Hardness of tungsten carbide layer deposited by cold-welding on dies can surpass nitriding to reach hardness of more than 70 HRC.</p>
+
+        <p>Photographs indicating beginning of die wear on forging dies are given below.</p>
+
+        <div class="img-grid img-grid-3">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-die-wear-03.jpg" alt="Wear-prone area of a forging die outlined in red"></div>
+            <figcaption>Early wear along a forging die profile — the highlighted area is where cold-welding protection should be applied first.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-die-wear-02.jpg" alt="Scratch and scuffing beginning at a die bore"></div>
+            <figcaption>Beginning of scratch and scuffing at a die bore — a typical early wear indicator.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-die-wear-01.jpg" alt="Wear beginning at connecting rod die cavities"></div>
+            <figcaption>Wear beginning at connecting rod forging die cavities.</figcaption>
+          </figure>
+        </div>
+
+        <div class="article-callout">
+          If the indicated areas are protected using Japanese cold-welding technique before using the die, the wearing will be postponed and substantial increase in die life can be expected.
+        </div>
+
+        <h4>Benefits of Japanese Cold Welding Technology</h4>
+        <ol>
+          <li>Skilled welders not required. Can be carried out by anyone.</li>
+          <li>Open space not required. No fumes are generated during cold welding.</li>
+          <li>Time saving process as dies need not be removed from forging equipment.</li>
+          <li>Pre and post welding heat treatment not necessary. No stresses are generated during cold welding as it is a cold process.</li>
+        </ol>
+
+        <h4>Additional Benefits of Japanese Cold Welding Technology</h4>
+        <ol>
+          <li>Nitriding of dies not required as hardness of tungsten carbide coating is more than 70 HRC, which is higher than nitriding hardness (62&ndash;64 HRC).</li>
+          <li>Increased die life due to high wear resistance.</li>
+          <li>Substantially reduced maintenance downtime of dies and tools.</li>
+          <li>Can be carried out on selective areas of dies that are prone to wear. Does not require the complete die to be treated / protected.</li>
+        </ol>
+
+        <!-- 4. Equipment -->
+        <h2 id="equipment">Compact Cold Welding Equipment and Applicators</h2>
+
+        <div class="img-grid img-grid-3">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-equipment-unit.jpg" alt="Compact cold welding power unit with argon gas cylinder"></div>
+            <figcaption>Compact cold welding power unit with argon gas cylinder attached.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-applicator-gun.jpg" alt="Cold welding applicator gun"></div>
+            <figcaption>Cold welding applicator gun for larger coated areas.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-applicator-pen.jpg" alt="Cold welding applicator pen / probe"></div>
+            <figcaption>Fine applicator pen / probe for precise, selective-area coating.</figcaption>
+          </figure>
+        </div>
+
+        <p>Argon gas cylinder is shown in the photograph. It is recommended to be used during the cold welding process to avoid oxidation of carbide electrode.</p>
+
+        <!-- 5. Can be used by anyone -->
+        <h2 id="anyone">Can Be Used By Anyone, Anywhere</h2>
+
+        <div class="img-grid img-grid-2">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-anyone-01.jpg" alt="Operator carrying out cold welding on a die"></div>
+            <figcaption>No specialised welding skill is required &mdash; cold welding can be carried out by any operator.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-onsite-01.jpg" alt="On-site overlay repair at the parting line of an injection mould"></div>
+            <figcaption>On-site overlay repair at the parting line to eliminate burr formation &mdash; carried out only at the required area.</figcaption>
+          </figure>
+        </div>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-cold-welding-onsite-02.jpg" alt="On-site overlay repair at the parting line, then hand-finished with grinder, files or oil stones">
+          <figcaption>On-site overlay repair at the parting line to eliminate burr formation, then hand-finished with grinder, files or oil stones etc.</figcaption>
+        </figure>
+
+        <div class="img-grid img-grid-2">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-anyone-02.jpg" alt="Cold welding applicator used directly on a forging die"></div>
+            <figcaption>Cold welding carried out directly on the die, in place, without removing it from the equipment.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-cold-welding-anyone-03.jpg" alt="Close-up of the cold welding spark on a die surface"></div>
+            <figcaption>Close-up of the cold welding spark depositing tungsten carbide on the die surface.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 6. Principle of operation -->
+        <h2 id="principle">Principle of Operation</h2>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-cold-welding-principle-diagram.jpg" alt="Principle of operation: shield pipe, electrode, shield gas and plasma arc depositing a coating / overlay and diffusion layer on the work">
+          <figcaption>Principle of operation &mdash; the electrode, shield gas and plasma arc deposit a coating / overlay with a diffusion layer bonded into the work surface.</figcaption>
+        </figure>
+
+        <p>Consumable electrode made of alloys and intermetallic compounds are deposited on the die by means of electronic spark at a frequency of 10<sup>-1</sup> to 10<sup>-3</sup> second for one to millionth of seconds per spark. Direct current from the power supply will heat the electrode to 8,000 to 25,000 deg. C., only at the contact areas and transfer a small quantity of electrode to the work piece under an ionized state. A strong metallurgical bond is thereby produced.</p>
+
+        <h3>Characteristics of Carbide Coating</h3>
+
+        <h4>1. Wear Resistant</h4>
+        <p>Due to inherent strength of tungsten carbide, the wear resistance is high. If the die is hard and heat treated well, a good forging die life can be expected after carbide protective coating.</p>
+
+        <h4>2. Heat Resistant</h4>
+        <p>The coating is heat resistant and will not cause heat checks. Excessive heat leading to die wear will be prevented in protected areas.</p>
+
+        <h4>3. Scuffing Resistant</h4>
+        <p>Scuffing and bruising is the initial stage of having serrations on die. This scuffing will be prevented or substantially delayed.</p>
+
+        <h4>4. Lubricity</h4>
+        <p>Many times, due to very smooth finish of new dies, the forging / casting die lubricant does not adhere to the die. This problem is not faced in the case of carbide coated dies. It is observed that die can be lubricated better than before.</p>
+
+        <!-- 7. High Quality Procedure -->
+        <h2 id="procedure">High Quality and Performance Procedure</h2>
+
+        <ol>
+          <li>Extremely low heat input eliminates distortion, shrinkage, under-cut, or stress.</li>
+          <li>Provides excellent bonding by the formation of diffusion layer under work surface. No re-movable after procedure.</li>
+          <li>Shield Gas (Ar, He etc.) avoids oxidation during its procedure and may provide excellent thick overlay.</li>
+        </ol>
+
+        <div class="img-pair">
+          <figure class="article-img cap-top">
+            <figcaption>Reason for low heat input: the spark time (St) is extremely short compared with the interval time (It), so no heat accumulation occurs during diffusion and deposition periods.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/st-it.png" alt="Graph showing spark time (St) versus interval time (It) output"></div>
+          </figure>
+          <figure class="article-img cap-top">
+            <figcaption>Why strong bonding is possible: a strong bond of the transferred electrode material occurs due to instantaneous melting of the electrode upon each spark and generation of plasma atmosphere.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/electrode.png" alt="Diagram of electrode spark forming a diffusion layer bond"></div>
+          </figure>
+        </div>
+
+        <!-- 8. Heat resistance -->
+        <h2 id="heat-resistance">Proven Excellent Heat Resistance</h2>
+
+        <figure class="article-img cap-top">
+          <figcaption><strong>Molten metal erosion resistance of carbide coated dies.</strong> One each of H13 (JIS SKD-61) with or without carbide coating were immersed in a molten alloy, ADC-12 at 680&deg;C (1,256&deg;F) and rotated at 30 RPM. Their weight loss was measured after 1 and 4 hours. The uncoated sample (A) shows visible cracking and erosion after 4 hours, while the carbide-coated sample (B) remains intact.</figcaption>
+          <img src="Images/Articles/article-cold-welding-erosion-resistance.png" alt="Molten metal erosion resistance test comparing uncoated and carbide-coated dies at 680°C over 4 hours">
+        </figure>
+
+        <!-- 9. Comparison table -->
+        <h2 id="comparison">Comparison With Other Techniques</h2>
+
+        <p>Cold welding rates highest or joint-highest on 7 of the 10 comparison criteria below, on a scale of 1 (worst / most expensive) to 5 (best / least expensive):</p>
+
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Cold Welding</th>
+                <th>Thermal Spraying</th>
+                <th>Spot Welding (Sheet / Wire)</th>
+                <th>Spot Welding (Powder / Paste)</th>
+                <th>Argon Welding</th>
+                <th>Laser Welding</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="highlight-row"><td>Easy to handle</td><td>5</td><td>3</td><td>5</td><td>5</td><td>2</td><td>3</td></tr>
+              <tr class="highlight-row"><td>Heat input</td><td>5</td><td>3</td><td>5</td><td>5</td><td>1</td><td>5</td></tr>
+              <tr class="highlight-row"><td>Distortion / Under-cut</td><td>5</td><td>3</td><td>5</td><td>5</td><td>1</td><td>5</td></tr>
+              <tr><td>Bond strength</td><td>4</td><td>2</td><td>1</td><td>1</td><td>5</td><td>4</td></tr>
+              <tr class="highlight-row"><td>On-site work</td><td>5</td><td>3</td><td>5</td><td>5</td><td>5</td><td>1</td></tr>
+              <tr><td>Deposition speed</td><td>3</td><td>5</td><td>2</td><td>2</td><td>5</td><td>2</td></tr>
+              <tr><td>Equipment cost</td><td>4</td><td>3</td><td>4</td><td>4</td><td>5</td><td>1</td></tr>
+              <tr class="highlight-row"><td>Treatment cost</td><td>5</td><td>3</td><td>4</td><td>4</td><td>4</td><td>1</td></tr>
+              <tr><td>Materials</td><td>Ni, Co etc. (electrode)</td><td>Ni, Co (powder)</td><td>Steel (sheet / wire)</td><td>Steel (powder / paste)</td><td>All materials (rod)</td><td>All materials (wire)</td></tr>
+              <tr><td>Applicable substrates</td><td>Steel, Al, Cu alloys</td><td>Steel, Al, Cu alloys</td><td>Steel only</td><td>Steel only</td><td>Steel, Al, Cu alloys</td><td>Steel, Al, Cu alloys</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 10. Applicability -->
+        <h2 id="applicability">Applicable Substrates, Examples &amp; Safety</h2>
+
+        <div class="info-panel">
+          <h4>Applicable Substrates</h4>
+          <p>Available overlay substrates are low &amp; medium carbon steels, tool steel, die &amp; mould steels, cast steels, stainless steels, aluminium alloys, copper alloys, and the majority of alloys and composites having sufficient electrical conductivity.</p>
+        </div>
+
+        <div class="info-panel">
+          <h4>Applicable Examples</h4>
+          <ol>
+            <li>Coating as preventive maintenance and overlay repair on aluminium diecasting and casting dies</li>
+            <li>On-site overlay repair of machine parts</li>
+            <li>In-line overlay repair of injection moulds</li>
+            <li>Overlay repair and coating procedure on press-squeeze dies</li>
+            <li>Overlay repair of casting defects in casting aluminium and copper</li>
+          </ol>
+        </div>
+
+        <div class="info-panel">
+          <h4>Safety &mdash; Human &amp; Eco-Friendly</h4>
+          <ol>
+            <li>Easy operation makes it a high quality procedure that can be carried out by anyone.</li>
+            <li>Environmentally safe. Produces no toxic gas, drainage, or unpleasant odour and noise.</li>
+            <li>The only gear required for safety operations is safety glasses against weak UV light.</li>
+            <li>Safety operation is secured by double safeguards in every machine.</li>
+          </ol>
+        </div>
+
+        <!-- 11. Case studies -->
+        <h2 id="case-studies">Successful Cold-Welding Case Studies in the Indian Metal Forming Industry</h2>
+
+        <p>A number of esteemed Indian metal-forming organisations have tried out carbide coating on wear-prone areas of their dies and tools using Japanese cold-welding technique. Some photographs and results are given below.</p>
+
+        <div class="img-grid img-grid-3">
+          <figure class="article-img">
+            <div class="img-cell cover"><img src="Images/Articles/article-cold-welding-case-01.jpg" alt="Scratch and serrations-prone inner diameter of a forging die, coated with carbide"></div>
+            <figcaption>Scratch and serrations-prone inner diameter of a forging die that was coated. Carbide coating is seen as silvery coarse layer.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell cover"><img src="Images/Articles/article-cold-welding-case-02.jpg" alt="Sheet metal pressing and punching tool edges coated with carbide"></div>
+            <figcaption>Sheet metal pressing and punching tools set carbide coated on edges and wear-prone areas.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell cover"><img src="Images/Articles/article-cold-welding-case-03.jpg" alt="Sensitive areas of a forging die protected with carbide coating"></div>
+            <figcaption>Sensitive areas of the die were protected with carbide coating. It is seen as silvery layer on edges of die profile.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 12. Die life data -->
+        <h2 id="die-life-data">Substantial Increase in Die Life After Cold-Welding</h2>
+
+        <div class="article-table-wrap">
+          <table class="article-table">
+            <thead>
+              <tr>
+                <th>S. No.</th>
+                <th>Description</th>
+                <th>Metal Forming Equipment</th>
+                <th>Not Coated Die Life (parts made)</th>
+                <th>Japanese Cold-Welded Die Life (parts made)</th>
+                <th>% Increase in Die Life</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Sheet metal pressing die &amp; tool set</td>
+                <td>Sheet metal press</td>
+                <td>18,500</td>
+                <td>25,900</td>
+                <td>40%</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Hot forging die</td>
+                <td>1000 ton forging press</td>
+                <td>4,000</td>
+                <td>5,400</td>
+                <td>35%</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Hot forging die</td>
+                <td>1600 ton forging press</td>
+                <td>8,000</td>
+                <td>12,000</td>
+                <td>58%</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>4</td>
+                <td>Hot forging die</td>
+                <td>1600 ton forging press</td>
+                <td>10,000</td>
+                <td>22,000</td>
+                <td>120%</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p><em>Till date, no negative result is observed in any of the demonstrations of this technique carried out in various metal forming operations. The percentage of increase in die and tool life has varied from as low as 14% to as high as 120%. Various parameters that contribute to success of this technique are well documented, leading to refinement of the technique, assuring best results in each new trial.</em></p>
+
+        <!-- 13. Summary -->
+        <h2 id="summary">Summary</h2>
+
+        <p>Japanese cold welding technique of electronically overlaying protective carbide layer on metal-forming dies and tools holds promise of increased die &amp; tool life, reduced maintenance downtime, convenience of operation and better productivity. As the concept is proven, it is a requirement in every modern metal-forming unit seeking cost reduction and increased profitability.</p>
+
+        <div class="article-callout">
+          <p style="margin:0"><strong>Call to Action:</strong> Identify one wear-prone area on a die currently in service. Team SPS can help evaluate whether Japanese cold-welding is the right preventive maintenance step for it.</p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="author-card">
+          <span class="section-label" style="grid-column:1/-1;margin-bottom:4px">About the Author</span>
+          <img class="author-card-photo" src="Images/About/srikar-shenoy.webp" alt="Srikar Shenoy — Director">
+          <div>
+            <h3>Srikar Shenoy</h3>
+            <span class="author-card-role">Director — Steel Plant Specialities LLP, Mumbai</span>
+            <p>A management graduate with over two decades of techno-commercial experience in the steel industry. He works alongside seasoned metallurgical engineers to solve customer challenges and drives business growth at Steel Plant Specialities.</p>
+          </div>
+        </div>
+
+      </div><!-- .article-body -->
+    </div><!-- .article-container -->
+  </section>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Want to Increase Your Die Life?</h2>
+          <p>Contact our team to evaluate whether Japanese cold-welding technology fits your dies and tools.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'resources';</script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

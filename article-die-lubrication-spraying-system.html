@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hot Forging Die Lubrication by the Use of Zero Maintenance Spraying System — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Article layout ─────────────────────────────────────── */
+    .article-wrap { padding: 64px 0 96px; background: #fff; }
+    .article-container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+    /* Meta bar */
+    .article-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      padding-bottom: 28px; margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--grey);
+    }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; }
+    .article-meta-item i { color: var(--red); font-size: 12px; }
+    .article-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 3px;
+      background: var(--red); color: #fff;
+    }
+
+    /* Table of contents */
+    .article-toc {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .article-toc h2 {
+      font-size: 14px; font-weight: 800; color: var(--dark);
+      margin-bottom: 16px; letter-spacing: .3px; text-transform: uppercase;
+    }
+    .toc-list { counter-reset: toc; list-style: none; padding-left: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list li a {
+      font-size: 14px; color: var(--grey); font-weight: 500;
+      transition: color .2s; display: flex; gap: 8px;
+    }
+    .toc-list li a::before {
+      counter-increment: toc;
+      content: counter(toc) ".";
+      color: var(--red); font-weight: 700; min-width: 20px;
+    }
+    .toc-list li a:hover { color: var(--red); }
+    .toc-sub { padding-left: 28px; margin-top: 6px; list-style: none; }
+    .toc-sub li a { font-size: 13px; }
+    .toc-sub li a::before { content: "▪"; color: var(--grey); font-size: 10px; counter-increment: none; }
+
+    /* Article body typography */
+    .article-body h2 {
+      font-size: clamp(22px, 2.5vw, 28px); font-weight: 900;
+      color: var(--dark); margin: 56px 0 20px; line-height: 1.2;
+      letter-spacing: -.3px; padding-top: 20px;
+      border-top: 2px solid var(--border);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .article-body h3 {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article-body h4 {
+      font-size: 15px; font-weight: 700; color: var(--dark);
+      margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 16px; color: var(--mid); line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .article-body strong { color: var(--dark); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px; font-size: 16px; color: var(--mid); line-height: 1.85;
+    }
+    .article-body li { margin-bottom: 8px; }
+
+    /* Article images */
+    .article-img {
+      margin: 32px 0; border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      padding: 10px 16px; background: var(--light);
+      font-size: 12.5px; color: var(--grey); line-height: 1.55;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Caption-above-image variant */
+    .article-img.cap-top { display: flex; flex-direction: column; }
+    .article-img.cap-top figcaption {
+      order: -1; border-top: none; border-bottom: 1px solid var(--border);
+    }
+    .article-img.cap-top .img-cell {
+      height: 260px; display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .article-img.cap-top .img-cell img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+    }
+
+    /* Single figure with fixed-height contain frame (for narrow product shots) */
+    .article-img .img-cell {
+      height: 280px; display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .article-img .img-cell img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+    }
+
+    /* Two-up side-by-side pair (stacks on mobile) */
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+    .img-pair .article-img { margin: 0; }
+    @media (max-width: 768px) {
+      .img-pair { grid-template-columns: 1fr; }
+    }
+
+    /* Data callout */
+    .article-callout {
+      background: rgba(235,61,0,.05);
+      border: 1px solid rgba(235,61,0,.15);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin: 28px 0; font-size: 15px; color: var(--dark); line-height: 1.75;
+    }
+    .article-callout strong { color: var(--red); }
+
+    /* Result block */
+    .result-block {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px; margin: 28px 0;
+    }
+    .result-block h4 { margin-top: 0; margin-bottom: 12px; }
+
+    /* Tables */
+    .article-table-wrap {
+      margin: 28px 0; overflow-x: auto;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+    }
+    .article-table {
+      width: 100%; border-collapse: collapse; font-size: 14px;
+    }
+    .article-table thead { background: var(--dark); color: #fff; }
+    .article-table th {
+      padding: 12px 16px; text-align: left;
+      font-weight: 700; font-size: 13px; letter-spacing: .3px;
+    }
+    .article-table td {
+      padding: 10px 16px; border-bottom: 1px solid var(--border);
+      color: var(--mid); vertical-align: top;
+    }
+    .article-table tbody tr:last-child td { border-bottom: none; }
+
+    /* Visible grid lines variant */
+    .article-table.grid-lines th,
+    .article-table.grid-lines td {
+      border-right: 1px solid var(--border);
+    }
+    .article-table.grid-lines th:last-child,
+    .article-table.grid-lines td:last-child {
+      border-right: none;
+    }
+
+    /* Yes / No comparison cells */
+    .cell-yes, .cell-no {
+      font-weight: 700; text-align: center;
+    }
+    .cell-yes { background: rgba(21,128,61,.10); color: #15803d; }
+    .cell-no { background: rgba(220,38,38,.08); color: #dc2626; }
+
+    /* Author card */
+    .author-card {
+      display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+      align-items: start;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      margin: 56px 0 0;
+    }
+    .author-card-photo {
+      width: 100px; height: 120px; border-radius: var(--radius);
+      object-fit: cover; object-position: top center;
+    }
+    .author-card h3 { font-size: 18px; font-weight: 800; color: var(--dark); margin: 0 0 2px; }
+    .author-card .author-card-role {
+      font-size: 12px; font-weight: 600; color: var(--red); margin-bottom: 12px; display: block;
+    }
+    .author-card p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .article-wrap { padding: 40px 0 64px; }
+      .article-container { padding: 0 16px; }
+      .article-toc { padding: 20px; }
+      .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+      .article-body p { font-size: 15px; }
+      .author-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 20px; }
+      .author-card-photo { width: 80px; height: 96px; }
+      .article-table { font-size: 13px; }
+      .article-table th, .article-table td { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .article-meta { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('Images/Articles/spray-systems.png')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="resources.html">Resources</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Technical Article</span>
+      </div>
+      <h1>Hot Forging Die Lubrication by the Use of<br><span>Zero Maintenance Spraying System</span></h1>
+      <p>Comparing diaphragm pump, pressure feed tank, and zero maintenance spraying systems for hot forging die lubrication &mdash; and why zero maintenance wins on cost, reliability and ease of use.</p>
+    </div>
+  </section>
+
+  <!-- ── Article Body ──────────────────────────────────────── -->
+  <section class="article-wrap">
+    <div class="article-container">
+
+      <!-- Meta bar -->
+      <div class="article-meta">
+        <span class="article-tag">Technical Article</span>
+        <div class="article-meta-item"><i class="fas fa-user"></i> Srikar Shenoy</div>
+        <div class="article-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+        <div class="article-meta-item"><i class="fas fa-clock"></i> 9 min read</div>
+        <div class="article-meta-item"><i class="fas fa-industry"></i> Hot Forging &amp; Spraying Equipment</div>
+      </div>
+
+      <div class="article-body">
+
+        <!-- TOC -->
+        <nav class="article-toc">
+          <h2>Contents</h2>
+          <ol class="toc-list">
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#spraying-systems">Common Die Lubricant Spraying Systems Available Today</a>
+              <ul class="toc-sub">
+                <li><a href="#diaphragm">Diaphragm pump type spraying system with motor</a></li>
+                <li><a href="#pressure-tank">Conventional pressure feed tank with hand stirring</a></li>
+                <li><a href="#pressure-tank-motor">Pressure feed tank with motor</a></li>
+              </ul>
+            </li>
+            <li><a href="#zero-maintenance">Zero Maintenance Spraying System</a></li>
+            <li><a href="#comparison">Quick Comparison Chart</a></li>
+            <li><a href="#sprayguns">Double Action Sprayguns</a></li>
+            <li><a href="#semi-automatic">Semi-Automatic Spraying Through Fixed Nozzles and Foot-Operated Pedal</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+          </ol>
+        </nav>
+
+        <!-- 1. Introduction -->
+        <h2 id="introduction">Introduction</h2>
+
+        <p><strong>Abstract:</strong> In closed die forging, use of effective spraying system enables benefits like proper die lubrication, maintenance of correct die temperature and prevention of over-heating or cooling of die, prevention of wastage of die lubricant, ease of forging production and ease of lubrication operation.</p>
+
+        <p>A number of forging companies are unable to use appropriate spraying systems due to reasons like operator inconvenience, frequent maintenance downtime of motor and spraying equipment, non-practical design of spraying system, high initial cost and recurring cost of spraying equipment, inability to train workmen regarding correct usage of spraying system, etc.</p>
+
+        <p>This article aims at reviewing the benefits of using spraying systems in hot forging die lubrication. Evaluation of various types of die lubricant spraying systems available in the market will be carried out. Shortcomings and benefits of most of the popular types of spraying systems will be listed. An innovative and proven zero maintenance die lubricant spraying system will be introduced.</p>
+
+        <p>A range of environment friendly hot forging die lubricants are now available to the Indian forging industry. Water soluble lubricants without graphite are becoming increasingly popular for small to medium size forgings. For large, heavy forgings, graphite based lubricants and oil based lubricants continue to be used.</p>
+
+        <p>Environment friendly die lubricants with and without graphite are found to be very effective and economical when used with the appropriate spraying system. They facilitate zero pollution and a clean working environment on the forge shop floor. Use of appropriate die lubricant spraying system gathers much importance in the use of water based die lubricants. A correct spraying system ensures effective die lubrication, reduced wastage of lubricant and increased die life. Ease of operation of die lubricant spraying system determines its acceptability by forging production personnel. Maintenance of the lubricant spraying systems have posed a problem to many forging companies as unplanned downtime of spraying system results in immediate use of furnace oil or such polluting and costly alternatives.</p>
+
+        <p>A large number of forging companies are switching over to zero maintenance spraying systems manufactured by SPS to enable effective spraying of hot forging die lubricants on their dies. Before we study the advantages of the zero maintenance spraying system, let us have a quick look at the common forging die lubricant spraying systems available at present, and their pros and cons:</p>
+
+        <!-- 2. Common spraying systems -->
+        <h2 id="spraying-systems">Common Die Lubricant Spraying Systems Available Today</h2>
+
+        <h3 id="diaphragm">1. Diaphragm Pump Type Spraying System with Motor</h3>
+
+        <p>This spraying system is very common in large forge shops. The powerful diaphragm pump is capable of spraying up to 133 litres of paint per minute. It is able to spray very high viscosity paints. An even spray is assured. Diaphragm pumps can be powered by pneumatic air or electricity. Re-filling is very easy as the open tank can be topped up with lubricant as and when required. Continuous stirring of lubricant is achieved by a separate motor. This system is very effective where large volumes of paint need to be sprayed continuously.</p>
+
+        <p>However, for the purpose of hot forging die lubrication, the diaphragm pump type spraying system is found to be over-equipped and too expensive. The process of forging requires only a small spray of lubricant on the forging dies between each forging blow. Most forging dies do not require more than 300 ml of lubricant per minute. Forging lubricants are diluted in water in high ratios such that the viscosity of lubricant is maintained very low. Hence, the capacity of the diaphragm pump is grossly underutilized if used for forging die lubrication. Maintenance downtime problems usually occur after 12 to 18 months of use of the diaphragm pump. In case of diaphragm pump downtime, the entire spraying system can not be used in any way. Hence, use of diaphragm pump for the purpose of forging die lubrication is a very inappropriate choice.</p>
+
+        <figure class="article-img">
+          <div class="img-cell"><img src="Images/Articles/article-spray-system-diaphragm-pump.jpg" alt="Diaphragm pump type die lubricant spraying system with motor"></div>
+          <figcaption><strong>Pros:</strong> Powerfully sprays high viscosity paints. Refilling of lubricant in tank is very easy. <strong>Cons:</strong> Expensive. High running cost as one additional motor and spares are required for stirring lubricant and diaphragm pump used for spraying the lubricant. Unplanned downtime.</figcaption>
+        </figure>
+
+        <h3 id="pressure-tank">2. Conventional Pressure Feed Tank with Hand Stirring</h3>
+
+        <p>This simple spraying system is functional and economical. It is powered by pneumatic air to pressurize the tank and spray the lubricant. Stirring is achieved by manually rotating the handle of the stirrer. Re-filling is time consuming and difficult as the entire lid of the system needs to be unscrewed and dismantled for re-filling. In case of graphite based lubricants, there is a tendency of graphite particles to settle at the bottom of the tank if not stirred continuously. The mixture quality of the lubricant will be affected. Hence, there is room for human error if the operator fails to stir the system manually at frequent intervals.</p>
+
+        <figure class="article-img">
+          <div class="img-cell"><img src="Images/Articles/article-spray-system-pressure-tank.jpg" alt="Conventional pressure feed tank with hand stirring"></div>
+          <figcaption><strong>Pros:</strong> Functional. Simple. Economical. <strong>Cons:</strong> Continuous stirring not possible and may affect lubricant properties. Re-filling is time consuming and requires correct spanners to open the lid.</figcaption>
+        </figure>
+
+        <h3 id="pressure-tank-motor">3. Pressure Feed Tank with Motor</h3>
+
+        <p>This is the upgraded version of the conventional pressure feed tank. It is powered by pneumatic air to pressurize the tank and spray the lubricant. A motor is affixed on the tank so that continuous stirring of the forging die lubricant is achieved. The rest of the functioning of this system is the same as the conventional pressure feed tank. Addition of the motor invites problems of motor maintenance. However, even if the motor is not functional, the system can still be used for spraying lubricant. A risk of graphite particles settling at the bottom of the tank and affecting the lubricant mix will always prevail in such case.</p>
+
+        <figure class="article-img">
+          <div class="img-cell"><img src="Images/Articles/article-spray-system-pressure-tank-motor.jpg" alt="Pressure feed tank with motor for continuous stirring"></div>
+          <figcaption><strong>Pros:</strong> Functional. Offers continuous stirring. Economical compared to diaphragm pump type system. <strong>Cons:</strong> Re-filling is time consuming and requires correct spanners to open the lid. Additional motor adds to running costs. Unplanned motor downtime may affect lubricant properties.</figcaption>
+        </figure>
+
+        <p>Considering the pros and cons of all the popular die lubricant spraying systems, SPS has made a breakthrough in this area by designing a special spraying system. This has proven to be better, easier to use and economical.</p>
+
+        <!-- 3. Zero maintenance system -->
+        <h2 id="zero-maintenance">Zero Maintenance Spraying System</h2>
+
+        <p>This specially designed, most modern spraying system has proven to be superior to other type of spraying systems mentioned above. Special design enables a number of beneficial features. The spraying system is powered by pneumatic air to pressurize the tank and spray the lubricant. Special internal mechanism ensures that the same compressed air that is used to pressurize the tank acts as an agitator to the lubricant. This ensures continuous mixing of the lubricant and settling of graphite in the tank is not possible.</p>
+
+        <p>Additional motor is not required for stirring; hence motor related problems are eliminated. Special design enables quick re-filling of die lubricant in less than a minute, without the use of any mechanical tools. This system is capable of delivering die lubricant up to 3.3 litres per minute for spraying. This is found to be more than sufficient for most forging die lubrication operations. This capacity can be doubled by increasing the compressed air supply up to 5 kgs./sq. cm. There are no user-serviced parts in this system. Unplanned downtime of spraying system is eliminated. No special inventory needs to be maintained for this system. Safety valve, pressure gauge and air pressure regulator ensure safety and ease of operation. Two forging presses can be serviced with one such spraying system by making simple modifications. Tank capacities of 45, 100 and 200 litres are available.</p>
+
+        <div class="img-pair">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-spray-system-zero-maintenance-full.jpg" alt="Zero maintenance die lubricant spraying system, full unit on wheels"></div>
+            <figcaption>Zero maintenance spraying system &mdash; full unit, available in 45, 100 and 200 litre tank capacities.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-spray-system-zero-maintenance-closeup.jpg" alt="Close-up of the zero maintenance spraying system refill funnel"></div>
+            <figcaption>Quick re-filling funnel &mdash; die lubricant can be topped up in less than a minute, without any mechanical tools.</figcaption>
+          </figure>
+        </div>
+
+        <div class="article-callout">
+          <strong>Pros:</strong> Ideal spraying system for using all types of forging die lubricants. Continuous stirring of lubricant is ensured at all times. Easy and quick re-filling of die lubricant is assured. Zero maintenance as no user-serviced parts present. No inventory costs. Zero downtime. Low running cost as no additional motor required. Economical.<br><br>
+          <strong>Cons:</strong> Tank size of 400 litres is under development and will be available shortly.
+        </div>
+
+        <p>Though all types of spraying systems are available with SPS, use of zero-maintenance spraying systems for hot forging die lubrication is strongly advised. A quick comparison chart of all spraying systems is provided below:</p>
+
+        <!-- 4. Comparison chart -->
+        <h2 id="comparison">Quick Comparison Chart</h2>
+
+        <div class="article-table-wrap">
+          <table class="article-table grid-lines">
+            <thead>
+              <tr>
+                <th>Benefits</th>
+                <th>Zero Maintenance Spraying System</th>
+                <th>Diaphragm Pump with Motor</th>
+                <th>Conventional Pressure Feed Tank</th>
+                <th>Pressure Feed Tank with Motor</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Ability to deliver all types of die lubricants</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+              </tr>
+              <tr>
+                <td>Continuous automatic stirring / agitation of lubricant</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+              </tr>
+              <tr>
+                <td>Quick re-filling of die lubricant</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-no">No</td>
+              </tr>
+              <tr>
+                <td>Long life and low running costs</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+              </tr>
+              <tr>
+                <td>Zero unplanned downtime</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+              </tr>
+              <tr>
+                <td>Low maintenance</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+              </tr>
+              <tr>
+                <td>Low inventory costs</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+              </tr>
+              <tr>
+                <td>Economical</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+                <td class="cell-yes">Yes</td>
+                <td class="cell-no">No</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- 5. Sprayguns -->
+        <h2 id="sprayguns">Double Action Sprayguns</h2>
+
+        <p>Double action sprayguns for effective die lubrication are available. Two side spray and single side spray capable guns are commonly used for forging die lubrication. Customized nozzles for special applications as per requirement can be developed.</p>
+
+        <div class="img-pair">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-spray-system-spraygun-01.jpg" alt="Double action spraygun, single side spray"></div>
+            <figcaption>Double action spraygun &mdash; single side spray.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-spray-system-spraygun-02.jpg" alt="Double action spraygun, two side spray"></div>
+            <figcaption>Double action spraygun &mdash; two side spray.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 6. Semi-automatic -->
+        <h2 id="semi-automatic">Semi-Automatic Spraying of Lubricant on Forging Dies Through Fixed Nozzles and Foot Operated Pedal</h2>
+
+        <p>Specially developed spraying nozzles are fastened close to or around the forging die at an angle such that the lubricant spray through the nozzles will land on the forging die. The spray is controlled by a foot operated pedal. This technique is a convenient substitute for sprayguns in hot forging die lubrication and ensures complete safety. Additional workman solely for purpose of spraying lubricant may not be necessary.</p>
+
+        <div class="img-pair">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-spray-system-nozzles.jpg" alt="Nozzles for semi-automatic spray fastened around the forging die"></div>
+            <figcaption>Nozzles for semi automatic spray.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-spray-system-foot-pedal.jpg" alt="Foot operated pedal to control air and lubricant release through nozzles"></div>
+            <figcaption>Foot operated pedal to control air and lubricant release through nozzles.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 7. Benefits -->
+        <h2 id="benefits">Benefits</h2>
+
+        <p>Use of zero maintenance spraying system manufactured by SPS have proven to enable the following benefits:</p>
+
+        <ol>
+          <li>No sticking of forgings. Smooth production.</li>
+          <li>Effective lubrication and cooling of die. This leads to increase in die life.</li>
+          <li>Quick re-filling of spraying system, in less than 1.5 minutes.</li>
+          <li>Zero maintenance of spraying system required.</li>
+          <li>Zero maintenance downtime of spraying system ensures continuous production.</li>
+          <li>Economical. Affordable and zero recurring cost of forging die lubricant spraying system.</li>
+        </ol>
+
+        <div class="article-callout">
+          <p style="margin:0"><strong>Call to Action:</strong> If motor downtime, slow re-filling, or graphite settling are disrupting your forging die lubrication, team SPS can help you evaluate the zero maintenance spraying system for your press.</p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="author-card">
+          <span class="section-label" style="grid-column:1/-1;margin-bottom:4px">About the Author</span>
+          <img class="author-card-photo" src="Images/About/srikar-shenoy.webp" alt="Srikar Shenoy — Director">
+          <div>
+            <h3>Srikar Shenoy</h3>
+            <span class="author-card-role">Director — Steel Plant Specialities LLP</span>
+            <p>A management graduate with over two decades of techno-commercial experience in the steel industry. He works alongside seasoned metallurgical engineers to solve customer challenges and drives business growth at Steel Plant Specialities.</p>
+          </div>
+        </div>
+
+      </div><!-- .article-body -->
+    </div><!-- .article-container -->
+  </section>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Need a Zero Maintenance Spraying System?</h2>
+          <p>Contact our team to evaluate the right die lubricant spraying system for your forging press.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'resources';</script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

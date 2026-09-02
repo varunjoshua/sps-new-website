@@ -9,13 +9,41 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav a.active { color: #fff; }
+.product-nav .container { position: relative; }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
 /* ── Product Page Layout ─────────────────────────────────── */
 
 /* Description section */
 .product-intro { padding: 72px 0; background: #fff; }
 .product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
-.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
-.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
 .product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
 .product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
 .product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
@@ -79,11 +107,16 @@
 }
 @media (max-width: 900px) {
   .product-intro-grid { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
   .comparison-grid { grid-template-columns: 1fr 1fr; }
   .steps-grid { grid-template-columns: 1fr; }
   .application-images { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
   .specs-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
 }
 @media (max-width: 600px) {
   .product-intro, .product-how, .product-application,
@@ -116,16 +149,26 @@
   </div>
 </section>
 
-<!-- ── Description ─────────────────────────────────────────── -->
-<section class="product-intro">
+<!-- ── Section Nav Strip ──────────────────────────────────── -->
+<nav class="product-nav">
   <div class="container">
+    <a href="#overview">Overview</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#application">Application</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">ESPON-HR &mdash; Anti-Scale Protective Coating</div>
+    <h2 class="product-title">Protect Billets &amp; Ingots from Oxidation During High-Temperature Heating</h2>
     <div class="product-intro-grid">
-      <div>
-        <div class="product-code">ESPON-HR &mdash; Anti-Scale Protective Coating</div>
-        <h2 class="product-title">Protect Billets &amp; Ingots from Oxidation During High-Temperature Heating</h2>
-        <div class="product-desc">
-          <p>ESPON-HR is a protective coating that substantially reduces scaling on billets and ingots during heating prior to hot rolling and hot forging. Applied before furnace entry, it forms a barrier that prevents atmospheric oxygen from reacting with the steel surface at high temperatures.</p>
-        </div>
+      <div class="product-desc">
+        <p>ESPON-HR is a protective coating that substantially reduces scaling on billets and ingots during heating prior to hot rolling and hot forging. Applied before furnace entry, it forms a barrier that prevents atmospheric oxygen from reacting with the steel surface at high temperatures.</p>
       </div>
       <div>
         <div class="product-img-card">
@@ -134,11 +177,12 @@
         </div>
       </div>
     </div>
+
   </div>
 </section>
 
 <!-- ── How It Works ────────────────────────────────────────── -->
-<section class="product-how">
+<section class="product-how" id="how-it-works">
   <div class="container">
     <div class="section-label">How It Works</div>
     <h2 class="section-title">Preventing Scale Formation at the Source</h2>
@@ -150,12 +194,12 @@
     <div class="comparison-grid">
       <div class="comparison-card">
         <div class="comparison-label uncoated">Not Coated</div>
-        <img src="https://steelplantspecialities.com/wp-content/uploads/2023/11/NOT-1.webp" alt="Uncoated Ni steel billet showing heavy scale after induction heating to 1230°C">
+        <img src="Images/Products/uncoated-billet.jpg" alt="Uncoated Ni steel billet showing heavy scale after induction heating to 1230°C">
         <div class="comparison-caption">Ni steel billet induction heated to 1230&deg;C &mdash; heavy scale generated on billet surface</div>
       </div>
       <div class="comparison-card">
         <div class="comparison-label coated">ESPON-HR Coated</div>
-        <img src="https://steelplantspecialities.com/wp-content/uploads/2023/11/NOT-2.webp" alt="ESPON-HR coated Ni steel billet showing minimal scale after induction heating to 1230°C">
+        <img src="Images/Products/coated-billet.jpg" alt="ESPON-HR coated Ni steel billet showing minimal scale after induction heating to 1230°C">
         <div class="comparison-caption">ESPON coated Ni steel billet, induction heated to 1230&deg;C &mdash; very minimal scale generated</div>
       </div>
     </div>
@@ -163,7 +207,7 @@
 </section>
 
 <!-- ── Application ─────────────────────────────────────────── -->
-<section class="product-application">
+<section class="product-application" id="application">
   <div class="container">
     <div class="section-label">Application</div>
     <h2 class="section-title">Method of Application</h2>
@@ -202,7 +246,7 @@
 </section>
 
 <!-- ── Benefits ────────────────────────────────────────────── -->
-<section class="product-benefits">
+<section class="product-benefits" id="benefits">
   <div class="container">
     <div class="section-label">Benefits</div>
     <h2 class="section-title">Why Use ESPON-HR</h2>
@@ -245,7 +289,7 @@
 </section>
 
 <!-- ── Properties & Specifications ─────────────────────────── -->
-<section class="product-specs">
+<section class="product-specs" id="specifications">
   <div class="container">
     <div class="section-label">Specifications</div>
     <h2 class="section-title">Properties &amp; Technical Data</h2>
@@ -346,5 +390,47 @@
 
 <div id="footer-mount"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+
+  // Scroll hint visibility
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+
+  // Active section highlighting via Intersection Observer
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          // Auto-scroll the nav strip to show the active link
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
 </body>
 </html>

@@ -3,54 +3,142 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Oil Cleaning Liquid — Steel Plant Specialities LLP</title>
+<title>O-CLEAN3 — Industrial Oil Cleaning Liquid — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
-.products-section { padding: 72px 0; background: #fff; }
-.single-product-wrap { margin-top: 40px; max-width: 560px; }
-.product-card {
-  background: #fff; border: 1px solid var(--border); border-radius: 10px;
-  overflow: hidden; transition: all .25s ease; position: relative;
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
 }
-.product-card:hover { box-shadow: 0 8px 32px rgba(235,61,0,.12); transform: translateY(-3px); border-color: var(--red); }
-.product-card::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
-  background: var(--red); transition: width .25s ease;
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
 }
-.product-card:hover::before { width: 3px; }
-.product-img { height: 200px; overflow: hidden; }
-.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-.product-card:hover .product-img img { transform: scale(1.05); }
-.product-body { padding: 24px 22px 22px; }
-.product-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
-.product-name { font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 8px; }
-.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: var(--red); font-weight: 600; margin-bottom: 10px; }
-.product-desc { font-size: 13px; color: var(--grey); line-height: 1.65; margin-bottom: 14px; }
-.product-footer {
-  border-top: 1px solid var(--border); padding-top: 16px;
-  display: flex; align-items: center; justify-content: flex-end;
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container { position: relative; }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
 }
-.product-link {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 13px; font-weight: 600; color: var(--red); transition: gap .2s;
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+/* ── Product Page Layout ─────────────────────────────────── */
+
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+/* Applications section */
+.product-applications { padding: 72px 0; background: var(--light); }
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.app-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.app-card:hover { border-color: var(--red); }
+.app-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.app-icon i { font-size: 13px; color: var(--red); }
+.app-text h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+.app-text p { font-size: 13px; color: var(--grey); line-height: 1.6; margin: 0; }
+
+/* Before & After (inside benefits) */
+.results-showcase { margin-top: 48px; }
+.results-showcase h3 { font-size: 18px; font-weight: 700; color: var(--dark); margin-bottom: 24px; }
+.results-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.result-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: #fff; }
+.result-label { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; }
+.result-label.before { background: var(--dark); color: #fff; }
+.result-label.after { background: var(--red); color: #fff; }
+.result-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.result-caption { padding: 12px 16px; font-size: 13px; color: var(--grey); line-height: 1.55; text-align: center; border-top: 1px solid var(--border); }
+.result-full { margin-top: 24px; }
+
+/* How it works */
+.product-how { padding: 72px 0; background: var(--light); }
+.how-layout { display: grid; grid-template-columns: 1fr 400px; gap: 48px; align-items: start; }
+.how-content { max-width: 720px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); }
+.dilution-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.dilution-note h4 i { color: var(--red); font-size: 13px; }
+.dilution-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+/* Benefits section */
+.product-benefits { padding: 72px 0; background: #fff; }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Specifications section */
+.product-specs { padding: 72px 0; background: var(--light); }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+.spec-card-standalone { background: #fff; border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+  .specs-layout { gap: 36px; }
 }
-.product-card:hover .product-link { gap: 10px; }
-.category-intro {
-  background: var(--light); border-left: 4px solid var(--red);
-  padding: 20px 24px; border-radius: 0 8px 8px 0; margin-bottom: 0; max-width: 760px;
+@media (max-width: 900px) {
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .how-layout { grid-template-columns: 1fr; }
+  .app-grid { grid-template-columns: 1fr; }
+  .results-row { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
 }
-.category-intro p { font-size: 15px; color: var(--mid); line-height: 1.75; margin: 0; }
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-applications,
+  .product-how, .product-benefits, .product-specs { padding: 48px 0; }
+  .product-title { font-size: 24px; }
+}
 </style>
 </head>
 <body>
 
 <script>window.ACTIVE_NAV = 'products';</script>
 
+<!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1518770660439-4636190af475?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-bg" style="background-image:url('Images/Products/O-Clean3-machinery.jpg')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
@@ -58,44 +146,250 @@
       <i class="fas fa-chevron-right"></i>
       <a href="products.html">Products</a>
       <i class="fas fa-chevron-right"></i>
-      <span>Oil Cleaning Liquid</span>
+      <span>O-CLEAN3 Oil Cleaning Liquid</span>
     </div>
-    <h1>Oil Cleaning <span>Liquid</span></h1>
-    <p>Environment-friendly, water-based degreasers that remove oil, grease, and accumulated grime from shop floors, machinery, and equipment — without solvents or harsh chemicals.</p>
+    <h1>O-CLEAN3 <span>Industrial Oil Cleaning Liquid</span></h1>
+    <p>Eco-friendly, water-based cleaning solution for effortless removal of oil, grease, and grime from machinery, shop floors, and workmen&rsquo;s hands.</p>
   </div>
 </section>
 
-<section class="products-section">
+<!-- ── Section Nav ─────────────────────────────────────────── -->
+<nav class="product-nav">
   <div class="container">
-    <div class="category-intro">
-      <p>O-CLEAN3 is a concentrated, water-based cleaning solution designed for heavy industrial environments. It lifts and emulsifies oil and grease without damaging surfaces, making it safe for floors, machinery casings, plastic components, and skin contact. Dilute with water and apply by mopping, spraying, or soaking.</p>
-    </div>
+    <a href="#overview">Overview</a>
+    <a href="#applications">Applications</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
 
-    <div class="single-product-wrap">
-      <div class="product-card">
-        <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&q=75&fit=crop" alt="O-CLEAN3">
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">O-CLEAN3 &mdash; Industrial Cleaning Solution</div>
+    <h2 class="product-title">Water-Based Oil Cleaning for Machinery &amp; Shop Floors</h2>
+    <div class="product-intro-grid">
+      <div>
+        <div class="product-desc">
+          <p>Oil-based fuels and lubricants are essential consumables in hot forging, hot rolling, and heat treatment operations. Oils leak and dirty shop floors, machinery, and workmen&rsquo;s hands. O-CLEAN3 is an environment-friendly, water-based cleaning solution that effortlessly dissolves all types of oil and grease &mdash; without acids, solvents, or flammable kerosene.</p>
+          <p style="margin-top:16px;">The dissolved oil and impurities are completely removed by washing with water. No scraping, repeated scrubbing, or expensive cleaning equipment required.</p>
         </div>
-        <div class="product-body">
-          <div class="product-tags"><span class="tag tag-red">Cleaning</span><span class="tag tag-light">Water-Based</span><span class="tag tag-light">Eco-Safe</span></div>
-          <div class="product-code">O-CLEAN3</div>
-          <div class="product-name">O-CLEAN3</div>
-          <div class="product-desc">Concentrated water-based degreaser for forging and rolling shop environments. Removes solid oil-mud cake, lubricant residue, and general grime from floors, machinery, and workers' hands.</div>
-          <div class="product-footer">
-            <a href="product-o-clean3.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
-          </div>
+      </div>
+      <div>
+        <div class="product-img-card">
+          <img src="Images/Products/O-Clean3-product.png" alt="O-CLEAN3 Eco-Friendly Oil Cleaner — 20 litre HDPE carboy" style="object-fit:contain; background:#f5f5f5;">
+          <div class="product-img-caption">O-CLEAN3 Eco-Friendly Oil Cleaner &mdash; 20 litre HDPE carboy</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- ── Applications ───────────────────────────────────────── -->
+<section class="product-applications" id="applications">
+  <div class="container">
+    <div class="section-label">Applications</div>
+    <h2 class="section-title">Where O-CLEAN3 Is Used</h2>
+
+    <div class="app-grid">
+      <div class="app-card">
+        <div class="app-icon"><i class="fas fa-warehouse"></i></div>
+        <div class="app-text">
+          <h4>Shop Floors &amp; Chequered Plates</h4>
+          <p>Dissolves solid oil-mud cake formed by oil spills and mud deposits. Repeated application ensures an oil-free, clean shop floor.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-icon"><i class="fas fa-industry"></i></div>
+        <div class="app-text">
+          <h4>Machinery Cleaning</h4>
+          <p>Removes oil and dirt from machinery without damaging glossy paint finish.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-icon"><i class="fas fa-box-open"></i></div>
+        <div class="app-text">
+          <h4>Plastic Trays, Crates &amp; Bins</h4>
+          <p>Dip oily trays for a few minutes &mdash; oil is cleaned and metallic burr falls off easily. Avoids expensive tray washing machines.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-icon"><i class="fas fa-hands-wash"></i></div>
+        <div class="app-text">
+          <h4>Workmen&rsquo;s Hands</h4>
+          <p>Effectively cleans oil from hands without causing dryness, burning, or peeling &mdash; unlike sawdust or detergent.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-icon"><i class="fas fa-cogs"></i></div>
+        <div class="app-text">
+          <h4>Degreasing Metal Parts</h4>
+          <p>Parts are degreased by dipping in diluted O-CLEAN3 solution.</p>
+        </div>
+      </div>
+      <div class="app-card">
+        <div class="app-icon"><i class="fas fa-fire"></i></div>
+        <div class="app-text">
+          <h4>Quenching Oil Cleanup</h4>
+          <p>Degreases oil-quenched forgings and cleans quenching oil from floors.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── How It Works ────────────────────────────────────────── -->
+<section class="product-how" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple, Effective Cleaning</h2>
+    <div class="how-content">
+      <p>O-CLEAN3 works by dissolving oil, grease, and lubricants on contact. The dissolved oil and impurities can then be completely removed from floors and equipment by washing with water. There is no need for acids, flammable solvents, scraping, or repeated scrubbing.</p>
+      <p>For shop floors with thick oil-mud cake, apply the solution 2&ndash;3 times for a completely oil-free surface. Regular maintenance with a small quantity keeps the floor clean thereafter.</p>
+
+      <div class="dilution-note">
+        <h4><i class="fas fa-droplet"></i> Dilution Ratio</h4>
+        <p>1 litre of O-CLEAN3 concentrate is mixed with 5 to 15 litres of water, depending on the application and level of contamination.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section class="product-benefits" id="benefits">
+  <div class="container">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why Use O-CLEAN3</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-spray-can-sparkles"></i></div>
+        <div class="benefit-text">Removes oil and dirt from machinery without affecting paint finish</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-broom"></i></div>
+        <div class="benefit-text">Dissolves solid oil and dust layers settled on floors for months &mdash; substantially reduces cleaning manpower and time</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-hand-sparkles"></i></div>
+        <div class="benefit-text">Cleans oil from workmen&rsquo;s hands without causing dryness, burning, or peeling</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+        <div class="benefit-text">Eco-friendly, water-based formula &mdash; non-hazardous, non-flammable, non-toxic</div>
+      </div>
+    </div>
+
+    <div class="results-showcase">
+      <h3>Before &amp; After</h3>
+      <div class="results-row">
+        <div class="result-card">
+          <div class="result-label before">Before</div>
+          <img src="Images/Products/O-Clean3-floor-dirty.png" alt="Shop floor with oil, dirt, and grime deposited over months">
+          <div class="result-caption">Oil spills and dirt deposited on shop floor for many months</div>
+        </div>
+        <div class="result-card">
+          <div class="result-label after">After</div>
+          <img src="Images/Products/O-Clean3-floor-clean.png" alt="Shop floor cleaned in minutes using O-CLEAN3">
+          <div class="result-caption">Cleaned in minutes using O-CLEAN3 water-based solution</div>
+        </div>
+      </div>
+      <div class="result-full">
+        <div class="result-card">
+          <img src="Images/Products/O-Clean3-machinery.jpg" alt="Machinery before and after cleaning with O-CLEAN3 — oil, dirt, and graphite removed in minutes">
+          <div class="result-caption">Machinery cleaned effortlessly &mdash; oil, dirt, and graphite caked for months removed in minutes using O-CLEAN3</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Properties & Specifications ─────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Properties &amp; Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Code</td>
+              <td class="mono">O-CLEAN3</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Translucent viscous liquid</td>
+            </tr>
+            <tr>
+              <td>Type</td>
+              <td>Water-based, concentrated</td>
+            </tr>
+            <tr>
+              <td>Dilution</td>
+              <td>1 : 5 to 1 : 15 with water</td>
+            </tr>
+            <tr>
+              <td>Application</td>
+              <td>Mopping, spraying, dipping, or hand-wash</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>Non-hazardous. Non-flammable. Non-toxic.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="spec-card-standalone">
+          <div class="spec-card-title">Packaging</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pack Size</th>
+                <th>Container Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20 litres</td>
+                <td>HDPE carboy</td>
+              </tr>
+              <tr>
+                <td>210 litres</td>
+                <td>HDPE carboy</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products.html" class="back-link"><i class="fas fa-arrow-left"></i> All Products</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
 <section class="cta-strip">
   <div class="container">
     <div class="cta-strip-inner">
       <div>
-        <h2>Need a Sample of O-CLEAN3?</h2>
-        <p>Request a trial quantity and test it on your shop floor before committing to a full order.</p>
+        <h2>Want to Try O-CLEAN3 in Your Plant?</h2>
+        <p>Request a trial quantity and test it on your shop floor, machinery, or quenching area.</p>
       </div>
       <div class="cta-strip-actions">
         <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
@@ -106,5 +400,41 @@
 
 <div id="footer-mount"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
 </body>
 </html>

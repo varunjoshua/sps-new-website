@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-ACR3 — Oxidation Resistant Coating for Titanium &amp; Super Alloys — Steel Plant Specialities LLP</title>
+<title>ESPON-ACR — Heat Retention &amp; Alpha-Case Control Coating — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -52,11 +52,13 @@ html { scroll-behavior: smooth; }
 
 /* Application section */
 .product-application { padding: 72px 0; background: #fff; }
-.steps-list { display: flex; flex-direction: column; gap: 16px; margin-top: 32px; max-width: 780px; }
-.step-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: #fff; transition: border-color .2s; }
-.step-item:hover { border-color: var(--red); }
-.step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.step-text { font-size: 14px; color: var(--mid); line-height: 1.6; padding-top: 6px; }
+.how-content { max-width: 780px; margin-top: 32px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+.removal-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 780px; }
+.removal-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.removal-note h4 i { color: var(--red); font-size: 13px; }
+.removal-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
 
 /* Benefits section */
 .product-benefits { padding: 72px 0; background: var(--light); }
@@ -69,7 +71,7 @@ html { scroll-behavior: smooth; }
 
 /* Specifications section */
 .product-specs { padding: 72px 0; background: #fff; }
-.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.specs-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; }
 .spec-table { width: 100%; border-collapse: collapse; }
 .spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
 .spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
@@ -77,8 +79,6 @@ html { scroll-behavior: smooth; }
 .spec-table td:last-child { color: var(--dark); font-weight: 600; }
 .spec-table tr:last-child td { border-bottom: none; }
 .spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
-.spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
-.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
 
 /* Back link */
 .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
@@ -86,11 +86,11 @@ html { scroll-behavior: smooth; }
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .specs-layout { gap: 36px; }
+  .specs-layout { grid-template-columns: 1fr 300px; gap: 36px; }
 }
 @media (max-width: 900px) {
-  .benefits-grid { grid-template-columns: 1fr; }
   .specs-layout { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .product-nav { top: 64px; }
@@ -117,10 +117,10 @@ html { scroll-behavior: smooth; }
       <i class="fas fa-chevron-right"></i>
       <a href="products-anti-scale.html">Anti-Scale &amp; Decarburization Control Coatings</a>
       <i class="fas fa-chevron-right"></i>
-      <span>ESPON-ACR3</span>
+      <span>ESPON-ACR</span>
     </div>
-    <h1>ESPON-ACR3 <span>Oxidation Resistant Coating</span></h1>
-    <p>Proprietary protective coating for titanium, stainless steel, Inconel, and other critical alloys — preventing high-temperature oxidation during heating for hot forming.</p>
+    <h1>ESPON-ACR <span>Heat Retention &amp; Alpha-Case Control Coating</span></h1>
+    <p>Protective coating for titanium, Inconel, and other critical super alloys — retaining heat in the billet and reducing alpha-case formation during heating.</p>
   </div>
 </section>
 
@@ -138,10 +138,10 @@ html { scroll-behavior: smooth; }
 <!-- ── Description ─────────────────────────────────────────── -->
 <section class="product-intro" id="overview">
   <div class="container">
-    <div class="product-code">ESPON-ACR3 &mdash; Oxidation Resistant Coating</div>
-    <h2 class="product-title">Protective Coating for Titanium, Inconel &amp; Special Alloys</h2>
+    <div class="product-code">ESPON-ACR &mdash; Heat Retention &amp; Alpha-Case Control Coating</div>
+    <h2 class="product-title">Protective Coating for Titanium, Inconel &amp; Critical Super Alloys</h2>
     <div class="product-desc">
-      <p>ESPON-ACR3 is a proprietary protective coating for critical alloys. It prevents high-temperature oxidation during heating for hot forming of titanium, stainless steel, Inconel, and other special alloys. It is suited to parts that undergo further shaping after heating &mdash; the coating comes off naturally during that process rather than needing to be removed by hand.</p>
+      <p>ESPON-ACR is applied to titanium, Inconel, and other critical super alloys before heating, to retain heat in the billet and substantially reduce alpha-case formation on the surface. It is best suited to finish-machined parts that see no further shaping after heat treatment &mdash; once heating is complete, the coating comes off easily by hand.</p>
     </div>
   </div>
 </section>
@@ -150,11 +150,11 @@ html { scroll-behavior: smooth; }
 <section class="product-why" id="why-it-matters">
   <div class="container">
     <div class="section-label">Why It Matters</div>
-    <h2 class="section-title">Protecting Titanium &amp; Critical Alloys During Heating</h2>
+    <h2 class="section-title">Heat Loss &amp; Alpha-Case in Titanium Forging</h2>
     <div class="why-content">
-      <p>During heating of titanium, Inconel, and such highly critical super alloys, much care is required to ensure that forging is done at precisely controlled temperature. In the case of titanium forging, heat is lost very fast from heated billets, thereby making subsequent processing like forging very difficult. Heat loss from titanium billets can cause rejection due to required properties not being met.</p>
-      <p>Additionally, similar to oxidation and decarburisation in steels, titanium is prone to formation of alpha-case on the surface during heating at high temperatures. Alpha case formation in titanium causes rejection of parts during final testing. Alpha case formed on titanium must be removed by grinding after forming the parts &mdash; a laborious process, as hard titanium is not easily machinable.</p>
-      <p>Before heating, titanium must be protected with ESPON-ACR3 protective coating. This results in retention of heat in heated titanium billets so that forging or such processing can be carried out as planned, while substantially reducing alpha-case formation. This coating has no impact on heating time, temperature, or properties after heating of coated parts.</p>
+      <p>Heating titanium, Inconel, and similar critical super alloys demands precise temperature control. Titanium billets lose heat very quickly once out of the furnace, which makes subsequent processing such as forging difficult and can cause rejection when required properties are not met.</p>
+      <p>Titanium is also prone to forming a hard alpha-case layer on its surface during high-temperature heating &mdash; much like oxidation and decarburisation in steel. Alpha-case causes part rejection at final testing and has to be ground off, a slow process since hardened titanium does not machine easily.</p>
+      <p>Coating titanium billets with ESPON-ACR before heating helps them retain heat so that forging can proceed as planned, while substantially reducing alpha-case formation. The coating has no impact on heating time, temperature, or the properties of the part after heating.</p>
     </div>
   </div>
 </section>
@@ -164,29 +164,13 @@ html { scroll-behavior: smooth; }
   <div class="container">
     <div class="section-label">Application</div>
     <h2 class="section-title">Method of Application</h2>
-    <p class="section-sub">ESPON-ACR3 is ready-to-use and can be applied by brushing or dipping.</p>
+    <div class="how-content">
+      <p>ESPON-ACR can be applied by brushing, spraying, or dipping.</p>
+    </div>
 
-    <div class="steps-list">
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-text">After opening the container, stir the contents with a clean stirrer for 20 minutes so that the bottom sludge is completely mixed with the liquid.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-text">Ensure the surface to be coated is dry, and free from grease, oil, rust, and dust. Achieve this by swabbing the surface with a piece of cloth dipped in ESPON-ACR3 &mdash; a very thin film is left, which enables adherence of the subsequent coating by brushing.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">3</div>
-        <div class="step-text">Use a clean brush to apply the coating. ESPON-ACR3 can also be applied by dipping.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">4</div>
-        <div class="step-text">Allow the coating to dry well before charging the coated billets into the heating furnace.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">5</div>
-        <div class="step-text">After use, close the container air-tight and store in a cool place.</div>
-      </div>
+    <div class="removal-note">
+      <h4><i class="fas fa-hand"></i> Removal</h4>
+      <p>Once heat treatment is complete, ESPON-ACR is removed by hand &mdash; making it well suited to finish-machined parts that require no further shot blasting, grinding, or machining afterward.</p>
     </div>
   </div>
 </section>
@@ -195,32 +179,32 @@ html { scroll-behavior: smooth; }
 <section class="product-benefits" id="benefits">
   <div class="container">
     <div class="section-label">Benefits</div>
-    <h2 class="section-title">Why Use ESPON-ACR3</h2>
+    <h2 class="section-title">Why Use ESPON-ACR</h2>
 
     <div class="benefits-grid">
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-arrow-trend-up"></i></div>
-        <div class="benefit-text">Substantial reduction in oxidation, leading to increased yield</div>
+        <div class="benefit-icon"><i class="fas fa-temperature-half"></i></div>
+        <div class="benefit-text">Retains heat in heated titanium billets, so forging or further processing proceeds as planned</div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i class="fas fa-layer-group"></i></div>
-        <div class="benefit-text">Reduced depth of alpha case on titanium and critical alloy surfaces</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-temperature-half"></i></div>
-        <div class="benefit-text">Retains heat in heated titanium billets so forging can proceed as planned</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-gears"></i></div>
-        <div class="benefit-text">Reduces operations like grinding and acid pickling required after heating</div>
+        <div class="benefit-text">Substantially reduces alpha-case formation on titanium and other critical alloy surfaces</div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i class="fas fa-sack-dollar"></i></div>
-        <div class="benefit-text">Substantial reduction in the cost of processing titanium, SS, Inconel, and such critical alloys &mdash; saving expensive material from loss due to alpha case formation</div>
+        <div class="benefit-text">Increases yield &mdash; saves expensive titanium and alloy material from loss due to alpha-case</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-hand"></i></div>
+        <div class="benefit-text">Removed easily by hand after heat treatment &mdash; suited to finish-machined parts needing no further processing</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-paint-roller"></i></div>
+        <div class="benefit-text">Can be applied by brushing, spraying, or dipping &mdash; no special equipment required</div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i class="fas fa-fire-extinguisher"></i></div>
-        <div class="benefit-text">Non-flammable and non-hazardous &mdash; no toxic or volatile materials expelled during brushing or heating of coated billets</div>
+        <div class="benefit-text">Non-flammable and non-hazardous</div>
       </div>
     </div>
   </div>
@@ -244,64 +228,30 @@ html { scroll-behavior: smooth; }
           <tbody>
             <tr>
               <td>Product Code</td>
-              <td class="mono">ESPON-ACR3</td>
-            </tr>
-            <tr>
-              <td>Description</td>
-              <td>Yellow paste, free from visible extraneous matter</td>
-            </tr>
-            <tr>
-              <td>Toxicity</td>
-              <td>Nil</td>
-            </tr>
-            <tr>
-              <td>Weight per Litre</td>
-              <td>1.4 kgs &plusmn; 0.1 kg</td>
-            </tr>
-            <tr>
-              <td>Flash Point</td>
-              <td>Nil &mdash; does not catch fire</td>
+              <td class="mono">ESPON-ACR</td>
             </tr>
             <tr>
               <td>Application Method</td>
-              <td>Brush or dip</td>
+              <td>Brush, spray, or dip</td>
             </tr>
             <tr>
               <td>Removal</td>
-              <td>Comes off during shot blasting, grinding, or machining &mdash; not removable by hand</td>
+              <td>By hand, after heat treatment</td>
+            </tr>
+            <tr>
+              <td>Protects Up To</td>
+              <td>1260&deg;C (on titanium)</td>
             </tr>
             <tr>
               <td>Safety</td>
               <td>Non-hazardous. Non-flammable.</td>
-            </tr>
-            <tr>
-              <td>Shelf Life</td>
-              <td>12 months in factory-sealed condition</td>
             </tr>
           </tbody>
         </table>
       </div>
 
       <div>
-        <div class="spec-card-standalone">
-          <div class="spec-card-title">Packaging</div>
-          <table class="spec-table">
-            <thead>
-              <tr>
-                <th>Pack Size</th>
-                <th>Container Type</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>50 kg</td>
-                <td>Special container</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-
-        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center;">
           <i class="fas fa-envelope"></i> Enquire Now
         </a>
 
@@ -317,7 +267,7 @@ html { scroll-behavior: smooth; }
     <div class="cta-strip-inner">
       <div>
         <h2>Processing Titanium or Critical Alloys?</h2>
-        <p>Speak with our engineers about ESPON-ACR3 for oxidation protection during hot forming.</p>
+        <p>Speak with our engineers about ESPON-ACR for heat retention and alpha-case control.</p>
       </div>
       <div class="cta-strip-actions">
         <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>

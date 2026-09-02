@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reduce Rail Production Costs: Prevent Rejections and Reduce Fuel Consumption in Hot Rolling of Rails — Steel Plant Specialities LLP</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <style>
+    /* ── Article layout ─────────────────────────────────────── */
+    .article-wrap { padding: 64px 0 96px; background: #fff; }
+    .article-container { max-width: 820px; margin: 0 auto; padding: 0 32px; }
+
+    /* Meta bar */
+    .article-meta {
+      display: flex; flex-wrap: wrap; align-items: center; gap: 20px;
+      padding-bottom: 28px; margin-bottom: 36px;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px; color: var(--grey);
+    }
+    .article-meta-item { display: flex; align-items: center; gap: 6px; }
+    .article-meta-item i { color: var(--red); font-size: 12px; }
+    .article-tag {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      padding: 3px 10px; border-radius: 3px;
+      background: var(--red); color: #fff;
+    }
+
+    /* Table of contents */
+    .article-toc {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px 32px;
+      margin-bottom: 48px;
+    }
+    .article-toc h2 {
+      font-size: 14px; font-weight: 800; color: var(--dark);
+      margin-bottom: 16px; letter-spacing: .3px; text-transform: uppercase;
+    }
+    .toc-list { counter-reset: toc; list-style: none; padding-left: 0; }
+    .toc-list li { margin-bottom: 8px; }
+    .toc-list li a {
+      font-size: 14px; color: var(--grey); font-weight: 500;
+      transition: color .2s; display: flex; gap: 8px;
+    }
+    .toc-list li a::before {
+      counter-increment: toc;
+      content: counter(toc) ".";
+      color: var(--red); font-weight: 700; min-width: 20px;
+    }
+    .toc-list li a:hover { color: var(--red); }
+    .toc-sub { padding-left: 28px; margin-top: 6px; list-style: none; }
+    .toc-sub li a { font-size: 13px; }
+    .toc-sub li a::before { content: "▪"; color: var(--grey); font-size: 10px; counter-increment: none; }
+
+    /* Article body typography */
+    .article-body h2 {
+      font-size: clamp(22px, 2.5vw, 28px); font-weight: 900;
+      color: var(--dark); margin: 56px 0 20px; line-height: 1.2;
+      letter-spacing: -.3px; padding-top: 20px;
+      border-top: 2px solid var(--border);
+    }
+    .article-body h2:first-child { border-top: none; margin-top: 0; padding-top: 0; }
+    .article-body h3 {
+      font-size: 18px; font-weight: 800; color: var(--dark);
+      margin: 40px 0 14px; line-height: 1.3;
+    }
+    .article-body h4 {
+      font-size: 15px; font-weight: 700; color: var(--dark);
+      margin: 28px 0 10px;
+    }
+    .article-body p {
+      font-size: 16px; color: var(--mid); line-height: 1.85;
+      margin-bottom: 18px;
+    }
+    .article-body strong { color: var(--dark); }
+    .article-body ul, .article-body ol {
+      margin: 0 0 20px 20px; font-size: 16px; color: var(--mid); line-height: 1.85;
+    }
+    .article-body li { margin-bottom: 8px; }
+
+    /* Article images */
+    .article-img {
+      margin: 32px 0; border-radius: var(--radius-lg); overflow: hidden;
+      border: 1px solid var(--border);
+    }
+    .article-img img { width: 100%; display: block; }
+    .article-img figcaption {
+      padding: 10px 16px; background: var(--light);
+      font-size: 12.5px; color: var(--grey); line-height: 1.55;
+      border-top: 1px solid var(--border);
+    }
+
+    /* Caption-above-image variant */
+    .article-img.cap-top { display: flex; flex-direction: column; }
+    .article-img.cap-top figcaption {
+      order: -1; border-top: none; border-bottom: 1px solid var(--border);
+    }
+    .article-img.cap-top .img-cell {
+      height: 260px; display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .article-img.cap-top .img-cell img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+    }
+
+    /* Two-up side-by-side pair (stacks on mobile) */
+    .img-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 32px 0; }
+    .img-pair .article-img { margin: 0; }
+    @media (max-width: 768px) {
+      .img-pair { grid-template-columns: 1fr; }
+    }
+
+    /* Flexible image grids (3-up / 2-up) */
+    .img-grid { display: grid; gap: 16px; margin: 32px 0; }
+    .img-grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .img-grid-2 { grid-template-columns: repeat(2, 1fr); }
+    .img-grid .article-img { margin: 0; display: flex; flex-direction: column; }
+    .img-grid .article-img .img-cell {
+      height: 190px; display: flex; align-items: center; justify-content: center;
+      background: var(--light); overflow: hidden;
+    }
+    .img-grid .article-img .img-cell img {
+      max-width: 100%; max-height: 100%; width: auto; height: auto; object-fit: contain; display: block;
+    }
+    .img-grid .article-img .img-cell.cover img {
+      width: 100%; height: 100%; object-fit: cover;
+    }
+    .img-grid .article-img figcaption { flex: 1; }
+
+    /* Data callout */
+    .article-callout {
+      background: rgba(235,61,0,.05);
+      border: 1px solid rgba(235,61,0,.15);
+      border-radius: var(--radius); padding: 20px 24px;
+      margin: 28px 0; font-size: 15px; color: var(--dark); line-height: 1.75;
+    }
+    .article-callout strong { color: var(--red); }
+
+    /* Result block */
+    .result-block {
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 24px 28px; margin: 28px 0;
+    }
+    .result-block h4 { margin-top: 0; margin-bottom: 12px; }
+    .result-row {
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: 6px 0; font-size: 14px; color: var(--mid);
+      border-bottom: 1px dashed var(--border);
+    }
+    .result-row:last-child { border-bottom: none; }
+    .result-row .result-label { font-weight: 500; }
+    .result-row .result-value { font-weight: 700; color: var(--dark); font-family: 'IBM Plex Mono', monospace; }
+    .result-highlight {
+      margin-top: 16px; padding: 12px 16px;
+      background: rgba(235,61,0,.07); border-radius: var(--radius);
+      font-size: 14px; font-weight: 700; color: var(--red); text-align: center;
+    }
+
+    /* Tables */
+    .article-table-wrap {
+      margin: 28px 0; overflow-x: auto;
+      border: 1px solid var(--border); border-radius: var(--radius-lg);
+    }
+    .article-table {
+      width: 100%; border-collapse: collapse; font-size: 14px;
+    }
+    .article-table thead { background: var(--dark); color: #fff; }
+    .article-table th {
+      padding: 12px 16px; text-align: left;
+      font-weight: 700; font-size: 13px; letter-spacing: .3px;
+    }
+    .article-table td {
+      padding: 10px 16px; border-bottom: 1px solid var(--border);
+      color: var(--mid); vertical-align: top;
+    }
+    .article-table tbody tr:last-child td { border-bottom: none; }
+    .article-table tbody tr:nth-child(even) { background: var(--light); }
+    .article-table .highlight-row { background: rgba(235,61,0,.05) !important; }
+    .article-table .highlight-row td { color: var(--dark); font-weight: 600; }
+
+    /* Visible grid lines variant */
+    .article-table.grid-lines th,
+    .article-table.grid-lines td {
+      border-right: 1px solid var(--border);
+    }
+    .article-table.grid-lines th:last-child,
+    .article-table.grid-lines td:last-child {
+      border-right: none;
+    }
+
+    /* Author card */
+    .author-card {
+      display: grid; grid-template-columns: 100px 1fr; gap: 24px;
+      align-items: start;
+      background: var(--light); border: 1px solid var(--border);
+      border-radius: var(--radius-lg); padding: 28px;
+      margin: 56px 0 0;
+    }
+    .author-card-photo {
+      width: 100px; height: 120px; border-radius: var(--radius);
+      object-fit: cover; object-position: top center;
+    }
+    .author-card h3 { font-size: 18px; font-weight: 800; color: var(--dark); margin: 0 0 2px; }
+    .author-card .author-card-role {
+      font-size: 12px; font-weight: 600; color: var(--red); margin-bottom: 12px; display: block;
+    }
+    .author-card p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+    /* ── Responsive ────────────────────────────────────────── */
+    @media (max-width: 768px) {
+      .article-wrap { padding: 40px 0 64px; }
+      .article-container { padding: 0 16px; }
+      .article-toc { padding: 20px; }
+      .article-body h2 { font-size: 22px; margin: 40px 0 16px; }
+      .article-body p { font-size: 15px; }
+      .img-grid-3, .img-grid-2 { grid-template-columns: 1fr; }
+      .author-card { grid-template-columns: 80px 1fr; gap: 16px; padding: 20px; }
+      .author-card-photo { width: 80px; height: 96px; }
+      .result-row { flex-direction: column; gap: 2px; }
+      .article-table { font-size: 13px; }
+      .article-table th, .article-table td { padding: 8px 10px; }
+    }
+    @media (max-width: 480px) {
+      .article-meta { gap: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Page Hero ───────────────────────────────────────── -->
+  <section class="page-hero">
+    <div class="page-hero-bg" style="background-image:url('Images/Articles/railway.webp')"></div>
+    <div class="page-hero-overlay"></div>
+    <div class="container page-hero-content">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <i class="fas fa-chevron-right"></i>
+        <a href="resources.html">Resources</a>
+        <i class="fas fa-chevron-right"></i>
+        <span>Technical Article</span>
+      </div>
+      <h1>Reduce Rail Production Costs: Prevent Rejections and<br><span>Reduce Fuel Consumption in Hot Rolling of Rails</span></h1>
+      <p>Two IIT-pioneered protective coating techniques &mdash; one for billets, one for furnace refractory &mdash; that cut rejections, increase yield, and reduce fuel consumption in hot rolling of rail steel.</p>
+    </div>
+  </section>
+
+  <!-- ── Article Body ──────────────────────────────────────── -->
+  <section class="article-wrap">
+    <div class="article-container">
+
+      <!-- Meta bar -->
+      <div class="article-meta">
+        <span class="article-tag">Technical Article</span>
+        <div class="article-meta-item"><i class="fas fa-user"></i> S.P. Shenoy</div>
+        <div class="article-meta-item"><i class="fas fa-calendar"></i> 2025</div>
+        <div class="article-meta-item"><i class="fas fa-clock"></i> 14 min read</div>
+        <div class="article-meta-item"><i class="fas fa-industry"></i> Rail Steel &amp; Furnace Efficiency</div>
+      </div>
+
+      <div class="article-body">
+
+        <!-- TOC -->
+        <nav class="article-toc">
+          <h2>Contents</h2>
+          <ol class="toc-list">
+            <li><a href="#introduction">Introduction</a></li>
+            <li>
+              <a href="#coating-1">Protective Coating 1: To Control Decarburisation and Prevent Scaling</a>
+              <ul class="toc-sub">
+                <li><a href="#understanding">Understanding Oxidation and Decarburisation</a></li>
+                <li><a href="#characteristics">Characteristics of Protective Coating and Its Use</a></li>
+                <li><a href="#case-studies">Preventing Rejections, Increasing Yield: Industrial Case Studies</a></li>
+                <li><a href="#rail-benefits">Benefits Achieved in Hot Rolling of Rails</a></li>
+                <li><a href="#other-benefits">Benefits Achieved in Hot Rolling of Other Grades of Steel</a></li>
+              </ul>
+            </li>
+            <li>
+              <a href="#coating-2">Protective Coating 2: To Reduce Fuel Consumption and Increase Refractory Lining Life</a>
+              <ul class="toc-sub">
+                <li><a href="#refractory-problems">Problems Encountered in Refractories</a></li>
+                <li><a href="#refractory-coating">Use of Protective Refractory Coatings</a></li>
+                <li><a href="#refractory-results">Results of Refractory Protective Coatings</a></li>
+              </ul>
+            </li>
+            <li><a href="#summary">Summary and Conclusion</a></li>
+          </ol>
+        </nav>
+
+        <!-- 1. Introduction -->
+        <h2 id="introduction">Introduction</h2>
+
+        <p><strong>Abstract:</strong> Manufacture of hot rolled rails is a complex process as compared with most other rolled products. Hot rolled rail affects very important parameters like passenger safety in all seasons, durability of rails to ensure minimum downtime of rail-transport and fast transportation of locomotives on the laid-out rail tracks. With the demand of all types of rail steel rising substantially in recent times, there is a constant need to manufacture hot rolled rail steels with stringent quality checks to ensure that all the required parameters are met, at the least cost.</p>
+
+        <p>This article provides information on two techniques that have proven to prevent rejections, increase yield and reduce fuel consumption in the hot rolling of rail steels. Both techniques involve the use of protective coatings at various stages of manufacturing rail steels.</p>
+
+        <p>Protective coatings play a major role in increasing productivity and reducing costs in metal forming processes like hot rolling and heat treatment. These coatings are pioneered in India by an experienced metallurgist from the Indian Institute of Technology (I.I.T.), Mumbai. Details and successful case studies of two such protective coatings are presented below:</p>
+
+        <div class="article-callout">
+          <strong>1. Decarburisation and Oxidation at high temperatures</strong> are caused during heating of billets or ingots for hot rolling and during heat treatment of rolled products. Decarburisation and scaling lead to enormous losses by way of rejection of produce, reduced yield, furnace downtime for scale removal, low roll life by serrations due to scale and increase in expensive, time-consuming operations like grinding, acid pickling, shot blasting etc. Billets are often subjected to excessive heat in furnaces due to unplanned downtime of rolling mill. In such cases, high oxidation and resultant decarburisation may lead to rejection of entire heat. The need to control decarburisation and scaling is very important in the case of critical hot rolled products like rail steel, spring steel and expensive grades. <strong>Protective coatings on billets to control decarburisation and prevent scaling</strong> are used during billet re-heating for hot rolling and also during heat treatment of rolled products, where necessary. Recent developments in these coatings have made coating technique viable for most grades of steel.
+        </div>
+
+        <div class="article-callout">
+          <strong>2. Production downtime due to furnace maintenance and increased fuel consumption</strong> are caused due to wear of refractory bricks. Common causes of furnace downtime are thermal shock cracks, corrosive action of flame and gases on refractory and carbon deposits on burner blocks. <strong>Protective coatings for refractory</strong> bricks are developed to withstand temperatures up to 1600 deg. C. Being slightly plastic in nature at temperatures above 200 deg. C., these protective coatings enable prevention of thermal shock cracking of refractory bricks. Due to increased emissivity by refractory coating and reduced thermal conductivity of refractory lining, heat is retained in furnace for longer duration. As a result, when furnace is switched off in the evening and switched on next morning, the time and fuel required to achieve temperature of 1250 deg. C., are considerably reduced. Furnace outer shell temperature is also reduced considerably, between 10 to 20 deg. C. due to refractory coating.
+        </div>
+
+        <p>These techniques can be easily adopted by all hot rolling mills, large or small.</p>
+
+        <!-- 2. Protective Coating 1 -->
+        <h2 id="coating-1">Protective Coating 1: To Control Decarburisation and Prevent Scaling</h2>
+
+        <p>In hot rolling of rail steels, the major factor accounting for rejections is decarburization, and for reduced yield is &lsquo;burning loss&rsquo; or &lsquo;scale loss&rsquo; or &lsquo;mill scale&rsquo; caused due to oxidation. Decarburization and oxidation of steel take place when billets are heated in a billet re-heating furnace, in the presence of air or products of combustion. Apart from burning loss of between 1.5% up to 4%, decarburization and oxidation lead to numerous other problems like scale pit marks, bad quality surface finish of metal, rejections, cumbersome task of removal of mill scale and increased expensive operations like bar-peeling, grinding, shot blasting, etc., in some type of rolled products.</p>
+
+        <div class="img-pair">
+          <figure class="article-img cap-top">
+            <figcaption>The red area represents the depth of the decarburised layer. The effective depth of decarburisation of high speed rail is less than 0.3 mm. It can only be used as the common rail if the decarburised depth is between 0.31&ndash;0.49 mm. It can not be used if the depth is more than 0.5 mm.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-railsteel-decarb-diagram.png" alt="Rail cross-section showing depth of decarburised layer highlighted in red"></div>
+          </figure>
+          <figure class="article-img cap-top">
+            <figcaption>Rail steel billet on conveyor during hot rolling. Decarburization and oxidation of steel take place when billets are heated in a billet re-heating furnace, in the presence of air or products of combustion.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-hotrolling-p13-15.jpg" alt="Hot rail steel billet on conveyor during rolling"></div>
+          </figure>
+        </div>
+
+        <!-- 2.1 Understanding oxidation -->
+        <h3 id="understanding">Understanding Oxidation and Decarburisation</h3>
+
+        <p>For the purpose of hot rolling, when billets or blooms are heated in an open atmosphere furnace in the presence of air or products of combustion, the surface phenomena of oxidation and decarburization take place. Oxidation causes immediate corrosion of steel at high temperature and creates a layer of metal-oxide, or mill scale, on the surface of the billets or ingots. Decarburisation is a simultaneous reaction that removes carbon from surface, thereby making the steel unfit for use as rails.</p>
+
+        <p>A decarburized layer decreases the hardness and wear resistance of rail steels. The wear rate of a decarburized rail is over twice that of the same steel without decarburization. With an increase in the depth of decarburization, the damage of rail roller turns from major spalling to pitting and peeling. In addition, surface fatigue cracks become more serious as depth increases. By contrast, shallow decarburization has little effect on rolling contact fatigue (RCF) of the rail material. Only when the depth of the decarburization exceeds a certain thickness (i.e., about 0.5 mm), RCF damage sharply worsens as decarburization depth increases. <em>(Source: H.Y. Wang et. al.: Effects of decarburisation on the wear resistance and damage mechanism of rail steels subject to contact fatigue. July 2016. Wear 364)</em></p>
+
+        <p>Oxidation of steel is caused by oxygen, carbon dioxide and/or water-vapour. The general reactions are given below:</p>
+
+        <div class="result-block">
+          <div class="result-row"><span class="result-label">O&#8322; + 2 Fe</span><span class="result-value">&#8652; 2 FeO</span></div>
+          <div class="result-row"><span class="result-label">O&#8322; + 4 FeO</span><span class="result-value">&#8652; 2 Fe&#8322;O&#8323;</span></div>
+          <div class="result-row"><span class="result-label">CO&#8322; + Fe</span><span class="result-value">&#8652; CO + FeO</span></div>
+          <div class="result-row"><span class="result-label">CO&#8322; + 3 FeO</span><span class="result-value">&#8652; Fe&#8323;O&#8324; + CO</span></div>
+        </div>
+
+        <p>Oxidation of steel may range from a tight, adherent straw-coloured film that forms at a temperature of about 180&deg;C to a loose, blue-black oxide scale that forms at temperature above about 450&deg;C with resultant loss of metal or reduced yield.</p>
+
+        <h4>Harmful Effects of Oxidation and Decarburisation</h4>
+
+        <p>Oxidation leads to loss of dimensions and material as extra material allowance needs to be kept for scaling. Often, surface quality is deteriorated due to scale-pitting. This is especially true in the case of Nickel (Ni) steel.</p>
+
+        <p>Throughout the industry, this burning loss or scale loss is simply treated as wastage and not many practical solutions are available to stop or reduce this wastage. Problems like thick adherent scaling or scale pit marks or decarburization are dealt by manually grinding off the scale or decarburized layer after the hot rolling process. In many cases, entire heat of billets with excessive decarburization are gas cut and fed to scrap. This is a huge loss of energy and rolling mill production time.</p>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-railsteel-scrap-cutting.png" alt="Workers gas-cutting a rejected heat of billets due to excessive decarburization">
+          <figcaption>Entire heat of billets with excessive decarburization being gas cut and fed to scrap &mdash; a huge loss of energy and rolling mill production time.</figcaption>
+        </figure>
+
+        <p>Prevention or substantial reduction of oxidation is not only better than cure, it is profitable too. However, most of the available solutions pose a number of practical difficulties. Capital-intensive special furnaces and availability of human resource for using these high-end furnaces is a major issue. Many small hot rolling organisations cannot afford these solutions. Yet they are under mounting pressure to prevent rejections, increase yield and reduce costs. <strong>Use of protective coating on billets has proven to be a feasible solution to the problem of decarburization and scaling in hot rolling.</strong></p>
+
+        <!-- 2.2 Characteristics -->
+        <h3 id="characteristics">Characteristics of Protective Coating and Its Use</h3>
+
+        <p>Use of protective coating has been found beneficial and cost-effective. An anti-scale coating is applied on billets / ingots to be heated, before charging them into furnace. This anti-scale protective coating acts as a barrier between oxygen and metal. Care is taken to apply a uniform, impervious layer of coating on the billet to be heated. Coating ensures substantial reduction of oxidation, and thereby reduction in burning loss or mill scale. Anti-scale coating also reduces decarburization on billets during hot rolling operations. Heat transfer from heating media to metal is not affected due to anti-scale protective coating.</p>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-hotrolling-p5-3.jpg" alt="Rail steel billets coated with anti-scale protective coating before charging into furnace">
+          <figcaption>Coated rail steel billets before being charged into the furnace. Coating may be applied by brushing, spraying or dipping, as found feasible by each rolling mill.</figcaption>
+        </figure>
+
+        <p>No reaction with steel surface, no release of toxic fumes during use or hot rolling or storage, non-hazardous and economical implementation are other required characteristics of the coating.</p>
+
+        <div class="img-pair">
+          <figure class="article-img cap-top">
+            <figcaption>Protective coating being sprayed on billets before being charged into billet re-heating furnace. This method enables coating of entire heat of billets within a few minutes.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-railsteel-spray-application.png" alt="Worker spraying protective anti-scale coating on rail steel billets"></div>
+          </figure>
+          <figure class="article-img cap-top">
+            <figcaption>Automatic spray system used to spray one side of billets while on conveyor, on way to the charging bed of the pusher-type furnace.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-railsteel-auto-spray-system.png" alt="Automatic spray system for coating one side of rail steel billets"></div>
+          </figure>
+        </div>
+
+        <p>The image above shows automatic spraying of protective coating on only one side of billets. In many cases, especially in pusher-type furnaces, decarburization and scaling are excessive on top surface of billets. Hence, rolling mills find it effective enough to spray only the top surface of billets. In the case of rail steels, the side of the billet that will eventually become the top part of the rail on which the wheels will move is most important. Hence, it is very important to control decarburisation and scaling on this critical side of the billet. This is done by spray of protective coating on the critical side of the rail steel billets.</p>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-railsteel-coated-billet.png" alt="Rail steel billet sprayed evenly with protective anti-scale coating on the critical side">
+          <figcaption>The critical side of a rail steel billet, sprayed evenly with protective coating.</figcaption>
+        </figure>
+
+        <!-- 2.3 Case studies -->
+        <h3 id="case-studies">Preventing Rejections, Increasing Yield by the Use of Protective Anti-Scale Coating: Industrial Case Studies and Success Stories</h3>
+
+        <p>Due to reduction in oxidation by the use of protective anti-scale coating during hot rolling, the scale thickness is considerably reduced and decarburization is controlled. As a result, a range of benefits are achieved. Many benefits can be perceived immediately and some benefits can be perceived in the long run.</p>
+
+        <div class="img-pair">
+          <figure class="article-img cap-top">
+            <figcaption>Not coated billet on conveyor, discharged from furnace and passed through water de-scaler. As thick, adherent scale was formed, water de-scaling has not been effective. Adherent scale is observed on the top surface and some adherent scale on the left side surface.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-hotrolling-p13-15.jpg" alt="Not-coated billet on conveyor showing thick adherent scale"></div>
+          </figure>
+          <figure class="article-img cap-top">
+            <figcaption>Anti-scale coated billet on conveyor, discharged from furnace and passed through water de-scaler. Minimum, loose scale was formed that has completely fallen off during water de-scaling. This proves that scale loss is reduced. Ease of rolling operation and reduced scale deposits on the rolling mill machinery are ensured.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-hotrolling-p13-16.jpg" alt="Anti-scale coated billet on conveyor showing thin loose scale"></div>
+          </figure>
+        </div>
+
+        <p>Adjoining photographs are of mill scale that were generated on billets during re-heating for hot rolling, with and without using protective anti-scale coating:</p>
+
+        <div class="img-pair">
+          <figure class="article-img cap-top">
+            <figcaption>Thin, loose scale is observed on billets when protective coating is used. White layer of coating residue is observed on scale &mdash; this indicates efficacy of coating.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-hotrolling-p6-4.jpg" alt="Thin, loose mill scale flakes from an ESPON-coated billet"></div>
+          </figure>
+          <figure class="article-img cap-top">
+            <figcaption>Thick adherent scale is observed on billets when coating is not used.</figcaption>
+            <div class="img-cell"><img src="Images/Articles/article-hotrolling-p6-5.jpg" alt="Thick adherent mill scale from an uncoated billet"></div>
+          </figure>
+        </div>
+
+        <figure class="article-img">
+          <img src="Images/Articles/article-hotrolling-p7-6.jpg" alt="Thickness of scale comparison: 0.717mm on ESPON coated billet versus 1.667mm on not coated billet">
+          <figcaption>Thickness of mill scale fallen off both coated and not coated billets, measured using digital vernier calliper. Scale of much lower thickness of 0.717 mm is generated on billets that were protected using anti-scale coating. In comparison, billets that were not protected and were charged in the same batch of heating have shown thicker and more adherent scale of 1.667 mm.</figcaption>
+        </figure>
+
+        <div class="result-block">
+          <div class="result-row">
+            <span class="result-label">Total Reduction in Scale</span>
+            <span class="result-value">0.95 mm</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Reduction in Mill Scale Loss</span>
+            <span class="result-value">56.98%</span>
+          </div>
+          <div class="result-highlight">Approximately 50% up to 70% reduction in mill scale is usually achieved by the use of anti-scale protective coating on billets in hot rolling. In the case of heat treatment of rolled products, where temperatures are 1000 deg. C. and lesser, the efficacy of coating and savings achieved are much more.</div>
+        </div>
+
+        <p>A report of a number of mild-steel billets hot rolled without coating, in comparison with hot rolling similar billets with single coating and double coating of anti-scale protection, is provided below:</p>
+
+        <div class="article-table-wrap">
+          <table class="article-table grid-lines">
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Billet Wt. Before Coating (kg)</th>
+                <th>Billet Wt. After Heating (kg)</th>
+                <th>Scale Difference (kg)</th>
+                <th>3 Billet Wt. Before Coating (kg)</th>
+                <th>3 Billet Wt. After Heating (kg)</th>
+                <th>Coating Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>47.720</td>
+                <td>47.330</td>
+                <td>0.390</td>
+                <td></td>
+                <td></td>
+                <td>With Coating</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>47.010</td>
+                <td>46.660</td>
+                <td>0.350</td>
+                <td></td>
+                <td></td>
+                <td>With Coating</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>3</td>
+                <td>46.510</td>
+                <td>46.110</td>
+                <td>0.400</td>
+                <td>141.240 (Sr. No. 1, 2, 3)</td>
+                <td>140.100 (Sr. No. 1, 2, 3)</td>
+                <td>With Coating</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>47.720</td>
+                <td>46.900</td>
+                <td>0.820</td>
+                <td></td>
+                <td></td>
+                <td>Without Coating</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>46.930</td>
+                <td>46.260</td>
+                <td>0.670</td>
+                <td></td>
+                <td></td>
+                <td>Without Coating</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>6</td>
+                <td>46.450</td>
+                <td>45.800</td>
+                <td>0.650</td>
+                <td>141.100 (Sr. No. 4, 5, 6)</td>
+                <td>138.960 (Sr. No. 4, 5, 6)</td>
+                <td>Without Coating</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="result-block">
+          <div class="result-row">
+            <span class="result-label">Scale Loss — Without Coating</span>
+            <span class="result-value">2.140 kg</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Scale Loss — With Double Layer Coating</span>
+            <span class="result-value">1.140 kg</span>
+          </div>
+          <div class="result-highlight">Percentage reduction in mill scale loss due to use of protective anti-scale coating: 47.00%</div>
+        </div>
+
+        <!-- 2.4 Rail-specific benefits -->
+        <h3 id="rail-benefits">Benefits Achieved by the Use of Protective Coatings in Hot Rolling of Rails</h3>
+
+        <h4>1. Reduced Decarburization of Rail Steel</h4>
+
+        <p>Rail steel and certain grades like spring steels, ball bearing steels etc. are susceptible to decarburisation. During hot rolling of these special grades, decarburization needs to be consistently maintained to the required specification. However, due to unforeseen conditions like mill breakdown and unplanned downtime, billets remain in the furnace for longer time than usual. Also, when the plant is closed for weekly holiday, furnace is shut off abruptly, subjecting the billets to prolonged heating inside the furnace. If billets are not coated, it becomes difficult to guarantee the consistency in the decarburization level. Use of protective coatings on billets before charging them into the re-heating furnace enables to maintain the decarburization level consistently. This enables the hot rolling mill to guarantee their customers that decarburization level will always be less than the upper control limit.</p>
+
+        <p>During hot rolling of rails, especially high-speed rails, decarburization needs to be controlled stringently. Even if decarburization is controlled during billet heating, it needs to be further controlled during heat treatment. This is possible by the use of decarburization control protective coatings.</p>
+
+        <figure class="article-img cap-top">
+          <figcaption><strong>Side A: with coating vs. Side B: without coating.</strong> Image on left shows the billet coated on one side. Image on right shows the microscopic view of cross section of the billet sample. The side without coating is decarburized to a greater extent than the side that was protected with coating.</figcaption>
+          <img src="Images/Articles/article-railsteel-decarb-cross-section.png" alt="Microscopic cross-section comparing decarburization depth with and without protective coating">
+        </figure>
+
+        <p>Controlling decarburization on other components like automobile leaf springs leads to increased fatigue strength and greater reliability. Leaf springs heated after applying protective coating show substantially reduced decarburization and scaling.</p>
+
+        <h4>2. Reduced Furnace Downtime for Scale Removal and Hearth Repair / Increased Roll Life</h4>
+
+        <p>Scales fallen in furnace have a tendency to damage the furnace floors or hearth. In many rolling mills, furnace downtime is undergone only to remove scale from furnaces and to repair the hearth. Removal of scale from rolling machinery and all other locations of the rolling mill is also a cost. Hence, substantial reduction in scale will automatically reduce costs involved in disposal of scale. Furnace downtime is reduced. Reduction of scale also has a positive effect on roll life as adherent scale is known to cause serrations, and compromise roll life. Hence, there is an overall positive impact on productivity of the hot rolling plant.</p>
+
+        <!-- 2.5 Other benefits -->
+        <h3 id="other-benefits">Benefits Achieved by the Use of Protective Coatings in Hot Rolling of Other Grades of Steel</h3>
+
+        <h4>Reduction in Bar Peeling, Shot Blasting, Acid Pickling Time of Hot Rolled Products</h4>
+
+        <p>Bar peeling is carried out with the sole purpose of removing surface defects like decarburization and scale pits. It is a capital-intensive and time consuming process. By the use of protective coatings on billets, the causes of surface defects are prevented or reduced. There is consistent control of decarburization and scaling. Owing to this reliability offered by protective coatings, bar peeling operations can be reduced substantially. In many operations, bar peeling could be reduced by 50% due to consistent reduction in decarburization and scaling.</p>
+
+        <p>Operations like grinding, acid pickling, etc. do not add value, are expensive and time consuming procedures. These operations are necessary to remove adherent scaling from the hot rolled billets. Time required for operations like shot blasting, grinding, acid pickling, etc. can be substantially reduced if protective anti-scale coating is applied on components before heat treatment. Aesthetic appeal of rolled products is automatically enhanced without much effort as scaling is either prevented or reduced by the use of anti-oxidation protective coating.</p>
+
+        <h4>Preventing Cracking During Hot Rolling</h4>
+
+        <p>Micro cracks formation is a common occurrence during casting of billets. 20MnCr5 and a range of such sensitive grades of steel are susceptible to cracks. There are different types of surface defects, with many of them having to do with the poor quality of steel during continuous casting. Other important stages following continuous casting are reheating and hot rolling. There is always a chance that surface defects after casting are either very small or not detected. These defects will extend and show up in the later stages, i.e., during reheating or rolling and heat treatment. Depending on the depth of surface irregularities on the surface of heavy plates, they might be rejected, which is considered as a major economic loss for a plant. Alternatively, a heavy plate containing surface defects might be downgraded due to poor surface quality and poor surface appearance. Minor cracks formed during casting of billets are further intensified during hot rolling and lead to major cracking of hot rolled products. Similarly, micro cracks formed during hot rolling propagate further during heat treatment. Thus, one of the most important objectives of a hot rolling plant is to minimize surface defects.</p>
+
+        <p>In such cases, protective coatings are used to prevent cracking of hot rolled products. The coating prevents intensifying of micro cracks that are formed during preliminary stages. Hence, billets must be protected with coating before re-heating for hot rolling.</p>
+
+        <h4>Improving Surface Finish of Hot Rolled Components and Preventing Welding of Billets During Heating</h4>
+
+        <p>During hot rolling of special grades of steel like Nickel (Ni) and 416 Stainless Steel containing high sulphur, mill scale formation is greatly increased. Surface finish of hot rolled product may be compromised due to scale pits and rolled-in scale. Occasionally, due to heavy adherent scale, problem of roll skid is also encountered. Subsequent grinding operations are increased due to excessive mill scale. Protecting the billets with anti-scale protective coating before charging them into the re-heating furnace ensures remarkable reduction in oxidation and mill scale. It enables to achieve good surface finish of the hot rolled products, free from scale pits and rolled-in scale.</p>
+
+        <p>During re-heating of billets in pusher-type furnaces, sometimes, billets get welded together. This leads to unproductive process of separating the welded billets and downtime. Welding of billets during hot rolling can be prevented by applying protective coating on billets ends before charging them into the furnace.</p>
+
+        <!-- 3. Protective Coating 2 -->
+        <h2 id="coating-2">Protective Coating 2: To Reduce Fuel Consumption and Increase Refractory Lining Life in Furnace Operations</h2>
+
+        <p>Hot rolling involves plastic deformation of heated metals and alloys into flat products (slabs, plates) or long products (rails, wire rods, angles, channels, I sections, TMT bars, etc.). In this important metal forming operation, refractory and fuel for the reheating furnace (such as furnace oil, pulverized coal or gas) are the major costs. Any process or technique to reduce these costs will automatically improve the profitability of the rolling mill.</p>
+
+        <h3 id="refractory-problems">The Following Problems Are Encountered in the Case of Refractories</h3>
+
+        <ol>
+          <li><strong>Thermal shock cracking:</strong> Thermal shock is unavoidable in furnace operation, however much care may be taken. Due to thermal shock, cracks are initiated in the refractory lining. Energy leaks through these cracks. This loss may be as high as 33% of the total energy consumption. This is the reason why fuel consumption is observed to be more after a time gap of say, six months from the date of relining the furnace, for the same level of production.</li>
+          <li><strong>Low emissivity:</strong> Refractory lining has a low emissivity of 0.2 and hence hampers furnace efficiency. Improving this value to 0.5 or more will lead to fuel saving.</li>
+          <li><strong>Corrosive action:</strong> Furnace oil contains sulphur dioxide and vanadium pent oxide. These compounds corrode the refractory lining.</li>
+          <li><strong>Vicious sand blasting effect:</strong> The flame impinging on the refractory lining has a vicious effect of sand blasting.</li>
+          <li><strong>Carbon deposit on the burner blocks:</strong> This problem is more pronounced when the fuel used is furnace oil. Unburned carbon deposits on the burner blocks, and over a period of time, sufficient carbon build up takes place. Due to this build up, the flame geometry is impaired and heating efficiency is lowered.</li>
+        </ol>
+
+        <!-- 3.2 Use of protective refractory coatings -->
+        <h3 id="refractory-coating">Use of Protective Refractory Coatings</h3>
+
+        <p>To overcome these problems, the entire refractory lining of the reheating furnace is coated with a special zircon based coating. The coating can withstand heat of up to 1900 deg. C. Fig. 1 and 2 show the condition of the refractory lining and burner blocks before coating, and Fig. 3 and 4 show their condition after using refractory coating.</p>
+
+        <div class="img-grid img-grid-2">
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-furnace-006.jpg" alt="Fig. 1: Damaged, cracked refractory lining before coating"></div>
+            <figcaption><strong>Fig. 1</strong> &mdash; Refractory lining before coating: thermal shock cracking and carbon deposits visible.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-furnace-007.jpg" alt="Fig. 2: Worn burner blocks before coating"></div>
+            <figcaption><strong>Fig. 2</strong> &mdash; Burner blocks before coating.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-furnace-008.jpg" alt="Fig. 3: Refractory lining after zircon-based protective coating"></div>
+            <figcaption><strong>Fig. 3</strong> &mdash; Refractory lining after applying zircon-based protective coating: cracks sealed, smooth uniform surface.</figcaption>
+          </figure>
+          <figure class="article-img">
+            <div class="img-cell"><img src="Images/Articles/article-furnace-009.jpg" alt="Fig. 4: Burner blocks after zircon-based protective coating"></div>
+            <figcaption><strong>Fig. 4</strong> &mdash; Burner blocks after applying zircon-based protective coating.</figcaption>
+          </figure>
+        </div>
+
+        <!-- 3.3 Results -->
+        <h3 id="refractory-results">Results of Refractory Protective Coatings</h3>
+
+        <p>A hot rolling mill producing 40,000 tons per annum of TMT bars has reported the following results:</p>
+
+        <div class="result-block">
+          <h4>Increased Refractory Lining Life</h4>
+          <div class="result-row">
+            <span class="result-label">Relining Frequency — Without Coating</span>
+            <span class="result-value">12 months</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Relining Frequency — With Protective Refractory Coating</span>
+            <span class="result-value">21 months</span>
+          </div>
+        </div>
+
+        <div class="result-block">
+          <h4>Fuel Consumption</h4>
+          <div class="result-row">
+            <span class="result-label">Without Coating</span>
+            <span class="result-value">40 liters per ton</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">With Protective Refractory Coating</span>
+            <span class="result-value">38 liters per ton</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Annual Saving</span>
+            <span class="result-value">80,000 liters</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Value of Annual Saving</span>
+            <span class="result-value">Rs. 16,00,000</span>
+          </div>
+          <div class="result-row">
+            <span class="result-label">Cost of Refractory Coating</span>
+            <span class="result-value">Rs. 1,90,000</span>
+          </div>
+          <div class="result-highlight">Net Annual Saving: Rs. 14,10,000</div>
+        </div>
+
+        <p>In the annealing furnace of a reputed stainless steel hot rolling organization, the following savings by the use of protective refractory coating were recorded:</p>
+
+        <div class="article-table-wrap">
+          <table class="article-table grid-lines">
+            <thead>
+              <tr>
+                <th>Sr. No.</th>
+                <th>Details</th>
+                <th>Unit of Measure</th>
+                <th>Value</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td></td>
+                <td>Furnace temperature</td>
+                <td>Deg. C.</td>
+                <td>1250</td>
+              </tr>
+              <tr>
+                <td>1</td>
+                <td>Propane consumption before coating</td>
+                <td>kg/mt</td>
+                <td>25.94</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Propane consumption after coating</td>
+                <td>kg/mt</td>
+                <td>25.75</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Average fuel saving</td>
+                <td>kg/mt</td>
+                <td>0.19</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Average production</td>
+                <td>mt (per month)</td>
+                <td>21,330</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Fuel price</td>
+                <td>Rs./mt</td>
+                <td>41,821</td>
+              </tr>
+              <tr>
+                <td>6</td>
+                <td>Fuel saving per month</td>
+                <td>mt</td>
+                <td>4.053</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>7</td>
+                <td>Saving per month</td>
+                <td>Rs.</td>
+                <td>1,69,488</td>
+              </tr>
+              <tr class="highlight-row">
+                <td>8</td>
+                <td>ROI (Return on investment) for ESPON coating per furnace</td>
+                <td>Period</td>
+                <td>1 month</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p>Other results include:</p>
+
+        <h4>Reduction in Time Required for Achieving Hot Rolling Temperature of 1250 Deg. C.</h4>
+        <p>In many hot rolling mills, billet re-heating furnace is shut down in the evening at end of working shift. Furnace is switched on next morning, at start of working day. It is observed that use of protective refractory coating enabled achieving the required temperature of 1250 deg. C. much faster than the time required to achieve same temperature when refractory is not coated. Reason: high retention of heat in furnace and increased emissivity of heat by the use of protective refractory coating. In best cases, approximately 45 minutes to 1 hour of time was saved in achieving temperature of 1250 deg. C. Hence, substantial fuel saving is achieved and hot rolling production can commence faster.</p>
+
+        <h4>Increased Uniformity of Heat Throughout Furnace Chamber</h4>
+        <p>This is achieved due to heat retention and better heat emissivity by the use of protective refractory coating.</p>
+
+        <h4>Reduced Furnace Outer Shell Temperature by 10 Deg. C. to 20 Deg. C.</h4>
+        <p>All gaps and cracks in refractory lining are sealed off during application of refractory coating. This prevents energy leaks, thereby restricting heat transfer to furnace outer shell. Hence, furnace outer shell temperature is reduced as compared with not coated refractory.</p>
+
+        <!-- 4. Summary -->
+        <h2 id="summary">Summary and Conclusion</h2>
+
+        <ol>
+          <li><strong>Protective billet coatings</strong> enable consistent control of decarburisation and up to 70% reduction in burning loss or mill scale loss in hot rolling. A number of additional benefits are achieved like substantial reduction of bar-peeling, grinding, acid pickling, etc., prevention of billet welding in furnace and improved surface finish of rolled products.</li>
+          <li><strong>Protective refractory coatings</strong> enable reduction in fuel consumption, increase in refractory lining life and reduction in furnace maintenance downtime. In many reputed organisations, the return on investment (ROI) is confirmed to be 1 month only.</li>
+          <li>Use of protective coatings has proven to achieve substantial savings by preventing rejections, increasing yield and reducing fuel consumption in hot rolling of rails and other products.</li>
+        </ol>
+
+        <div class="article-callout">
+          <p style="margin:0"><strong>Call to Action:</strong> If rejections, decarburization, or furnace fuel consumption are eating into your rail steel or hot rolling mill's margins, team SPS can help you evaluate both protective billet coating and protective refractory coating for your operation.</p>
+        </div>
+
+        <!-- Author Card -->
+        <div class="author-card">
+          <span class="section-label" style="grid-column:1/-1;margin-bottom:4px">About the Author</span>
+          <img class="author-card-photo" src="Images/About/sp-shenoy.webp" alt="S.P. Shenoy">
+          <div>
+            <h3>S.P. Shenoy</h3>
+            <span class="author-card-role">M.Tech. (Met. Engg.), Founder &amp; CEO — Steel Plant Specialities LLP</span>
+            <p>A metallurgist from the Indian Institute of Technology, Mumbai and CEO of M/s. Steel Plant Specialities (SPS), Mumbai, India, established in 1985, engaged in the manufacture of environment friendly hot forging die lubricants and a range of protective coatings that enable cost reduction in hot forging, heat treatment and hot rolling operations.</p>
+          </div>
+        </div>
+
+      </div><!-- .article-body -->
+    </div><!-- .article-container -->
+  </section>
+
+  <!-- ── CTA Strip ─────────────────────────────────────────── -->
+  <div class="cta-strip">
+    <div class="container">
+      <div class="cta-strip-inner">
+        <div>
+          <h2>Want to Reduce Rejections and Fuel Costs?</h2>
+          <p>Contact our team to evaluate protective billet and refractory coatings for your rail steel hot rolling mill.</p>
+        </div>
+        <div class="cta-strip-actions">
+          <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-envelope"></i> Talk to an Expert</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="footer-mount"></div>
+
+  <script>window.ACTIVE_NAV = 'resources';</script>
+  <script src="assets/js/components.js"></script>
+</body>
+</html>

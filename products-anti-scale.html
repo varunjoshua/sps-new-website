@@ -19,10 +19,11 @@
 }
 .product-card:hover { box-shadow: 0 8px 32px rgba(235,61,0,.12); transform: translateY(-3px); border-color: var(--red); }
 .product-card::before {
-  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 0;
-  background: var(--red); transition: width .25s ease;
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: var(--red); transform: scaleX(0); transform-origin: left;
+  transition: transform .25s ease;
 }
-.product-card:hover::before { width: 3px; }
+.product-card:hover::before { transform: scaleX(1); }
 .product-img { height: 160px; overflow: hidden; }
 .product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
 .product-card:hover .product-img img { transform: scale(1.05); }
@@ -117,15 +118,31 @@
       <!-- ESPON-SR -->
       <div class="product-card">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=75&fit=crop" alt="ESPON-SR">
+          <img src="Images/Products/Espon-SR-coating.png" alt="ESPON-SR — Anti-Scale Protective Coating">
         </div>
         <div class="product-body">
-          <div class="product-tags"><span class="tag tag-red">Scale Reduction</span><span class="tag tag-light">Coating</span></div>
+          <div class="product-tags"><span class="tag tag-red">Re-Heat Treatment</span><span class="tag tag-light">Coating</span></div>
           <div class="product-code">ESPON-SR</div>
           <div class="product-name">ESPON-SR</div>
-          <div class="product-desc">Scale reduction coating for bars, rods, and shaped profiles. Designed for operations with short heating cycles where maximum scale reduction efficiency is needed.</div>
+          <div class="product-desc">Anti-scale coating for machined parts during re-heat treatment. Prevents scaling on finished components where shot blasting or grinding is not possible.</div>
           <div class="product-footer">
             <a href="product-espon-sr.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPON-ACR -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="https://images.unsplash.com/photo-1569025591790-e2e90c3a6591?w=600&q=75&fit=crop" alt="ESPON-ACR">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Titanium &amp; Alloys</span><span class="tag tag-light">Heat Retention</span></div>
+          <div class="product-code">ESPON-ACR</div>
+          <div class="product-name">ESPON-ACR</div>
+          <div class="product-desc">Retains heat and reduces alpha-case formation on titanium, Inconel, and other critical alloys. Suited to finish-machined parts — removed easily by hand after heat treatment.</div>
+          <div class="product-footer">
+            <a href="product-espon-acr.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -139,25 +156,25 @@
           <div class="product-tags"><span class="tag tag-red">Anti-Scale</span><span class="tag tag-light">High Performance</span></div>
           <div class="product-code">ESPON-ACR3</div>
           <div class="product-name">ESPON-ACR3</div>
-          <div class="product-desc">Advanced anti-scale and anti-corrosion coating for superalloys, titanium, and high-alloy steels. Provides enhanced protection at extreme temperatures with superior adhesion.</div>
+          <div class="product-desc">Oxidation resistant coating for titanium, stainless steel, Inconel, and other critical alloys. Comes off naturally during shot blasting, grinding, or machining after heating.</div>
           <div class="product-footer">
             <a href="product-espon-acr3.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
 
-      <!-- Decarburisation Control Coating -->
+      <!-- ESPON-HF -->
       <div class="product-card">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1574624498700-e35a8aba6e45?w=600&q=75&fit=crop" alt="Decarburisation Control Coating">
+          <img src="https://steelplantspecialities.com/wp-content/uploads/2023/11/1hf-1024x576.jpg" alt="ESPON-HF — Anti-Scale Protective Coating">
         </div>
         <div class="product-body">
-          <div class="product-tags"><span class="tag tag-red">Decarb Control</span><span class="tag tag-light">Coating</span></div>
-          <div class="product-code">ESPON-DC</div>
-          <div class="product-name">Decarburisation Control Coating</div>
-          <div class="product-desc">Maintains decarburisation within specification for high-carbon steel components — leaf springs, rails, automotive parts, and pressure vessels processed through heat treatment furnaces.</div>
+          <div class="product-tags"><span class="tag tag-red">Hot Rolling &amp; Forging</span><span class="tag tag-light">Decarburization Control</span></div>
+          <div class="product-code">ESPON-HF</div>
+          <div class="product-name">ESPON-HF</div>
+          <div class="product-desc">Controls decarburization and reduces scaling on billets and ingots during heating for hot rolling and hot forging. Protects at temperatures up to 1280&deg;C.</div>
           <div class="product-footer">
-            <a href="product-decarb-coating.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+            <a href="product-espon-hf.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>

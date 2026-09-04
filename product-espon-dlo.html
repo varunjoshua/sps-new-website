@@ -1,77 +1,345 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-DLO — Oil-Based Die Lubricant — Steel Plant Specialities LLP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESPON-DLO — Oil-Based Hot Forging Die Lubricant — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
-.product-detail{padding:72px 0;background:#fff}.product-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}.product-code-label{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--red);font-weight:600;margin-bottom:12px}.product-title{font-size:32px;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:16px}.product-tagline{font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:32px}.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}.benefit-item{display:flex;align-items:flex-start;gap:10px}.benefit-item i{color:var(--red);margin-top:3px;flex-shrink:0}.benefit-item span{font-size:14px;color:var(--mid);line-height:1.5}.applications{margin-top:32px}.applications h3,.kbene h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}.app-tags{display:flex;gap:8px;flex-wrap:wrap}.spec-card{background:var(--light);border-radius:12px;padding:28px;border:1px solid var(--border);position:sticky;top:88px}.spec-card-title{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}.spec-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}.spec-row:last-child{border-bottom:none;padding-bottom:0}.spec-label{color:var(--grey);font-weight:500;flex-shrink:0}.spec-value{color:var(--dark);font-weight:600;text-align:right}.spec-code{font-family:"IBM Plex Mono",monospace}.request-btn{display:block;width:100%;margin-top:24px;padding:13px;background:var(--red);color:#fff;text-align:center;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}.request-btn:hover{opacity:.88;color:#fff}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mid);margin-top:40px}.back-link:hover{color:var(--red)}
-@media(max-width:900px){.product-layout{grid-template-columns:1fr}.spec-card{position:static}.benefits-grid{grid-template-columns:1fr}}
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container { position: relative; }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+/* ── Product Page Layout (text/data-only — no product photography available) ── */
+
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: 780px; }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; max-width: 780px; }
+
+/* Why It Matters (context) */
+.product-why { padding: 72px 0; background: var(--light); }
+.why-content { max-width: 780px; }
+.why-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.why-content p:last-child { margin-bottom: 0; }
+
+/* Application section */
+.product-application { padding: 72px 0; background: #fff; }
+.how-content { max-width: 780px; margin-top: 32px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 780px; }
+.dilution-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.dilution-note h4 i { color: var(--red); font-size: 13px; }
+.dilution-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+/* Benefits section */
+.product-benefits { padding: 72px 0; background: var(--light); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Specifications section */
+.product-specs { padding: 72px 0; background: #fff; }
+.specs-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+.spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .specs-layout { grid-template-columns: 1fr 300px; gap: 36px; }
+}
+@media (max-width: 900px) {
+  .specs-layout { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-why, .product-application,
+  .product-benefits, .product-specs { padding: 48px 0; }
+  .product-title { font-size: 24px; }
+}
 </style>
 </head>
 <body>
+
 <script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── Hero (no product photography available — solid background) ─ -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1600&q=80&fit=crop')"></div>
-  <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><i class="fas fa-chevron-right"></i>
-      <a href="products.html">Products</a><i class="fas fa-chevron-right"></i>
-      <a href="products-die-lubricants.html">Hot Forging Die Lubricants</a><i class="fas fa-chevron-right"></i>
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products-die-lubricants.html">Hot Forging Die Lubricants</a>
+      <i class="fas fa-chevron-right"></i>
       <span>ESPON-DLO</span>
     </div>
-    <h1>ESPON-DLO <span>Oil-Based Die Lubricant</span></h1>
-    <p>Oil-based die lubricant for forging operations where water-based lubricants are not suitable. Provides a tenacious film on die surfaces with superior thermal stability.</p>
+    <h1>ESPON-DLO <span>Oil-Based Hot Forging Die Lubricant</span></h1>
+    <p>Graphite-based coolant-cum-lubricant for hot forging dies &mdash; improves die life and forge shop profitability.</p>
   </div>
 </section>
-<section class="product-detail">
+
+<nav class="product-nav">
   <div class="container">
-    <div class="product-layout">
-      <div>
-        <div class="product-code-label">ESPON-DLO</div>
-        <div class="product-title">Oil-Based Die Lubricant for Specialised Forging</div>
-        <div class="product-tagline">ESPON-DLO is an oil-based die lubricant designed for operations where the introduction of water is undesirable — such as titanium forging, high-speed press lines, or furnace-adjacent operations where steam flash can cause safety or quality concerns. Its oil base provides a tenacious, persistent film that remains on die surfaces for multiple strokes.</div>
-        <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:14px;">Key Benefits</h3>
-        <div class="benefits-grid">
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Oil base — suitable where water cannot be used</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Tenacious film remains across multiple strokes</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Superior thermal stability on hot die surfaces</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Prevents soldering and cold sticking</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Suitable for titanium and reactive alloy forging</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Low smoke generation during application</span></div>
-        </div>
-        <div class="applications"><h3>Applications</h3><div class="app-tags"><span class="tag tag-light">Oil-Fired Press Lines</span><span class="tag tag-light">High-Temp Die Forging</span><span class="tag tag-light">Stainless &amp; Tool Steels</span><span class="tag tag-light">Extrusion Presses</span></div></div>
-        <a href="products-die-lubricants.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Hot Forging Die Lubricants</a>
+    <a href="#overview">Overview</a>
+    <a href="#why-it-matters">Why It Matters</a>
+    <a href="#application">Application</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">ESPON-DLO &mdash; Oil-Based Hot Forging Die Lubricant</div>
+    <h2 class="product-title">Graphite-Based Coolant-Cum-Lubricant for Hot Forging Dies</h2>
+    <div class="product-desc">
+      <p>ESPON-DLO is an excellent graphite-based coolant-cum-lubricant for hot forging dies, suited to hot forging hammers and presses. It is used directly, or diluted with low-viscosity mineral oil if found to be too thick, and applied by swabbing or spraying.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Why It Matters ───────────────────────────────────────── -->
+<section class="product-why" id="why-it-matters">
+  <div class="container">
+    <div class="section-label">Why It Matters</div>
+    <h2 class="section-title">Die Cost &amp; Die Life in a Forge Shop</h2>
+    <div class="why-content">
+      <p>In a forge shop, die cost amounts to 10&ndash;15% of the total forging cost &mdash; making die life one of the biggest levers on profitability. Poor lubrication increases forging load, disrupts metal flow, and can cause the forged component to stick in the die cavity, all of which accelerate die wear and drive up cost per part.</p>
+      <p>ESPON-DLO improves die life and, in turn, automatically improves the profitability of the forge shop.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Application ─────────────────────────────────────────── -->
+<section class="product-application" id="application">
+  <div class="container">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Method of Application</h2>
+    <div class="how-content">
+      <p>After opening the container, stir the contents well with a clean wooden plank. It is then ready for use by swabbing or spraying.</p>
+    </div>
+
+    <div class="dilution-note">
+      <h4><i class="fas fa-droplet"></i> Dilution</h4>
+      <p>If the lubricant is found to be very thick, dilute it with low-viscosity mineral oil.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section class="product-benefits" id="benefits">
+  <div class="container">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why Use ESPON-DLO</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-gauge-high"></i></div>
+        <div class="benefit-text">Reduces forging load</div>
       </div>
-      <div>
-        <div class="spec-card">
-          <div class="spec-card-title">Product Data</div>
-          <div class="spec-row"><span class="spec-label">Product Code</span><span class="spec-value spec-code">ESPON-DLO</span></div>
-          <div class="spec-row"><span class="spec-label">Form</span><span class="spec-value">Oil-based liquid</span></div>
-          <div class="spec-row"><span class="spec-label">Dilution</span><span class="spec-value">As supplied</span></div>
-          <div class="spec-row"><span class="spec-label">Application</span><span class="spec-value">Manual or spray application</span></div>
-          <div class="spec-row"><span class="spec-label">Base</span><span class="spec-value">Synthetic and mineral oil blend</span></div>
-          <div class="spec-row"><span class="spec-label">Shelf Life</span><span class="spec-value">24 months</span></div>
-          <div class="spec-row"><span class="spec-label">Packaging</span><span class="spec-value">20 L, 200 L drum</span></div>
-          <a href="contact.html" class="request-btn"><i class="fas fa-flask"></i> &nbsp;Request a Sample</a>
-        </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-water"></i></div>
+        <div class="benefit-text">Improves metal flow during forging</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-hand"></i></div>
+        <div class="benefit-text">Prevents sticking of the forged component in the die cavity</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="benefit-text">Improves die life</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-star"></i></div>
+        <div class="benefit-text">Improves surface quality of forged components</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-sack-dollar"></i></div>
+        <div class="benefit-text">Improves forge shop profitability by lowering die cost per part</div>
       </div>
     </div>
   </div>
 </section>
-<section class="cta-strip">
-  <div class="container"><div class="cta-strip-inner">
-    <div><h2>Oil-Based Lubrication Where Water Cannot Be Used</h2><p>ESPON-DLO is the preferred choice when water-based lubricants create process problems. Request a sample and discuss your application.</p></div>
-    <div class="cta-strip-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+
+<!-- ── Properties & Specifications ─────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Properties &amp; Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Code</td>
+              <td class="mono">ESPON-DLO</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Free-flowing black liquid, free from visible extraneous matter</td>
+            </tr>
+            <tr>
+              <td>Weight per Litre</td>
+              <td>0.9 kg &plusmn; 0.1 kg</td>
+            </tr>
+            <tr>
+              <td>Flash Point</td>
+              <td>Above 150&deg;C</td>
+            </tr>
+            <tr>
+              <td>Application Method</td>
+              <td>Swabbing or spraying</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>Contains special oils &mdash; follow standard precautions for handling and storing such products</td>
+            </tr>
+            <tr>
+              <td>Shelf Life</td>
+              <td>12 months in factory sealed condition</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="spec-card-standalone">
+          <div class="spec-card-title">Packaging</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pack Size</th>
+                <th>Container Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>20 L / 210 L</td>
+                <td>Special container</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products-die-lubricants.html" class="back-link"><i class="fas fa-arrow-left"></i> All Hot Forging Die Lubricants</a>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Losing Profit to Die Wear?</h2>
+        <p>Speak with our engineers about ESPON-DLO for your hot forging presses and hammers.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-mount"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
 </body>
 </html>

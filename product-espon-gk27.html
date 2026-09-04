@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-HF — Anti-Scale Protective Coating — Steel Plant Specialities LLP</title>
+<title>ESPON-GK27 — Hot Forging Die Lubricant — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -25,7 +25,6 @@ html { scroll-behavior: smooth; }
   background: #fff; transform: scaleX(0); transition: transform .2s ease;
 }
 .product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
-.product-nav a.active { color: #fff; }
 .product-nav .container { position: relative; }
 .product-nav .container::-webkit-scrollbar { display: none; }
 .product-nav .scroll-hint {
@@ -46,7 +45,7 @@ html { scroll-behavior: smooth; }
 .product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
 .product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
 .product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
-.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: var(--light); }
 .product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
 
 /* How it works */
@@ -55,24 +54,25 @@ html { scroll-behavior: smooth; }
 .how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
 .how-content p:last-child { margin-bottom: 0; }
 .comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.comparison-row-label { grid-column: 1 / -1; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--grey); margin-top: 8px; }
+.comparison-row-label:first-child { margin-top: 0; }
 .comparison-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: #fff; }
 .comparison-label { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; }
 .comparison-label.uncoated { background: var(--dark); color: #fff; }
 .comparison-label.coated { background: var(--red); color: #fff; }
-.comparison-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; }
+.comparison-card img { width: 100%; aspect-ratio: 16/10; object-fit: contain; display: block; background: var(--light); }
 .comparison-caption { padding: 12px 16px; font-size: 13px; color: var(--grey); line-height: 1.55; text-align: center; border-top: 1px solid var(--border); }
 
 /* Application section */
 .product-application { padding: 72px 0; background: #fff; }
-.steps-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; }
 .application-images { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
-.application-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
-.application-img-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.application-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.application-img-card img { width: 100%; aspect-ratio: 16/10; object-fit: contain; display: block; background: var(--light); }
 .application-img-card figcaption { padding: 10px 16px; font-size: 13px; color: var(--grey); text-align: center; border-top: 1px solid var(--border); line-height: 1.5; }
-.step-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: #fff; transition: border-color .2s; }
-.step-item:hover { border-color: var(--red); }
-.step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-.step-text { font-size: 14px; color: var(--mid); line-height: 1.6; padding-top: 6px; }
+.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 720px; }
+.dilution-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.dilution-note h4 i { color: var(--red); font-size: 13px; }
+.dilution-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
 
 /* Benefits section */
 .product-benefits { padding: 72px 0; background: var(--light); }
@@ -109,7 +109,6 @@ html { scroll-behavior: smooth; }
   .product-intro-grid { grid-template-columns: 1fr; }
   .product-code, .product-title { max-width: none; }
   .comparison-grid { grid-template-columns: 1fr 1fr; }
-  .steps-grid { grid-template-columns: 1fr; }
   .application-images { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
   .specs-layout { grid-template-columns: 1fr; }
@@ -132,7 +131,7 @@ html { scroll-behavior: smooth; }
 
 <!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://steelplantspecialities.com/wp-content/uploads/2023/11/1hf-1024x576.jpg')"></div>
+  <div class="page-hero-bg" style="background-image:url('Images/Products/espon-dfk3-press-coated.webp')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
@@ -140,12 +139,12 @@ html { scroll-behavior: smooth; }
       <i class="fas fa-chevron-right"></i>
       <a href="products.html">Products</a>
       <i class="fas fa-chevron-right"></i>
-      <a href="products-anti-scale.html">Anti-Scale &amp; Decarburization Control Coatings</a>
+      <a href="products-die-lubricants.html">Hot Forging Die Lubricants</a>
       <i class="fas fa-chevron-right"></i>
-      <span>ESPON-HF</span>
+      <span>ESPON-GK27</span>
     </div>
-    <h1>ESPON-HF <span>Anti-Scale Protective Coating</span></h1>
-    <p>Controls decarburization and reduces scaling on billets and ingots during heating for hot rolling and hot forging. Protects at temperatures up to 1280&deg;C.</p>
+    <h1>ESPON-GK27 <span>Hot Forging Die Lubricant</span></h1>
+    <p>Graphite-based, water-miscible lubricant for net-shape forgings, extrusions, and complex hot and warm forgings.</p>
   </div>
 </section>
 
@@ -163,16 +162,16 @@ html { scroll-behavior: smooth; }
 <!-- ── Description ─────────────────────────────────────────── -->
 <section class="product-intro" id="overview">
   <div class="container">
-    <div class="product-code">ESPON-HF &mdash; Anti-Scale Protective Coating</div>
-    <h2 class="product-title">Control Decarburization &amp; Reduce Scale Loss in Hot Rolling and Forging</h2>
+    <div class="product-code">ESPON-GK27 &mdash; Hot Forging Die Lubricant</div>
+    <h2 class="product-title">Graphite-Based, Water-Miscible Lubricant for Net-Shape &amp; Complex Forgings</h2>
     <div class="product-intro-grid">
       <div class="product-desc">
-        <p>ESPON-HF is an effective protective coating for blooms and billets that controls decarburization to a minimum level while substantially reducing scaling during heating. It improves productivity and reduces cost in hot rolling and hot forging operations.</p>
+        <p>ESPON-GK27 is a graphite-based, water-miscible lubricant, useful for net-shape forgings, extrusions, and complex hot and warm forgings.</p>
       </div>
       <div>
         <div class="product-img-card">
-          <img src="Images/Products/ESPON-HF-Packaging.jpeg" alt="ESPON-HF Anti-Scale Compound — 50 kg HDPE container" style="object-fit:contain; background:#f0e4e0;">
-          <div class="product-img-caption">ESPON-HF Anti-Scale Compound &mdash; 50 kg special HDPE container</div>
+          <img src="Images/Products/espon-gk27-packaging.webp" alt="ESPON-GK27 Hot Forging Die Lubricant — 220 kg HDPE container">
+          <div class="product-img-caption">ESPON-GK27 Hot Forging Die Lubricant &mdash; 220 kg special HDPE container</div>
         </div>
       </div>
     </div>
@@ -183,22 +182,35 @@ html { scroll-behavior: smooth; }
 <section class="product-how" id="how-it-works">
   <div class="container">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title">Preventing Decarburization &amp; Scale Formation</h2>
+    <h2 class="section-title">Eliminating Smoke, Extending Die Life</h2>
     <div class="how-content">
-      <p>During high-temperature heating for hot rolling or forging, oxygen reacts with the metal surface to form scale, while carbon migrates from the steel &mdash; a process called decarburization. Decarburization leaves the metal unfit for critical components like rails, leaf springs, and automotive parts where carbon content must be maintained within specification.</p>
-      <p>ESPON-HF is applied to billets and ingots before furnace entry. The coating forms a protective barrier that prevents atmospheric oxygen from reacting with the steel surface, controlling both scale formation and decarburization to negligible levels with no impact on heating time or temperature.</p>
+      <p>Conventional oil-based die lubricants burn off on contact with hot dies, generating heavy smoke and pollution on the shop floor while offering little protection to the die surface &mdash; leading to reduced die life and poor surface finish on forged parts.</p>
+      <p>ESPON-GK27&rsquo;s water-miscible, graphite-based formulation eliminates this smoke entirely, while helping optimise die life &mdash; even on net-shape, complex hot and warm forgings.</p>
     </div>
 
     <div class="comparison-grid">
+      <div class="comparison-row-label">Hot Forging Press</div>
       <div class="comparison-card">
         <div class="comparison-label uncoated">Not Coated</div>
-        <img src="Images/Products/high-decarb.jpeg" alt="Uncoated billet showing substantial decarburization">
-        <div class="comparison-caption">Uncoated billet &mdash; substantial decarburization after heating</div>
+        <img src="Images/Products/espon-dfk3-press-uncoated.webp" alt="Uncoated die on hot forging press — heavy smoke and pollution, low die life">
+        <div class="comparison-caption">Heavy smoke and pollution. Low die life.</div>
       </div>
       <div class="comparison-card">
-        <div class="comparison-label coated">ESPON-HF Coated</div>
-        <img src="Images/Products/low-decarb.jpeg" alt="ESPON-HF coated billet showing negligible decarburization">
-        <div class="comparison-caption">ESPON-HF coated billet &mdash; negligible decarburization after heating</div>
+        <div class="comparison-label coated">ESPON-GK27 Coated</div>
+        <img src="Images/Products/espon-dfk3-press-coated.webp" alt="ESPON-GK27 coated die on hot forging press — no smoke, no pollution, increased die life">
+        <div class="comparison-caption">No smoke. No pollution. Increased die life by using ESPON-GK27.</div>
+      </div>
+
+      <div class="comparison-row-label">Hot Forging Hammer</div>
+      <div class="comparison-card">
+        <div class="comparison-label uncoated">Not Coated</div>
+        <img src="Images/Products/espon-dfk3-hammer-uncoated.webp" alt="Uncoated die on hot forging hammer — heavy smoke and pollution, low die life">
+        <div class="comparison-caption">Heavy smoke and pollution. Low die life.</div>
+      </div>
+      <div class="comparison-card">
+        <div class="comparison-label coated">ESPON-GK27 Coated</div>
+        <img src="Images/Products/espon-dfk3-hammer-coated.webp" alt="ESPON-GK27 coated die on hot forging hammer — no smoke, no pollution, increased die life">
+        <div class="comparison-caption">No smoke. No pollution. Increased die life by using ESPON-GK27.</div>
       </div>
     </div>
   </div>
@@ -209,35 +221,24 @@ html { scroll-behavior: smooth; }
   <div class="container">
     <div class="section-label">Application</div>
     <h2 class="section-title">Method of Application</h2>
-    <p class="section-sub">ESPON-HF is ready to use. It can be applied by airless spraying, brushing, or dipping.</p>
 
-    <div class="steps-grid">
-      <div class="step-item">
-        <div class="step-num">1</div>
-        <div class="step-text">Stir the contents thoroughly with a clean stirrer so that the bottom sludge is completely mixed with the liquid.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">2</div>
-        <div class="step-text">Ensure the surface to be coated is dry and free from grease, oil, rust, and dust.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">3</div>
-        <div class="step-text">Using airless spraying equipment, coat the blooms or billets with ESPON-HF. Brushing or dipping may also be used.</div>
-      </div>
-      <div class="step-item">
-        <div class="step-num">4</div>
-        <div class="step-text">Allow the coating to dry at 70&ndash;120&deg;C. If required, apply a second coat by spraying.</div>
-      </div>
+    <div class="how-content" style="margin-top:32px;">
+      <p>ESPON-GK27 is mixed with water in a 1:10 up to 1:30 dilution ratio, depending on forged part complexity, weight, die temperature, and method of die lubrication. Different forgings call for different dilution ratios &mdash; the exact ratio for a given part is determined by a series of trials.</p>
+    </div>
+
+    <div class="dilution-note">
+      <h4><i class="fas fa-spray-can"></i> Recommended Equipment</h4>
+      <p>Best results are obtained when ESPON-GK27 is sprayed using the SPS die spray system and DSP2 spray gun.</p>
     </div>
 
     <div class="application-images">
       <figure class="application-img-card">
-        <img src="Images/Products/coated-forgings.webp" alt="ESPON-HF coated forgings" loading="lazy">
-        <figcaption>Forgings coated with ESPON-HF protective coating</figcaption>
+        <img src="Images/Products/espon-dfk3-concentrate.webp" alt="ESPON-GK27 concentrate — shiny black paste" loading="lazy">
+        <figcaption>ESPON-GK27 concentrate &mdash; shiny black paste</figcaption>
       </figure>
       <figure class="application-img-card">
-        <img src="Images/Articles/article-hotrolling-p5-3.jpg" alt="Billets coated with anti-scale protective coatings before heating" loading="lazy">
-        <figcaption>Billets coated with anti-scale protective coatings before heating</figcaption>
+        <img src="Images/Products/espon-dfk3-application.webp" alt="ESPON-GK27 applied by spray during hot forging" loading="lazy">
+        <figcaption>ESPON-GK27 applied by spray during hot forging</figcaption>
       </figure>
     </div>
   </div>
@@ -247,32 +248,28 @@ html { scroll-behavior: smooth; }
 <section class="product-benefits" id="benefits">
   <div class="container">
     <div class="section-label">Benefits</div>
-    <h2 class="section-title">Why Use ESPON-HF</h2>
+    <h2 class="section-title">Why Use ESPON-GK27</h2>
 
     <div class="benefits-grid">
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-bullseye"></i></div>
-        <div class="benefit-text">Controls decarburization to a minimum level, ensuring carbon content stays within specification for critical components</div>
+        <div class="benefit-icon"><i class="fas fa-gauge-high"></i></div>
+        <div class="benefit-text">Optimum die life</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-chart-line"></i></div>
-        <div class="benefit-text">Substantially reduces scaling on billets and ingots during heating for hot rolling and hot forging, increasing yield</div>
+        <div class="benefit-icon"><i class="fas fa-star"></i></div>
+        <div class="benefit-text">Good surface finish of forged parts</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
-        <div class="benefit-text">Prevents quench cracking that can occur during heat treatment of decarburized steel</div>
+        <div class="benefit-icon"><i class="fas fa-sack-dollar"></i></div>
+        <div class="benefit-text">Low cost per litre of die lubricant, due to a high dilution ratio</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-ban"></i></div>
-        <div class="benefit-text">Prevents rejection of forgings due to pit marks caused by scale on the billet surface</div>
+        <div class="benefit-icon"><i class="fas fa-smog"></i></div>
+        <div class="benefit-text">Zero smoke emission &mdash; the lubricant is water-miscible</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-temperature-high"></i></div>
-        <div class="benefit-text">Protects billets and ingots at temperatures up to 1280&deg;C in furnaces and induction heaters</div>
-      </div>
-      <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
-        <div class="benefit-text">Non-hazardous, non-flammable, and non-toxic during storage and use</div>
+        <div class="benefit-icon"><i class="fas fa-industry"></i></div>
+        <div class="benefit-text">Suitable for use in hot extrusion and forging presses, for hot and warm forging applications</div>
       </div>
     </div>
   </div>
@@ -296,27 +293,23 @@ html { scroll-behavior: smooth; }
           <tbody>
             <tr>
               <td>Product Code</td>
-              <td class="mono">ESPON-HF</td>
+              <td class="mono">ESPON-GK27</td>
             </tr>
             <tr>
               <td>Description</td>
-              <td>Pink paste, free from visible extraneous matter</td>
+              <td>Shiny black paste, free from visible extraneous matter</td>
             </tr>
             <tr>
               <td>Weight per Litre</td>
-              <td>1.5 kgs &plusmn; 0.2 kg</td>
+              <td>1.2 kgs &plusmn; 0.1 kg</td>
             </tr>
             <tr>
-              <td>Max Operating Temp.</td>
-              <td>1280&deg;C</td>
+              <td>Dilution Ratio</td>
+              <td>1:10 to 1:30 with water</td>
             </tr>
             <tr>
               <td>Application Method</td>
-              <td>Airless spraying, brushing, or dipping</td>
-            </tr>
-            <tr>
-              <td>Drying Temperature</td>
-              <td>70&ndash;120&deg;C</td>
+              <td>Spray (SPS die spray system, DSP2 gun)</td>
             </tr>
             <tr>
               <td>Flash Point</td>
@@ -324,11 +317,11 @@ html { scroll-behavior: smooth; }
             </tr>
             <tr>
               <td>Safety</td>
-              <td>Non-hazardous. Non-flammable. Non-toxic.</td>
+              <td>Non-hazardous. Normal industrial hygiene and shop ventilation sufficient.</td>
             </tr>
             <tr>
               <td>Shelf Life</td>
-              <td>6 months in factory sealed condition</td>
+              <td>12 months in factory sealed condition</td>
             </tr>
           </tbody>
         </table>
@@ -346,7 +339,7 @@ html { scroll-behavior: smooth; }
             </thead>
             <tbody>
               <tr>
-                <td>50 kg</td>
+                <td>220 kg</td>
                 <td>Special HDPE container</td>
               </tr>
             </tbody>
@@ -357,7 +350,7 @@ html { scroll-behavior: smooth; }
           <i class="fas fa-envelope"></i> Enquire Now
         </a>
 
-        <a href="products-anti-scale.html" class="back-link"><i class="fas fa-arrow-left"></i> All Anti-Scale &amp; Decarburization Control Coatings</a>
+        <a href="products-die-lubricants.html" class="back-link"><i class="fas fa-arrow-left"></i> All Hot Forging Die Lubricants</a>
       </div>
     </div>
   </div>
@@ -368,8 +361,8 @@ html { scroll-behavior: smooth; }
   <div class="container">
     <div class="cta-strip-inner">
       <div>
-        <h2>Need Decarburization Control?</h2>
-        <p>Speak with our metallurgical engineers about ESPON-HF for your rolling mill or forging setup.</p>
+        <h2>Forging Complex, Net-Shape Parts?</h2>
+        <p>Speak with our engineers about ESPON-GK27 for your hot and warm forging operations.</p>
       </div>
       <div class="cta-strip-actions">
         <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>

@@ -1,77 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-DFK3 — Heavy Die Forging Lubricant — Steel Plant Specialities LLP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESPON-DFK3 — Hot Forging Die Lubricant — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
-.product-detail{padding:72px 0;background:#fff}.product-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}.product-code-label{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--red);font-weight:600;margin-bottom:12px}.product-title{font-size:32px;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:16px}.product-tagline{font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:32px}.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}.benefit-item{display:flex;align-items:flex-start;gap:10px}.benefit-item i{color:var(--red);margin-top:3px;flex-shrink:0}.benefit-item span{font-size:14px;color:var(--mid);line-height:1.5}.applications{margin-top:32px}.applications h3,.kbene h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}.app-tags{display:flex;gap:8px;flex-wrap:wrap}.spec-card{background:var(--light);border-radius:12px;padding:28px;border:1px solid var(--border);position:sticky;top:88px}.spec-card-title{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}.spec-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}.spec-row:last-child{border-bottom:none;padding-bottom:0}.spec-label{color:var(--grey);font-weight:500;flex-shrink:0}.spec-value{color:var(--dark);font-weight:600;text-align:right}.spec-code{font-family:"IBM Plex Mono",monospace}.request-btn{display:block;width:100%;margin-top:24px;padding:13px;background:var(--red);color:#fff;text-align:center;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}.request-btn:hover{opacity:.88;color:#fff}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mid);margin-top:40px}.back-link:hover{color:var(--red)}
-@media(max-width:900px){.product-layout{grid-template-columns:1fr}.spec-card{position:static}.benefits-grid{grid-template-columns:1fr}}
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container { position: relative; }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+/* ── Product Page Layout ─────────────────────────────────── */
+
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+/* How it works */
+.product-how { padding: 72px 0; background: var(--light); }
+.how-content { max-width: 720px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+.comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px; }
+.comparison-row-label { grid-column: 1 / -1; font-size: 12px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: var(--grey); margin-top: 8px; }
+.comparison-row-label:first-child { margin-top: 0; }
+.comparison-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: #fff; }
+.comparison-label { padding: 10px 16px; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; text-align: center; }
+.comparison-label.uncoated { background: var(--dark); color: #fff; }
+.comparison-label.coated { background: var(--red); color: #fff; }
+.comparison-card img { width: 100%; aspect-ratio: 16/10; object-fit: contain; display: block; background: var(--light); }
+.comparison-caption { padding: 12px 16px; font-size: 13px; color: var(--grey); line-height: 1.55; text-align: center; border-top: 1px solid var(--border); }
+
+/* Application section */
+.product-application { padding: 72px 0; background: #fff; }
+.application-images { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
+.application-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.application-img-card img { width: 100%; aspect-ratio: 16/10; object-fit: contain; display: block; background: var(--light); }
+.application-img-card figcaption { padding: 10px 16px; font-size: 13px; color: var(--grey); text-align: center; border-top: 1px solid var(--border); line-height: 1.5; }
+.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 720px; }
+.dilution-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.dilution-note h4 i { color: var(--red); font-size: 13px; }
+.dilution-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+/* Benefits section */
+.product-benefits { padding: 72px 0; background: var(--light); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Specifications section */
+.product-specs { padding: 72px 0; background: #fff; }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+.spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+  .specs-layout { gap: 36px; }
+}
+@media (max-width: 900px) {
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
+  .comparison-grid { grid-template-columns: 1fr 1fr; }
+  .application-images { grid-template-columns: 1fr; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-how, .product-application,
+  .product-benefits, .product-specs { padding: 48px 0; }
+  .comparison-grid { grid-template-columns: 1fr; }
+  .product-title { font-size: 24px; }
+}
 </style>
 </head>
 <body>
+
 <script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-bg" style="background-image:url('Images/Products/espon-dfk3-press-coated.webp')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><i class="fas fa-chevron-right"></i>
-      <a href="products.html">Products</a><i class="fas fa-chevron-right"></i>
-      <a href="products-die-lubricants.html">Hot Forging Die Lubricants</a><i class="fas fa-chevron-right"></i>
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products-die-lubricants.html">Hot Forging Die Lubricants</a>
+      <i class="fas fa-chevron-right"></i>
       <span>ESPON-DFK3</span>
     </div>
-    <h1>ESPON-DFK3 <span>Heavy Forging Die Lubricant</span></h1>
-    <p>High-film-strength die lubricant for heavy closed-die forging of large components. Withstands high impact loads and extreme die surface temperatures.</p>
+    <h1>ESPON-DFK3 <span>Hot Forging Die Lubricant</span></h1>
+    <p>Graphite-based, water-miscible die lubricant for heavy forgings and extrusions in hot forging presses and hammers.</p>
   </div>
 </section>
-<section class="product-detail">
+
+<nav class="product-nav">
   <div class="container">
-    <div class="product-layout">
-      <div>
-        <div class="product-code-label">ESPON-DFK3</div>
-        <div class="product-title">High-Film-Strength Lubricant for Heavy Forgings</div>
-        <div class="product-tagline">ESPON-DFK3 is formulated for the most demanding closed-die forging operations — large automotive, aerospace, and industrial components where die surface temperatures exceed 300°C and impact loads are at their highest. Its enhanced film-strength additives ensure the lubricant film does not break down between strokes, protecting die faces and maintaining consistent forging quality.</div>
-        <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:14px;">Key Benefits</h3>
-        <div class="benefits-grid">
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Exceptional film strength under high impact loads</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Maintains film integrity above 300°C die temperature</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reduces soldering and welding of forging to die</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Extends die life in heavy closed-die operations</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Suitable for complex large-section forgings</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reduced smoke generation vs. conventional lubricants</span></div>
-        </div>
-        <div class="applications"><h3>Applications</h3><div class="app-tags"><span class="tag tag-light">Hot Forging Presses</span><span class="tag tag-light">Hammers</span><span class="tag tag-light">Carbon Steel</span><span class="tag tag-light">Alloy Steel</span><span class="tag tag-light">Stainless Steel</span></div></div>
-        <a href="products-die-lubricants.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Hot Forging Die Lubricants</a>
+    <a href="#overview">Overview</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#application">Application</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">ESPON-DFK3 &mdash; Hot Forging Die Lubricant</div>
+    <h2 class="product-title">Graphite-Based, Water-Miscible Die Lubricant for Heavy Forgings</h2>
+    <div class="product-intro-grid">
+      <div class="product-desc">
+        <p>ESPON-DFK3 is a graphite-based, water-miscible die lubricant useful for heavy forgings and extrusions in hot forging presses and hammers. Its graphite particle size is maintained to withstand the impact loads of forging hammers while providing excellent lubricity.</p>
+        <p>It is suitable for hot forging presses, hot extrusion processes, upsetters, and hot forging hammers &mdash; replacing oil-based lubricants that generate heavy smoke and reduce die life.</p>
       </div>
       <div>
-        <div class="spec-card">
-          <div class="spec-card-title">Product Data</div>
-          <div class="spec-row"><span class="spec-label">Product Code</span><span class="spec-value spec-code">ESPON-DFK3</span></div>
-          <div class="spec-row"><span class="spec-label">Form</span><span class="spec-value">Water-based concentrate</span></div>
-          <div class="spec-row"><span class="spec-label">Dilution</span><span class="spec-value">1:5 to 1:15 with water</span></div>
-          <div class="spec-row"><span class="spec-label">Application</span><span class="spec-value">Spray gun (SPS system)</span></div>
-          <div class="spec-row"><span class="spec-label">Graphite Content</span><span class="spec-value">Zero</span></div>
-          <div class="spec-row"><span class="spec-label">Shelf Life</span><span class="spec-value">18 months</span></div>
-          <div class="spec-row"><span class="spec-label">Packaging</span><span class="spec-value">20 L, 200 L drum</span></div>
-          <a href="contact.html" class="request-btn"><i class="fas fa-flask"></i> &nbsp;Request a Sample</a>
+        <div class="product-img-card">
+          <img src="Images/Products/espon-dfk3-packaging.webp" alt="ESPON-DFK3 Hot Forging Die Lubricant — 220 kg HDPE container" style="object-fit:contain; background:#f0e4e0;">
+          <div class="product-img-caption">ESPON-DFK3 Hot Forging Die Lubricant &mdash; 220 kg special HDPE container</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="cta-strip">
-  <div class="container"><div class="cta-strip-inner">
-    <div><h2>Solve Heavy Forging Die Problems</h2><p>If you are experiencing die failure or soldering on large forgings, ESPON-DFK3 may be the solution. Request a sample and technical assessment.</p></div>
-    <div class="cta-strip-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+
+<!-- ── How It Works ────────────────────────────────────────── -->
+<section class="product-how" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Eliminating Smoke, Extending Die Life</h2>
+    <div class="how-content">
+      <p>Conventional oil-based die lubricants burn off on contact with hot dies, generating heavy smoke and pollution on the shop floor while offering little protection to the die surface &mdash; leading to reduced die life and poor surface finish on forged parts.</p>
+      <p>ESPON-DFK3&rsquo;s water-miscible, graphite-based formulation eliminates this smoke entirely. As the water content flashes off on contact with the hot die, it leaves behind a graphite film that lubricates the die-workpiece interface, extending die life and improving surface finish &mdash; in hot forging hammers and presses alike.</p>
     </div>
-  </div></div>
+
+    <div class="comparison-grid">
+      <div class="comparison-row-label">Hot Forging Hammer</div>
+      <div class="comparison-card">
+        <div class="comparison-label uncoated">Not Coated</div>
+        <img src="Images/Products/espon-dfk3-hammer-uncoated.webp" alt="Uncoated die on hot forging hammer — heavy smoke and pollution, low die life">
+        <div class="comparison-caption">Heavy smoke and pollution. Low die life.</div>
+      </div>
+      <div class="comparison-card">
+        <div class="comparison-label coated">ESPON-DFK3</div>
+        <img src="Images/Products/espon-dfk3-hammer-coated.webp" alt="ESPON-DFK3 coated die on hot forging hammer — no smoke, no pollution, increased die life">
+        <div class="comparison-caption">No smoke. No pollution. Increased die life by using ESPON-DFK3.</div>
+      </div>
+
+      <div class="comparison-row-label">Hot Forging Press</div>
+      <div class="comparison-card">
+        <div class="comparison-label uncoated">Not Coated</div>
+        <img src="Images/Products/espon-dfk3-press-uncoated.webp" alt="Uncoated die on hot forging press — heavy smoke and pollution, low die life">
+        <div class="comparison-caption">Heavy smoke and pollution. Low die life.</div>
+      </div>
+      <div class="comparison-card">
+        <div class="comparison-label coated">ESPON-DFK3</div>
+        <img src="Images/Products/espon-dfk3-press-coated.webp" alt="ESPON-DFK3 coated die on hot forging press — no smoke, no pollution, increased die life">
+        <div class="comparison-caption">No smoke. No pollution. Increased die life by using ESPON-DFK3.</div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<!-- ── Application ─────────────────────────────────────────── -->
+<section class="product-application" id="application">
+  <div class="container">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Method of Application</h2>
+
+    <div class="how-content" style="margin-top:32px;">
+      <p>ESPON-DFK3 is mixed with water in a 1:10 up to 1:30 dilution ratio, depending on forged part complexity, weight, and method of die lubrication. Different forgings call for different dilution ratios &mdash; the exact ratio for a given part is determined by a series of trials.</p>
+    </div>
+
+    <div class="dilution-note">
+      <h4><i class="fas fa-spray-can"></i> Recommended Equipment</h4>
+      <p>Best results are obtained when ESPON-DFK3 is sprayed using the SPS die spray system and DSP2 spray gun.</p>
+    </div>
+
+    <div class="application-images">
+      <figure class="application-img-card">
+        <img src="Images/Products/espon-dfk3-concentrate.webp" alt="ESPON-DFK3 concentrate — shiny black paste" loading="lazy">
+        <figcaption>ESPON-DFK3 concentrate &mdash; shiny black paste</figcaption>
+      </figure>
+      <figure class="application-img-card">
+        <img src="Images/Products/espon-dfk3-application.webp" alt="ESPON-DFK3 applied by spray during hot forging" loading="lazy">
+        <figcaption>ESPON-DFK3 applied by spray during hot forging</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section class="product-benefits" id="benefits">
+  <div class="container">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why Use ESPON-DFK3</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-gauge-high"></i></div>
+        <div class="benefit-text">Optimum die life &mdash; the graphite film protects the die surface from repeated impact</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-star"></i></div>
+        <div class="benefit-text">Good surface finish on forged parts</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-sack-dollar"></i></div>
+        <div class="benefit-text">Low cost per litre of die lubricant, due to a high dilution ratio</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-smog"></i></div>
+        <div class="benefit-text">Zero smoke emission &mdash; the lubricant is fully water-miscible</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-industry"></i></div>
+        <div class="benefit-text">Suitable for hot forging presses, hammers, upsetters, and hot extrusion processes</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-fire-extinguisher"></i></div>
+        <div class="benefit-text">Non-hazardous &mdash; does not flash or catch fire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Properties & Specifications ─────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Properties &amp; Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Code</td>
+              <td class="mono">ESPON-DFK3</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Shiny black paste, free from visible extraneous matter</td>
+            </tr>
+            <tr>
+              <td>Weight per Litre</td>
+              <td>1.6 kgs &plusmn; 0.1 kg</td>
+            </tr>
+            <tr>
+              <td>Dilution Ratio</td>
+              <td>1:10 to 1:30 with water</td>
+            </tr>
+            <tr>
+              <td>Application Method</td>
+              <td>Spray (SPS die spray system, DSP2 gun)</td>
+            </tr>
+            <tr>
+              <td>Flash Point</td>
+              <td>Does not flash. Does not catch fire.</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>Non-hazardous. Normal industrial hygiene and shop ventilation sufficient.</td>
+            </tr>
+            <tr>
+              <td>Shelf Life</td>
+              <td>12 months in factory sealed condition</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="spec-card-standalone">
+          <div class="spec-card-title">Packaging</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pack Size</th>
+                <th>Container Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>220 kg</td>
+                <td>Special HDPE container</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products-die-lubricants.html" class="back-link"><i class="fas fa-arrow-left"></i> All Hot Forging Die Lubricants</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Fighting Smoke or Short Die Life?</h2>
+        <p>Speak with our engineers about ESPON-DFK3 for your hot forging presses and hammers.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-mount"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
 </body>
 </html>

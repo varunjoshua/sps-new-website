@@ -10,7 +10,9 @@
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
 .products-section { padding: 72px 0; background: #fff; }
-.single-product-wrap { margin-top: 40px; max-width: 560px; }
+.products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+@media (max-width: 1024px) { .products-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .products-grid { grid-template-columns: 1fr; } }
 .product-card {
   background: #fff; border: 1px solid var(--border); border-radius: 10px;
   overflow: hidden; transition: all .25s ease; position: relative;
@@ -68,21 +70,37 @@
 <section class="products-section">
   <div class="container">
     <div class="category-intro">
-      <p>ESPON-RCP is applied to the hot face of furnace linings — combustion chambers, hearths, walls, and roof arches. It seals micro-cracks before they propagate, reflects radiant heat back into the furnace chamber, and resists attack from corrosive combustion gases and liquid slag. The result is longer refractory life, lower fuel consumption, and reduced downtime for repairs.</p>
+      <p>SPS refractory coatings are applied to the hot face of furnace linings to increase emissivity — reflecting heat back into the furnace — and protect against thermal shock cracking. This reduces fuel consumption, cuts furnace heat-up time, and extends refractory lining life in rolling mill, billet re-heating, and sealed quench furnaces.</p>
     </div>
 
-    <div class="single-product-wrap">
+    <div class="products-grid">
       <div class="product-card">
         <div class="product-img">
-          <img src="https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&q=75&fit=crop" alt="ESPON-RCP">
+          <img src="Images/Products/espon-rcp-packaging.webp" alt="ESPON-RCP">
         </div>
         <div class="product-body">
           <div class="product-tags"><span class="tag tag-red">Refractory</span><span class="tag tag-light">Coating</span><span class="tag tag-light">Up to 1900°C</span></div>
           <div class="product-code">ESPON-RCP</div>
           <div class="product-name">ESPON-RCP</div>
-          <div class="product-desc">Refractory coating paste for hot-face lining protection in high-temperature industrial furnaces. Withstands up to 1900°C, reduces furnace heat-up time by up to 1.5 hours, and resists corrosive combustion gases and slag attack.</div>
+          <div class="product-desc">Zircon-based refractory coating for furnace linings. Reflects heat back into the furnace and prevents thermal shock cracking — can cut next-morning furnace startup time by up to 1.5 hours.</div>
           <div class="product-footer">
             <a href="product-espon-rcp.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ESPON-RC3 -->
+      <div class="product-card">
+        <div class="product-img">
+          <img src="Images/Products/espon-rc3-packaging.webp" alt="ESPON-RC3">
+        </div>
+        <div class="product-body">
+          <div class="product-tags"><span class="tag tag-red">Refractory</span><span class="tag tag-light">Coating</span><span class="tag tag-light">Up to 1900°C</span></div>
+          <div class="product-code">ESPON-RC3</div>
+          <div class="product-name">ESPON-RC3</div>
+          <div class="product-desc">Protective coating for refractory brick lining in furnaces. Reduces thermal conductivity and reflects heat back into the furnace — lab-verified to cut thermal conductivity by up to 35.71% when both sides of the lining are coated.</div>
+          <div class="product-footer">
+            <a href="product-espon-rc3.html" class="product-link">View Product <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -94,7 +112,7 @@
   <div class="container">
     <div class="cta-strip-inner">
       <div>
-        <h2>Reduce Furnace Downtime with ESPON-RCP</h2>
+        <h2>Reduce Furnace Downtime &amp; Fuel Cost</h2>
         <p>Talk to our engineers about your furnace type, temperature, and lining material — we'll specify the right application method and coating thickness.</p>
       </div>
       <div class="cta-strip-actions">

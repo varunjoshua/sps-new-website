@@ -44,11 +44,11 @@ html { scroll-behavior: smooth; }
 .product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: 780px; }
 .product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; max-width: 780px; }
 
-/* Why It Matters (context) */
-.product-why { padding: 72px 0; background: var(--light); }
-.why-content { max-width: 780px; }
-.why-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
-.why-content p:last-child { margin-bottom: 0; }
+/* How It Works */
+.product-how { padding: 72px 0; background: var(--light); }
+.how-content { max-width: 780px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
 
 /* Application section */
 .product-application { padding: 72px 0; background: #fff; }
@@ -97,7 +97,7 @@ html { scroll-behavior: smooth; }
   [id] { scroll-margin-top: 118px; }
 }
 @media (max-width: 600px) {
-  .product-intro, .product-why, .product-application,
+  .product-intro, .product-how, .product-application,
   .product-benefits, .product-specs { padding: 48px 0; }
   .product-title { font-size: 24px; }
 }
@@ -127,7 +127,7 @@ html { scroll-behavior: smooth; }
 <nav class="product-nav">
   <div class="container">
     <a href="#overview">Overview</a>
-    <a href="#why-it-matters">Why It Matters</a>
+    <a href="#how-it-works">How It Works</a>
     <a href="#application">Application</a>
     <a href="#benefits">Benefits</a>
     <a href="#specifications">Specifications</a>
@@ -146,15 +146,14 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- ── Why It Matters ───────────────────────────────────────── -->
-<section class="product-why" id="why-it-matters">
+<!-- ── How It Works ─────────────────────────────────────────── -->
+<section class="product-how" id="how-it-works">
   <div class="container">
-    <div class="section-label">Why It Matters</div>
-    <h2 class="section-title">Protecting Titanium &amp; Critical Alloys During Heating</h2>
-    <div class="why-content">
-      <p>During heating of titanium, Inconel, and such highly critical super alloys, much care is required to ensure that forging is done at precisely controlled temperature. In the case of titanium forging, heat is lost very fast from heated billets, thereby making subsequent processing like forging very difficult. Heat loss from titanium billets can cause rejection due to required properties not being met.</p>
-      <p>Additionally, similar to oxidation and decarburisation in steels, titanium is prone to formation of alpha-case on the surface during heating at high temperatures. Alpha case formation in titanium causes rejection of parts during final testing. Alpha case formed on titanium must be removed by grinding after forming the parts &mdash; a laborious process, as hard titanium is not easily machinable.</p>
-      <p>Before heating, titanium must be protected with ESPON-ACR3 protective coating. This results in retention of heat in heated titanium billets so that forging or such processing can be carried out as planned, while substantially reducing alpha-case formation. This coating has no impact on heating time, temperature, or properties after heating of coated parts.</p>
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Retaining Heat, Reducing Alpha-Case</h2>
+    <div class="how-content">
+      <p>Protecting titanium billets with ESPON-ACR3 before heating results in retention of heat in the heated billets, so that forging or further processing can be carried out as planned, while substantially reducing alpha-case formation. The coating has no impact on heating time, temperature, or properties after heating of coated parts.</p>
+      <p>This matters because during heating of titanium, Inconel, and such highly critical super alloys, much care is required to ensure that forging is done at precisely controlled temperature. In the case of titanium forging, heat is lost very fast from heated billets, thereby making subsequent processing like forging very difficult, and heat loss from titanium billets can cause rejection due to required properties not being met. Additionally, similar to oxidation and decarburisation in steels, titanium is prone to formation of alpha-case on the surface during heating at high temperatures &mdash; which causes rejection of parts during final testing and must be removed by grinding after forming the parts, a laborious process, as hard titanium is not easily machinable.</p>
     </div>
   </div>
 </section>

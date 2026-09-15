@@ -1,77 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-RCP — Refractory Coating Paste — Steel Plant Specialities LLP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESPON-RCP — Refractory Coating Compound — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
-.product-detail{padding:72px 0;background:#fff}.product-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}.product-code-label{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--red);font-weight:600;margin-bottom:12px}.product-title{font-size:32px;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:16px}.product-tagline{font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:32px}.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}.benefit-item{display:flex;align-items:flex-start;gap:10px}.benefit-item i{color:var(--red);margin-top:3px;flex-shrink:0}.benefit-item span{font-size:14px;color:var(--mid);line-height:1.5}.applications{margin-top:32px}.applications h3,.kbene h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}.app-tags{display:flex;gap:8px;flex-wrap:wrap}.spec-card{background:var(--light);border-radius:12px;padding:28px;border:1px solid var(--border);position:sticky;top:88px}.spec-card-title{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}.spec-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}.spec-row:last-child{border-bottom:none;padding-bottom:0}.spec-label{color:var(--grey);font-weight:500;flex-shrink:0}.spec-value{color:var(--dark);font-weight:600;text-align:right}.spec-code{font-family:"IBM Plex Mono",monospace}.request-btn{display:block;width:100%;margin-top:24px;padding:13px;background:var(--red);color:#fff;text-align:center;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}.request-btn:hover{opacity:.88;color:#fff}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mid);margin-top:40px}.back-link:hover{color:var(--red)}
-@media(max-width:900px){.product-layout{grid-template-columns:1fr}.spec-card{position:static}.benefits-grid{grid-template-columns:1fr}}
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container { position: relative; }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+/* ── Product Page Layout ─────────────────────────────────── */
+
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-desc p { margin-bottom: 16px; }
+.product-desc p:last-child { margin-bottom: 0; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: var(--light); }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+/* How It Works */
+.product-how { padding: 72px 0; background: var(--light); }
+.how-content { max-width: 720px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+
+/* Application section */
+.product-application { padding: 72px 0; background: #fff; }
+.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 720px; }
+.dilution-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.dilution-note h4 i { color: var(--red); font-size: 13px; }
+.dilution-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+/* Benefits section */
+.product-benefits { padding: 72px 0; background: var(--light); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Specifications section */
+.product-specs { padding: 72px 0; background: #fff; }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+.spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+  .specs-layout { gap: 36px; }
+}
+@media (max-width: 900px) {
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-how, .product-application,
+  .product-benefits, .product-specs { padding: 48px 0; }
+  .product-title { font-size: 24px; }
+}
 </style>
 </head>
 <body>
+
 <script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=1600&q=80&fit=crop')"></div>
-  <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><i class="fas fa-chevron-right"></i>
-      <a href="products.html">Products</a><i class="fas fa-chevron-right"></i>
-      <a href="products-refractory.html">Refractory Coatings</a><i class="fas fa-chevron-right"></i>
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products-refractory.html">Refractory Coatings</a>
+      <i class="fas fa-chevron-right"></i>
       <span>ESPON-RCP</span>
     </div>
-    <h1>ESPON-RCP <span>Refractory Coating Paste</span></h1>
-    <p>High-temperature refractory coating that protects furnace linings up to 1900°C — sealing micro-cracks, reflecting heat, and resisting corrosive combustion gases and slag attack.</p>
+    <h1>ESPON-RCP <span>Refractory Coating Compound</span></h1>
+    <p>Zircon-based refractory coating with special additives and powerful binders &mdash; protects furnace linings up to 1900&deg;C.</p>
   </div>
 </section>
-<section class="product-detail">
+
+<nav class="product-nav">
   <div class="container">
-    <div class="product-layout">
-      <div>
-        <div class="product-code-label">ESPON-RCP</div>
-        <div class="product-title">Hot-Face Refractory Coating for Industrial Furnaces</div>
-        <div class="product-tagline">ESPON-RCP is applied to the hot face of furnace linings — hearths, walls, roof arches, and combustion chambers. It penetrates into micro-cracks and surface pores in the refractory, sealing them before thermal cycling can propagate cracking. The fired coating acts as a radiant heat reflector, returning energy back into the furnace chamber to reduce fuel consumption and heat-up time.</div>
-        <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:14px;">Key Benefits</h3>
-        <div class="benefits-grid">
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Seals micro-cracks before they propagate to spalling</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reflects radiant heat back into furnace — saves fuel</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reduces furnace heat-up time by up to 1.5 hours</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Resists corrosive combustion gases and slag attack</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Extends refractory lining life — reduces shutdown frequency</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Applied as paste — no specialist equipment required</span></div>
-        </div>
-        <div class="applications"><h3>Applications</h3><div class="app-tags"><span class="tag tag-light">Billet Heating Furnaces</span><span class="tag tag-light">Reheat Furnaces</span><span class="tag tag-light">Heat Treatment Furnaces</span><span class="tag tag-light">Combustion Chambers</span><span class="tag tag-light">Annealing Furnaces</span></div></div>
-        <a href="products-refractory.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Refractory Coatings</a>
+    <a href="#overview">Overview</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#application">Application</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">ESPON-RCP &mdash; Refractory Coating Compound</div>
+    <h2 class="product-title">Zircon-Based Refractory Coating for Furnace Linings</h2>
+    <div class="product-intro-grid">
+      <div class="product-desc">
+        <p>ESPON-RCP is a zircon-based refractory coating with special additives and powerful binders, applied to the hot face of furnace linings. It withstands temperatures up to 1900&deg;C and resists corrosive gases.</p>
+        <p>ESPON-RCP is optimally applied to new refractory linings. If used on old or partially worn-out linings, the lining must first be properly repaired &mdash; for example, using ESPON-RC3 powder &mdash; before coating.</p>
       </div>
       <div>
-        <div class="spec-card">
-          <div class="spec-card-title">Product Data</div>
-          <div class="spec-row"><span class="spec-label">Product Code</span><span class="spec-value spec-code">ESPON-RCP</span></div>
-          <div class="spec-row"><span class="spec-label">Form</span><span class="spec-value">Paste / thick liquid</span></div>
-          <div class="spec-row"><span class="spec-label">Application Method</span><span class="spec-value">Brush, trowel, or spray</span></div>
-          <div class="spec-row"><span class="spec-label">Max Service Temp.</span><span class="spec-value">1900°C</span></div>
-          <div class="spec-row"><span class="spec-label">Curing</span><span class="spec-value">Air dry + fire-in cycle</span></div>
-          <div class="spec-row"><span class="spec-label">Shelf Life</span><span class="spec-value">12 months</span></div>
-          <div class="spec-row"><span class="spec-label">Packaging</span><span class="spec-value">5 kg, 25 kg containers</span></div>
-          <a href="contact.html" class="request-btn"><i class="fas fa-flask"></i> &nbsp;Request a Sample</a>
+        <div class="product-img-card">
+          <img src="Images/Products/espon-rcp-packaging.webp" alt="ESPON-RCP Refractory Coating Compound container">
+          <div class="product-img-caption">ESPON-RCP Refractory Coating Compound</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="cta-strip">
-  <div class="container"><div class="cta-strip-inner">
-    <div><h2>Extend Your Furnace Lining Life</h2><p>ESPON-RCP is in use at forging and rolling plants across India and Asia. Request a sample and trial it in your next planned maintenance shutdown.</p></div>
-    <div class="cta-strip-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+
+<!-- ── How It Works ────────────────────────────────────────── -->
+<section class="product-how" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Reflecting Heat, Preventing Thermal Shock</h2>
+    <div class="how-content">
+      <p>ESPON-RCP reflects heat back into the furnace and prevents thermal shock cracking of the refractory lining, while increasing its emissivity. This heat retention allows furnaces that are shut down overnight to stay warmer, reducing next-morning startup time by up to 1.5 hours in some cases. In sealed quench furnaces, ESPON-RCP improves heat uniformity and reduces outer shell temperature.</p>
+      <p>This matters because refractory lining wears over time from thermal shock cracking, flame impingement, corrosive combustion products, carbon buildup, and manual scraping &mdash; all of which increase the time and fuel needed to reach target temperature. A furnace with a new refractory lining may take 3.5 hours to reach 1250&deg;C; after 8 to 10 months of lining wear, the same furnace can take 4 to 4.5 hours to reach the same temperature.</p>
     </div>
-  </div></div>
+  </div>
 </section>
+
+<!-- ── Application ─────────────────────────────────────────── -->
+<section class="product-application" id="application">
+  <div class="container">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Where ESPON-RCP Is Used</h2>
+
+    <div class="how-content" style="margin-top:32px;">
+      <p>ESPON-RCP is used in rolling mill furnaces, billet re-heating furnaces, and sealed quench furnaces. It is optimally applied to new refractory linings.</p>
+    </div>
+
+    <div class="dilution-note">
+      <h4><i class="fas fa-trowel"></i> Worn Linings</h4>
+      <p>If applying to old or partially worn-out refractory lining, care must be taken to repair the lining properly &mdash; for example, using ESPON-RC3 powder &mdash; before applying ESPON-RCP.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section class="product-benefits" id="benefits">
+  <div class="container">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why Use ESPON-RCP</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="benefit-text">Protects refractory lining from thermal shock and cracking</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-sun"></i></div>
+        <div class="benefit-text">Increases emissivity &mdash; reflects heat into the furnace</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-fire-flame-curved"></i></div>
+        <div class="benefit-text">Prevents carbon deposits on burner blocks</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-flask"></i></div>
+        <div class="benefit-text">Prevents slag adhesion in acid regeneration plants</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-gas-pump"></i></div>
+        <div class="benefit-text">Reduces fuel consumption</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-wrench"></i></div>
+        <div class="benefit-text">Reduces maintenance downtime</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Properties & Specifications ─────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Properties &amp; Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Code</td>
+              <td class="mono">ESPON-RCP</td>
+            </tr>
+            <tr>
+              <td>Composition</td>
+              <td>Zircon-based, with special additives and powerful binders</td>
+            </tr>
+            <tr>
+              <td>Appearance</td>
+              <td>Pink paste, free from visible extraneous matter</td>
+            </tr>
+            <tr>
+              <td>Weight per Litre</td>
+              <td>1.4 kg &plusmn; 0.1 kg</td>
+            </tr>
+            <tr>
+              <td>Max Service Temperature</td>
+              <td>Up to 1900&deg;C</td>
+            </tr>
+            <tr>
+              <td>Flash Point</td>
+              <td>Nil &mdash; non-flammable</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>Non-hazardous. Non-toxic during storage or use.</td>
+            </tr>
+            <tr>
+              <td>Shelf Life</td>
+              <td>12 months in factory sealed condition</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="spec-card-standalone">
+          <div class="spec-card-title">Packaging</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pack Size</th>
+                <th>Container Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>25 kg</td>
+                <td>HDPE container</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products-refractory.html" class="back-link"><i class="fas fa-arrow-left"></i> All Refractory Coatings</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Losing Time &amp; Fuel to Refractory Wear?</h2>
+        <p>Speak with our engineers about ESPON-RCP for your rolling mill, re-heating, or sealed quench furnace.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-mount"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
 </body>
 </html>

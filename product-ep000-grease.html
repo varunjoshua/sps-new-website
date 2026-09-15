@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON-DLO — Oil-Based Hot Forging Die Lubricant — Steel Plant Specialities LLP</title>
+<title>EP000 Grease — Extreme Pressure Lithium Grease — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -36,23 +36,25 @@ html { scroll-behavior: smooth; }
 .product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
 .product-nav .scroll-hint.hidden { opacity: 0; }
 
-/* ── Product Page Layout (text/data-only — no product photography available) ── */
+/* ── Product Page Layout (no product photography available) ── */
 
 /* Description section */
 .product-intro { padding: 72px 0; background: #fff; }
 .product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; }
 .product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: 780px; }
 .product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; max-width: 780px; }
+.product-desc p { margin-bottom: 16px; }
+.product-desc p:last-child { margin-bottom: 0; }
 
 /* How It Works */
 .product-how { padding: 72px 0; background: var(--light); }
+.how-content { max-width: 720px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
 
 /* Application section */
 .product-application { padding: 72px 0; background: #fff; }
-.how-content { max-width: 780px; margin-top: 32px; }
-.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
-.how-content p:last-child { margin-bottom: 0; }
-.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 780px; }
+.dilution-note { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: var(--light); border: 1px solid var(--border); max-width: 720px; }
 .dilution-note h4 { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
 .dilution-note h4 i { color: var(--red); font-size: 13px; }
 .dilution-note p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
@@ -68,16 +70,17 @@ html { scroll-behavior: smooth; }
 
 /* Specifications section */
 .product-specs { padding: 72px 0; background: #fff; }
-.specs-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
 .spec-table { width: 100%; border-collapse: collapse; }
 .spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
 .spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
-.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; }
 .spec-table td:last-child { color: var(--dark); font-weight: 600; }
 .spec-table tr:last-child td { border-bottom: none; }
 .spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
 .spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
 .spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+.spec-card-standalone + .spec-card-standalone { margin-top: 20px; }
 
 /* Back link */
 .back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
@@ -85,11 +88,11 @@ html { scroll-behavior: smooth; }
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .specs-layout { grid-template-columns: 1fr 300px; gap: 36px; }
+  .specs-layout { gap: 36px; }
 }
 @media (max-width: 900px) {
-  .specs-layout { grid-template-columns: 1fr; }
   .benefits-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
 }
 @media (max-width: 768px) {
   .product-nav { top: 64px; }
@@ -106,7 +109,7 @@ html { scroll-behavior: smooth; }
 
 <script>window.ACTIVE_NAV = 'products';</script>
 
-<!-- ── Hero (no product photography available — solid background) ─ -->
+<!-- ── Hero (no product photography available for this grade) ─ -->
 <section class="page-hero">
   <div class="container page-hero-content">
     <div class="breadcrumb">
@@ -114,12 +117,12 @@ html { scroll-behavior: smooth; }
       <i class="fas fa-chevron-right"></i>
       <a href="products.html">Products</a>
       <i class="fas fa-chevron-right"></i>
-      <a href="products-die-lubricants.html">Hot Forging Die Lubricants</a>
+      <a href="products-ep-grease.html">ESPON EP Grease</a>
       <i class="fas fa-chevron-right"></i>
-      <span>ESPON-DLO</span>
+      <span>EP000 Grease</span>
     </div>
-    <h1>ESPON-DLO <span>Oil-Based Hot Forging Die Lubricant</span></h1>
-    <p>Graphite-based coolant-cum-lubricant for hot forging dies &mdash; improves die life and forge shop profitability.</p>
+    <h1>EP000 <span>Grease</span></h1>
+    <p>Lithium-based extreme pressure grease for centralised lubrication systems — the softest, most free-flowing grade in the EP range.</p>
   </div>
 </section>
 
@@ -137,22 +140,23 @@ html { scroll-behavior: smooth; }
 <!-- ── Description ─────────────────────────────────────────── -->
 <section class="product-intro" id="overview">
   <div class="container">
-    <div class="product-code">ESPON-DLO &mdash; Oil-Based Hot Forging Die Lubricant</div>
-    <h2 class="product-title">Graphite-Based Coolant-Cum-Lubricant for Hot Forging Dies</h2>
+    <div class="product-code">EP000 Grease &mdash; Extreme Pressure Lithium Grease</div>
+    <h2 class="product-title">Lithium-Based Extreme Pressure Grease for Centralised Lubrication</h2>
     <div class="product-desc">
-      <p>ESPON-DLO is an excellent graphite-based coolant-cum-lubricant for hot forging dies, suited to hot forging hammers and presses. It is used directly, or diluted with low-viscosity mineral oil if found to be too thick, and applied by swabbing or spraying.</p>
+      <p>SPS offers lithium-based extreme pressure grease manufactured using superior quality base stocks and specially customised extreme pressure additives for optimum performance. EP000 Grease meets IPSS:1-09-005 and IS:7623-1993 (second revision) specifications.</p>
+      <p>EP000 Grease is the softest and most free-flowing of the EP0 / EP00 / EP000 range &mdash; suited to centralised lubrication systems with fine distributor nozzles, where a more fluid grease is needed to maintain reliable flow without choking the system.</p>
     </div>
   </div>
 </section>
 
-<!-- ── How It Works ─────────────────────────────────────────── -->
+<!-- ── How It Works ────────────────────────────────────────── -->
 <section class="product-how" id="how-it-works">
   <div class="container">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title">Reducing Forging Load, Improving Die Life</h2>
+    <h2 class="section-title">Stability at High &amp; Low Operating Temperatures</h2>
     <div class="how-content">
-      <p>ESPON-DLO acts as a coolant-cum-lubricant on the die surface during hot forging. By reducing forging load, improving metal flow, and preventing the forged component from sticking in the die cavity, it reduces the die wear that poor lubrication would otherwise cause &mdash; improving die life and the surface quality of forged parts.</p>
-      <p>This matters because die cost amounts to 10&ndash;15% of the total forging cost in a forge shop, making die life one of the biggest levers on profitability. Poor lubrication that increases forging load, disrupts metal flow, or lets parts stick accelerates die wear and drives up cost per part; ESPON-DLO improves die life and, in turn, automatically improves the profitability of the forge shop.</p>
+      <p>Centralised lubrication systems on roller and anti-friction bearings run at operational temperatures that may exceed 120&ndash;150&deg;C. A grease that thins out at these temperatures causes overflow, leakage, and spillage; EP000 Grease maintains its stability at high operating temperatures, keeping the system running clean.</p>
+      <p>Even where ambient temperatures drop as low as 5&deg;C, EP000 Grease maintains its stability and viscosity &mdash; preventing the choking of centralised lubrication systems that a grease which thickens in the cold would otherwise cause. SPS also customises EP000 Grease to suit the specific requirements of a system&rsquo;s lubrication nozzles and pumps, improving lubricity and reducing wastage.</p>
     </div>
   </div>
 </section>
@@ -162,13 +166,15 @@ html { scroll-behavior: smooth; }
   <div class="container">
     <div class="section-label">Application</div>
     <h2 class="section-title">Method of Application</h2>
-    <div class="how-content">
-      <p>After opening the container, stir the contents well with a clean wooden plank. It is then ready for use by swabbing or spraying.</p>
+
+    <div class="how-content" style="margin-top:32px;">
+      <p>Clean the surface thoroughly before applying EP000 Grease, manually or with a grease gun. Always avoid contamination of the grease by dust and/or dirt when applying &mdash; preferably use a pneumatic pump system.</p>
+      <p>EP000 Grease is especially developed for the lubrication of closed gears, and can also be used for chassis lubrication by means of a centralised system.</p>
     </div>
 
     <div class="dilution-note">
-      <h4><i class="fas fa-droplet"></i> Dilution</h4>
-      <p>If the lubricant is found to be very thick, dilute it with low-viscosity mineral oil.</p>
+      <h4><i class="fas fa-certificate"></i> International Specifications Followed</h4>
+      <p>IPSS 1-09-005 &nbsp;&bull;&nbsp; IS: 7623-1993 (second revision)</p>
     </div>
   </div>
 </section>
@@ -177,32 +183,32 @@ html { scroll-behavior: smooth; }
 <section class="product-benefits" id="benefits">
   <div class="container">
     <div class="section-label">Benefits</div>
-    <h2 class="section-title">Why Use ESPON-DLO</h2>
+    <h2 class="section-title">Why Use EP000 Grease</h2>
 
     <div class="benefits-grid">
       <div class="benefit-card">
         <div class="benefit-icon"><i class="fas fa-gauge-high"></i></div>
-        <div class="benefit-text">Reduces forging load</div>
+        <div class="benefit-text">Best for centralised lubrication systems</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-water"></i></div>
-        <div class="benefit-text">Improves metal flow during forging</div>
+        <div class="benefit-icon"><i class="fas fa-layer-group"></i></div>
+        <div class="benefit-text">Forms a durable lubrication film &mdash; reduces friction and load, extending machine life</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-hand"></i></div>
-        <div class="benefit-text">Prevents sticking of the forged component in the die cavity</div>
+        <div class="benefit-icon"><i class="fas fa-link-slash"></i></div>
+        <div class="benefit-text">Prevents welding and seizure of moving parts</div>
       </div>
       <div class="benefit-card">
         <div class="benefit-icon"><i class="fas fa-shield-halved"></i></div>
-        <div class="benefit-text">Improves die life</div>
+        <div class="benefit-text">Excellent anti-rust property and excellent adhesion to metal</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-star"></i></div>
-        <div class="benefit-text">Improves surface quality of forged components</div>
+        <div class="benefit-icon"><i class="fas fa-flask"></i></div>
+        <div class="benefit-text">Miscible with most other conventional greases</div>
       </div>
       <div class="benefit-card">
-        <div class="benefit-icon"><i class="fas fa-sack-dollar"></i></div>
-        <div class="benefit-text">Improves forge shop profitability by lowering die cost per part</div>
+        <div class="benefit-icon"><i class="fas fa-leaf"></i></div>
+        <div class="benefit-text">Does not contain lead or other heavy metals</div>
       </div>
     </div>
   </div>
@@ -226,27 +232,35 @@ html { scroll-behavior: smooth; }
           <tbody>
             <tr>
               <td>Product Code</td>
-              <td class="mono">ESPON-DLO</td>
+              <td class="mono">EP000 Grease</td>
             </tr>
             <tr>
-              <td>Description</td>
-              <td>Free-flowing black liquid, free from visible extraneous matter</td>
+              <td>Appearance</td>
+              <td>Yellowish golden</td>
             </tr>
             <tr>
-              <td>Weight per Litre</td>
-              <td>0.9 kg &plusmn; 0.1 kg</td>
+              <td>Type of Thickener</td>
+              <td>Lithium</td>
             </tr>
             <tr>
-              <td>Flash Point</td>
-              <td>Above 150&deg;C</td>
+              <td>Worked Penetration at 25&deg;C, After 60 Strokes</td>
+              <td>455</td>
             </tr>
             <tr>
-              <td>Application Method</td>
-              <td>Swabbing or spraying</td>
+              <td>Drop Point</td>
+              <td>160&deg;C</td>
             </tr>
             <tr>
-              <td>Safety</td>
-              <td>Contains special oils &mdash; follow standard precautions for handling and storing such products</td>
+              <td>Corrosion on Copper Strip @ 100&deg;C, 24 hrs</td>
+              <td>Negative</td>
+            </tr>
+            <tr>
+              <td>Four Ball Weld Load, Min.</td>
+              <td>200 kg</td>
+            </tr>
+            <tr>
+              <td>Viscosity of Oil @ 40&deg;C</td>
+              <td>180 cSt</td>
             </tr>
             <tr>
               <td>Shelf Life</td>
@@ -268,8 +282,12 @@ html { scroll-behavior: smooth; }
             </thead>
             <tbody>
               <tr>
-                <td>20 L / 210 L</td>
-                <td>Special container</td>
+                <td>18 kg</td>
+                <td>Special HDPE container</td>
+              </tr>
+              <tr>
+                <td>180 kg</td>
+                <td>Sturdy metallic drum</td>
               </tr>
             </tbody>
           </table>
@@ -279,7 +297,7 @@ html { scroll-behavior: smooth; }
           <i class="fas fa-envelope"></i> Enquire Now
         </a>
 
-        <a href="products-die-lubricants.html" class="back-link"><i class="fas fa-arrow-left"></i> All Hot Forging Die Lubricants</a>
+        <a href="products-ep-grease.html" class="back-link"><i class="fas fa-arrow-left"></i> All ESPON EP Grease</a>
       </div>
     </div>
   </div>
@@ -290,8 +308,8 @@ html { scroll-behavior: smooth; }
   <div class="container">
     <div class="cta-strip-inner">
       <div>
-        <h2>Losing Profit to Die Wear?</h2>
-        <p>Speak with our engineers about ESPON-DLO for your hot forging presses and hammers.</p>
+        <h2>Choking Centralised Lubrication Lines?</h2>
+        <p>Speak with our engineers about EP000 Grease for your roller and anti-friction bearings.</p>
       </div>
       <div class="cta-strip-actions">
         <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>

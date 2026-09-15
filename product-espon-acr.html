@@ -44,11 +44,8 @@ html { scroll-behavior: smooth; }
 .product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: 780px; }
 .product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; max-width: 780px; }
 
-/* Why It Matters (context) */
-.product-why { padding: 72px 0; background: var(--light); }
-.why-content { max-width: 780px; }
-.why-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
-.why-content p:last-child { margin-bottom: 0; }
+/* How It Works */
+.product-how { padding: 72px 0; background: var(--light); }
 
 /* Application section */
 .product-application { padding: 72px 0; background: #fff; }
@@ -97,7 +94,7 @@ html { scroll-behavior: smooth; }
   [id] { scroll-margin-top: 118px; }
 }
 @media (max-width: 600px) {
-  .product-intro, .product-why, .product-application,
+  .product-intro, .product-how, .product-application,
   .product-benefits, .product-specs { padding: 48px 0; }
   .product-title { font-size: 24px; }
 }
@@ -127,7 +124,7 @@ html { scroll-behavior: smooth; }
 <nav class="product-nav">
   <div class="container">
     <a href="#overview">Overview</a>
-    <a href="#why-it-matters">Why It Matters</a>
+    <a href="#how-it-works">How It Works</a>
     <a href="#application">Application</a>
     <a href="#benefits">Benefits</a>
     <a href="#specifications">Specifications</a>
@@ -146,15 +143,14 @@ html { scroll-behavior: smooth; }
   </div>
 </section>
 
-<!-- ── Why It Matters ───────────────────────────────────────── -->
-<section class="product-why" id="why-it-matters">
+<!-- ── How It Works ─────────────────────────────────────────── -->
+<section class="product-how" id="how-it-works">
   <div class="container">
-    <div class="section-label">Why It Matters</div>
-    <h2 class="section-title">Heat Loss &amp; Alpha-Case in Titanium Forging</h2>
-    <div class="why-content">
-      <p>Heating titanium, Inconel, and similar critical super alloys demands precise temperature control. Titanium billets lose heat very quickly once out of the furnace, which makes subsequent processing such as forging difficult and can cause rejection when required properties are not met.</p>
-      <p>Titanium is also prone to forming a hard alpha-case layer on its surface during high-temperature heating &mdash; much like oxidation and decarburisation in steel. Alpha-case causes part rejection at final testing and has to be ground off, a slow process since hardened titanium does not machine easily.</p>
-      <p>Coating titanium billets with ESPON-ACR before heating helps them retain heat so that forging can proceed as planned, while substantially reducing alpha-case formation. The coating has no impact on heating time, temperature, or the properties of the part after heating.</p>
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Retaining Heat, Reducing Alpha-Case</h2>
+    <div class="how-content" style="margin-top:0;">
+      <p>Coating titanium billets with ESPON-ACR before heating helps them retain heat, so that forging or further processing can proceed as planned, while substantially reducing alpha-case formation on the surface. The coating has no impact on heating time, temperature, or the properties of the part after heating.</p>
+      <p>This matters because heating titanium, Inconel, and similar critical super alloys demands precise temperature control. Titanium billets lose heat very quickly once out of the furnace, which makes subsequent processing such as forging difficult and can cause rejection when required properties are not met. Titanium is also prone to forming a hard alpha-case layer during high-temperature heating &mdash; much like oxidation and decarburisation in steel &mdash; which causes part rejection at final testing and must be ground off, a slow process since hardened titanium does not machine easily.</p>
     </div>
   </div>
 </section>

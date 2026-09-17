@@ -3,7 +3,80 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Steel Plant Specialities LLP — Homepage Preview</title>
+<title>Reduce Costs, Increase Yield, Improve Quality in Hot Rolling, Hot Forging and Heat Treatment — Steel Plant Specialities LLP</title>
+<meta name="description" content="Steel Plant Specialities LLP designs and manufactures metallurgical anti-scale coatings, hot forging die lubricants, refractory coatings, anti-nitriding compounds, EP greases, spray systems and sustainable technologies to prevent rejections, increase yield, improve steel quality and reduce carbon footprint in hot rolling, hot forging and heat treatment. 40+ years serving steel, forging & heat treatment industries worldwide.">
+<meta name="robots" content="index, follow, max-snippet:-1, max-video-preview:-1, max-image-preview:large">
+<link rel="canonical" href="https://steelplantspecialities.com/">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_IN">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Steel Plant Specialities LLP">
+<meta property="og:title" content="Reduce Costs, Increase Yield, Improve Quality in Hot Rolling, Hot Forging and Heat Treatment — Steel Plant Specialities LLP">
+<meta property="og:description" content="Steel Plant Specialities LLP designs and manufactures metallurgical anti-scale coatings, hot forging die lubricants, refractory coatings, anti-nitriding compounds, EP greases, spray systems and sustainable technologies to prevent rejections, increase yield, improve steel quality and reduce carbon footprint in hot rolling, hot forging and heat treatment. 40+ years serving steel, forging & heat treatment industries worldwide.">
+<meta property="og:url" content="https://steelplantspecialities.com/">
+<meta property="og:image" content="https://steelplantspecialities.com/sps_logo.png">
+<meta property="og:image:width" content="526">
+<meta property="og:image:height" content="520">
+<meta property="og:image:alt" content="Steel Plant Specialities LLP logo">
+<meta property="og:image:type" content="image/png">
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Reduce Costs, Increase Yield, Improve Quality in Hot Rolling, Hot Forging and Heat Treatment — Steel Plant Specialities LLP">
+<meta name="twitter:description" content="Steel Plant Specialities LLP designs and manufactures metallurgical anti-scale coatings, hot forging die lubricants, refractory coatings, EP greases, spray systems and sustainable technologies for hot rolling, hot forging and heat treatment.">
+<meta name="twitter:image" content="https://steelplantspecialities.com/sps_logo.png">
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" href="sps_logo.png">
+<link rel="apple-touch-icon" href="sps_logo.png">
+
+<!-- Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://steelplantspecialities.com/#organization",
+      "name": "Steel Plant Specialities LLP",
+      "url": "https://steelplantspecialities.com",
+      "logo": "https://steelplantspecialities.com/sps_logo.png",
+      "foundingDate": "1985",
+      "description": "Designs and manufactures metallurgical anti-scale coatings, hot forging die lubricants, refractory coatings, anti-nitriding compounds, EP greases, spray systems and sustainable technologies for hot rolling, hot forging and heat treatment industries.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mumbai",
+        "addressCountry": "IN"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+91-98204-93373",
+        "email": "info@steelplantspecialities.com",
+        "contactType": "sales"
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://steelplantspecialities.com/#website",
+      "url": "https://steelplantspecialities.com",
+      "name": "Steel Plant Specialities LLP",
+      "publisher": { "@id": "https://steelplantspecialities.com/#organization" },
+      "inLanguage": "en-IN"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://steelplantspecialities.com/#webpage",
+      "url": "https://steelplantspecialities.com/",
+      "name": "Reduce Costs, Increase Yield, Improve Quality in Hot Rolling, Hot Forging and Heat Treatment — Steel Plant Specialities LLP",
+      "isPartOf": { "@id": "https://steelplantspecialities.com/#website" },
+      "about": { "@id": "https://steelplantspecialities.com/#organization" },
+      "inLanguage": "en-IN"
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,12 +141,12 @@
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background-image: url('https://raw.githubusercontent.com/varunjoshua/sps-new-website/cdf13e26caf46f6fbc50d6c094abd837b5abee38/tempimages/Homepage-cover-1.jpg');
+    background-image: url('Images/Home/hero-01.png');
     background-size: cover; background-position: center;
   }
   .hero-overlay {
     position: absolute; inset: 0;
-    background: linear-gradient(105deg, rgba(10,10,10,.85) 0%, rgba(10,10,10,.65) 50%, rgba(10,10,10,.4) 100%);
+    background: linear-gradient(105deg, rgba(10,10,10,.85) 0%, rgba(10,10,10,.4) 50%, rgba(10,10,10,.05) 100%);
   }
   .hero .container { width: 100%; }
   .hero-content { position: relative; z-index: 1; max-width: 680px; }
@@ -247,8 +320,10 @@
   /* ── About Strip ───────────────────────────────────────────── */
   .about-section { padding: 96px 0; background: #fff; }
   .about-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: center; }
-  .about-image-wrap { border-radius: 10px; overflow: hidden; }
-  .about-image-wrap img { width: 100%; height: auto; display: block; }
+  .about-visual img {
+    width: 100%; height: auto; display: block;
+    border-radius: 12px;
+  }
   .about-text .section-sub { margin-bottom: 28px; }
   .about-stats {
     display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 36px;
@@ -392,6 +467,7 @@
 
     /* About strip */
     .about-inner { grid-template-columns: 1fr; gap: 36px; }
+    .about-visual img { border-radius: 8px; }
     .about-stats { grid-template-columns: repeat(2, 1fr); }
 
     /* CTA strip */
@@ -556,32 +632,32 @@
     <div class="section-header center">
       <div class="section-label">Industries Served</div>
       <h2 class="section-title">Built for the Most Demanding Metal Forming Processes</h2>
-      <p class="section-sub">SPS products are proven across five high-temperature metal forming industries, with global installations from India to Europe.</p>
+      <p class="section-sub">SPS products are proven across five high-temperature metal forming industries.</p>
     </div>
 
     <div class="industries-grid">
 
-      <a href="industries.html#hot-forging" class="industry-card">
-        <div class="industry-img">
-          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/hotforging.jpg" alt="Hot Forging" style="height:100%; object-fit:cover;">
-        </div>
-        <div class="industry-overlay"></div>
-        <div class="industry-content">
-          <div class="industry-icon"><i class="fas fa-hammer"></i></div>
-          <div class="industry-name">Hot Forging</div>
-          <div class="industry-desc">Die lubricants, anti-scale, spray systems</div>
-        </div>
-      </a>
-
       <a href="industries.html#hot-rolling" class="industry-card">
         <div class="industry-img">
-          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/hotrolling.jpg" alt="Hot Rolling" style="height:100%; object-fit:cover;">
+          <img src="Images/Home/HR.webp" alt="Hot Rolling" style="height:100%; object-fit:cover;">
         </div>
         <div class="industry-overlay"></div>
         <div class="industry-content">
           <div class="industry-icon"><i class="fas fa-industry"></i></div>
           <div class="industry-name">Hot Rolling</div>
           <div class="industry-desc">Scale prevention, decarb control, yield improvement</div>
+        </div>
+      </a>
+
+      <a href="industries.html#hot-forging" class="industry-card">
+        <div class="industry-img">
+          <img src="Images/Home/HotForging.jpg" alt="Hot Forging" style="height:100%; object-fit:cover;">
+        </div>
+        <div class="industry-overlay"></div>
+        <div class="industry-content">
+          <div class="industry-icon"><i class="fas fa-hammer"></i></div>
+          <div class="industry-name">Hot Forging</div>
+          <div class="industry-desc">Die lubricants, anti-scale, spray systems</div>
         </div>
       </a>
 
@@ -599,11 +675,11 @@
 
       <a href="industries.html#die-casting" class="industry-card">
         <div class="industry-img">
-          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/main/temp-images/die-casting.jpg" alt="Die Casting" style="height:100%; object-fit:cover;">
+          <img src="Images/Home/diecasting.jpg" alt="Die Casting" style="height:100%; object-fit:cover;">
         </div>
         <div class="industry-overlay"></div>
         <div class="industry-content">
-          <div class="industry-icon"><i class="fas fa-cubes"></i></div>
+          <div class="industry-icon"><i class="fas fa-cog"></i></div>
           <div class="industry-name">Die Casting</div>
           <div class="industry-desc">Release agents, die protection, cleaning solutions</div>
         </div>
@@ -682,8 +758,8 @@
     </div>
     <div class="about-inner">
 
-      <div class="about-image-wrap">
-        <img src="Images/Home/about.png" alt="Steel Plant Specialities — metallurgical expertise">
+      <div class="about-visual">
+        <img src="Images/Home/about.png" alt="Steel Plant Specialities — About">
       </div>
 
       <div class="about-text">

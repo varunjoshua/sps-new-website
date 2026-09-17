@@ -23,9 +23,8 @@ function renderUtilityBar() {
         <span><i class="fab fa-whatsapp"></i><a href="#">WhatsApp</a></span>
       </div>
       <div class="utility-right">
-        <a href="#"><i class="fab fa-linkedin-in"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/company/steel-plant-specialities" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.youtube.com/@srikarshenoy" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </div>`;
@@ -73,9 +72,8 @@ function renderFooter() {
           </a>
           <p>Innovative protective coatings and lubricants for hot forging, hot rolling, and heat treatment industries. Engineered by IIT metallurgists. Trusted by market leaders worldwide.</p>
           <div class="footer-social">
-            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-            <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/company/steel-plant-specialities" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@srikarshenoy" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
           </div>
           <div class="footer-newsletter">
             <h5>Product updates & technical articles</h5>
@@ -88,24 +86,23 @@ function renderFooter() {
         <div class="footer-col">
           <h4>Products</h4>
           <ul>
-            <li><a href="products.html">Anti-Scale Coatings</a></li>
-            <li><a href="products.html">Refractory Coatings</a></li>
-            <li><a href="products.html">Forging Die Lubricants</a></li>
-            <li><a href="products.html">Anti-Nitriding Paste</a></li>
-            <li><a href="products.html">EP Grease</a></li>
-            <li><a href="products.html">Oil Cleaning Liquids</a></li>
-            <li><a href="products.html">Die Spray Systems</a></li>
-            <li><a href="products.html">Decarb Control Coatings</a></li>
+            <li><a href="products-anti-scale.html">Anti-Scale Coatings</a></li>
+            <li><a href="products-refractory.html">Refractory Coatings</a></li>
+            <li><a href="products-die-lubricants.html">Forging Die Lubricants</a></li>
+            <li><a href="products-anti-nitriding.html">Anti-Nitriding Paste</a></li>
+            <li><a href="products-ep-grease.html">EP Grease</a></li>
+            <li><a href="products-oil-cleaning.html">Oil Cleaning Liquids</a></li>
+            <li><a href="products-spray-systems.html">Die Spray Systems</a></li>
           </ul>
         </div>
         <div class="footer-col">
           <h4>Industries</h4>
           <ul>
-            <li><a href="industries.html">Hot Forging</a></li>
-            <li><a href="industries.html">Hot Rolling</a></li>
-            <li><a href="industries.html">Heat Treatment</a></li>
-            <li><a href="industries.html">Die Casting</a></li>
-            <li><a href="industries.html">Titanium &amp; Super-Alloys</a></li>
+            <li><a href="industries.html#hot-rolling">Hot Rolling</a></li>
+            <li><a href="industries.html#hot-forging">Hot Forging</a></li>
+            <li><a href="industries.html#heat-treatment">Heat Treatment</a></li>
+            <li><a href="industries.html#die-casting">Die Casting</a></li>
+            <li><a href="industries.html#superalloys">Titanium &amp; Super-Alloys</a></li>
           </ul>
           <h4 style="margin-top:24px">Company</h4>
           <ul>

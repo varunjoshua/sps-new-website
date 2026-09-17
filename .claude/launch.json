@@ -3,9 +3,10 @@
   "configurations": [
     {
       "name": "sps-website",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": ["-m", "http.server", "8080", "--directory", "/Users/varunjoshua/Desktop/steelplant/sps-new-website"],
-      "port": 8080
+      "runtimeExecutable": "bash",
+      "runtimeArgs": ["-c", "python3 -m http.server $PORT --directory /Users/varunjoshua/Desktop/steelplant/sps-new-website"],
+      "port": 8080,
+      "autoPort": true
     }
   ]
 }

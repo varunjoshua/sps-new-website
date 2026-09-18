@@ -52,12 +52,30 @@ function renderNav(activeKey) {
       </div>
       <div class="nav-overlay" id="nav-overlay"></div>
       <div class="nav-cta">
+        <button class="nav-search-btn" id="nav-search-btn" aria-label="Search">
+          <svg class="search-icon-default" width="22" height="22" viewBox="0 -960 960 960" fill="currentColor"><path d="M796-121 533-384q-30 26-70 40.5T378-329q-108 0-183-75t-75-181q0-106 75-181t182-75q106 0 180.5 75T632-585q0 43-14 83t-42 75l264 262-44 44ZM377-389q81 0 138-57.5T572-585q0-81-57-138.5T377-781q-82 0-139.5 57.5T180-585q0 81 57.5 138.5T377-389Z"/></svg>
+          <svg class="search-icon-active" width="22" height="22" viewBox="0 -960 960 960" fill="currentColor" style="display:none"><path d="M136-136q-56-56-56-134t56-134q56-56 134-56t134 56q56 56 56 134t-56 134q-56 56-134 56t-134-56Zm700 16L573-383q-14 11-31.5 21.5T508-344q-5-14-11-28.5T483-399q54-21 91.5-69.5T612-584q0-81-57-138.5T417-780q-82 0-139.5 57.5T220-584q0 17 3.5 35.5T232-517q-13 2-29 6.5T174-500q-7-18-10.5-40t-3.5-44q0-107 75-181.5T417-840q106 0 180.5 75T672-584q0 43-15 85t-41 73l264 262-44 44Zm-635-56 69-69 68 68 23-23-69-69 71-71-23-23-70 70-70-70-23 23 70 70-70 70 24 24Z"/></svg>
+        </button>
         <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu">
           <span></span><span></span><span></span>
         </button>
       </div>
     </div>
-  </nav>`;
+  </nav>
+  <div class="search-strip" id="search-strip">
+    <div class="search-strip-wrap">
+      <div class="container" style="padding-top:16px;padding-bottom:16px">
+        <div class="search-strip-inner">
+          <i class="fas fa-search search-strip-icon"></i>
+          <input type="text" id="search-input" placeholder="Search products, industries, articles..." autocomplete="off">
+          <button class="search-clear-btn" id="search-clear-btn" aria-label="Clear search">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+          </button>
+        </div>
+        <div class="search-results" id="search-results"></div>
+      </div>
+    </div>
+  </div>`;
 }
 
 function renderFooter() {
@@ -167,4 +185,117 @@ document.addEventListener('DOMContentLoaded', () => {
       link.addEventListener('click', closeNav)
     );
   }
+
+  // ── Search ──────────────────────────────────────────────
+  const searchBtn     = document.getElementById('nav-search-btn');
+  const searchStrip   = document.getElementById('search-strip');
+  const searchInput   = document.getElementById('search-input');
+  const searchResults = document.getElementById('search-results');
+  if (!searchBtn || !searchStrip) return;
+
+  var fuse = null;
+  var searchClearBtn = document.getElementById('search-clear-btn');
+  var iconDefault = searchBtn.querySelector('.search-icon-default');
+  var iconActive  = searchBtn.querySelector('.search-icon-active');
+
+  function toggleSearch() {
+    var isOpen = searchStrip.classList.toggle('open');
+    iconDefault.style.display = isOpen ? 'none' : '';
+    iconActive.style.display  = isOpen ? '' : 'none';
+    if (isOpen) {
+      setTimeout(function() { searchInput.focus(); }, 100);
+      loadFuse();
+    } else {
+      searchInput.value = '';
+      searchResults.innerHTML = '';
+      if (searchClearBtn) searchClearBtn.style.visibility = 'hidden';
+    }
+  }
+
+  function updateClearBtn() {
+    if (searchClearBtn) searchClearBtn.style.visibility = searchInput.value.length ? 'visible' : 'hidden';
+  }
+
+  searchBtn.addEventListener('click', toggleSearch);
+  if (searchClearBtn) searchClearBtn.addEventListener('click', function() {
+    searchInput.value = '';
+    searchResults.innerHTML = '';
+    searchClearBtn.style.visibility = 'hidden';
+    searchInput.focus();
+  });
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && searchStrip.classList.contains('open')) {
+      toggleSearch();
+    }
+  });
+
+  var fuseLoading = false;
+  function loadFuse() {
+    if (fuse || fuseLoading) return;
+    fuseLoading = true;
+    if (typeof Fuse === 'function') {
+      initFuse();
+      return;
+    }
+    var script = document.createElement('script');
+    script.src = 'https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js';
+    script.onload = function() { initFuse(); };
+    script.onerror = function() { fuseLoading = false; };
+    document.head.appendChild(script);
+  }
+
+  function initFuse() {
+    fetch('assets/js/search-index.json')
+      .then(function(r) { return r.json(); })
+      .then(function(data) {
+        fuse = new Fuse(data, {
+          keys: [
+            { name: 'title', weight: 0.4 },
+            { name: 'keywords', weight: 0.35 },
+            { name: 'desc', weight: 0.25 }
+          ],
+          threshold: 0.35,
+          includeScore: true,
+          minMatchCharLength: 2
+        });
+        var q = searchInput.value.trim();
+        if (q.length >= 2) doSearch(q);
+      })
+      .catch(function() { fuseLoading = false; });
+  }
+
+  var debounceTimer;
+  searchInput.addEventListener('input', function() {
+    clearTimeout(debounceTimer);
+    updateClearBtn();
+    var q = this.value.trim();
+    if (q.length < 2) { searchResults.innerHTML = ''; return; }
+    debounceTimer = setTimeout(function() { doSearch(q); }, 150);
+  });
+
+  function doSearch(q) {
+    if (!fuse) return;
+    var results = fuse.search(q, { limit: 8 });
+    if (!results.length) {
+      searchResults.innerHTML = '<div class="search-no-results">No results found</div>';
+      return;
+    }
+    searchResults.innerHTML = results.map(function(r) {
+      var item = r.item;
+      return '<a href="' + item.url + '" class="search-result-item">' +
+        '<span class="search-result-type">' + item.type + '</span>' +
+        '<span class="search-result-title">' + item.title + '</span>' +
+        '<span class="search-result-desc">' + item.desc + '</span>' +
+      '</a>';
+    }).join('');
+  }
+
+  document.addEventListener('click', function(e) {
+    if (searchStrip.classList.contains('open') &&
+        !searchStrip.contains(e.target) &&
+        !searchBtn.contains(e.target)) {
+      toggleSearch();
+    }
+  });
 });

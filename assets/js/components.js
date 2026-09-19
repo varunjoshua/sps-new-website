@@ -8,7 +8,7 @@ const NAV_ITEMS = [
   { label: 'Home',       href: 'index.html',      key: 'home' },
   { label: 'Products',   href: 'products.html',   key: 'products' },
   { label: 'Industries', href: 'industries.html', key: 'industries' },
-  { label: 'Resources',  href: 'resources.html',  key: 'resources' },
+  { label: 'Technical Resources', href: 'resources.html', key: 'resources' },
   { label: 'About',      href: 'about.html',      key: 'about' },
   { label: 'Contact',    href: 'contact.html',    key: 'contact' },
 ];
@@ -17,14 +17,13 @@ function renderUtilityBar() {
   return `
   <div class="utility-bar">
     <div class="container">
-      <div class="utility-left">
-        <span><i class="fas fa-phone"></i><a href="tel:+919820493373">+91 98204 93373</a></span>
-        <span><i class="fas fa-envelope"></i><a href="mailto:info@steelplantspecialities.com">info@steelplantspecialities.com</a></span>
-        <span><i class="fab fa-whatsapp"></i><a href="#">WhatsApp</a></span>
-      </div>
       <div class="utility-right">
         <a href="https://www.linkedin.com/company/steel-plant-specialities" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
         <a href="https://www.youtube.com/@srikarshenoy" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+        <span class="utility-sep"></span>
+        <a href="tel:+919820493373" class="utility-contact"><i class="fas fa-phone"></i><span>+91 98204 93373</span></a>
+        <a href="mailto:info@steelplantspecialities.com" class="utility-contact"><i class="fas fa-envelope"></i><span>info@steelplantspecialities.com</span></a>
+        <a href="https://wa.me/919820493373" class="utility-contact"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
       </div>
     </div>
   </div>`;
@@ -49,6 +48,15 @@ function renderNav(activeKey) {
           </button>
         </div>
         ${links}
+        <div class="nav-panel-contact">
+          <a href="tel:+919820493373"><i class="fas fa-phone"></i><span>+91 98204 93373</span></a>
+          <a href="mailto:info@steelplantspecialities.com"><i class="fas fa-envelope"></i><span>info@steelplantspecialities.com</span></a>
+          <a href="https://wa.me/919820493373"><i class="fab fa-whatsapp"></i><span>WhatsApp</span></a>
+          <div class="nav-panel-social">
+            <a href="https://www.linkedin.com/company/steel-plant-specialities" target="_blank" rel="noopener"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.youtube.com/@srikarshenoy" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
       </div>
       <div class="nav-overlay" id="nav-overlay"></div>
       <div class="nav-cta">

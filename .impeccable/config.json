@@ -8,6 +8,39 @@
         "value": "inter",
         "createdAt": "2026-08-27T11:02:10.957Z",
         "reason": "User confirmed inter is intentional"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "products-spray-systems.html"
+        ],
+        "createdAt": "2026-09-26T11:38:21.909Z",
+        "reason": "Red left-border on category-intro is an intentional design pattern used consistently across all 7 category pages"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "products-anti-nitriding.html"
+        ],
+        "createdAt": "2026-09-26T12:53:46.790Z"
+      },
+      {
+        "rule": "flat-type-hierarchy",
+        "value": "*",
+        "files": [
+          "products-anti-nitriding.html"
+        ],
+        "createdAt": "2026-09-26T12:53:49.760Z"
+      },
+      {
+        "rule": "bounce-easing",
+        "value": "bounce",
+        "files": [
+          "index.html"
+        ],
+        "createdAt": "2026-09-26T13:07:10.048Z"
       }
     ]
   }

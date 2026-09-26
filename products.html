@@ -49,9 +49,11 @@
 }
 .product-img-icon i { font-size: 17px; color: #fff; }
 .product-count-badge {
-  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 500;
-  color: rgba(255,255,255,.65); letter-spacing: .8px; text-transform: uppercase;
-  margin-bottom: 3px;
+  position: absolute; top: 12px; right: 12px; z-index: 2;
+  font-family: 'IBM Plex Mono', monospace; font-size: 10px; font-weight: 600;
+  color: #fff; letter-spacing: .6px; text-transform: uppercase;
+  background: rgba(0,0,0,.55); backdrop-filter: blur(4px);
+  padding: 5px 10px; border-radius: 6px;
 }
 .product-name { font-size: 17px; font-weight: 700; color: #fff; line-height: 1.25; }
 
@@ -138,20 +140,20 @@
   <div class="container">
     <div class="section-header" style="margin-bottom:40px; text-align:left;">
       <div class="section-label">Product Categories</div>
-      <h2 class="section-title">Seven Specialised Product Lines</h2>
+      <h2 class="section-title">Eight Specialised Product Lines</h2>
       <p class="section-sub">Select a category to explore individual products within it.</p>
     </div>
     <div class="products-grid">
 
       <!-- 1. Anti-Scale & Decarburization Control Coatings -->
-      <div class="product-card">
+      <div class="product-card" data-category-page="products-anti-scale.html">
         <div class="product-img-header">
           <img src="Images/Products/hot-rolling- anti scale-products-section.jpg" alt="Anti-Scale Coating">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">6 Products</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-layer-group"></i></div>
             <div class="product-img-label">
-              <div class="product-count-badge">5 Products</div>
               <div class="product-name">Anti-Scale &amp; Decarburization Control Coatings</div>
             </div>
           </div>
@@ -169,14 +171,14 @@
       </div>
 
       <!-- 2. Anti-Nitriding Stop-Off Paste -->
-      <div class="product-card">
+      <div class="product-card" data-category-page="products-anti-nitriding.html">
         <div class="product-img-header">
           <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/114a28ac5f8a1b998c1f974bfdb5069efe974d05/tempimages/anti-nitriding-products-section.jpg" alt="Anti-Nitriding Paste">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">2 Products</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-shield-alt"></i></div>
             <div class="product-img-label">
-              <div class="product-count-badge">2 Products</div>
               <div class="product-name">Anti-Nitriding Stop-Off Paste</div>
             </div>
           </div>
@@ -194,14 +196,14 @@
       </div>
 
       <!-- 3. Oil Cleaning Liquid -->
-      <div class="product-card">
+      <div class="product-card" data-category-page="products-oil-cleaning.html">
         <div class="product-img-header">
           <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/114a28ac5f8a1b998c1f974bfdb5069efe974d05/tempimages/oil-cleaning-products-section.jpg" alt="Oil Cleaning Liquid">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">1 Product</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-soap"></i></div>
             <div class="product-img-label">
-              <div class="product-count-badge">1 Product</div>
               <div class="product-name">Oil Cleaning Liquid</div>
             </div>
           </div>
@@ -219,14 +221,14 @@
       </div>
 
       <!-- 4. ESPON EP Grease -->
-      <div class="product-card">
+      <div class="product-card" data-category-page="products-ep-grease.html">
         <div class="product-img-header">
           <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/114a28ac5f8a1b998c1f974bfdb5069efe974d05/tempimages/grease-lubricating-system-products-section.jpeg" alt="EP Grease">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">3 Products</div>
           <div class="product-img-text">
             <div class="product-img-icon"><img src="icons/grease.png" alt="EP Grease" style="width:22px;height:22px"></div>
             <div class="product-img-label">
-              <div class="product-count-badge">2 Products</div>
               <div class="product-name">ESPON EP Grease</div>
             </div>
           </div>
@@ -244,14 +246,14 @@
       </div>
 
       <!-- 5. Hot Forging Die Lubricants -->
-      <div class="product-card">
+      <div class="product-card" data-category-page="products-die-lubricants.html">
         <div class="product-img-header">
-          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/23fb2bbc20828718d7cb14d6ff3e9b9e1a449be6/tempimages/die-lubricant-products-section.jpg" alt="Die Lubricants">
+          <img src="Images/Products/espon-dfk3-press-coated.webp" alt="Die Lubricants">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">9 Products</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-tint"></i></div>
             <div class="product-img-label">
-              <div class="product-count-badge">5 Products</div>
               <div class="product-name">Hot Forging Die Lubricants</div>
             </div>
           </div>
@@ -269,14 +271,14 @@
       </div>
 
       <!-- 6. Refractory Coatings -->
-      <div class="product-card">
+      <div class="product-card" data-category-page="products-refractory.html">
         <div class="product-img-header">
-          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/23fb2bbc20828718d7cb14d6ff3e9b9e1a449be6/tempimages/refractory-products-section.jpeg" alt="Refractory Coating">
+          <img src="Images/Products/espon-rc3-application.webp" alt="Refractory Coating">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">2 Products</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-fire-alt"></i></div>
             <div class="product-img-label">
-              <div class="product-count-badge">1 Product</div>
               <div class="product-name">Refractory Coatings</div>
             </div>
           </div>
@@ -293,16 +295,16 @@
         </div>
       </div>
 
-      <!-- 7. Spray Systems -->
-      <div class="product-card">
+      <!-- 7. ESPON Coating Spray Systems -->
+      <div class="product-card" data-category-page="products-spray-systems.html">
         <div class="product-img-header">
           <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/114a28ac5f8a1b998c1f974bfdb5069efe974d05/tempimages/spray-system-products-section.jpeg" alt="Spray Systems">
           <div class="product-img-overlay"></div>
+          <div class="product-count-badge">1 Product</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-spray-can"></i></div>
             <div class="product-img-label">
-              <div class="product-count-badge">4 Products</div>
-              <div class="product-name">Spray Systems</div>
+              <div class="product-name">ESPON Coating Spray Systems</div>
             </div>
           </div>
         </div>
@@ -314,6 +316,31 @@
           </div>
           <div class="product-footer">
             <a href="products-spray-systems.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Die Lubricant Spray Systems -->
+      <div class="product-card" data-category-page="products-die-lubricant-spray-systems.html">
+        <div class="product-img-header">
+          <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75&fit=crop" alt="Die Lubricant Spray Systems">
+          <div class="product-img-overlay"></div>
+          <div class="product-count-badge">2 Products</div>
+          <div class="product-img-text">
+            <div class="product-img-icon"><i class="fas fa-crosshairs"></i></div>
+            <div class="product-img-label">
+              <div class="product-name">Die Lubricant Spray Systems</div>
+            </div>
+          </div>
+        </div>
+        <div class="product-body">
+          <div class="product-benefits">
+            <div class="product-benefit"><i class="fas fa-check-circle"></i>Uniform atomised die lubricant application</div>
+            <div class="product-benefit"><i class="fas fa-check-circle"></i>Double-action: air blow + lubricant spray</div>
+            <div class="product-benefit"><i class="fas fa-check-circle"></i>Customised nozzles for any die profile</div>
+          </div>
+          <div class="product-footer">
+            <a href="products-die-lubricant-spray-systems.html" class="product-link">Explore Category <i class="fas fa-arrow-right"></i></a>
           </div>
         </div>
       </div>
@@ -431,5 +458,20 @@
 <div id="footer-mount"></div>
 
 <script src="assets/js/components.js"></script>
+<script>
+document.querySelectorAll('.product-card[data-category-page]').forEach(function(card) {
+  var page = card.getAttribute('data-category-page');
+  var badge = card.querySelector('.product-count-badge');
+  fetch(page).then(function(r) { return r.text(); }).then(function(html) {
+    var doc = new DOMParser().parseFromString(html, 'text/html');
+    var links = doc.querySelectorAll('a[href^="product-"]');
+    var unique = new Set();
+    links.forEach(function(a) { unique.add(a.getAttribute('href')); });
+    var n = unique.size;
+    if (n === 0) return;
+    badge.textContent = n === 1 ? '1 Product' : n + ' Products';
+  }).catch(function() {});
+});
+</script>
 </body>
 </html>

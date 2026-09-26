@@ -1,77 +1,426 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ESPON INT3 — Plasma Nitriding Stop-Off Paste — Steel Plant Specialities LLP</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ESPON INT3 — Plasma Ion Nitriding Stop-Off Paste — Steel Plant Specialities LLP</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link rel="stylesheet" href="assets/css/main.css">
 <style>
-.product-detail{padding:72px 0;background:#fff}.product-layout{display:grid;grid-template-columns:1fr 340px;gap:48px;align-items:start}.product-code-label{font-family:"IBM Plex Mono",monospace;font-size:13px;color:var(--red);font-weight:600;margin-bottom:12px}.product-title{font-size:32px;font-weight:800;color:var(--dark);line-height:1.2;margin-bottom:16px}.product-tagline{font-size:16px;color:var(--grey);line-height:1.7;margin-bottom:32px}.benefits-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:28px 0}.benefit-item{display:flex;align-items:flex-start;gap:10px}.benefit-item i{color:var(--red);margin-top:3px;flex-shrink:0}.benefit-item span{font-size:14px;color:var(--mid);line-height:1.5}.applications{margin-top:32px}.applications h3,.kbene h3{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:14px}.app-tags{display:flex;gap:8px;flex-wrap:wrap}.spec-card{background:var(--light);border-radius:12px;padding:28px;border:1px solid var(--border);position:sticky;top:88px}.spec-card-title{font-size:13px;font-weight:700;color:var(--grey);text-transform:uppercase;letter-spacing:1px;margin-bottom:20px}.spec-row{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;padding:10px 0;border-bottom:1px solid var(--border);font-size:13px}.spec-row:last-child{border-bottom:none;padding-bottom:0}.spec-label{color:var(--grey);font-weight:500;flex-shrink:0}.spec-value{color:var(--dark);font-weight:600;text-align:right}.spec-code{font-family:"IBM Plex Mono",monospace}.request-btn{display:block;width:100%;margin-top:24px;padding:13px;background:var(--red);color:#fff;text-align:center;border-radius:8px;font-weight:700;font-size:14px;text-decoration:none;transition:opacity .2s}.request-btn:hover{opacity:.88;color:#fff}.back-link{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--mid);margin-top:40px}.back-link:hover{color:var(--red)}
-@media(max-width:900px){.product-layout{grid-template-columns:1fr}.spec-card{position:static}.benefits-grid{grid-template-columns:1fr}}
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container { position: relative; }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+/* ── Product Page Layout ─────────────────────────────────── */
+
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+/* How it works */
+.product-how { padding: 72px 0; background: var(--light); }
+.how-content { max-width: 720px; }
+.how-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.how-content p:last-child { margin-bottom: 0; }
+.how-layout { display: grid; grid-template-columns: 1fr 340px; gap: 48px; align-items: start; }
+
+/* Use cases */
+.use-case { margin-top: 28px; padding: 20px 24px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); }
+.use-case + .use-case { margin-top: 14px; }
+.use-case-title { font-size: 14px; font-weight: 700; color: var(--dark); margin-bottom: 8px; display: flex; align-items: center; gap: 10px; }
+.use-case-title i { color: var(--red); font-size: 13px; }
+.use-case p { font-size: 14px; color: var(--grey); line-height: 1.7; margin: 0; }
+
+/* Application section */
+.product-application { padding: 72px 0; background: #fff; }
+.application-layout { display: grid; grid-template-columns: 1fr 400px; gap: 40px; align-items: start; margin-top: 32px; }
+.steps-list { display: flex; flex-direction: column; gap: 16px; }
+.application-image { position: sticky; top: 88px; }
+.application-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.application-img-card img { width: 100%; display: block; }
+.application-img-card figcaption { padding: 10px 16px; font-size: 13px; color: var(--grey); text-align: center; border-top: 1px solid var(--border); line-height: 1.5; }
+.step-item { display: flex; gap: 16px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); border: 1px solid var(--border); background: #fff; transition: border-color .2s; }
+.step-item:hover { border-color: var(--red); }
+.step-num { width: 36px; height: 36px; border-radius: 50%; background: var(--red); color: #fff; font-size: 14px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.step-text { font-size: 14px; color: var(--mid); line-height: 1.6; padding-top: 6px; }
+
+/* Benefits section */
+.product-benefits { padding: 72px 0; background: var(--light); }
+.benefits-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+/* Specifications section */
+.product-specs { padding: 72px 0; background: #fff; }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+.spec-card-standalone { background: var(--light); border-radius: var(--radius-lg); padding: 28px; border: 1px solid var(--border); }
+.spec-card-standalone .spec-card-title { font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 20px; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+  .specs-layout { gap: 36px; }
+}
+@media (max-width: 900px) {
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
+  .how-layout { grid-template-columns: 1fr; }
+  .application-layout { grid-template-columns: 1fr; }
+  .application-image { position: static; }
+  .benefits-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-how, .product-application,
+  .product-benefits, .product-specs { padding: 48px 0; }
+  .product-title { font-size: 24px; }
+}
 </style>
 </head>
 <body>
+
 <script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
 <section class="page-hero">
-  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1565008829796-fd03a5e5a4b7?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-bg" style="background-image:url('Images/Products/Espon-ANP-coated-parts.png')"></div>
   <div class="page-hero-overlay"></div>
   <div class="container page-hero-content">
     <div class="breadcrumb">
-      <a href="index.html">Home</a><i class="fas fa-chevron-right"></i>
-      <a href="products.html">Products</a><i class="fas fa-chevron-right"></i>
-      <a href="products-anti-nitriding.html">Anti-Nitriding Stop-Off Paste</a><i class="fas fa-chevron-right"></i>
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products-anti-nitriding.html">Anti-Nitriding Stop-Off Paste</a>
+      <i class="fas fa-chevron-right"></i>
       <span>ESPON INT3</span>
     </div>
-    <h1>ESPON INT3 <span>Plasma Nitriding Stop-Off Paste</span></h1>
-    <p>High-performance masking paste for plasma-ion nitriding furnaces. Formulated to withstand the ionised nitrogen environment while maintaining a complete, defect-free mask.</p>
+    <h1>ESPON INT3 <span>Plasma Ion Nitriding Stop-Off Paste</span></h1>
+    <p>Prevents nitriding on selected areas during plasma ion nitriding. Non-hazardous, non-flammable compound.</p>
   </div>
 </section>
-<section class="product-detail">
+
+<!-- ── Section Nav ─────────────────────────────────────────── -->
+<nav class="product-nav">
   <div class="container">
-    <div class="product-layout">
-      <div>
-        <div class="product-code-label">ESPON INT3</div>
-        <div class="product-title">Stop-Off Paste for Plasma-Ion Nitriding</div>
-        <div class="product-tagline">ESPON INT3 is engineered specifically for the plasma-ion nitriding environment, where conventional pastes may break down under the high-energy ionised nitrogen plasma. Its advanced binder system maintains mask integrity throughout the entire plasma cycle, ensuring clean, reliable masking on critical die and tool steel surfaces.</div>
-        <h3 style="font-size:15px;font-weight:700;color:var(--dark);margin-bottom:14px;">Key Benefits</h3>
-        <div class="benefits-grid">
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Withstands high-energy plasma-ion nitriding environment</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Maintains mask integrity throughout full cycle</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Suitable for complex and intricate die geometries</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Prevents nitriding on bores, threads, and keyways</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Clean removal post-process — no contamination</span></div>
-          <div class="benefit-item"><i class="fas fa-check-circle"></i><span>Reduces rejection due to unwanted nitriding</span></div>
-        </div>
-        <div class="applications"><h3>Applications</h3><div class="app-tags"><span class="tag tag-light">Plasma-Ion Nitriding</span><span class="tag tag-light">High-Speed Steels</span><span class="tag tag-light">Complex Die Geometries</span><span class="tag tag-light">Close-Tolerance Surfaces</span></div></div>
-        <a href="products-anti-nitriding.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Anti-Nitriding Stop-Off Paste</a>
+    <a href="#overview">Overview</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#application">Application</a>
+    <a href="#benefits">Benefits</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">ESPON INT3 &mdash; Plasma Ion Nitriding Stop-Off Paste</div>
+    <h2 class="product-title">Selective Nitriding Protection for Plasma Ion Nitriding</h2>
+    <div class="product-intro-grid">
+      <div class="product-desc">
+        <p>Plasma ion nitriding is a case hardening process that improves wear resistance, seizing resistance, corrosion resistance, and fatigue life of components. Selective plasma ion nitriding is often necessary &mdash; only specific areas of a component need hardening while the rest must remain unaffected. ESPON INT3 is applied to areas that must be protected from nitriding during the plasma ion nitriding process.</p>
       </div>
       <div>
-        <div class="spec-card">
-          <div class="spec-card-title">Product Data</div>
-          <div class="spec-row"><span class="spec-label">Product Code</span><span class="spec-value spec-code">ESPON INT3</span></div>
-          <div class="spec-row"><span class="spec-label">Form</span><span class="spec-value">Paste</span></div>
-          <div class="spec-row"><span class="spec-label">Application Method</span><span class="spec-value">Brush or spatula</span></div>
-          <div class="spec-row"><span class="spec-label">Process Compatibility</span><span class="spec-value">Plasma-ion nitriding</span></div>
-          <div class="spec-row"><span class="spec-label">Max Temp.</span><span class="spec-value">560°C</span></div>
-          <div class="spec-row"><span class="spec-label">Shelf Life</span><span class="spec-value">18 months</span></div>
-          <div class="spec-row"><span class="spec-label">Packaging</span><span class="spec-value">500 g, 1 kg, 5 kg containers</span></div>
-          <a href="contact.html" class="request-btn"><i class="fas fa-flask"></i> &nbsp;Request a Sample</a>
+        <div class="product-img-card">
+          <img src="Images/Products/Espon-INT3-product.png" alt="ESPON-INT3 Anti-Nitriding Compound — HDPE container" style="object-fit:contain; background:#f5f5f5;">
+          <div class="product-img-caption">ESPON-INT3 Anti-Nitriding Compound &mdash; 1 kg HDPE container</div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section class="cta-strip">
-  <div class="container"><div class="cta-strip-inner">
-    <div><h2>Reliable Masking for Plasma Nitriding</h2><p>ESPON INT3 was developed specifically for plasma nitriding challenges. Request a sample or discuss your masking requirements with our team.</p></div>
-    <div class="cta-strip-actions">
-      <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+
+<!-- ── How It Works ────────────────────────────────────────── -->
+<section class="product-how" id="how-it-works">
+  <div class="container">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Why Selective Plasma Ion Nitriding Is Necessary</h2>
+    <div class="how-layout">
+      <div class="how-content">
+        <p>ESPON INT3 is applied to surfaces where nitriding must be prevented during plasma ion nitriding. The paste forms a barrier, preventing nitrogen atoms from penetrating into the metal surface. This prevents case hardening in the coated areas, allowing for selective nitriding only where desired.</p>
+
+        <div class="use-case">
+          <div class="use-case-title"><i class="fas fa-gear"></i> Barrel Screws for Injection Moulding</div>
+          <p>Barrel screws are nitrided to increase wear resistance. However, threaded areas become brittle if nitrided. ESPON INT3 is used to mask and protect threaded areas from nitriding during plasma ion nitriding.</p>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-title"><i class="fas fa-hammer"></i> Hot Forging Dies</div>
+          <p>Forging dies are nitrided to increase service life. However, machining fully nitrided dies during die sinking is time-consuming and wears out expensive machine tools. Only the impression area needs nitriding &mdash; the rest is coated with ESPON INT3 to allow easier machining afterwards.</p>
+        </div>
+      </div>
+      <div class="how-image">
+        <div class="product-img-card">
+          <img src="Images/Products/Espon-ANP-coated-parts.png" alt="Parts coated with ESPON Anti-Nitriding Stop-Off Paste before plasma ion nitriding" style="aspect-ratio:auto; object-fit:contain; background:#f5f5f5;">
+          <div class="product-img-caption">Parts coated with ESPON Anti-Nitriding Stop-Off Paste</div>
+        </div>
+      </div>
     </div>
-  </div></div>
+  </div>
 </section>
+
+<!-- ── Application ─────────────────────────────────────────── -->
+<section class="product-application" id="application">
+  <div class="container">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Method of Application</h2>
+    <p class="section-sub">ESPON INT3 can be applied by brushing, spraying, or dipping.</p>
+
+    <div class="application-layout">
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-text">Stir the contents thoroughly with a wooden plank so that the bottom sludge is completely mixed.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-text">Degrease the components thoroughly. The surface must be clean and free from oil or grease.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-text">Apply the paste by brushing, spraying, or dipping. Ensure uniform coverage on all areas to be protected from nitriding.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-text">Allow to dry, then apply a second coat. Two coats are recommended for reliable protection in the plasma ion nitriding environment.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-text">After drying, inspect the coating for cracks or defects. Repair any cracks before the component enters the plasma ion nitriding furnace.</div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">6</div>
+          <div class="step-text">After nitriding, remove the coating. The coated areas will remain un-nitrided and machinable.</div>
+        </div>
+      </div>
+      <div class="application-image">
+        <figure class="application-img-card">
+          <img src="Images/Products/Espon-ANP-application.png" alt="Parts coated with ESPON Anti-Nitriding Stop-Off Paste before plasma ion nitriding" loading="lazy" style="object-fit:contain; background:#f5f5f5;">
+          <figcaption>Parts coated with ESPON Anti-Nitriding Stop-Off Paste &mdash; areas to be hardened left uncoated for selective nitriding</figcaption>
+        </figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Benefits ────────────────────────────────────────────── -->
+<section class="product-benefits" id="benefits">
+  <div class="container">
+    <div class="section-label">Benefits</div>
+    <h2 class="section-title">Why Use ESPON INT3</h2>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-crosshairs"></i></div>
+        <div class="benefit-text">Precise control &mdash; enables selective plasma ion nitriding, ensuring hardness is prevented in coated areas</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-clock"></i></div>
+        <div class="benefit-text">Reduced machining time &mdash; prevents unwanted hardening, reducing time required for machining nitrided parts</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-gears"></i></div>
+        <div class="benefit-text">Increased tool life &mdash; prevents unwanted hardening in undesired areas, enhancing tool longevity</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-coins"></i></div>
+        <div class="benefit-text">Cost savings &mdash; optimises the nitriding process, reducing costs in machining and overall manufacturing</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-paint-roller"></i></div>
+        <div class="benefit-text">Easy application &mdash; can be applied by brushing, spraying, or dipping with no special equipment required</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-fire-extinguisher"></i></div>
+        <div class="benefit-text">Non-flammable and non-hazardous &mdash; safe during storage and use, does not catch fire</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Properties & Specifications ─────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Properties &amp; Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Property</th>
+              <th>Value</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Product Code</td>
+              <td class="mono">ESPON INT3</td>
+            </tr>
+            <tr>
+              <td>Grade Standard</td>
+              <td>Technical Grade</td>
+            </tr>
+            <tr>
+              <td>Physical State</td>
+              <td>Paste</td>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Yellow coloured paste, free from visible extraneous matter</td>
+            </tr>
+            <tr>
+              <td>Applicable Industry</td>
+              <td>Plasma ion nitriding operations</td>
+            </tr>
+            <tr>
+              <td>Application Method</td>
+              <td>Brushing, spraying, or dipping</td>
+            </tr>
+            <tr>
+              <td>Flash Point</td>
+              <td>Nil &mdash; does not catch fire</td>
+            </tr>
+            <tr>
+              <td>Safety</td>
+              <td>Non-flammable and non-hazardous during storage and use</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <div class="spec-card-standalone">
+          <div class="spec-card-title">Packaging</div>
+          <table class="spec-table">
+            <thead>
+              <tr>
+                <th>Pack Size</th>
+                <th>Container Type</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1 kg / 2 kg</td>
+                <td>Special HDPE container</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products-anti-nitriding.html" class="back-link"><i class="fas fa-arrow-left"></i> All Anti-Nitriding Stop-Off Pastes</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Need Selective Nitriding Protection?</h2>
+        <p>Speak with our engineers about ESPON INT3 for your plasma ion nitriding operations.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <div id="footer-mount"></div>
 <script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
 </body>
 </html>

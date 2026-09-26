@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diaphragm Pump Spray System — Die Lubricant Spray Systems — Steel Plant Specialities LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+/* Sticky section nav strip */
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+/* ── Product Page Layout ─────────────────────────────────── */
+
+/* Description section */
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f5f5f5; }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+/* System Components (uses benefit-card pattern) */
+.product-components { padding: 72px 0; background: var(--light); }
+.components-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.component-images { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; margin-top: 40px; }
+.component-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); }
+.component-img-card img { width: 100%; aspect-ratio: 16/10; object-fit: cover; display: block; }
+.component-img-card figcaption { padding: 10px 16px; font-size: 13px; color: var(--grey); text-align: center; border-top: 1px solid var(--border); line-height: 1.5; }
+
+/* Operating Guidelines */
+.product-practices { padding: 72px 0; background: var(--light); }
+.practices-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+
+/* Specifications */
+.product-specs { padding: 72px 0; background: #fff; }
+.specs-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.spec-table { width: 100%; border-collapse: collapse; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; white-space: nowrap; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+
+/* Back link */
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+/* ── Responsive ──────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+  .specs-layout { gap: 36px; }
+}
+@media (max-width: 900px) {
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
+  .components-grid { grid-template-columns: 1fr; }
+  .component-images { grid-template-columns: 1fr; }
+  .practices-grid { grid-template-columns: 1fr; }
+  .specs-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-components,
+  .product-practices, .product-specs { padding: 48px 0; }
+  .product-title { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=1600&q=80&fit=crop')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products-die-lubricant-spray-systems.html">Die Lubricant Spray Systems</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>Diaphragm Pump Spray System</span>
+    </div>
+    <h1>Diaphragm Pump <span>Spray System</span></h1>
+    <p>200-litre die lubricant spraying unit with built-in agitator, Graco diaphragm pump, and dual-action spray gun &mdash; keeps graphite lubricant in continuous suspension while saving compressed air.</p>
+  </div>
+</section>
+
+<!-- ── Section Nav Strip ──────────────────────────────────── -->
+<nav class="product-nav">
+  <div class="container">
+    <a href="#overview">Overview</a>
+    <a href="#components">System Components</a>
+    <a href="#guidelines">Operating Guidelines</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Description ─────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">Overview</div>
+    <h2 class="product-title">Effective Die Lubricant Spraying System</h2>
+    <div class="product-intro-grid">
+      <div class="product-desc">
+        <p>The Diaphragm Pump Spray System is a 200-litre die lubricant spraying unit designed to keep water-based graphite lubricant in continuous suspension, ensuring a homogeneous mixture of water and lubricant at all times. The diaphragm pump operates on pressure difference, discharging lubricant only when the spray gun is in use. This saves compressed air that would otherwise be consumed continuously.</p>
+        <p>The built-in agitator ensures a homogeneous water&ndash;lubricant mixture at all times, while the stainless steel vessel resists corrosion and the mobile trolley allows easy movement across the forging shop floor.</p>
+      </div>
+      <div>
+        <div class="product-img-card">
+          <img src="Images/Products/spray-system-p1-5.jpeg" alt="Diaphragm Pump Spray System — 200 litre unit with agitator, Graco pump, and control panel">
+          <div class="product-img-caption">200-litre Diaphragm Pump Spray System &mdash; complete unit with agitator, pump, and controls</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── System Components ──────────────────────────────────── -->
+<section class="product-components" id="components">
+  <div class="container">
+    <div class="section-label">System Components</div>
+    <h2 class="section-title">What&rsquo;s Inside the Unit</h2>
+
+    <div class="components-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-cog"></i></div>
+        <div class="benefit-text"><strong>Agitator Unit</strong> &mdash; Stainless steel impeller sweeps the maximum cross-section of the vessel, keeping graphite lubricant in continuous suspension. Mounted on a stainless steel shaft guided in a bottom bush and coupled to the gearbox shaft by SS coupling. Driven by a 0.25 HP motor through a Bonfiglioli in-line helical gearbox with Siemens starter panel. The agitator unit can be removed by removing the top cover.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-compress-arrows-alt"></i></div>
+        <div class="benefit-text"><strong>Graco Diaphragm Pump</strong> &mdash; Graco 3/4&Prime; Husky air-operated diaphragm pump delivers lubricant on demand. Pump activates only when the spray gun trigger is pressed, saving compressed air. Includes air silencer and suction hose.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-spray-can"></i></div>
+        <div class="benefit-text"><strong>Dual-Action Spray Gun</strong> &mdash; Model DJ-10-600 with separate trigger positions for air spraying and material spraying, fitted with a 600 mm aluminium straight pipe for reach.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-tachometer-alt"></i></div>
+        <div class="benefit-text"><strong>Pressure Regulator</strong> &mdash; Aeroflex W-02 regulator (1/4&Prime; port) with adjustable knob for air pressure setting. Operating pressure up to 2.5 kg/cm&sup2;.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-database"></i></div>
+        <div class="benefit-text"><strong>Stainless Steel Vessel</strong> &mdash; 200-litre vessel fabricated from 2 mm SS 202 sheet (650 mm dia. &times; 655 mm height). The rigid design supports the agitator and spraying unit assembly. Corrosion-resistant with drain plug for easy cleaning. Hand lid on top cover for refilling.</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-dolly"></i></div>
+        <div class="benefit-text"><strong>Mobile Trolley</strong> &mdash; Sturdy MS square-section trolley with 4&Prime; &times; 2&Prime; cast iron castor wheels (fixed + swivel) for easy movement across the forging shop floor.</div>
+      </div>
+    </div>
+
+    <div class="component-images">
+      <figure class="component-img-card">
+        <img src="Images/Products/spray-system-p5-1.jpeg" alt="Graco Husky diaphragm pump" loading="lazy">
+        <figcaption>Graco Husky Diaphragm Pump</figcaption>
+      </figure>
+      <figure class="component-img-card">
+        <img src="Images/Products/spray-system-p6-1.jpeg" alt="Dual-action spray gun in use" loading="lazy">
+        <figcaption>Dual-Action Spray Gun in Operation</figcaption>
+      </figure>
+      <figure class="component-img-card">
+        <img src="Images/Products/spray-system-p5-2.jpeg" alt="Top view showing pump and agitator assembly" loading="lazy">
+        <figcaption>Pump &amp; Agitator Assembly</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ── Operating Guidelines ────────────────────────────────── -->
+<section class="product-practices" id="guidelines">
+  <div class="container">
+    <div class="section-label">Operating Guidelines</div>
+    <h2 class="section-title">Tips for Optimum Performance</h2>
+
+    <div class="practices-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-exclamation-triangle"></i></div>
+        <div class="benefit-text">Do not start the agitator when the vessel is empty. The vessel must contain liquid up to the impeller to avoid dry running of the shaft in the locating bush</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-filter"></i></div>
+        <div class="benefit-text">Ensure no foreign material &mdash; cotton waste, paper, polythene bags &mdash; enters the lubricant</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-wind"></i></div>
+        <div class="benefit-text">Supply dry air to the pump and drain the FR unit frequently</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-flask"></i></div>
+        <div class="benefit-text">Use ESPON graphite-based and/or graphiteless die lubricants for best performance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Specifications ─────────────────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Technical Data</h2>
+
+    <div class="specs-layout">
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Agitator &amp; Drive</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Drive Motor</td>
+              <td>0.25 HP, 3-phase, 4-pole, flange mounted</td>
+            </tr>
+            <tr>
+              <td>Motor Make</td>
+              <td>Hindustan</td>
+            </tr>
+            <tr>
+              <td>Gearbox</td>
+              <td>Bonfiglioli in-line helical</td>
+            </tr>
+            <tr>
+              <td>Gearbox Spec</td>
+              <td>AS 16 F36:36 P63 B3</td>
+            </tr>
+            <tr>
+              <td>Starter</td>
+              <td>Siemens 3T-W42-90-1A</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="spec-table" style="margin-top: 32px;">
+          <thead>
+            <tr>
+              <th>Vessel</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Capacity</td>
+              <td>200 litres</td>
+            </tr>
+            <tr>
+              <td>Material</td>
+              <td>SS 202, 2 mm thick</td>
+            </tr>
+            <tr>
+              <td>Dimensions</td>
+              <td>650 mm dia. &times; 655 mm height</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div>
+        <table class="spec-table">
+          <thead>
+            <tr>
+              <th>Spray Unit</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Pump</td>
+              <td>Graco 3/4&Prime; Husky</td>
+            </tr>
+            <tr>
+              <td>Pump Part No.</td>
+              <td>D 53377</td>
+            </tr>
+            <tr>
+              <td>Spray Gun Model</td>
+              <td>DJ-10-600</td>
+            </tr>
+            <tr>
+              <td>Straight Pipe</td>
+              <td>600 mm, aluminium</td>
+            </tr>
+            <tr>
+              <td>Pressure Regulator</td>
+              <td>Aeroflex W-02 (1/4&Prime; port)</td>
+            </tr>
+            <tr>
+              <td>Operating Pressure</td>
+              <td>Up to 2.5 kg/cm&sup2;</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="spec-table" style="margin-top: 32px;">
+          <thead>
+            <tr>
+              <th>Trolley &amp; Wheels</th>
+              <th>Specification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Trolley Material</td>
+              <td>MS, square cross-section</td>
+            </tr>
+            <tr>
+              <td>Wheel Size</td>
+              <td>4&Prime; &times; 2&Prime; (fixed + swivel)</td>
+            </tr>
+            <tr>
+              <td>Wheel Material</td>
+              <td>Cast Iron</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <a href="contact.html" class="btn btn-primary btn-lg" style="width:100%; justify-content:center; margin-top:24px;">
+          <i class="fas fa-envelope"></i> Enquire Now
+        </a>
+
+        <a href="products-die-lubricant-spray-systems.html" class="back-link"><i class="fas fa-arrow-left"></i> All Die Lubricant Spray Systems</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA Strip ───────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Interested in This Spraying System?</h2>
+        <p>Contact our team for pricing, delivery, and technical details.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
+</body>
+</html>

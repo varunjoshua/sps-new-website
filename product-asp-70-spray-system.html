@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ASP-70 ESPON Coating Spray System — ESPON Coating Spray Systems — Steel Plant Specialities LLP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/main.css">
+<style>
+html { scroll-behavior: smooth; }
+[id] { scroll-margin-top: 144px; }
+
+.product-nav { position: sticky; top: 90px; z-index: 90; background: var(--red); }
+.product-nav .container { display: flex; gap: 0; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+.product-nav a {
+  padding: 15px 22px; font-size: 14px; font-weight: 600; color: rgba(255,255,255,.8);
+  white-space: nowrap; transition: all .2s ease; position: relative; letter-spacing: .2px;
+}
+.product-nav a:hover, .product-nav a.active { color: #fff; }
+.product-nav a::after {
+  content: ''; position: absolute; left: 22px; right: 22px; bottom: 0; height: 3px;
+  background: #fff; transform: scaleX(0); transition: transform .2s ease;
+}
+.product-nav a:hover::after, .product-nav a.active::after { transform: scaleX(1); }
+.product-nav .container::-webkit-scrollbar { display: none; }
+.product-nav .scroll-hint {
+  position: absolute; right: 0; top: 0; bottom: 0; width: 48px;
+  background: linear-gradient(to right, transparent, var(--red));
+  pointer-events: none; transition: opacity .3s; z-index: 1;
+  display: flex; align-items: center; justify-content: flex-end; padding-right: 8px;
+}
+.product-nav .scroll-hint i { color: rgba(255,255,255,.6); font-size: 12px; }
+.product-nav .scroll-hint.hidden { opacity: 0; }
+
+.product-intro { padding: 72px 0; background: #fff; }
+.product-intro-grid { display: grid; grid-template-columns: 1fr 400px; gap: 56px; align-items: start; }
+.product-code { font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; color: var(--red); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 12px; max-width: calc(100% - 456px); }
+.product-title { font-size: 30px; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 20px; letter-spacing: -.3px; max-width: calc(100% - 456px); }
+.product-desc { font-size: 16px; color: var(--grey); line-height: 1.8; }
+.product-img-card { border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border); background: var(--light); }
+.product-img-card img { width: 100%; aspect-ratio: 4/3; object-fit: contain; background: #f5f5f5; }
+.product-img-caption { padding: 14px 18px; font-size: 12px; color: var(--grey); text-align: center; font-weight: 500; border-top: 1px solid var(--border); }
+
+.product-features { padding: 72px 0; background: var(--light); }
+.features-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 32px; }
+.benefit-card { display: flex; gap: 14px; align-items: flex-start; padding: 20px; border-radius: var(--radius-lg); background: #fff; border: 1px solid var(--border); transition: border-color .2s; }
+.benefit-card:hover { border-color: var(--red); }
+.benefit-icon { width: 32px; height: 32px; border-radius: 50%; background: var(--red-bg); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.benefit-icon i { font-size: 13px; color: var(--red); }
+.benefit-text { font-size: 14px; color: var(--mid); line-height: 1.6; }
+
+.product-application { padding: 72px 0; background: #fff; }
+.application-content { max-width: 720px; }
+.application-content p { font-size: 16px; color: var(--grey); line-height: 1.8; margin-bottom: 20px; }
+.application-content p:last-child { margin-bottom: 0; }
+.application-list { margin-top: 28px; }
+.application-list h4 { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); margin-bottom: 14px; }
+.application-list ul { list-style: none; padding: 0; margin: 0; }
+.application-list ul li { font-size: 15px; color: var(--mid); line-height: 1.65; padding: 6px 0; display: flex; align-items: flex-start; gap: 10px; }
+.application-list ul li i { color: var(--red); font-size: 12px; margin-top: 5px; flex-shrink: 0; }
+
+.product-specs { padding: 72px 0; background: var(--light); }
+.spec-table { width: 100%; border-collapse: collapse; max-width: 640px; }
+.spec-table th { text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--grey); padding: 12px 16px; border-bottom: 2px solid var(--dark); }
+.spec-table td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border); }
+.spec-table td:first-child { color: var(--grey); font-weight: 500; }
+.spec-table td:last-child { color: var(--dark); font-weight: 600; }
+.spec-table tr:last-child td { border-bottom: none; }
+.spec-table .mono { font-family: 'IBM Plex Mono', monospace; }
+
+.back-link { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--grey); margin-top: 40px; transition: color .2s; }
+.back-link:hover { color: var(--red); }
+
+@media (max-width: 1024px) {
+  .product-intro-grid { grid-template-columns: 1fr 340px; gap: 40px; }
+}
+@media (max-width: 900px) {
+  .product-intro-grid { grid-template-columns: 1fr; }
+  .product-code, .product-title { max-width: none; }
+  .features-grid { grid-template-columns: 1fr; }
+  .product-application [style*="grid-template-columns"] { grid-template-columns: 1fr !important; }
+}
+@media (max-width: 768px) {
+  .product-nav { top: 64px; }
+  [id] { scroll-margin-top: 118px; }
+}
+@media (max-width: 600px) {
+  .product-intro, .product-features,
+  .product-application, .product-specs { padding: 48px 0; }
+  .product-title { font-size: 24px; }
+}
+</style>
+</head>
+<body>
+
+<script>window.ACTIVE_NAV = 'products';</script>
+
+<!-- ── Hero ────────────────────────────────────────────────── -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('Images/Products/asp70-front.jpg')"></div>
+  <div class="page-hero-overlay"></div>
+  <div class="container page-hero-content">
+    <div class="breadcrumb">
+      <a href="index.html">Home</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products.html">Products</a>
+      <i class="fas fa-chevron-right"></i>
+      <a href="products-spray-systems.html">ESPON Coating Spray Systems</a>
+      <i class="fas fa-chevron-right"></i>
+      <span>ASP-70</span>
+    </div>
+    <h1>ASP-70 <span>ESPON Coating Spray System</span></h1>
+    <p>Heavy duty airless spray system custom-designed for effectively spraying ESPON anti-scale coatings on billets, blooms, slabs, and ingots.</p>
+  </div>
+</section>
+
+<!-- ── Section Nav Strip ──────────────────────────────────── -->
+<nav class="product-nav">
+  <div class="container">
+    <a href="#overview">Overview</a>
+    <a href="#features">Features</a>
+    <a href="#application">Application</a>
+    <a href="#specifications">Specifications</a>
+    <span class="scroll-hint"><i class="fas fa-chevron-right"></i></span>
+  </div>
+</nav>
+
+<!-- ── Overview ────────────────────────────────────────────── -->
+<section class="product-intro" id="overview">
+  <div class="container">
+    <div class="product-code">Overview</div>
+    <h2 class="product-title">Heavy Duty Airless Spray System for ESPON Coatings</h2>
+    <div class="product-intro-grid">
+      <div class="product-desc">
+        <p>The ASP-70 is a heavy duty airless spray system designed for tough working conditions. It is suitable for high viscosity, solventless and low solvent coatings, semisolid coatings, and marine coatings.</p>
+        <p>The system features a pneumatically sensed high-performance air motor with a stainless steel rust-proof hydraulic body, delivering high pressure with high output discharge. Ice-free air motor technology ensures reliable operation, and the unit complies with EC and ATEX norms.</p>
+      </div>
+      <div>
+        <div class="product-img-card">
+          <img src="Images/Products/asp70-front.jpg" alt="ASP-70 Heavy Duty Airless Spray System">
+          <div class="product-img-caption">ASP-70 Heavy Duty Airless Spray System — 70:1 pressure ratio</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Features ────────────────────────────────────────────── -->
+<section class="product-features" id="features">
+  <div class="container">
+    <div class="section-label">Features</div>
+    <h2 class="section-title">Built for Heavy Duty Coating Applications</h2>
+    <div style="margin-bottom:32px;">
+      <div class="product-img-card" style="max-width:560px;">
+        <img src="Images/Products/asp70-accessories.jpg" alt="ASP-70 included accessories — airless sprayguns, nozzle tips, and filter" style="object-fit:contain; background:#fff;">
+        <div class="product-img-caption">Included accessories — Eagle &amp; Falcon airless sprayguns, reversible nozzle tip, filter, and nozzle key</div>
+      </div>
+    </div>
+    <div class="features-grid">
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-spray-can"></i></div>
+        <div class="benefit-text">Airless spraygun with nozzles and nozzle spray extension provided</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-cog"></i></div>
+        <div class="benefit-text">Pneumatically sensed high-performance air motor</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-tachometer-alt"></i></div>
+        <div class="benefit-text">High pressure with high output discharge</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-shield-alt"></i></div>
+        <div class="benefit-text">Stainless steel rust-proof hydraulic body</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-wrench"></i></div>
+        <div class="benefit-text">Easy maintenance</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-snowflake"></i></div>
+        <div class="benefit-text">Ice-free air motor technology</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-hand-rock"></i></div>
+        <div class="benefit-text">Durable and rugged, easy to handle</div>
+      </div>
+      <div class="benefit-card">
+        <div class="benefit-icon"><i class="fas fa-certificate"></i></div>
+        <div class="benefit-text">Compliance to EC and ATEX norms</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Application ─────────────────────────────────────────── -->
+<section class="product-application" id="application">
+  <div class="container">
+    <div class="section-label">Application</div>
+    <h2 class="section-title">Designed for ESPON Anti-Scale Coatings</h2>
+    <div style="display:grid; grid-template-columns:1fr 300px; gap:48px; align-items:start;">
+    <div class="application-content">
+      <div class="application-list">
+        <h4>Primary Application</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Custom-designed for effectively spraying ESPON anti-scale coatings on billets, blooms, slabs, and ingots</li>
+        </ul>
+      </div>
+      <div class="application-list" style="margin-top: 28px;">
+        <h4>Other Applications</h4>
+        <ul>
+          <li><i class="fas fa-check-circle"></i> Heavy structural coating and painting</li>
+          <li><i class="fas fa-check-circle"></i> Anti-rust oil spray</li>
+        </ul>
+      </div>
+    </div>
+    <div class="product-img-card" style="margin-top:8px;">
+      <img src="Images/Products/asp70-rear.jpg" alt="ASP-70 rear view showing stainless steel hydraulic body" style="object-fit:contain; background:#f5f5f5;">
+      <div class="product-img-caption">ASP-70 rear view — stainless steel hydraulic body</div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Specifications ──────────────────────────────────────── -->
+<section class="product-specs" id="specifications">
+  <div class="container">
+    <div class="section-label">Specifications</div>
+    <h2 class="section-title">Technical Specifications</h2>
+    <table class="spec-table">
+      <thead>
+        <tr>
+          <th>Parameter</th>
+          <th>Value</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Type</td><td class="mono">70:150</td></tr>
+        <tr><td>Pressure ratio</td><td class="mono">70:1</td></tr>
+        <tr><td>Output per cycle</td><td class="mono">150 cc</td></tr>
+        <tr><td>Air motor piston diameter</td><td class="mono">&Oslash; 250 mm</td></tr>
+        <tr><td>Stroke length</td><td class="mono">120 mm</td></tr>
+        <tr><td>Recommended spray volume @ 15 cycles/min</td><td class="mono">2.25 litres</td></tr>
+        <tr><td>Air inlet pressure (max)</td><td class="mono">6 bar</td></tr>
+        <tr><td>Output pressure</td><td class="mono">420 bar</td></tr>
+        <tr><td>Air consumption @ 15 cycles/min</td><td class="mono">1237 NL/min</td></tr>
+        <tr><td>CFM at 6 bar @ 15 cycles</td><td class="mono">43.7</td></tr>
+      </tbody>
+    </table>
+
+    <a href="products-spray-systems.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to ESPON Coating Spray Systems</a>
+  </div>
+</section>
+
+<!-- ── CTA ─────────────────────────────────────────────────── -->
+<section class="cta-strip">
+  <div class="container">
+    <div class="cta-strip-inner">
+      <div>
+        <h2>Need an ESPON Coating Spray System?</h2>
+        <p>Share your coating type, billet dimensions, and production volume &mdash; our engineers will configure the right spray system for your operation.</p>
+      </div>
+      <div class="cta-strip-actions">
+        <a href="contact.html" class="btn btn-primary btn-lg"><i class="fas fa-phone"></i> Talk to an Expert</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div id="footer-mount"></div>
+<script src="assets/js/components.js"></script>
+<script>
+(function() {
+  var nav = document.querySelector('.product-nav .container');
+  if (!nav) return;
+  var links = nav.querySelectorAll('a[href^="#"]');
+  var hint = nav.querySelector('.scroll-hint');
+  var sections = [];
+  links.forEach(function(a) {
+    var id = a.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: a });
+  });
+  function checkScroll() {
+    if (!hint) return;
+    var atEnd = nav.scrollLeft + nav.clientWidth >= nav.scrollWidth - 4;
+    hint.classList.toggle('hidden', atEnd);
+  }
+  nav.addEventListener('scroll', checkScroll);
+  window.addEventListener('resize', checkScroll);
+  checkScroll();
+  var current = null;
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match && match.id !== current) {
+          current = match.id;
+          links.forEach(function(a) { a.classList.remove('active'); });
+          match.link.classList.add('active');
+          match.link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+        }
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  sections.forEach(function(s) { observer.observe(s.el); });
+})();
+</script>
+</body>
+</html>

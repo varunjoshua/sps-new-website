@@ -173,13 +173,14 @@
       letter-spacing: -.3px;
     }
     .customers-grid {
-      display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center; max-width: 960px; margin: 0 auto;
     }
     .customer-card {
       display: flex; align-items: center; gap: 10px;
       background: var(--light); border: 1px solid var(--border);
       border-radius: 8px; padding: 10px 12px;
-      transition: all .2s ease;
+      transition: all .2s ease; width: calc(25% - 9px);
     }
     .customer-card:hover { border-color: var(--red); box-shadow: 0 2px 8px rgba(0,0,0,.06); }
     .customer-logo {
@@ -190,12 +191,12 @@
     .customer-info h4 { font-size: 13px; font-weight: 700; color: var(--dark); line-height: 1.2; margin: 0; }
     .customer-info span { font-size: 10.5px; color: var(--grey); font-weight: 500; line-height: 1; display: block; margin-top: 1px; }
     @media (max-width: 1024px) {
-      .customers-grid { grid-template-columns: repeat(3, 1fr); }
+      .customer-card { width: calc(33.333% - 8px); }
     }
     @media (max-width: 768px) {
       .customers-section { padding: 56px 0; }
       .customer-group { margin-bottom: 36px; }
-      .customers-grid { grid-template-columns: repeat(2, 1fr); }
+      .customer-card { width: calc(50% - 6px); }
     }
   </style>
 </head>

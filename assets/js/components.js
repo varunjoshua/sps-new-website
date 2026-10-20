@@ -152,7 +152,7 @@ function renderFooter() {
         <div class="footer-bottom-links">
           <a href="#">Privacy Policy</a>
           <a href="#">Terms of Use</a>
-          <a href="#">Sitemap</a>
+          <a href="sitemap.xml">Sitemap</a>
         </div>
       </div>
     </div>

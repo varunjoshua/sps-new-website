@@ -78,20 +78,6 @@
 .product-card:hover .product-link { gap: 10px; }
 
 /* Range intro */
-/* Selector guide */
-.selector-section { background: var(--light); padding: 72px 0; }
-.selector-table-wrap { overflow-x: auto; margin-top: 40px; border-radius: 10px; border: 1px solid var(--border); }
-.selector-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 13.5px; }
-.selector-table th {
-  background: var(--dark); color: #fff; padding: 14px 18px;
-  text-align: left; font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
-}
-.selector-table td { padding: 13px 18px; border-bottom: 1px solid var(--border); color: var(--mid); vertical-align: top; }
-.selector-table tr:last-child td { border-bottom: none; }
-.selector-table tr:nth-child(even) td { background: var(--light); }
-.selector-table td:first-child { font-weight: 600; color: var(--dark); }
-.check { color: var(--red); font-size: 14px; }
-.dash { color: var(--border); font-size: 18px; }
 
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width: 1024px) {
@@ -101,8 +87,6 @@
   .products-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
   .product-img-header { height: 190px; }
   .product-body { padding: 20px; }
-  .table-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
-  .selector-table { min-width: 640px; }
 }
 @media (max-width: 480px) {
   .products-grid { grid-template-columns: 1fr; }
@@ -142,7 +126,7 @@
   <div class="container">
     <div class="section-header" style="margin-bottom:40px; text-align:left;">
       <div class="section-label">Product Categories</div>
-      <h2 class="section-title">Right ESPON Product for Your Process</h2>
+      <h2 class="section-title">Choose the Right ESPON Product for Your Process</h2>
       <p class="section-sub">Select a category to explore individual products within it.</p>
     </div>
     <div class="products-grid">
@@ -152,7 +136,7 @@
         <div class="product-img-header">
           <img src="Images/Products/hot-rolling- anti scale-products-section.jpg" alt="Anti-Scale Coating">
           <div class="product-img-overlay"></div>
-          <div class="product-count-badge">6 Products</div>
+          <div class="product-count-badge">4 Products</div>
           <div class="product-img-text">
             <div class="product-img-icon"><i class="fas fa-layer-group"></i></div>
             <div class="product-img-label">
@@ -298,7 +282,7 @@
       <!-- 7. ESPON Coating Spray Systems -->
       <div class="product-card" data-category-page="products-spray-systems.html">
         <div class="product-img-header">
-          <img src="https://raw.githubusercontent.com/varunjoshua/sps-new-website/114a28ac5f8a1b998c1f974bfdb5069efe974d05/tempimages/spray-system-products-section.jpeg" alt="Spray Systems">
+          <img src="Images/Products/asp70-front-top.webp" alt="ESPON Coating Spray System">
           <div class="product-img-overlay"></div>
           <div class="product-count-badge">1 Product</div>
           <div class="product-img-text">
@@ -346,97 +330,6 @@
       </div>
 
     </div><!-- /products-grid -->
-  </div>
-</section>
-
-<!-- ── PRODUCT SELECTOR TABLE ─────────────────────────────── -->
-<section class="selector-section">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-label">Product Selector</div>
-      <h2 class="section-title">Which Product is Right for Your Process?</h2>
-      <p class="section-sub">Use this quick-reference guide to identify the products applicable to your specific metal forming operation.</p>
-    </div>
-    <div class="selector-table-wrap">
-      <table class="selector-table">
-        <thead>
-          <tr>
-            <th>Product</th>
-            <th>Hot Forging</th>
-            <th>Hot Rolling</th>
-            <th>Heat Treatment</th>
-            <th>Die Casting</th>
-            <th>Ti / Super-Alloys</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Anti-Scale Protective Coatings (ESPON-HR)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><i class="fas fa-check check"></i></td>
-          </tr>
-          <tr>
-            <td>Refractory Coatings (ESPON-RC3)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-          </tr>
-          <tr>
-            <td>Hot Forging Die Lubricants (ESPON-GLF3)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-          </tr>
-          <tr>
-            <td>Anti-Nitriding Stop-off Paste (ESPON-AN)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-          </tr>
-          <tr>
-            <td>EP Grease (ESPON EP00)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-          </tr>
-          <tr>
-            <td>Oil Cleaning Liquids (O-CLEAN3)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-          </tr>
-          <tr>
-            <td>Die Lubricant Spray Systems (DSP2)</td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-            <td><span class="dash">—</span></td>
-          </tr>
-          <tr>
-            <td>Decarburisation Control Coatings (ESPON-DC)</td>
-            <td><span class="dash">—</span></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><i class="fas fa-check check"></i></td>
-            <td><span class="dash">—</span></td>
-            <td><i class="fas fa-check check"></i></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
   </div>
 </section>
 
